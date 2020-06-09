@@ -1,0 +1,518 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A32",
+    "architecture": "armv8",
+    "pmu_architecture": "pmuv3",
+    "counters": 6,
+    "reference": "Cortex-A32 TRM",
+    "events": [
+        {
+            "code": 0,
+            "name": "SW_INCR",
+            "type": "UEVT",
+            "description": "Software increment. The register is incremented only on writes to the Software Increment Register"
+        },
+        {
+            "code": 1,
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 0,
+            "trace_lsb": 0,
+            "description": "L1 Instruction cache refill"
+        },
+        {
+            "code": 2,
+            "name": "L1I_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1ITLB",
+            "event_bits": 1,
+            "event_lsb": 1,
+            "trace_lsb": 1,
+            "description": "L1 Instruction TLB refill"
+        },
+        {
+            "code": 3,
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 2,
+            "trace_lsb": 2,
+            "description": "L1 Data cache refill"
+        },
+        {
+            "code": 4,
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 3,
+            "trace_lsb": 3,
+            "description": "L1 Data cache access"
+        },
+        {
+            "code": 5,
+            "name": "L1D_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "event_bits": 1,
+            "event_lsb": 4,
+            "trace_lsb": 4,
+            "description": "L1 Data TLB refill"
+        },
+        {
+            "code": 6,
+            "name": "LD_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 5,
+            "trace_lsb": 5,
+            "description": "Instruction that is architecturally executed, condition check pass - load"
+        },
+        {
+            "code": 7,
+            "name": "ST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 6,
+            "trace_lsb": 6,
+            "description": "Instruction that is architecturally executed, condition check pass - store"
+        },
+        {
+            "code": 8,
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 7,
+            "trace_lsb": 7,
+            "description": "Instruction that is architecturally executed"
+        },
+        {
+            "code": 9,
+            "name": "EXC_TAKEN",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 9,
+            "trace_lsb": 9,
+            "description": "Exception taken"
+        },
+        {
+            "code": 10,
+            "name": "EXC_RETURN",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 10,
+            "trace_lsb": 10,
+            "description": "Exception return"
+        },
+        {
+            "code": 11,
+            "name": "CID_WRITE_RETIRED",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 11,
+            "trace_lsb": 11,
+            "description": "Change to Context ID retired"
+        },
+        {
+            "code": 12,
+            "name": "PC_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 12,
+            "trace_lsb": 12,
+            "description": "Instruction that is architecturally executed, condition check pass, software change of the PC"
+        },
+        {
+            "code": 13,
+            "name": "BR_IMMED_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 13,
+            "trace_lsb": 13,
+            "description": "Instruction that is architecturally executed, immediate branch"
+        },
+        {
+            "code": 14,
+            "name": "BR_RETURN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction that is architecturally executed, condition code check pass, procedure return"
+        },
+        {
+            "code": 15,
+            "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 14,
+            "trace_lsb": 14,
+            "description": "Instruction that is architecturally executed, condition check pass, unaligned load or store"
+        },
+        {
+            "code": 16,
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 15,
+            "trace_lsb": 15,
+            "description": "Mispredicted or not predicted branch that is speculatively executed"
+        },
+        {
+            "code": 17,
+            "name": "CPU_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Cycle"
+        },
+        {
+            "code": 18,
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 16,
+            "trace_lsb": 16,
+            "description": "Predictable branch that is speculatively executed"
+        },
+        {
+            "code": 19,
+            "name": "MEM_ACCESS",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 17,
+            "trace_lsb": 17,
+            "description": "Data memory access"
+        },
+        {
+            "code": 20,
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 18,
+            "trace_lsb": 18,
+            "description": "L1 Instruction cache access"
+        },
+        {
+            "code": 21,
+            "name": "L1D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 19,
+            "trace_lsb": 19,
+            "description": "L1 Data cache writeback"
+        },
+        {
+            "code": 22,
+            "name": "L2D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 20,
+            "trace_lsb": 20,
+            "description": "L2 Data cache access"
+        },
+        {
+            "code": 23,
+            "name": "L2D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 21,
+            "trace_lsb": 21,
+            "description": "L2 Data cache refill"
+        },
+        {
+            "code": 24,
+            "name": "L2D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 22,
+            "trace_lsb": 22,
+            "description": "L2 Data cache write-back"
+        },
+        {
+            "code": 25,
+            "name": "BUS_ACCESS",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access"
+        },
+        {
+            "code": 26,
+            "name": "MEMORY_ERROR",
+            "type": "UEVT",
+            "description": "Local memory error"
+        },
+        {
+            "code": 29,
+            "name": "BUS_CYCLES",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus cycle"
+        },
+        {
+            "code": 30,
+            "name": "CHAIN",
+            "type": "UEVT",
+            "description": "Odd performance counter chain mode"
+        },
+        {
+            "code": 96,
+            "name": "BUS_ACCESS_LD",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access - Read"
+        },
+        {
+            "code": 97,
+            "name": "BUS_ACCESS_ST",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access - Write"
+        },
+        {
+            "code": 122,
+            "name": "BR_INDIRECT_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch that is speculatively executed - Indirect branch"
+        },
+        {
+            "code": 134,
+            "name": "EXC_IRQ",
+            "type": "EXC",
+            "description": "Exception taken, IRQ"
+        },
+        {
+            "code": 135,
+            "name": "EXC_FIQ",
+            "type": "EXC",
+            "description": "Exception taken, FIQ"
+        },
+        {
+            "code": 192,
+            "type": "UEVT",
+            "description": "External memory request"
+        },
+        {
+            "code": 193,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request"
+        },
+        {
+            "code": 194,
+            "type": "UEVT",
+            "description": "Linefill because of prefetch"
+        },
+        {
+            "code": 196,
+            "type": "UEVT",
+            "description": "Entering read allocate mode"
+        },
+        {
+            "code": 197,
+            "type": "UEVT",
+            "description": "Read allocate mode"
+        },
+        {
+            "code": 198,
+            "type": "UEVT",
+            "description": "Pre-decode error"
+        },
+        {
+            "code": 199,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data Write operation that stalls the pipeline because the store buffer is full"
+        },
+        {
+            "code": 200,
+            "type": "UEVT",
+            "description": "SCU Snooped data from another core for this core"
+        },
+        {
+            "code": 201,
+            "type": "UEVT",
+            "description": "Conditional branch that is executed"
+        },
+        {
+            "code": 202,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Indirect branch that is mispredicted"
+        },
+        {
+            "code": 203,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Indirect branch that is mispredicted because of address miscompare"
+        },
+        {
+            "code": 204,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Conditional branch that is mispredicted"
+        },
+        {
+            "code": 208,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 23,
+            "trace_lsb": 23,
+            "description": "L1 Instruction Cache (data or tag) memory error"
+        },
+        {
+            "code": 209,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 24,
+            "trace_lsb": 24,
+            "description": "L1 Data Cache (data, tag, or dirty) memory error, correctable or non-correctable"
+        },
+        {
+            "code": 210,
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 25,
+            "trace_lsb": 25,
+            "description": "TLB memory error"
+        },
+        {
+            "code": 224,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle that the DPU IQ is empty and that is not because of a recent micro-TLB miss, an instruction cache miss or a pre-decode error"
+        },
+        {
+            "code": 225,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is an instruction cache miss being processed"
+        },
+        {
+            "code": 226,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is an instruction micro-TLB miss being processed"
+        },
+        {
+            "code": 227,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is a pre-decode error being processed"
+        },
+        {
+            "code": 228,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is not because of an Advanced SIMD or floating-point instruction, and not because of a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 229,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is because of a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 230,
+            "architectural": false,
+            "type": "INS",
+            "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is because of an Advanced SIMD or floating-point instruction. Stall cycles because of a stall in the Wr stage, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 231,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Attributable Performance Impact Event Counts every cycle there is a stall in the Wr stage because of a load miss"
+        },
+        {
+            "code": 232,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Attributable Performance Impact Event. Counts every cycle there is a stall in the Wr stage because of a store"
+        },
+        {
+            "architectural": false,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 8,
+            "trace_lsb": 8,
+            "description": "Two instructions are architecturally executed. Counts every cycle in which two instructions are architecturally retired. Event 0x08, INST_RETIRED, always counts when this event counts"
+        },
+        {
+            "type": "UEVT",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 26,
+            "trace_lsb": 26,
+            "description": "L2 (data or tag) memory error, correctable or noncorrectable"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 27,
+            "trace_lsb": 27,
+            "description": "SCU snoop filter memory error, correctable or noncorrectable"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 28,
+            "description": "Advanced SIMD and floating-point retention active"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 29,
+            "description": "Core retention active"
+        }
+    ]
+}

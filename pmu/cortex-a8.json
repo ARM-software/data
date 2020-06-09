@@ -1,0 +1,322 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A8",
+    "architecture": "armv7",
+    "pmu_architecture": "pmuv2",
+    "counters": 4,
+    "reference": "gator events-Cortex-A8.xml",
+    "events": [
+        {
+            "code": 0,
+            "type": "UEVT",
+            "description": "Incremented only on writes to the Software Increment Register"
+        },
+        {
+            "code": 1,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "description": "Instruction fetch that causes a refill at the lowest level of instruction or unified cache. Each instruction fetch from normal cacheable memory that causes a refill from outside of the cache is counted. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted. Where instruction fetches consist of multiple instructions, these accesses count as single events. CP15 cache maintenance operations do not count as events. This counter increments for speculative instruction fetches and for fetches of instructions that reach execution"
+        },
+        {
+            "code": 2,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Instruction fetch that causes a TLB refill at the lowest level of TLB. Each instruction fetch that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative instruction fetches and for fetches of instructions that reach execution"
+        },
+        {
+            "code": 3,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Data read or write operation that causes a refill at the lowest level of data or unified cache. Each data read from or write to normal cacheable memory that causes a refill from outside of the cache is counted. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted. Each access to a cache line to normal cacheable memory that causes a new linefill is counted, including the multiple transaction of instructions such as LDM or STM, PUSH and POP. Write-through writes that hit in the cache do not cause a linefill and so are not counted. CP15 cache maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
+        },
+        {
+            "code": 4,
+            "architectural": false,
+            "type": "INS",
+            "subtype": "READ",
+            "description": "Data read or write operation that causes a cache access at the lowest level of data or unified cache. Each access to a cache line to normal cacheable memory is counted including the multiple transaction of instructions such as LDM or STM. CP15 cache maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
+        },
+        {
+            "code": 5,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data read or write operation that causes a TLB refill at the lowest level of TLB. Each data read or write operation that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
+        },
+        {
+            "code": 6,
+            "architectural": true,
+            "type": "INS",
+            "description": "Data read architecturally executed. This counter increments for every instruction that explicitly read data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 7,
+            "architectural": true,
+            "type": "INS",
+            "description": "Data write architecturally executed. The counter increments for every instruction that explicitly wrote data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 8,
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed. This counter counts for all instructions, including conditional instructions that fail their condition codes"
+        },
+        {
+            "code": 9,
+            "type": "EXC",
+            "description": "Exception taken. This counts for each exception taken"
+        },
+        {
+            "code": 10,
+            "architectural": true,
+            "type": "EXC",
+            "description": "Exception return architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 11,
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction that writes to the Context ID Register architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 12,
+            "architectural": true,
+            "type": "INS",
+            "description": "Software change of PC, except by an exception, architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 13,
+            "architectural": true,
+            "type": "INS",
+            "description": "Immediate branch architecturally executed, taken or not taken. This includes B{L}, BLX, CB{N}Z, HB{L}, and HBLP. This counter counts for all immediate branch instructions that are architecturally executed, including conditional instructions that fail their condition codes"
+        },
+        {
+            "code": 14,
+            "architectural": true,
+            "type": "EXC",
+            "description": "Procedure return, other than exception returns, architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 15,
+            "architectural": true,
+            "type": "INS",
+            "description": "Unaligned access architecturally executed. This counts each instruction that is an access to an unaligned address. This counter only increments for instructions that are unconditional or that pass their condition codes"
+        },
+        {
+            "code": 16,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Branch mispredicted or not predicted. This counts for every pipeline flush because of a misprediction from the program flow prediction resources"
+        },
+        {
+            "code": 18,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Branches or other change in the program flow that could have been predicted by the branch prediction resources of the processor"
+        },
+        {
+            "code": 64,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Any write buffer full cycle"
+        },
+        {
+            "code": 65,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "Any store that is merged in the L2 memory system"
+        },
+        {
+            "code": 66,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "EVICT",
+            "component": "L2",
+            "description": "Any bufferable store transaction from load/store to L2 cache, excluding eviction or cast out data"
+        },
+        {
+            "code": 67,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "description": "Any accesses to the L2 cache"
+        },
+        {
+            "code": 68,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "Any cacheable miss in the L2 cache"
+        },
+        {
+            "code": 69,
+            "type": "UEVT",
+            "description": "The number of AXI read data transfers"
+        },
+        {
+            "code": 70,
+            "type": "UEVT",
+            "description": "The number of AXI write data transfers"
+        },
+        {
+            "code": 71,
+            "type": "UEVT",
+            "description": "Any replay event in the memory system"
+        },
+        {
+            "code": 72,
+            "type": "UEVT",
+            "description": "Any unaligned memory access that results in a replay"
+        },
+        {
+            "code": 73,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Any L1 data memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: hash hit and physical address miss, hash hit and physical address hit in another way and hash miss and physical address hit"
+        },
+        {
+            "code": 74,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "Any L1 instruction memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: hash hit and physical address miss, hash hit and physical address hit in another way and hash miss and physical address hit"
+        },
+        {
+            "code": 75,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "Any L1 data memory access in which a page coloring alias occurs. alias = virtual address [12] ! = physical address [12]. This behavior results in a data memory eviction or cast out"
+        },
+        {
+            "code": 76,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Any NEON access that hits in the L1 data cache"
+        },
+        {
+            "code": 77,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Any NEON cacheable data accesses for L1 data cache"
+        },
+        {
+            "code": 78,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "description": "Any L2 cache accesses as a result of a NEON memory access"
+        },
+        {
+            "code": 79,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "Any NEON hit in the L2 cache"
+        },
+        {
+            "code": 80,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "Any L1 instruction cache access, excluding CP15 cache accesses"
+        },
+        {
+            "code": 81,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Any return stack misprediction because of incorrect target address for a taken return stack pop"
+        },
+        {
+            "code": 82,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Two forms of branch direction misprediction: branch predicted taken, but was not taken and branch predicted not taken, but was taken"
+        },
+        {
+            "code": 83,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Any predictable branch that is predicted to be taken"
+        },
+        {
+            "code": 84,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Any predictable branch that is executed and taken"
+        },
+        {
+            "code": 85,
+            "architectural": false,
+            "type": "INS",
+            "description": "Number of operations issued, where an operation is either: an instruction or one operation in a sequence of operations that make up a multi-cycle instruction"
+        },
+        {
+            "code": 86,
+            "architectural": false,
+            "type": "INS",
+            "description": "Increment for every cycle that no instructions are available for issue"
+        },
+        {
+            "code": 87,
+            "architectural": false,
+            "type": "INS",
+            "description": "For every cycle, this event counts the number of instructions issued in that cycle. Multi-cycle instructions are only counted once"
+        },
+        {
+            "code": 88,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Number of cycles the processor stalls waiting on MRC data from NEON"
+        },
+        {
+            "code": 89,
+            "architectural": false,
+            "type": "INS",
+            "description": "Number of cycles that the processor stalls as a result of a full NEON instruction queue or NEON load queue"
+        },
+        {
+            "code": 90,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Number of cycles that NEON and integer processors are both not idle"
+        },
+        {
+            "code": 112,
+            "type": "UEVT",
+            "description": "Counts any event from external input source PMUEXTIN[0]"
+        },
+        {
+            "code": 113,
+            "type": "UEVT",
+            "description": "Counts any event from external input source PMUEXTIN[1]"
+        },
+        {
+            "code": 114,
+            "type": "UEVT",
+            "description": "Counts any event from both external input sources PMUEXTIN[0] and PMUEXTIN[1]"
+        }
+    ]
+}

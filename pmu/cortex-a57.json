@@ -1,0 +1,819 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A57",
+    "architecture": "armv8",
+    "pmu_architecture": "pmuv3",
+    "counters": 6,
+    "reference": "Cortex-A57 TRM",
+    "events": [
+        {
+            "code": 0,
+            "name": "SW_INCR",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "trace_lsb": 0,
+            "description": "Instruction architecturally executed (condition check pass) - Software increment"
+        },
+        {
+            "code": 1,
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 0,
+            "trace_lsb": 1,
+            "description": "Level 1 instruction cache refill"
+        },
+        {
+            "code": 2,
+            "name": "L1I_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1ITLB",
+            "event_bits": 1,
+            "event_lsb": 1,
+            "trace_lsb": 2,
+            "description": "Level 1 instruction TLB refill"
+        },
+        {
+            "code": 3,
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 2,
+            "trace_lsb": 3,
+            "description": "Level 1 data cache refill"
+        },
+        {
+            "code": 4,
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "event_bits": 2,
+            "trace_lsb": 4,
+            "description": "Level 1 data cache access"
+        },
+        {
+            "code": 5,
+            "name": "L1D_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "event_bits": 2,
+            "trace_lsb": 6,
+            "description": "Level 1 data TLB refill"
+        },
+        {
+            "code": 8,
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 4,
+            "event_lsb": 3,
+            "trace_lsb": 8,
+            "description": "Instruction architecturally executed"
+        },
+        {
+            "code": 9,
+            "name": "EXC_TAKEN",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 7,
+            "trace_lsb": 12,
+            "description": "Exception taken"
+        },
+        {
+            "code": 10,
+            "name": "EXC_RETURN",
+            "architectural": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 8,
+            "trace_lsb": 13,
+            "description": "Instruction architecturally executed (condition check pass) - Exception return"
+        },
+        {
+            "code": 11,
+            "name": "CID_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "trace_lsb": 14,
+            "description": "Instruction architecturally executed (condition check pass) - Write to CONTEXTIDR"
+        },
+        {
+            "code": 16,
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 9,
+            "trace_lsb": 15,
+            "description": "Mispredicted or not predicted branch speculatively executed"
+        },
+        {
+            "code": 17,
+            "name": "CPU_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "event_bits": 1,
+            "trace_lsb": 16,
+            "description": "Cycle"
+        },
+        {
+            "code": 18,
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 10,
+            "trace_lsb": 17,
+            "description": "Predictable branch speculatively executed"
+        },
+        {
+            "code": 19,
+            "name": "MEM_ACCESS",
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 18,
+            "description": "Data memory access"
+        },
+        {
+            "code": 20,
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 11,
+            "trace_lsb": 20,
+            "description": "Level 1 instruction cache access"
+        },
+        {
+            "code": 21,
+            "name": "L1D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 12,
+            "trace_lsb": 21,
+            "description": "Level 1 data cache Write-Back"
+        },
+        {
+            "code": 22,
+            "name": "L2D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "event_bits": 2,
+            "trace_lsb": 22,
+            "description": "Level 2 data cache access"
+        },
+        {
+            "code": 23,
+            "name": "L2D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 13,
+            "trace_lsb": 24,
+            "description": "Level 2 data cache refill"
+        },
+        {
+            "code": 24,
+            "name": "L2D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 14,
+            "trace_lsb": 25,
+            "description": "Level 2 data cache Write-Back"
+        },
+        {
+            "code": 25,
+            "name": "BUS_ACCESS",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 2,
+            "trace_lsb": 26,
+            "description": "Bus access"
+        },
+        {
+            "code": 26,
+            "name": "MEMORY_ERROR",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 28,
+            "description": "Local memory error"
+        },
+        {
+            "code": 27,
+            "name": "INST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 29,
+            "description": "Operation speculatively executed"
+        },
+        {
+            "code": 28,
+            "name": "TTBR_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "trace_lsb": 31,
+            "description": "Instruction architecturally executed (condition check pass) - Write to translation table base"
+        },
+        {
+            "code": 29,
+            "name": "BUS_CYCLES",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "trace_lsb": 32,
+            "description": "Bus cycle"
+        },
+        {
+            "code": 30,
+            "name": "CHAIN",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 33,
+            "description": "Odd performance counter chain mode"
+        },
+        {
+            "code": 64,
+            "name": "L1D_CACHE_LD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 15,
+            "trace_lsb": 34,
+            "description": "Level 1 data cache access - Read"
+        },
+        {
+            "code": 65,
+            "name": "L1D_CACHE_ST",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 16,
+            "trace_lsb": 35,
+            "description": "Level 1 data cache access - Write"
+        },
+        {
+            "code": 66,
+            "name": "L1D_CACHE_REFILL_LD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 36,
+            "description": "Level 1 data cache refill - Read"
+        },
+        {
+            "code": 67,
+            "name": "L1D_CACHE_REFILL_ST",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 37,
+            "description": "Level 1 data cache refill - Write"
+        },
+        {
+            "code": 70,
+            "name": "L1D_CACHE_WB_VICTIM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 38,
+            "description": "Level 1 data cache Write-back - Victim"
+        },
+        {
+            "code": 71,
+            "name": "L1D_CACHE_WB_CLEAN",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 39,
+            "description": "Level 1 data cache Write-back - Cleaning and coherency"
+        },
+        {
+            "code": 72,
+            "name": "L1D_CACHE_INVAL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 40,
+            "description": "Level 1 data cache invalidate"
+        },
+        {
+            "code": 76,
+            "name": "L1D_TLB_REFILL_LD",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "event_bits": 1,
+            "event_lsb": 17,
+            "trace_lsb": 41,
+            "description": "Level 1 data TLB refill - Read"
+        },
+        {
+            "code": 77,
+            "name": "L1D_TLB_REFILL_ST",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "event_bits": 1,
+            "event_lsb": 18,
+            "trace_lsb": 42,
+            "description": "Level 1 data TLB refill - Write"
+        },
+        {
+            "code": 80,
+            "name": "L2D_CACHE_LD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 19,
+            "trace_lsb": 43,
+            "description": "Level 2 data cache access - Read"
+        },
+        {
+            "code": 81,
+            "name": "L2D_CACHE_ST",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "event_lsb": 20,
+            "trace_lsb": 44,
+            "description": "Level 2 data cache access - Write"
+        },
+        {
+            "code": 82,
+            "name": "L2D_CACHE_REFILL_LD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L2",
+            "event_bits": 1,
+            "trace_lsb": 45,
+            "description": "Level 2 data cache refill - Read"
+        },
+        {
+            "code": 83,
+            "name": "L2D_CACHE_REFILL_ST",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "trace_lsb": 46,
+            "description": "Level 2 data cache refill - Write"
+        },
+        {
+            "code": 86,
+            "name": "L2D_CACHE_WB_VICTIM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "trace_lsb": 47,
+            "description": "Level 2 data cache Write-back - Victim"
+        },
+        {
+            "code": 87,
+            "name": "L2D_CACHE_WB_CLEAN",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "event_bits": 1,
+            "trace_lsb": 48,
+            "description": "Level 2 data cache Write-back - Cleaning and coherency"
+        },
+        {
+            "code": 88,
+            "name": "L2D_CACHE_INVAL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "event_bits": 1,
+            "trace_lsb": 49,
+            "description": "Level 2 data cache invalidate"
+        },
+        {
+            "code": 96,
+            "name": "BUS_ACCESS_LD",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "trace_lsb": 50,
+            "description": "Bus access - Read"
+        },
+        {
+            "code": 97,
+            "name": "BUS_ACCESS_ST",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "trace_lsb": 51,
+            "description": "Bus access - Write"
+        },
+        {
+            "code": 98,
+            "name": "BUS_ACCESS_SHARED",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 2,
+            "trace_lsb": 52,
+            "description": "Bus access - Normal"
+        },
+        {
+            "code": 99,
+            "name": "BUS_ACCESS_NOT_SHARED",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 2,
+            "trace_lsb": 54,
+            "description": "Bus access - Not normal"
+        },
+        {
+            "code": 100,
+            "name": "BUS_ACCESS_NORMAL",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 2,
+            "trace_lsb": 56,
+            "description": "Bus access - Normal"
+        },
+        {
+            "code": 101,
+            "name": "BUS_ACCESS_PERIPH",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 2,
+            "trace_lsb": 58,
+            "description": "Bus access - Peripheral"
+        },
+        {
+            "code": 102,
+            "name": "MEM_ACCESS_LD",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 60,
+            "description": "Data memory access - Read"
+        },
+        {
+            "code": 103,
+            "name": "MEM_ACCESS_ST",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 61,
+            "description": "Data memory access - Write"
+        },
+        {
+            "code": 104,
+            "name": "UNALIGNED_LD_SPEC",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 62,
+            "description": "Unaligned access - Read"
+        },
+        {
+            "code": 105,
+            "name": "UNALIGNED_ST_SPEC",
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 63,
+            "description": "Unaligned access - Write"
+        },
+        {
+            "code": 106,
+            "name": "UNALIGNED_LDST_SPEC",
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 64,
+            "description": "Unaligned access"
+        },
+        {
+            "code": 108,
+            "name": "LDREX_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 21,
+            "trace_lsb": 66,
+            "description": "Exclusive operation speculatively executed - LDREX"
+        },
+        {
+            "code": 109,
+            "name": "STREX_PASS_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 22,
+            "trace_lsb": 67,
+            "description": "Exclusive instruction speculatively executed - STREX pass"
+        },
+        {
+            "code": 110,
+            "name": "STREX_FAIL_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 23,
+            "trace_lsb": 68,
+            "description": "Exclusive operation speculatively executed - STREX fail"
+        },
+        {
+            "code": 112,
+            "name": "LD_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 69,
+            "description": "Operation speculatively executed - Load"
+        },
+        {
+            "code": 113,
+            "name": "ST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 71,
+            "description": "Operation speculatively executed - Store"
+        },
+        {
+            "code": 114,
+            "name": "LDST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 73,
+            "description": "Operation speculatively executed - Load or store"
+        },
+        {
+            "code": 115,
+            "name": "DP_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 75,
+            "description": "Operation speculatively executed - Integer data processing"
+        },
+        {
+            "code": 116,
+            "name": "ASE_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 77,
+            "description": "Operation speculatively executed - Advanced SIMD"
+        },
+        {
+            "code": 117,
+            "name": "VFP_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 79,
+            "description": "Operation speculatively executed - VFP"
+        },
+        {
+            "code": 118,
+            "name": "PC_WRITE_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 81,
+            "description": "Operation speculatively executed - Software change of the PC"
+        },
+        {
+            "code": 119,
+            "name": "CRYPTO_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "trace_lsb": 83,
+            "description": "Operation speculatively executed, crypto data processing"
+        },
+        {
+            "code": 120,
+            "name": "BR_IMMED_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 85,
+            "description": "Branch speculatively executed - Immediate branch"
+        },
+        {
+            "code": 121,
+            "name": "BR_RETURN_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 86,
+            "description": "Branch speculatively executed - Procedure return"
+        },
+        {
+            "code": 122,
+            "name": "BR_INDIRECT_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 87,
+            "description": "Branch speculatively executed - Indirect branch"
+        },
+        {
+            "code": 124,
+            "name": "ISB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 88,
+            "description": "Barrier speculatively executed - ISB"
+        },
+        {
+            "code": 125,
+            "name": "DSB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 24,
+            "trace_lsb": 89,
+            "description": "Barrier speculatively executed - DSB"
+        },
+        {
+            "code": 126,
+            "name": "DMB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 24,
+            "trace_lsb": 90,
+            "description": "Barrier speculatively executed - DMB"
+        },
+        {
+            "code": 129,
+            "name": "EXC_UNDEF",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 91,
+            "description": "Exception taken, other synchronous"
+        },
+        {
+            "code": 130,
+            "name": "EXC_SVC",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 92,
+            "description": "Exception taken, Supervisor Call"
+        },
+        {
+            "code": 131,
+            "name": "EXC_PABORT",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 93,
+            "description": "Exception taken, Instruction Abort"
+        },
+        {
+            "code": 132,
+            "name": "EXC_DABORT",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 94,
+            "description": "Exception taken, Data Abort or SError"
+        },
+        {
+            "code": 134,
+            "name": "EXC_IRQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 95,
+            "description": "Exception taken, IRQ"
+        },
+        {
+            "code": 135,
+            "name": "EXC_FIQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 96,
+            "description": "Exception taken, FIQ"
+        },
+        {
+            "code": 136,
+            "name": "EXC_SMC",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 97,
+            "description": "Exception taken, Secure Monitor Call"
+        },
+        {
+            "code": 138,
+            "name": "EXC_HVC",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 98,
+            "description": "Exception taken, Hypervisor Call"
+        },
+        {
+            "code": 139,
+            "name": "EXC_TRAP_PABORT",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 99,
+            "description": "Exception taken, Instruction Abort not taken locally"
+        },
+        {
+            "code": 140,
+            "name": "EXC_TRAP_DABORT",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 100,
+            "description": "Exception taken, Data Abort, or SError not taken locally"
+        },
+        {
+            "code": 141,
+            "name": "EXC_TRAP_OTHER",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 101,
+            "description": "Exception taken - Other traps not taken locally"
+        },
+        {
+            "code": 142,
+            "name": "EXC_TRAP_IRQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 102,
+            "description": "Exception taken, IRQ not taken locally"
+        },
+        {
+            "code": 143,
+            "name": "EXC_TRAP_FIQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "trace_lsb": 103,
+            "description": "Exception taken, FIQ not taken locally"
+        },
+        {
+            "code": 144,
+            "name": "RC_LD_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "event_bits": 1,
+            "trace_lsb": 104,
+            "description": "Release consistency instruction speculatively executed - LoadAcquire"
+        },
+        {
+            "code": 145,
+            "name": "RC_ST_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "event_bits": 1,
+            "trace_lsb": 105,
+            "description": "Release consistency instruction speculatively executed - StoreRelease"
+        }
+    ]
+}

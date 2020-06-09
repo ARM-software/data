@@ -1,0 +1,201 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A5",
+    "architecture": "armv7",
+    "pmu_architecture": "pmuv2",
+    "counters": 2,
+    "reference": "gator events-Cortex-A5.xml",
+    "events": [
+        {
+            "code": 0,
+            "type": "UEVT",
+            "description": "Software increment. The register is incremented only on writes to the Software Increment Register"
+        },
+        {
+            "code": 1,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "description": "Instruction fetch that causes a refill at (at least) the lowest level of instruction or unified cache. Includes the speculative linefills in the count"
+        },
+        {
+            "code": 2,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Instruction fetch that causes a TLB refill at (at least) the lowest level of TLB. Includes the speculative requests in the count"
+        },
+        {
+            "code": 3,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Data read or write operation that causes a refill at (at least) the lowest level of data or unified cache. Counts the number of allocations performed in the Data Cache because of a read or a write"
+        },
+        {
+            "code": 4,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Data read or write operation that causes a cache access at (at least) the lowest level of data or unified cache. This includes speculative reads"
+        },
+        {
+            "code": 5,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Data read or write operation that causes a TLB refill at (at least) the lowest level of TLB. This does not include micro TLB misses because of PLD, PLI, CP15 Cache operation by MVA and CP15 VA to PA operations"
+        },
+        {
+            "code": 6,
+            "architectural": false,
+            "type": "INS",
+            "description": "Data read architecturally executed. Counts the number of data read instructions accepted by the Load Store Unit. This includes counting the speculative and aborted LDR/LDM, and the reads because of the SWP instructions"
+        },
+        {
+            "code": 7,
+            "architectural": false,
+            "type": "INS",
+            "description": "Data write architecturally executed. Counts the number of data write instructions accepted by the Load Store Unit. This includes counting the speculative and aborted STR/STM, and the writes because of the SWP instructions"
+        },
+        {
+            "code": 8,
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed"
+        },
+        {
+            "code": 9,
+            "type": "EXC",
+            "description": "Exception taken. Counts the number of exceptions architecturally taken"
+        },
+        {
+            "code": 10,
+            "architectural": true,
+            "type": "EXC",
+            "description": "Exception return architecturally executed"
+        },
+        {
+            "code": 11,
+            "architectural": true,
+            "type": "INS",
+            "description": "Change to ContextID retired. Counts the number of instructions architecturally executed writing into the ContextID Register"
+        },
+        {
+            "code": 12,
+            "type": "UEVT",
+            "description": "Software change of PC"
+        },
+        {
+            "code": 13,
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Immediate branch architecturally executed (taken or not taken). This includes the branches which are flushed due to a previous load/store which aborts late"
+        },
+        {
+            "code": 14,
+            "architectural": true,
+            "type": "EXC",
+            "description": "Procedure return (other than exception returns) architecturally executed"
+        },
+        {
+            "code": 15,
+            "type": "UEVT",
+            "description": "Unaligned load-store"
+        },
+        {
+            "code": 16,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Branch mispredicted/not predicted. Counts the number of mispredicted or not-predicted branches executed. This includes the branches which are flushed because of a previous load/store which aborts late"
+        },
+        {
+            "code": 18,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Branches or other change in program flow that could have been predicted by the branch prediction resources of the processor. This includes the branches which are flushed because of a previous load/store which aborts late"
+        },
+        {
+            "code": 19,
+            "name": "MEM_ACCESS",
+            "type": "UEVT",
+            "description": "Data memory access"
+        },
+        {
+            "code": 20,
+            "architectural": false,
+            "type": "INS",
+            "subtype": "ACCESS",
+            "description": "Instruction Cache access"
+        },
+        {
+            "code": 21,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "EVICT",
+            "description": "Data cache eviction"
+        },
+        {
+            "code": 134,
+            "type": "EXC",
+            "description": "IRQ exception taken"
+        },
+        {
+            "code": 135,
+            "type": "EXC",
+            "description": "FIQ exception taken"
+        },
+        {
+            "code": 192,
+            "type": "UEVT",
+            "description": "External memory request"
+        },
+        {
+            "code": 193,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request"
+        },
+        {
+            "code": 194,
+            "type": "UEVT",
+            "description": "Linefill because of prefetch"
+        },
+        {
+            "code": 195,
+            "type": "UEVT",
+            "description": "Prefetch linefill dropped"
+        },
+        {
+            "code": 196,
+            "type": "UEVT",
+            "description": "Entering read allocate mode"
+        },
+        {
+            "code": 197,
+            "type": "UEVT",
+            "description": "Read allocate mode"
+        },
+        {
+            "code": 199,
+            "type": "ETM",
+            "description": "ETM Ext Out[0]"
+        },
+        {
+            "code": 200,
+            "type": "ETM",
+            "description": "ETM Ext Out[1]"
+        },
+        {
+            "code": 201,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data Write operation that stalls the pipeline because the store buffer is full"
+        }
+    ]
+}

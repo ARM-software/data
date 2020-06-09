@@ -1,0 +1,771 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:51 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A76",
+    "architecture": "armv8",
+    "pmu_architecture": "pmuv3",
+    "counters": 6,
+    "reference": "gator events-Cortex-A76.xml",
+    "events": [
+        {
+            "code": 0,
+            "architectural": true,
+            "type": "INS",
+            "description": "Software increment. Instruction architecturally executed (condition code check pass)"
+        },
+        {
+            "code": 1,
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "L1 instruction cache refill"
+        },
+        {
+            "code": 2,
+            "name": "L1I_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1ITLB",
+            "description": "L1 instruction TLB refill"
+        },
+        {
+            "code": 3,
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill"
+        },
+        {
+            "code": 4,
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "L1 data cache access"
+        },
+        {
+            "code": 5,
+            "name": "L1D_TLB_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "L1 data TLB refill"
+        },
+        {
+            "code": 8,
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed"
+        },
+        {
+            "code": 9,
+            "name": "EXC_TAKEN",
+            "type": "EXC",
+            "description": "Exception taken"
+        },
+        {
+            "code": 10,
+            "name": "EXC_RETURN",
+            "architectural": true,
+            "type": "EXC",
+            "description": "Instruction architecturally executed, condition code check pass, exception return"
+        },
+        {
+            "code": 11,
+            "name": "CID_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR"
+        },
+        {
+            "code": 16,
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Mispredicted or not predicted branch speculatively executed"
+        },
+        {
+            "code": 17,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The number of core clock cycles"
+        },
+        {
+            "code": 18,
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Predictable branch speculatively executed"
+        },
+        {
+            "code": 19,
+            "name": "MEM_ACCESS",
+            "type": "UEVT",
+            "description": "Data memory access"
+        },
+        {
+            "code": 20,
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "L1 instruction cache access"
+        },
+        {
+            "code": 21,
+            "name": "L1D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "L1 data cache Write-Back"
+        },
+        {
+            "code": 22,
+            "name": "L2D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "description": "L2 data cache access"
+        },
+        {
+            "code": 23,
+            "name": "L2D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L2",
+            "description": "L2 data cache refill"
+        },
+        {
+            "code": 24,
+            "name": "L2D_CACHE_WB",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "L2 data cache Write-Back"
+        },
+        {
+            "code": 25,
+            "name": "BUS_ACCESS",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access"
+        },
+        {
+            "code": 26,
+            "type": "UEVT",
+            "description": "Local memory error. This event counts any correctable or uncorrectable memory error (ECC or parity) in the protected core RAMs"
+        },
+        {
+            "code": 27,
+            "name": "INST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed"
+        },
+        {
+            "code": 28,
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed (condition check pass) - Write to TTBR"
+        },
+        {
+            "code": 29,
+            "name": "BUS_CYCLES",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus cycle"
+        },
+        {
+            "code": 30,
+            "name": "CHAIN",
+            "type": "UEVT",
+            "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For even-numbered counters there is no increment"
+        },
+        {
+            "code": 32,
+            "name": "L2D_CACHE_ALLOCATE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L2",
+            "description": "L2 data cache allocation without refill"
+        },
+        {
+            "code": 33,
+            "architectural": true,
+            "type": "EXC",
+            "description": "Instruction architecturally executed, branch. This event counts all branches, taken or not. This excludes exception entries, debug entries and CCFAIL branches"
+        },
+        {
+            "code": 34,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted branch. The event counts any branch counted by BR_RETIRED which is not correctly predicted and causes a pipeline flush"
+        },
+        {
+            "code": 35,
+            "architectural": false,
+            "type": "INS",
+            "description": "No operation issued because of the frontend. The counter counts on any cycle when there are no fetched instructions available to dispatch"
+        },
+        {
+            "code": 36,
+            "architectural": false,
+            "type": "INS",
+            "description": "No operation issued because of the backend. The counter counts on any cycle fetched instructions are not dispatched due to resource constraints"
+        },
+        {
+            "code": 37,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "This event counts any load or store operation which accesses the data L1 TLB"
+        },
+        {
+            "code": 38,
+            "architectural": false,
+            "type": "INS",
+            "description": "his event counts any instruction fetch which accesses the instruction L1 TLB"
+        },
+        {
+            "code": 41,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and full-line writes which do not allocate into L2"
+        },
+        {
+            "code": 42,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "The event counts for any cacheable read transaction returning data from the SCU for which the data source was outside the cluster"
+        },
+        {
+            "code": 43,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "The event counts for any cacheable read transaction returning data from the SCU, or for any cacheable write to the SCU"
+        },
+        {
+            "code": 45,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "The event counts on any refill of the L2 TLB, caused by either an instruction or data access. This event does not count if the MMU is disabled"
+        },
+        {
+            "code": 47,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "The event counts on any access to the L2 TLB (caused by a refill of any of the L1 TLBs). This event does not count if the MMU is disabled."
+        },
+        {
+            "code": 49,
+            "type": "UEVT",
+            "description": "Access to another socket in a multi-socket system"
+        },
+        {
+            "code": 52,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Access to data TLB that caused a page table walk. This event counts on any data access which causes L2D_TLB_REFILL to count"
+        },
+        {
+            "code": 53,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Access to instruction TLB that caused a page table walk. This event counts on any instruction access which causes L2D_TLB_REFILL to count"
+        },
+        {
+            "code": 54,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Last level cache access, read"
+        },
+        {
+            "code": 55,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Last level cache miss, read"
+        },
+        {
+            "code": 64,
+            "name": "L1D_CACHE_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L1D",
+            "description": "L1 data cache access, read"
+        },
+        {
+            "code": 65,
+            "name": "L1D_CACHE_WR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "L1 data cache access, write"
+        },
+        {
+            "code": 66,
+            "name": "L1D_CACHE_REFILL_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L1D",
+            "description": "L1 data cache refill, read"
+        },
+        {
+            "code": 67,
+            "name": "L1D_CACHE_REFILL_WR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "L1 data cache refill, write"
+        },
+        {
+            "code": 68,
+            "name": "L1D_CACHE_REFILL_INNER",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill, inner"
+        },
+        {
+            "code": 69,
+            "name": "L1D_CACHE_REFILL_OUTER",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill, outer"
+        },
+        {
+            "code": 70,
+            "name": "L1D_CACHE_WB_VICTIM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "L1 data cache write-back, victim"
+        },
+        {
+            "code": 71,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "L1 data cache write-back cleaning and coherency"
+        },
+        {
+            "code": 72,
+            "name": "L1D_CACHE_INVAL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "L1 data cache invalidate"
+        },
+        {
+            "code": 76,
+            "name": "L1D_TLB_REFILL_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "L1 data TLB refill, read"
+        },
+        {
+            "code": 77,
+            "name": "L1D_TLB_REFILL_WR",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "L1 data TLB refill, write"
+        },
+        {
+            "code": 78,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "L1 data TLB access, read"
+        },
+        {
+            "code": 79,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "L1 data TLB access, write"
+        },
+        {
+            "code": 80,
+            "name": "L2D_CACHE_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L2",
+            "description": "L2 data cache access, read"
+        },
+        {
+            "code": 81,
+            "name": "L2D_CACHE_WR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "L2 data cache access, write"
+        },
+        {
+            "code": 82,
+            "name": "L2D_CACHE_REFILL_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L2",
+            "description": "L2 data cache refill, read"
+        },
+        {
+            "code": 83,
+            "name": "L2D_CACHE_REFILL_WR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "L2 data cache refill, write"
+        },
+        {
+            "code": 86,
+            "name": "L2D_CACHE_WB_VICTIM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "L2 data cache write-back, victim"
+        },
+        {
+            "code": 87,
+            "name": "L2D_CACHE_WB_CLEAN",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L2",
+            "description": "L2 data cache write-back, cleaning and coherency"
+        },
+        {
+            "code": 88,
+            "name": "L2D_CACHE_INVAL",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "L2 data cache invalidate"
+        },
+        {
+            "code": 92,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "L2 data or unified TLB refill, read"
+        },
+        {
+            "code": 93,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "L2 data or unified TLB refill, write"
+        },
+        {
+            "code": 94,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "L2 data or unified TLB access, read"
+        },
+        {
+            "code": 95,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "L2 data or unified TLB access,write"
+        },
+        {
+            "code": 96,
+            "type": "UEVT",
+            "description": "The event counts for every beat of data transferred over the read data channel between the core and the SCU"
+        },
+        {
+            "code": 97,
+            "type": "UEVT",
+            "description": "The event counts for every beat of data transferred over the write data channel between the core and the SCU"
+        },
+        {
+            "code": 102,
+            "name": "MEM_ACCESS_RD",
+            "type": "UEVT",
+            "description": "Data memory access, read"
+        },
+        {
+            "code": 103,
+            "name": "MEM_ACCESS_WR",
+            "type": "UEVT",
+            "description": "Data memory access, write"
+        },
+        {
+            "code": 104,
+            "name": "UNALIGNED_LD_SPEC",
+            "type": "UEVT",
+            "description": "Unaligned access, read"
+        },
+        {
+            "code": 105,
+            "name": "UNALIGNED_ST_SPEC",
+            "type": "UEVT",
+            "description": "Unaligned access, write"
+        },
+        {
+            "code": 106,
+            "name": "UNALIGNED_LDST_SPEC",
+            "type": "UEVT",
+            "description": "Unaligned access"
+        },
+        {
+            "code": 108,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, LDREX, or LDX"
+        },
+        {
+            "code": 109,
+            "name": "STREX_PASS_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, STREX or STX pass"
+        },
+        {
+            "code": 110,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, STREX, or STX fail"
+        },
+        {
+            "code": 111,
+            "name": "STREX_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, STREX or STX"
+        },
+        {
+            "code": 112,
+            "name": "LD_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, load"
+        },
+        {
+            "code": 113,
+            "name": "ST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, store"
+        },
+        {
+            "code": 114,
+            "name": "LDST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, load or store"
+        },
+        {
+            "code": 115,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, integer data processing"
+        },
+        {
+            "code": 116,
+            "name": "ASE_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "Operation speculatively executed, Advanced SIMD instruction"
+        },
+        {
+            "code": 117,
+            "name": "VFP_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "Operation speculatively executed, floating-point instruction"
+        },
+        {
+            "code": 118,
+            "name": "PC_WRITE_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, software change of the PC"
+        },
+        {
+            "code": 119,
+            "name": "CRYPTO_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "Operation speculatively executed, Cryptographic instruction"
+        },
+        {
+            "code": 120,
+            "name": "BR_IMMED_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed, immediate branch"
+        },
+        {
+            "code": 121,
+            "name": "BR_RETURN_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed, procedure return"
+        },
+        {
+            "code": 122,
+            "name": "BR_INDIRECT_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed - Indirect branch"
+        },
+        {
+            "code": 124,
+            "name": "ISB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Barrier speculatively executed, ISB"
+        },
+        {
+            "code": 125,
+            "name": "DSB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Barrier speculatively executed, DSB"
+        },
+        {
+            "code": 126,
+            "name": "DMB_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Barrier speculatively executed, DMB"
+        },
+        {
+            "code": 129,
+            "type": "EXC",
+            "description": "Counts the number of undefined exceptions taken locally"
+        },
+        {
+            "code": 130,
+            "type": "EXC",
+            "description": "Exception taken locally, Supervisor Call"
+        },
+        {
+            "code": 131,
+            "type": "EXC",
+            "description": "Exception taken locally, Instruction Abort"
+        },
+        {
+            "code": 132,
+            "type": "EXC",
+            "description": "Exception taken locally, Data Abort and SError"
+        },
+        {
+            "code": 134,
+            "type": "EXC",
+            "description": "Exception taken locally, IRQ"
+        },
+        {
+            "code": 135,
+            "type": "EXC",
+            "description": "Exception taken locally, FIQ"
+        },
+        {
+            "code": 136,
+            "type": "EXC",
+            "description": "Exception taken locally, Secure Monitor Call"
+        },
+        {
+            "code": 138,
+            "type": "EXC",
+            "description": "Exception taken locally, Hypervisor Call"
+        },
+        {
+            "code": 139,
+            "name": "EXC_TRAP_PABORT",
+            "type": "EXC",
+            "description": "Exception taken, Instruction Abort not taken locally"
+        },
+        {
+            "code": 140,
+            "name": "EXC_TRAP_DABORT",
+            "type": "EXC",
+            "description": "Exception taken, Data Abort or SError not taken locally"
+        },
+        {
+            "code": 141,
+            "name": "EXC_TRAP_OTHER",
+            "type": "EXC",
+            "description": "Exception taken, Other traps not taken locally"
+        },
+        {
+            "code": 142,
+            "name": "EXC_TRAP_IRQ",
+            "type": "EXC",
+            "description": "Exception taken, IRQ not taken locally"
+        },
+        {
+            "code": 143,
+            "name": "EXC_TRAP_FIQ",
+            "type": "EXC",
+            "description": "Exception taken, FIQ not taken locally"
+        },
+        {
+            "code": 144,
+            "name": "RC_LD_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Release consistency operation speculatively executed, load-acquire"
+        },
+        {
+            "code": 145,
+            "name": "RC_ST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Release consistency operation speculatively executed, store-release"
+        },
+        {
+            "code": 160,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "L3",
+            "description": "L3 cache read"
+        }
+    ]
+}

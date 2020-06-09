@@ -1,0 +1,373 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "implementer": "A",
+    "cpu": "Cortex-A9",
+    "architecture": "armv7",
+    "pmu_architecture": "pmuv2",
+    "counters": 6,
+    "reference": "Cortex-A9 TRM",
+    "events": [
+        {
+            "code": 0,
+            "type": "UEVT",
+            "description": "Software increment"
+        },
+        {
+            "code": 1,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction cache miss"
+        },
+        {
+            "code": 2,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction micro TLB miss"
+        },
+        {
+            "code": 3,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache miss"
+        },
+        {
+            "code": 4,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "description": "Data cache access"
+        },
+        {
+            "code": 5,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data micro TLB miss"
+        },
+        {
+            "code": 6,
+            "type": "UEVT",
+            "description": "Data read"
+        },
+        {
+            "code": 7,
+            "type": "UEVT",
+            "description": "Data writes"
+        },
+        {
+            "code": 9,
+            "name": "EXC_TAKEN",
+            "type": "EXC",
+            "description": "Exception taken"
+        },
+        {
+            "code": 10,
+            "type": "EXC",
+            "description": "Exception return"
+        },
+        {
+            "code": 11,
+            "type": "UEVT",
+            "description": "Write context ID"
+        },
+        {
+            "code": 12,
+            "type": "UEVT",
+            "description": "Software change of the PC"
+        },
+        {
+            "code": 13,
+            "type": "UEVT",
+            "description": "Immediate branch"
+        },
+        {
+            "code": 15,
+            "type": "UEVT",
+            "description": "Unaligned load or store"
+        },
+        {
+            "code": 16,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Branch mispredicted or not predicted"
+        },
+        {
+            "code": 18,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Predictable branches"
+        },
+        {
+            "code": 64,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Java bytecode execute.[a] Counts the number of Java bytecodes being decoded, including speculative ones"
+        },
+        {
+            "code": 65,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Software Java bytecode executed.[a] Counts the number of software Java bytecodes being decoded, including speculative ones"
+        },
+        {
+            "code": 66,
+            "type": "UEVT",
+            "description": "Jazelle backward branches executed.[a] Counts the number of Jazelle taken branches being executed. This includes the branches that are flushed because of a previous load/store that aborts late"
+        },
+        {
+            "code": 80,
+            "type": "UEVT",
+            "description": "Coherent linefill miss.[b] Counts the number of coherent linefill requests performed by the Cortex-A9 processor that also miss in all the other Cortex-A9 processors. This means that the request is sent to the external memory"
+        },
+        {
+            "code": 81,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Coherent linefill hit.[b] Counts the number of coherent linefill requests performed by the Cortex-A9 processor that hit in another Cortex-A9 processor. This means that the linefill data is fetched directly from the relevant Cortex-A9 cache"
+        },
+        {
+            "code": 96,
+            "architectural": false,
+            "type": "INS",
+            "subtype": "READ",
+            "description": "Instruction cache dependent stall cycles. Counts the number of cycles where the processor: is ready to accept new instructions, does not receive a new instruction, because: the instruction side is unable to provide one the instruction cache is performing at least one linefill"
+        },
+        {
+            "code": 97,
+            "architectural": false,
+            "type": "INS",
+            "description": "Data cache dependent stall cycles. Counts the number of cycles where the processor has some instructions that it cannot issue to any pipeline, and the Load Store unit has at least one pending linefill request, and no pending TLB requests"
+        },
+        {
+            "code": 98,
+            "architectural": false,
+            "type": "INS",
+            "description": "Main TLB miss stall cycles. Counts the number of cycles where the processor is stalled waiting for the completion of translation table walks from the main TLB. The processor stalls because the instruction side is not able to provide the instructions, or the data side is not able to provide the necessary data"
+        },
+        {
+            "code": 99,
+            "architectural": true,
+            "type": "INS",
+            "description": "STREX passed. Counts the number of STREX instructions architecturally executed and passed"
+        },
+        {
+            "code": 100,
+            "architectural": true,
+            "type": "INS",
+            "description": "STREX failed. Counts the number of STREX instructions architecturally executed and failed"
+        },
+        {
+            "code": 101,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "EVICT",
+            "description": "Data eviction. Counts the number of eviction requests because of a linefill in the data cache"
+        },
+        {
+            "code": 102,
+            "architectural": false,
+            "type": "INS",
+            "description": "Issue does not dispatch any instruction. Counts the number of cycles where the issue stage does not dispatch any instruction because it is empty or cannot dispatch any instructions"
+        },
+        {
+            "code": 103,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Issue is empty. Counts the number of cycles where the issue stage is empty"
+        },
+        {
+            "code": 104,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instructions coming out of the core renaming stage. Counts the number of instructions going through the Register Renaming stage. This number is an approximate number of the total number of instructions speculatively executed, and an even more approximate number of the total number of instructions architecturally executed. The approximation depends mainly on the branch misprediction rate. The renaming stage can handle two instructions in the same cycle so the event is two bits long: b00 No instructions coming out of the core renaming stage. b01 One instruction coming out of the core renaming stage. b10 Two instructions coming out of the core renaming stage"
+        },
+        {
+            "code": 105,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Number of data linefills.[c] Counts the number of linefills performed on the external AXI bus. This event counts all data linefill requests, caused by: loads, including speculative ones stores PLD prefetch page table walk"
+        },
+        {
+            "code": 106,
+            "type": "UEVT",
+            "description": "Number of prefetcher linefills.[c] Counts the number of data linefills caused by prefetcher requests"
+        },
+        {
+            "code": 107,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Number of hits in prefetched cache lines.[c] Counts the number of cache hits in a line that belongs to a stream followed by the prefetcher. This includes: lines that have been prefetched by the automatic data prefetcher lines already present in the cache, before the prefetcher action"
+        },
+        {
+            "code": 110,
+            "architectural": false,
+            "type": "EXC",
+            "component": "BPU",
+            "description": "Predictable function returns. Counts the number of procedure returns whose condition codes do not fail, excluding all returns from exception. This count includes procedure returns that are flushed because of a previous load/store that aborts late. Only the following instructions are reported: BX R14 MOV PC LR POP {..,pc} LDR pc,[sp],#offset. The following instructions are not reported: LDMIA R9!,{..,PC} (ThumbEE state only) LDR PC,[R9],#offset (ThumbEE state only) BX R0 (Rm != R14) MOV PC,R0 (Rm != R14) LDM SP,{...,PC} (writeback not specified) LDR PC,[SP,#offset] (wrong addressing mode)"
+        },
+        {
+            "code": 112,
+            "architectural": false,
+            "type": "INS",
+            "description": "Main execution unit instructions. Counts the number of instructions being executed in the main execution pipeline of the processor, the multiply pipeline and arithmetic logic unit pipeline. The counted instructions are still speculative"
+        },
+        {
+            "code": 113,
+            "architectural": false,
+            "type": "INS",
+            "description": "Second execution unit instructions. Counts the number of instructions being executed in the processor second execution pipeline (ALU). The counted instructions are still speculative"
+        },
+        {
+            "code": 114,
+            "architectural": false,
+            "type": "INS",
+            "description": "Load/Store Instructions. Counts the number of instructions being executed in the Load/Store unit. The counted instructions are still speculative"
+        },
+        {
+            "code": 115,
+            "architectural": false,
+            "type": "INS",
+            "description": "Floating-point instructions. Counts the number of floating-point instructions going through the Register Rename stage. Instructions are still speculative in this stage. Two floating-point instructions can be renamed in the same cycle so the event is two bits long: b00 No floating-point instruction renamed. b01 One floating-point instruction renamed. b10 Two floating-point instructions renamed"
+        },
+        {
+            "code": 116,
+            "architectural": false,
+            "type": "INS",
+            "description": "NEON instructions. Counts the number of NEON instructions going through the Register Rename stage. Instructions are still speculative in this stage. Two NEON instructions can be renamed in the same cycle so the event is two bits long: b00 No NEON instruction renamed. b01 One NEON instruction renamed. b10 Two NEON instructions renamed"
+        },
+        {
+            "code": 128,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Processor stalls because of PLDs. Counts the number of cycles where the processor is stalled because PLD slots are all full"
+        },
+        {
+            "code": 129,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Processor stalled because of a write to memory. Counts the number of cycles when the processor is stalled. The data side is stalled also, because it is full and executes writes to the external memory"
+        },
+        {
+            "code": 130,
+            "architectural": false,
+            "type": "INS",
+            "description": "Processor stalled because of instruction side main TLB miss. Counts the number of stall cycles because of main TLB misses on requests issued by the instruction side"
+        },
+        {
+            "code": 131,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Processor stalled because of data side main TLB miss. Counts the number of stall cycles because of main TLB misses on requests issued by the data side"
+        },
+        {
+            "code": 132,
+            "architectural": false,
+            "type": "INS",
+            "description": "Processor stalled because of instruction micro TLB miss. Counts the number of stall cycles because of micro TLB misses on the instruction side. This event does not include main TLB miss stall cycles that are already counted in the corresponding main TLB event"
+        },
+        {
+            "code": 133,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Processor stalled because of data micro TLB miss. Counts the number of stall cycles because of micro TLB misses on the data side. This event does not include main TLB miss stall cycles that are already counted in the corresponding main TLB event"
+        },
+        {
+            "code": 134,
+            "architectural": false,
+            "type": "INS",
+            "description": "Processor stalled because of DMB. Counts the number of stall cycles because of the execution of a DMB. This includes all DMB instructions being executed, even speculatively"
+        },
+        {
+            "code": 138,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Integer clock enabled. Counts the number of cycles when the integer core clock is enabled"
+        },
+        {
+            "code": 139,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Data engine clock enabled. Counts the number of cycles when the data engine clock is enabled"
+        },
+        {
+            "code": 140,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "NEON SIMD clock enabled.[c] Counts the number of cycles when the NEON SIMD clock is enabled"
+        },
+        {
+            "code": 141,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB allocation.[c] Counts the number of TLB allocations because of Instruction requests"
+        },
+        {
+            "code": 142,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data TLB allocation.[c] Counts the number of TLB allocations because of Data requests"
+        },
+        {
+            "code": 144,
+            "architectural": true,
+            "type": "INS",
+            "description": "ISB instructions. Counts the number of ISB instructions architecturally executed"
+        },
+        {
+            "code": 145,
+            "architectural": true,
+            "type": "INS",
+            "description": "DSB instructions. Counts the number of DSB instructions architecturally executed"
+        },
+        {
+            "code": 146,
+            "architectural": false,
+            "type": "INS",
+            "description": "DMB instructions. Counts the number of DMB instructions speculatively executed"
+        },
+        {
+            "code": 147,
+            "type": "UEVT",
+            "description": "External interrupts. Counts the number of external interrupts executed by the processor"
+        },
+        {
+            "code": 160,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PLE cache line request completed"
+        },
+        {
+            "code": 161,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PLE cache line request skipped"
+        },
+        {
+            "code": 162,
+            "type": "UEVT",
+            "description": "PLE FIFO flush"
+        },
+        {
+            "code": 163,
+            "type": "UEVT",
+            "description": "PLE request completed"
+        },
+        {
+            "code": 164,
+            "type": "UEVT",
+            "description": "PLE FIFO overflow"
+        },
+        {
+            "code": 165,
+            "type": "UEVT",
+            "description": "PLE request programmed"
+        }
+    ]
+}

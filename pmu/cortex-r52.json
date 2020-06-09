@@ -1,0 +1,982 @@
+{
+    "_type": "Events",
+    "timestamp": "Tue Jun  9 09:29:51 2020",
+    "implementer": "A",
+    "cpu": "Cortex-R52",
+    "architecture": "armv8",
+    "pmu_architecture": "pmuv3",
+    "reference": "Cortex-R52 TRM",
+    "events": [
+        {
+            "code": 0,
+            "name": "SW_INCR",
+            "type": "UEVT",
+            "description": "Software increment. The register is incremented only on writes to the Software Increment Register (PMSWINC)"
+        },
+        {
+            "code": 1,
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 0,
+            "trace_lsb": 4,
+            "description": "L1 instruction cache refill"
+        },
+        {
+            "code": 3,
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 1,
+            "trace_lsb": 5,
+            "description": "L1 data cache refill"
+        },
+        {
+            "code": 4,
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "event_bits": 1,
+            "event_lsb": 2,
+            "trace_lsb": 6,
+            "description": "L1 data cache access"
+        },
+        {
+            "code": 6,
+            "name": "LD_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 3,
+            "trace_lsb": 7,
+            "description": "Instruction architecturally executed, condition check pass - load"
+        },
+        {
+            "code": 7,
+            "name": "ST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 4,
+            "trace_lsb": 8,
+            "description": "Instruction architecturally executed, condition check pass - store"
+        },
+        {
+            "code": 8,
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 5,
+            "trace_lsb": 9,
+            "description": "Instruction architecturally executed"
+        },
+        {
+            "code": 9,
+            "name": "EXC_TAKEN",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 7,
+            "trace_lsb": 11,
+            "description": "Exception taken"
+        },
+        {
+            "code": 10,
+            "name": "EXC_RETURN",
+            "architectural": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 8,
+            "trace_lsb": 12,
+            "description": "Instruction architecturally executed, condition code check pass, exception return"
+        },
+        {
+            "code": 11,
+            "name": "CID_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 9,
+            "trace_lsb": 13,
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR"
+        },
+        {
+            "code": 12,
+            "name": "PC_WRITE_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 10,
+            "trace_lsb": 14,
+            "description": "Instruction architecturally executed, condition check pass, software change of the PC"
+        },
+        {
+            "code": 13,
+            "name": "BR_IMMED_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 11,
+            "trace_lsb": 15,
+            "description": "Instruction architecturally executed, immediate branch"
+        },
+        {
+            "code": 14,
+            "name": "BR_RETURN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 28,
+            "trace_lsb": 32,
+            "description": "Instruction architecturally executed, condition code check pass, procedure return"
+        },
+        {
+            "code": 15,
+            "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 12,
+            "trace_lsb": 16,
+            "description": "Instruction architecturally executed, condition code check pass, unaligned load or store"
+        },
+        {
+            "code": 16,
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 13,
+            "trace_lsb": 17,
+            "description": "Mispredicted or not predicted branch speculatively executed"
+        },
+        {
+            "code": 17,
+            "name": "CPU_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Cycle"
+        },
+        {
+            "code": 18,
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "event_bits": 1,
+            "event_lsb": 14,
+            "trace_lsb": 18,
+            "description": "Predictable branch speculatively executed"
+        },
+        {
+            "code": 19,
+            "name": "MEM_ACCESS",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 15,
+            "trace_lsb": 19,
+            "description": "Data memory access"
+        },
+        {
+            "code": 20,
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "event_bits": 1,
+            "event_lsb": 16,
+            "trace_lsb": 20,
+            "description": "L1 instruction cache access"
+        },
+        {
+            "code": 25,
+            "name": "BUS_ACCESS",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "AXIM, Flash, or LLPP bus access"
+        },
+        {
+            "code": 26,
+            "name": "MEMORY_ERROR",
+            "architectural": false,
+            "type": "INS",
+            "description": "Local memory error (instruction cache, data cache, ATCM, BTCM, CTCM, or Flash)"
+        },
+        {
+            "code": 27,
+            "name": "INST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed"
+        },
+        {
+            "code": 29,
+            "name": "BUS_CYCLES",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus cycle (AXIM)"
+        },
+        {
+            "code": 30,
+            "name": "CHAIN",
+            "type": "UEVT",
+            "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For evennumbered counters, there is no increment"
+        },
+        {
+            "code": 33,
+            "name": "BR_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 24,
+            "trace_lsb": 28,
+            "description": "Instruction architecturally executed, branch"
+        },
+        {
+            "code": 34,
+            "name": "BR_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted branch"
+        },
+        {
+            "code": 35,
+            "name": "STALL_FRONTEND",
+            "type": "UEVT",
+            "description": "No operation issued due to the front end"
+        },
+        {
+            "code": 36,
+            "name": "STALL_BACKEND",
+            "type": "UEVT",
+            "description": "No operation issued due to the back end"
+        },
+        {
+            "code": 96,
+            "name": "BUS_ACCESS_RD",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access - Read (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 97,
+            "name": "BUS_ACCESS_WR",
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Bus access - Write (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 130,
+            "name": "EXC_SVC",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 23,
+            "trace_lsb": 27,
+            "description": "Exception taken, supervisor call"
+        },
+        {
+            "code": 134,
+            "name": "EXC_IRQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 17,
+            "trace_lsb": 21,
+            "description": "Exception taken, IRQ"
+        },
+        {
+            "code": 135,
+            "name": "EXC_FIQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 18,
+            "trace_lsb": 22,
+            "description": "Exception taken, FIQ"
+        },
+        {
+            "code": 138,
+            "name": "EXC_HVC",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 19,
+            "trace_lsb": 23,
+            "description": "Exception taken, Hypervisor Call"
+        },
+        {
+            "code": 142,
+            "name": "EXC_TRAP_IRQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 20,
+            "trace_lsb": 24,
+            "description": "Exception taken, IRQ not taken locally"
+        },
+        {
+            "code": 143,
+            "name": "EXC_TRAP_FIQ",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 21,
+            "trace_lsb": 25,
+            "description": "Exception taken, FIQ not taken locally"
+        },
+        {
+            "code": 192,
+            "name": "KITE_AXI_READ",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 31,
+            "trace_lsb": 35,
+            "description": "External memory request, AXIM read"
+        },
+        {
+            "code": 193,
+            "name": "KITE_AXI_WRITE",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 32,
+            "trace_lsb": 36,
+            "description": "External memory request, AXIM write"
+        },
+        {
+            "code": 194,
+            "name": "KITE_FLASH_READ",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 33,
+            "trace_lsb": 37,
+            "description": "External memory request, Flash (read-only)"
+        },
+        {
+            "code": 195,
+            "name": "KITE_LLPP_READ",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 34,
+            "trace_lsb": 38,
+            "description": "External memory request, LLPP read"
+        },
+        {
+            "code": 196,
+            "name": "KITE_LLPP_WRITE",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 35,
+            "trace_lsb": 39,
+            "description": "External memory request, LLPP write"
+        },
+        {
+            "code": 197,
+            "name": "KITE_NC_AXI_READ",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "event_bits": 1,
+            "trace_lsb": 40,
+            "description": "Non-cacheable external memory request, AXIM read"
+        },
+        {
+            "code": 198,
+            "name": "KITE_NC_AXI_WRITE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "event_bits": 1,
+            "trace_lsb": 41,
+            "description": "Non-cacheable external memory request, AXIM write"
+        },
+        {
+            "code": 199,
+            "name": "KITE_NC_FLASH_READ",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "event_bits": 1,
+            "trace_lsb": 42,
+            "description": "Non-cacheable external memory request, Flash (read-only)"
+        },
+        {
+            "code": 200,
+            "name": "KITE_REFILL_PF_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of prefetch (AXIM only)"
+        },
+        {
+            "code": 201,
+            "name": "KITE_REFILL_LS_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of load or store, AXIM"
+        },
+        {
+            "code": 202,
+            "name": "KITE_REFILL_LS_FLASH",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of load or store, Flash.bx"
+        },
+        {
+            "code": 203,
+            "name": "KITE_DC_ACCESS_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 43,
+            "description": "L1 data cache access in a way reserved for AXIM"
+        },
+        {
+            "code": 204,
+            "name": "KITE_DC_ACCESS_FLASH",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "event_bits": 1,
+            "trace_lsb": 44,
+            "description": "L1 data cache access in a way reserved for Flash.by"
+        },
+        {
+            "code": 205,
+            "name": "KITE_IC_ACCESS_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "event_bits": 1,
+            "trace_lsb": 45,
+            "description": "L1 instruction cache access in a way reserved for AXIM"
+        },
+        {
+            "code": 206,
+            "name": "KITE_IC_ACCESS_FLASH",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "event_bits": 1,
+            "trace_lsb": 46,
+            "description": "L1 instruction cache access in a way reserved for Flash.bz"
+        },
+        {
+            "code": 207,
+            "name": "KITE_NC_LS_HINTED_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load was hinted, AXIM.ca"
+        },
+        {
+            "code": 208,
+            "name": "KITE_NC_LS_HINTED_FLASH_READ",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load was hinted, Flash.ca"
+        },
+        {
+            "code": 209,
+            "name": "KITE_REFILL_IC_AXI",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "L1 Instruction cache refill, AXIM"
+        },
+        {
+            "code": 210,
+            "name": "KITE_REFILL_IC_FLASH",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "L1 Instruction cache refill, Flash.cb"
+        },
+        {
+            "code": 211,
+            "name": "KITE_NC_LS_AXI_READ",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 47,
+            "description": "Non-cacheable external memory request because of load, AXIM"
+        },
+        {
+            "code": 212,
+            "name": "KITE_NC_LS_FLASH_READ",
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 1,
+            "trace_lsb": 48,
+            "description": "Non-cacheable external memory request because of load, Flash"
+        },
+        {
+            "code": 213,
+            "name": "KITE_COND_BR_RETIRED",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 25,
+            "trace_lsb": 29,
+            "description": "Conditional branch executed"
+        },
+        {
+            "code": 214,
+            "name": "KITE_MIS_PRED_COND_BR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Conditional branch mispredicted"
+        },
+        {
+            "code": 215,
+            "name": "KITE_BTAC_BR_RETIRED",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 26,
+            "trace_lsb": 30,
+            "description": "BTAC branch executed"
+        },
+        {
+            "code": 216,
+            "name": "KITE_MIS_PRED_BTAC_BR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Conditional branch mispredicted"
+        },
+        {
+            "code": 217,
+            "name": "KITE_VSCTLR_CHANGED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 30,
+            "trace_lsb": 34,
+            "description": "Instruction architecturally executed, MCR to VSCTLR"
+        },
+        {
+            "code": 218,
+            "name": "KITE_DSB_ALL_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 29,
+            "trace_lsb": 33,
+            "description": "Instruction architecturally executed, strong DSB, DFB"
+        },
+        {
+            "code": 219,
+            "name": "KITE_SIMULT_ACCESS_AXI",
+            "type": "INS",
+            "description": "Simultaneous accesses from instruction side and data side to AXIM (causing contention)"
+        },
+        {
+            "code": 220,
+            "name": "KITE_SIMULT_ACCESS_FLASH",
+            "type": "INS",
+            "description": "Simultaneous accesses from instruction side and data side to Flash (causing contention)"
+        },
+        {
+            "code": 221,
+            "name": "KITE_EL2_ENTERED",
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 22,
+            "trace_lsb": 26,
+            "description": "Exception taken to EL2 (hyp mode entry), excluding reset"
+        },
+        {
+            "code": 222,
+            "name": "KITE_CRS_BR_RETIRED",
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 27,
+            "trace_lsb": 31,
+            "description": "Implementation defined event. CRS branch executed"
+        },
+        {
+            "code": 223,
+            "name": "KITE_MIS_PRED_CRS_BR",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "CRS branch mispredicted"
+        },
+        {
+            "code": 240,
+            "name": "KITE_COR_ERR_MEM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 0,
+            "description": "Correctable memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or flash)"
+        },
+        {
+            "code": 241,
+            "name": "KITE_FAT_ERR_MEM",
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 1,
+            "description": "Fatal memory error occurred from any source (ATCM, BTCM, CTCM, or Flash)"
+        },
+        {
+            "code": 242,
+            "name": "KITE_BUS_COR_DATA",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 2,
+            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP)"
+        },
+        {
+            "code": 243,
+            "name": "KITE_BUS_FAT_OTHER",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 5,
+            "description": "Fatal non-protocol bus error (payload errors, except data) occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 244,
+            "name": "KITE_BUS_PROTOCOL_ANY",
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 6,
+            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 256,
+            "name": "KITE_IQ_EMPTY_NO_MISS",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU IQ is empty and that is not because of a recent instruction cache miss in any cache way"
+        },
+        {
+            "code": 257,
+            "name": "KITE_IQ_EMPTY_AXI_MISS",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU IQ is empty and there is an instruction cache miss being processed for a cache way reserved for AXI Master"
+        },
+        {
+            "code": 258,
+            "name": "KITE_IQ_EMPTY_FLASH_MISS",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU IQ is empty and there is an instruction cache miss being processed for a cache way reserved for Flash"
+        },
+        {
+            "code": 259,
+            "name": "KITE_INTERLOCK_OTHER",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is not because of an Advanced SIMD or floating-point instruction, and not because of a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 260,
+            "name": "KITE_INTERLOCK_AGU",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is because of a load/ store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 261,
+            "name": "KITE_INTERLOCK_FPASIMD",
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is because of an Advanced SIMD or floating-point instruction. Stall cycles because of a stall in the Wr stage, typically waiting load data, are excluded"
+        },
+        {
+            "code": 262,
+            "name": "KITE_LOAD_STALL_AXI",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is a stall in the Wr stage because of a load miss from the AXIM"
+        },
+        {
+            "code": 263,
+            "name": "KITE_LOAD_STALL_FLASH",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is a stall in the Wr stage because of a load miss from Flash"
+        },
+        {
+            "code": 264,
+            "name": "KITE_WR_STALL_STORE",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is a stall in the Wr stage because of a store"
+        },
+        {
+            "code": 265,
+            "name": "KITE_WR_STALL_AXI_STB_FULL",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the AXIM part of the store buffer was full"
+        },
+        {
+            "code": 266,
+            "name": "KITE_WR_STALL_TCM_STB_FULL",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the TCM part of the store buffer was full"
+        },
+        {
+            "code": 267,
+            "name": "KITE_WR_STALL_LLPP_STB_FULL",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the LLPP part of the store buffer was full"
+        },
+        {
+            "code": 268,
+            "name": "KITE_BARRIER_STALL_BARRIER",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Barrier stalled because store buffer was busy with another barrier"
+        },
+        {
+            "code": 269,
+            "name": "KITE_BARRIER_STORE_AXIWRITE",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Barrier stalled because it was waiting for a write to complete on the AXIM bus"
+        },
+        {
+            "code": 512,
+            "name": "KITE_IC_WT_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache way tracker hit"
+        },
+        {
+            "code": 513,
+            "name": "KITE_DC_WT_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "L1 data cache way tracker hit"
+        },
+        {
+            "code": 514,
+            "name": "KITE_I_UMPU_HIT",
+            "type": "INS",
+            "description": "Instruction side micro MPU hit"
+        },
+        {
+            "code": 515,
+            "name": "KITE_D_UMPU_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data side micro MPU hit. This can also be counted on a pipeline stall"
+        },
+        {
+            "code": 516,
+            "name": "KITE_IC_CACHE_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hit"
+        },
+        {
+            "code": 517,
+            "name": "KITE_IC_LFB_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache linefill buffer hit"
+        },
+        {
+            "code": 518,
+            "name": "KITE_IC_BIU_HIT",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hit on BIU response"
+        },
+        {
+            "code": 519,
+            "name": "KITE_IC_HINT_REQ",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hint request sent"
+        },
+        {
+            "architectural": true,
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 6,
+            "trace_lsb": 10,
+            "description": "Two instructions architecturally executed in parallel. Asserted along with bit PMUEVENTx[5] when dual issuing"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 3,
+            "description": "Fatal data payload bus error occurred from any source (AXIM or LLPP)"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 4,
+            "description": "Fatal READY signal bus error occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "event_bits": 1,
+            "errevent_lsb": 7,
+            "description": "Correctable L1 instruction cache (data or tag) memory error"
+        },
+        {
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 8,
+            "description": "Correctable L1 data cache (data or tag) memory error"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 9,
+            "description": "Correctable ATCM, BTCM, or CTCM memory error"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 10,
+            "description": "Fatal ATCM, BTCM, or CTCM memory error"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 11,
+            "description": "Correctable flash memory error"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 12,
+            "description": "Fatal flash memory error"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 13,
+            "description": "Timeout for AXIM bus"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 14,
+            "description": "Timeout for Flash bus"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 15,
+            "description": "Timeout for LLPP bus"
+        },
+        {
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 16,
+            "description": "Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error"
+        },
+        {
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 17,
+            "description": "Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 18,
+            "description": "Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered)"
+        },
+        {
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 19,
+            "description": "A memory or bus fatal error was synchronously detected in Hyp mode"
+        },
+        {
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 20,
+            "description": "An abort exception was taken because an EL2-controlled MPU fault generated an abort"
+        },
+        {
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 21,
+            "description": "An abort exception was taken because an EL1-controlled MPU fault generated an abort"
+        },
+        {
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 22,
+            "description": "An Undefined exception was taken due to any cause"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 23,
+            "description": "A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU"
+        },
+        {
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 24,
+            "description": "Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times"
+        },
+        {
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 25,
+            "description": "Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
+        }
+    ]
+}
