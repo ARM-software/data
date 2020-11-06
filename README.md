@@ -26,11 +26,12 @@ each event being described by a JSON object:
 
 The "type" field classfies the event:
 
-| type | meaning                                |
-|------|----------------------------------------|
-| INS  | Instruction of a certain type executed |
-| UEVT | Microarchitectural event               |
-| EXC  | Exception of a certain type            |
+| type  | meaning                                                  |
+|-------|----------------------------------------------------------|
+| INS   | Instruction of a certain type executed                   |
+| UEVT  | Microarchitectural event                                 |
+| CYCLE | Counts number of cycles during which a condition is true |
+| EXC   | Exception of a certain type                              |
 
 For microarchitectural events the "component" field indicates the core component
 that the event relates to:
