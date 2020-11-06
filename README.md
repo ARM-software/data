@@ -3,6 +3,11 @@
 ## pmu
 
 This repository contains JSON descriptions of hardware performance events for Arm cores.
+
+This repository is currently "beta" quality. Arm encourages use and evaluation but the data,
+and the data format, are subject to change.
+
+Arm welcomes feedback on this repository via the issue tracker.
  
 ### PMU data schema
   
