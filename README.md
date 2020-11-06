@@ -3,6 +3,8 @@
 ## pmu
 
 This repository contains JSON descriptions of hardware performance events for Arm cores.
+ 
+### PMU data schema
   
 The JSON schema is in pmu/pmu-schema.json. Briefly, each JSON file contains a list of events,
 each event being described by a JSON object:
@@ -24,6 +26,8 @@ each event being described by a JSON object:
 
 The "type" field classfies the event:
 
+| type | meaning                                |
+|------|----------------------------------------|
 | INS  | Instruction of a certain type executed |
 | UEVT | Microarchitectural event               |
 | EXC  | Exception of a certain type            |
@@ -31,12 +35,18 @@ The "type" field classfies the event:
 For microarchitectural events the "component" field indicates the core component
 that the event relates to:
 
-| L1I | L1 I-cache       |
-| L1D | L1 D-cache       |
-| L2  | L2 cache         |
-| BPU | Branch predictor |
+|        | component          |
+|--------|--------------------|
+| L1I    | L1 I-cache         |
+| L1D    | L1 D-cache         |
+| L2     | L2 cache           |
+| BPU    | Branch predictor   |
+| L1ITLB | L1 instruction TLB |
+| L1DTLB | L1 data TLB        |
+| BUS    | Core bus interface |
 
 The "subtype" field may be present to classify the event further, e.g. into READ,
-WRITE and REFILL cache events.
+WRITE, ACCESS and REFILL cache events.
 
-For events exported over the PMU event bus, the position of the event on the bus is shown.
+For events exported on the external event bus, and/or to the ETM,
+the position of the event on the bus is shown.
