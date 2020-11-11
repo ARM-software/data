@@ -11,6 +11,26 @@
             "description": "Time this description file was generated",
             "type": "string"
         },
+        "refs": {
+            "description": "Reference to documentation of these events",
+            "type": "array",
+            "items": {
+                "title": "ref",
+                "type": "object",
+                "properties": {
+                    "ref": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "description": "true if the document is publicly available",
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
         "implementer": {
             "description": "CPU implementer code, e.g. A for ARM Ltd.",
             "type": "string",
@@ -31,10 +51,6 @@
             "description": "CPU name, e.g. Cortex-A7",
             "type": "string"
         },
-        "reference": {
-            "description": "Reference to documentation of these events",
-            "type": "string"
-        },
         "counters": {
             "description": "Number of physical hardware counters (e.g. 4, 6)",
             "type": "integer",
@@ -47,6 +63,13 @@
                 "title": "Event",
                 "type": "object",
                 "properties": {
+                    "refs": {
+                        "description": "List of references for this event",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
                     "code": {
                         "description": "The unique code to be programmed into the PMU event type register",
                         "type": "integer"
@@ -77,6 +100,16 @@
                     "component": {
                         "description": "For non-architectural events, the microarchitecture component",
                         "type": "string"
+                    },
+                    "impdef": {
+                        "description": "True if this event is implementation-defined",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "recommended": {
+                        "description": "True if this event is implementation-defined and recommended",
+                        "type": "boolean",
+                        "default": false
                     },
                     "public": {
                         "description": "True if this event is publicly documented",

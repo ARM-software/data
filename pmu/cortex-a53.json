@@ -1,21 +1,33 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "timestamp": "Tue Nov 10 21:53:45 2020",
     "implementer": "A",
     "cpu": "Cortex-A53",
     "architecture": "armv8",
     "pmu_architecture": "pmuv3",
     "counters": 6,
-    "reference": "Cortex-A53 TRM",
+    "refs": [
+        {
+            "ref": "Cortex-A53 TRM",
+            "public": true
+        },
+        {
+            "ref": "gator events-Cortex-A53.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A53.xml",
+            "public": true
+        }
+    ],
     "events": [
         {
             "code": 0,
+            "refs": [0, 1],
             "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment. The register is incremented only on writes to the Software Increment Register"
         },
         {
             "code": 1,
+            "refs": [0, 1],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -28,6 +40,7 @@
         },
         {
             "code": 2,
+            "refs": [0, 1],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -39,6 +52,7 @@
         },
         {
             "code": 3,
+            "refs": [0, 1],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -51,6 +65,7 @@
         },
         {
             "code": 4,
+            "refs": [0, 1],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -63,6 +78,7 @@
         },
         {
             "code": 5,
+            "refs": [0, 1],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -74,6 +90,7 @@
         },
         {
             "code": 6,
+            "refs": [0, 1],
             "name": "LD_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -84,6 +101,7 @@
         },
         {
             "code": 7,
+            "refs": [0, 1],
             "name": "ST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -94,6 +112,7 @@
         },
         {
             "code": 8,
+            "refs": [0, 1],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -104,6 +123,7 @@
         },
         {
             "code": 9,
+            "refs": [0, 1],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -113,6 +133,7 @@
         },
         {
             "code": 10,
+            "refs": [0, 1],
             "name": "EXC_RETURN",
             "type": "EXC",
             "event_bits": 1,
@@ -122,6 +143,7 @@
         },
         {
             "code": 11,
+            "refs": [0, 1],
             "name": "CID_WRITE_RETIRED",
             "type": "UEVT",
             "event_bits": 1,
@@ -131,6 +153,7 @@
         },
         {
             "code": 12,
+            "refs": [0, 1],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -141,6 +164,7 @@
         },
         {
             "code": 13,
+            "refs": [0, 1],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -151,6 +175,7 @@
         },
         {
             "code": 14,
+            "refs": [0, 1],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -158,6 +183,7 @@
         },
         {
             "code": 15,
+            "refs": [0, 1],
             "name": "UNALIGNED_LDST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -168,6 +194,7 @@
         },
         {
             "code": 16,
+            "refs": [0, 1],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -180,6 +207,7 @@
         },
         {
             "code": 17,
+            "refs": [0, 1],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -187,6 +215,7 @@
         },
         {
             "code": 18,
+            "refs": [0, 1],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -198,6 +227,7 @@
         },
         {
             "code": 19,
+            "refs": [0, 1],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
@@ -207,6 +237,7 @@
         },
         {
             "code": 20,
+            "refs": [0, 1],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -219,6 +250,7 @@
         },
         {
             "code": 21,
+            "refs": [0, 1],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -231,6 +263,7 @@
         },
         {
             "code": 22,
+            "refs": [0, 1],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -243,6 +276,7 @@
         },
         {
             "code": 23,
+            "refs": [0, 1],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -255,6 +289,7 @@
         },
         {
             "code": 24,
+            "refs": [0, 1],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -267,6 +302,7 @@
         },
         {
             "code": 25,
+            "refs": [0, 1],
             "name": "BUS_ACCESS",
             "type": "UEVT",
             "component": "BUS",
@@ -274,12 +310,14 @@
         },
         {
             "code": 26,
+            "refs": [0, 1],
             "name": "MEMORY_ERROR",
             "type": "UEVT",
             "description": "Local memory error"
         },
         {
             "code": 29,
+            "refs": [0, 1],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -288,98 +326,136 @@
         },
         {
             "code": 30,
+            "refs": [0, 1],
             "name": "CHAIN",
             "type": "UEVT",
             "description": "Odd performance counter chain mode"
         },
         {
             "code": 96,
+            "refs": [0, 1],
             "name": "BUS_ACCESS_LD",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access - Read"
         },
         {
             "code": 97,
+            "refs": [0, 1],
             "name": "BUS_ACCESS_ST",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access - Write"
         },
         {
             "code": 122,
+            "refs": [0, 1],
             "name": "BR_INDIRECT_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Branch speculatively executed - Indirect branch"
         },
         {
             "code": 134,
+            "refs": [0, 1],
             "name": "EXC_IRQ",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "Exception taken, IRQ"
         },
         {
             "code": 135,
+            "refs": [0, 1],
             "name": "EXC_FIQ",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "Exception taken, FIQ"
         },
         {
             "code": 192,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "External memory request"
         },
         {
             "code": 193,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Non-cacheable external memory request"
         },
         {
             "code": 194,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Linefill because of prefetch"
         },
         {
             "code": 195,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction Cache Throttle occurred"
         },
         {
             "code": 196,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Entering read allocate mode"
         },
         {
             "code": 197,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Read allocate mode"
         },
         {
             "code": 198,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Pre-decode error"
         },
         {
             "code": 199,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Data Write operation that stalls the pipeline because the store buffer is full"
         },
         {
             "code": 200,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "SCU Snooped data from another CPU for this CPU"
         },
         {
             "code": 201,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Conditional branch executed"
         },
         {
             "code": 202,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -388,6 +464,8 @@
         },
         {
             "code": 203,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -396,6 +474,8 @@
         },
         {
             "code": 204,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -404,6 +484,8 @@
         },
         {
             "code": 208,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L1I",
@@ -414,6 +496,8 @@
         },
         {
             "code": 209,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L1D",
@@ -424,6 +508,8 @@
         },
         {
             "code": 210,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
@@ -433,54 +519,72 @@
         },
         {
             "code": 224,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle that the DPU IQ is empty and that is not because of a recent micro-TLB miss, instruction cache miss or pre-decode error"
         },
         {
             "code": 225,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is an instruction cache miss being processed"
         },
         {
             "code": 226,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is an instruction micro-TLB miss being processed"
         },
         {
             "code": 227,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Attributable Performance Impact Event. Counts every cycle the DPU IQ is empty and there is a pre-decode error being processed"
         },
         {
             "code": 228,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is not because of an Advanced SIMD or Floating-point instruction, and not because of a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
         },
         {
             "code": 229,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is because of a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
         },
         {
             "code": 230,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Attributable Performance Impact Event. Counts every cycle there is an interlock that is because of an Advanced SIMD or Floating-point instruction. Stall cycles because of a stall in the Wr stage, typically awaiting load data, are excluded"
         },
         {
             "code": 231,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Attributable Performance Impact Event Counts every cycle there is a stall in the Wr stage because of a load miss"
         },
         {
             "code": 232,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Attributable Performance Impact Event. Counts every cycle there is a stall in the Wr stage because of a store"

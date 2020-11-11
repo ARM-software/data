@@ -1,20 +1,30 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "timestamp": "Tue Nov 10 21:53:44 2020",
     "implementer": "A",
     "cpu": "Cortex-A8",
     "architecture": "armv7",
     "pmu_architecture": "pmuv2",
     "counters": 4,
-    "reference": "gator events-Cortex-A8.xml",
+    "refs": [
+        {
+            "ref": "gator events-Cortex-A8.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A8.xml",
+            "public": true
+        }
+    ],
     "events": [
         {
             "code": 0,
+            "refs": [0],
+            "name": "SW_INCR",
             "type": "UEVT",
             "description": "Incremented only on writes to the Software Increment Register"
         },
         {
             "code": 1,
+            "refs": [0],
+            "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -22,12 +32,16 @@
         },
         {
             "code": 2,
+            "refs": [0],
+            "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "description": "Instruction fetch that causes a TLB refill at the lowest level of TLB. Each instruction fetch that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative instruction fetches and for fetches of instructions that reach execution"
         },
         {
             "code": 3,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -35,6 +49,8 @@
         },
         {
             "code": 4,
+            "refs": [0],
+            "name": "L1D_CACHE",
             "architectural": false,
             "type": "INS",
             "subtype": "READ",
@@ -42,71 +58,95 @@
         },
         {
             "code": 5,
+            "refs": [0],
+            "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "description": "Data read or write operation that causes a TLB refill at the lowest level of TLB. Each data read or write operation that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
         },
         {
             "code": 6,
+            "refs": [0],
+            "name": "LD_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Data read architecturally executed. This counter increments for every instruction that explicitly read data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 7,
+            "refs": [0],
+            "name": "ST_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Data write architecturally executed. The counter increments for every instruction that explicitly wrote data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 8,
+            "refs": [0],
+            "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Instruction architecturally executed. This counter counts for all instructions, including conditional instructions that fail their condition codes"
         },
         {
             "code": 9,
+            "refs": [0],
+            "name": "EXC_TAKEN",
             "type": "EXC",
             "description": "Exception taken. This counts for each exception taken"
         },
         {
             "code": 10,
+            "refs": [0],
+            "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
             "description": "Exception return architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 11,
+            "refs": [0],
+            "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Instruction that writes to the Context ID Register architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 12,
+            "refs": [0],
+            "name": "PC_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Software change of PC, except by an exception, architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 13,
+            "refs": [0],
+            "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Immediate branch architecturally executed, taken or not taken. This includes B{L}, BLX, CB{N}Z, HB{L}, and HBLP. This counter counts for all immediate branch instructions that are architecturally executed, including conditional instructions that fail their condition codes"
         },
         {
             "code": 14,
+            "refs": [0],
+            "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "EXC",
             "description": "Procedure return, other than exception returns, architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 15,
+            "refs": [0],
+            "name": "UNALIGNED_LDST_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Unaligned access architecturally executed. This counts each instruction that is an access to an unaligned address. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 16,
+            "refs": [0],
+            "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -115,6 +155,8 @@
         },
         {
             "code": 18,
+            "refs": [0],
+            "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
@@ -122,18 +164,30 @@
         },
         {
             "code": 64,
+            "refs": [0],
+            "name": "L1D_CACHE_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Any write buffer full cycle"
         },
         {
             "code": 65,
+            "refs": [0],
+            "name": "L1D_CACHE_WR",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "component": "L2",
             "description": "Any store that is merged in the L2 memory system"
         },
         {
             "code": 66,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "EVICT",
@@ -142,6 +196,10 @@
         },
         {
             "code": 67,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -150,6 +208,10 @@
         },
         {
             "code": 68,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL_INNER",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2",
@@ -157,26 +219,44 @@
         },
         {
             "code": 69,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL_OUTER",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "The number of AXI read data transfers"
         },
         {
             "code": 70,
+            "refs": [0],
+            "name": "L1D_CACHE_WB_VICTIM",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "The number of AXI write data transfers"
         },
         {
             "code": 71,
+            "refs": [0],
+            "name": "L1D_CACHE_WB_CLEAN",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Any replay event in the memory system"
         },
         {
             "code": 72,
+            "refs": [0],
+            "name": "L1D_CACHE_INVAL",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Any unaligned memory access that results in a replay"
         },
         {
             "code": 73,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -185,6 +265,8 @@
         },
         {
             "code": 74,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -193,6 +275,8 @@
         },
         {
             "code": 75,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L1D",
@@ -200,6 +284,10 @@
         },
         {
             "code": 76,
+            "refs": [0],
+            "name": "L1D_TLB_REFILL_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -208,6 +296,10 @@
         },
         {
             "code": 77,
+            "refs": [0],
+            "name": "L1D_TLB_REFILL_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -216,6 +308,10 @@
         },
         {
             "code": 78,
+            "refs": [0],
+            "name": "L1D_TLB_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -224,6 +320,10 @@
         },
         {
             "code": 79,
+            "refs": [0],
+            "name": "L1D_TLB_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2",
@@ -231,6 +331,10 @@
         },
         {
             "code": 80,
+            "refs": [0],
+            "name": "L2D_CACHE_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -239,6 +343,10 @@
         },
         {
             "code": 81,
+            "refs": [0],
+            "name": "L2D_CACHE_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -247,6 +355,10 @@
         },
         {
             "code": 82,
+            "refs": [0],
+            "name": "L2D_CACHE_REFILL_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -255,6 +367,10 @@
         },
         {
             "code": 83,
+            "refs": [0],
+            "name": "L2D_CACHE_REFILL_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
@@ -262,6 +378,8 @@
         },
         {
             "code": 84,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
@@ -269,52 +387,82 @@
         },
         {
             "code": 85,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Number of operations issued, where an operation is either: an instruction or one operation in a sequence of operations that make up a multi-cycle instruction"
         },
         {
             "code": 86,
+            "refs": [0],
+            "name": "L2D_CACHE_WB_VICTIM",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Increment for every cycle that no instructions are available for issue"
         },
         {
             "code": 87,
+            "refs": [0],
+            "name": "L2D_CACHE_WB_CLEAN",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "For every cycle, this event counts the number of instructions issued in that cycle. Multi-cycle instructions are only counted once"
         },
         {
             "code": 88,
+            "refs": [0],
+            "name": "L2D_CACHE_INVAL",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Number of cycles the processor stalls waiting on MRC data from NEON"
         },
         {
             "code": 89,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Number of cycles that the processor stalls as a result of a full NEON instruction queue or NEON load queue"
         },
         {
             "code": 90,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "CYCLE",
             "description": "Number of cycles that NEON and integer processors are both not idle"
         },
         {
             "code": 112,
+            "refs": [0],
+            "name": "LD_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[0]"
         },
         {
             "code": 113,
+            "refs": [0],
+            "name": "ST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[1]"
         },
         {
             "code": 114,
+            "refs": [0],
+            "name": "LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Counts any event from both external input sources PMUEXTIN[0] and PMUEXTIN[1]"
         }

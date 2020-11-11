@@ -1,20 +1,30 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "timestamp": "Tue Nov 10 21:53:45 2020",
     "implementer": "A",
     "cpu": "Cortex-A5",
     "architecture": "armv7",
     "pmu_architecture": "pmuv2",
     "counters": 2,
-    "reference": "gator events-Cortex-A5.xml",
+    "refs": [
+        {
+            "ref": "gator events-Cortex-A5.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A5.xml",
+            "public": true
+        }
+    ],
     "events": [
         {
             "code": 0,
+            "refs": [0],
+            "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment. The register is incremented only on writes to the Software Increment Register"
         },
         {
             "code": 1,
+            "refs": [0],
+            "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
@@ -22,12 +32,16 @@
         },
         {
             "code": 2,
+            "refs": [0],
+            "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "description": "Instruction fetch that causes a TLB refill at (at least) the lowest level of TLB. Includes the speculative requests in the count"
         },
         {
             "code": 3,
+            "refs": [0],
+            "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -35,6 +49,8 @@
         },
         {
             "code": 4,
+            "refs": [0],
+            "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -42,6 +58,8 @@
         },
         {
             "code": 5,
+            "refs": [0],
+            "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -49,18 +67,23 @@
         },
         {
             "code": 6,
+            "refs": [0],
+            "name": "LD_RETIRED",
             "architectural": false,
             "type": "INS",
             "description": "Data read architecturally executed. Counts the number of data read instructions accepted by the Load Store Unit. This includes counting the speculative and aborted LDR/LDM, and the reads because of the SWP instructions"
         },
         {
             "code": 7,
+            "refs": [0],
+            "name": "ST_RETIRED",
             "architectural": false,
             "type": "INS",
             "description": "Data write architecturally executed. Counts the number of data write instructions accepted by the Load Store Unit. This includes counting the speculative and aborted STR/STM, and the writes because of the SWP instructions"
         },
         {
             "code": 8,
+            "refs": [0],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -68,45 +91,61 @@
         },
         {
             "code": 9,
+            "refs": [0],
+            "name": "EXC_TAKEN",
             "type": "EXC",
             "description": "Exception taken. Counts the number of exceptions architecturally taken"
         },
         {
             "code": 10,
+            "refs": [0],
+            "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
             "description": "Exception return architecturally executed"
         },
         {
             "code": 11,
+            "refs": [0],
+            "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "description": "Change to ContextID retired. Counts the number of instructions architecturally executed writing into the ContextID Register"
         },
         {
             "code": 12,
+            "refs": [0],
+            "name": "PC_WRITE_RETIRED",
             "type": "UEVT",
             "description": "Software change of PC"
         },
         {
             "code": 13,
+            "refs": [0],
+            "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "UEVT",
             "description": "Immediate branch architecturally executed (taken or not taken). This includes the branches which are flushed due to a previous load/store which aborts late"
         },
         {
             "code": 14,
+            "refs": [0],
+            "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "EXC",
             "description": "Procedure return (other than exception returns) architecturally executed"
         },
         {
             "code": 15,
+            "refs": [0],
+            "name": "UNALIGNED_LDST_RETIRED",
             "type": "UEVT",
             "description": "Unaligned load-store"
         },
         {
             "code": 16,
+            "refs": [0],
+            "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -115,6 +154,8 @@
         },
         {
             "code": 18,
+            "refs": [0],
+            "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
@@ -122,12 +163,15 @@
         },
         {
             "code": 19,
+            "refs": [0],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "description": "Data memory access"
         },
         {
             "code": 20,
+            "refs": [0],
+            "name": "L1I_CACHE",
             "architectural": false,
             "type": "INS",
             "subtype": "ACCESS",
@@ -135,6 +179,8 @@
         },
         {
             "code": 21,
+            "refs": [0],
+            "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
             "subtype": "EVICT",
@@ -142,57 +188,83 @@
         },
         {
             "code": 134,
+            "refs": [0],
+            "name": "EXC_IRQ",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "IRQ exception taken"
         },
         {
             "code": 135,
+            "refs": [0],
+            "name": "EXC_FIQ",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "FIQ exception taken"
         },
         {
             "code": 192,
+            "refs": [0],
+            "impdef": true,
             "type": "UEVT",
             "description": "External memory request"
         },
         {
             "code": 193,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Non-cacheable external memory request"
         },
         {
             "code": 194,
+            "refs": [0],
+            "impdef": true,
             "type": "UEVT",
             "description": "Linefill because of prefetch"
         },
         {
             "code": 195,
+            "refs": [0],
+            "impdef": true,
             "type": "UEVT",
             "description": "Prefetch linefill dropped"
         },
         {
             "code": 196,
+            "refs": [0],
+            "impdef": true,
             "type": "UEVT",
             "description": "Entering read allocate mode"
         },
         {
             "code": 197,
+            "refs": [0],
+            "impdef": true,
             "type": "UEVT",
             "description": "Read allocate mode"
         },
         {
             "code": 199,
+            "refs": [0],
+            "impdef": true,
             "type": "ETM",
             "description": "ETM Ext Out[0]"
         },
         {
             "code": 200,
+            "refs": [0],
+            "impdef": true,
             "type": "ETM",
             "description": "ETM Ext Out[1]"
         },
         {
             "code": 201,
+            "refs": [0],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Data Write operation that stalls the pipeline because the store buffer is full"

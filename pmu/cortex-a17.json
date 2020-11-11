@@ -1,15 +1,27 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Jun  9 09:29:50 2020",
+    "timestamp": "Tue Nov 10 21:53:45 2020",
     "implementer": "A",
     "cpu": "Cortex-A17",
     "architecture": "armv7",
     "pmu_architecture": "pmuv2",
     "counters": 6,
-    "reference": "Cortex-A17 TRM",
+    "refs": [
+        {
+            "ref": "Cortex-A17 TRM",
+            "public": true
+        },
+        {
+            "ref": "gator events-Cortex-A17.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A17.xml",
+            "public": true
+        }
+    ],
     "events": [
         {
             "code": 1,
+            "refs": [0, 1],
+            "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
@@ -20,6 +32,8 @@
         },
         {
             "code": 2,
+            "refs": [0, 1],
+            "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
@@ -29,6 +43,8 @@
         },
         {
             "code": 3,
+            "refs": [0, 1],
+            "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -39,6 +55,8 @@
         },
         {
             "code": 4,
+            "refs": [0, 1],
+            "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -49,6 +67,8 @@
         },
         {
             "code": 5,
+            "refs": [0, 1],
+            "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -59,6 +79,7 @@
         },
         {
             "code": 8,
+            "refs": [0, 1],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -69,6 +90,8 @@
         },
         {
             "code": 9,
+            "refs": [0, 1],
+            "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
             "event_lsb": 17,
@@ -77,6 +100,8 @@
         },
         {
             "code": 10,
+            "refs": [0, 1],
+            "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
             "event_bits": 1,
@@ -86,6 +111,8 @@
         },
         {
             "code": 11,
+            "refs": [0, 1],
+            "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
@@ -95,6 +122,8 @@
         },
         {
             "code": 16,
+            "refs": [0, 1],
+            "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
@@ -106,12 +135,16 @@
         },
         {
             "code": 17,
+            "refs": [0],
+            "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
             "description": "Cycle counter"
         },
         {
             "code": 18,
+            "refs": [0, 1],
+            "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
@@ -122,6 +155,8 @@
         },
         {
             "code": 19,
+            "refs": [0, 1],
+            "name": "MEM_ACCESS",
             "type": "UEVT",
             "component": "L1D",
             "event_bits": 3,
@@ -131,6 +166,7 @@
         },
         {
             "code": 20,
+            "refs": [0, 1],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -143,6 +179,8 @@
         },
         {
             "code": 21,
+            "refs": [0, 1],
+            "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
             "subtype": "EVICT",
@@ -154,6 +192,7 @@
         },
         {
             "code": 22,
+            "refs": [0, 1],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -163,6 +202,7 @@
         },
         {
             "code": 23,
+            "refs": [0, 1],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -172,6 +212,8 @@
         },
         {
             "code": 24,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
@@ -180,6 +222,8 @@
         },
         {
             "code": 25,
+            "refs": [0, 1],
+            "name": "BUS_ACCESS",
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
@@ -187,12 +231,16 @@
         },
         {
             "code": 27,
+            "refs": [0, 1],
+            "name": "INST_SPEC",
             "architectural": false,
             "type": "INS",
             "description": "Instructions speculatively executed"
         },
         {
             "code": 28,
+            "refs": [0, 1],
+            "name": "TTBR_WRITE_RETIRED",
             "type": "UEVT",
             "event_bits": 1,
             "event_lsb": 20,
@@ -201,6 +249,7 @@
         },
         {
             "code": 29,
+            "refs": [0, 1],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -209,6 +258,10 @@
         },
         {
             "code": 64,
+            "refs": [0, 1],
+            "name": "L1D_CACHE_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -217,6 +270,10 @@
         },
         {
             "code": 65,
+            "refs": [0, 1],
+            "name": "L1D_CACHE_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
@@ -225,6 +282,10 @@
         },
         {
             "code": 80,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_RD",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -233,6 +294,10 @@
         },
         {
             "code": 81,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_WR",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
@@ -241,6 +306,10 @@
         },
         {
             "code": 86,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_WB_VICTIM",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
@@ -249,6 +318,10 @@
         },
         {
             "code": 87,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_WB_CLEAN",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
@@ -257,6 +330,10 @@
         },
         {
             "code": 88,
+            "refs": [0, 1],
+            "name": "L2D_CACHE_INVAL",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2",
@@ -264,11 +341,19 @@
         },
         {
             "code": 96,
+            "refs": [0],
+            "name": "BUS_ACCESS_RD",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Reserved"
         },
         {
             "code": 98,
+            "refs": [0, 1],
+            "name": "BUS_ACCESS_SHARED",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -277,6 +362,10 @@
         },
         {
             "code": 99,
+            "refs": [0, 1],
+            "name": "BUS_ACCESS_NOT_SHARED",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -285,38 +374,66 @@
         },
         {
             "code": 100,
+            "refs": [0, 1],
+            "name": "BUS_ACCESS_NORMAL",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access - Normal"
         },
         {
             "code": 101,
+            "refs": [0, 1],
+            "name": "BUS_ACCESS_PERIPH",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access - Peripheral"
         },
         {
             "code": 102,
+            "refs": [0, 1],
+            "name": "MEM_ACCESS_RD",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Data memory access - Read"
         },
         {
             "code": 103,
+            "refs": [0, 1],
+            "name": "MEM_ACCESS_WR",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Data memory access - Write"
         },
         {
             "code": 104,
+            "refs": [0, 1],
+            "name": "UNALIGNED_LD_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Unaligned access - Read"
         },
         {
             "code": 105,
+            "refs": [0, 1],
+            "name": "UNALIGNED_ST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "description": "Unaligned access - Write"
         },
         {
             "code": 106,
+            "refs": [0, 1],
+            "name": "UNALIGNED_LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "type": "UEVT",
             "event_bits": 2,
             "event_lsb": 24,
@@ -325,24 +442,40 @@
         },
         {
             "code": 108,
+            "refs": [0, 1],
+            "name": "LDREX_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Exclusive instruction speculatively executed - LDREX"
         },
         {
             "code": 110,
+            "refs": [0, 1],
+            "name": "STREX_FAIL_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Exclusive instruction speculatively executed - STREX fail"
         },
         {
             "code": 111,
+            "refs": [0, 1],
+            "name": "STREX_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Exclusive instruction speculatively executed - STREX"
         },
         {
             "code": 112,
+            "refs": [0, 1],
+            "name": "LD_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "event_bits": 2,
@@ -352,6 +485,10 @@
         },
         {
             "code": 113,
+            "refs": [0, 1],
+            "name": "ST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "event_bits": 2,
@@ -361,30 +498,50 @@
         },
         {
             "code": 114,
+            "refs": [0, 1],
+            "name": "LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction speculatively executed - Load or store"
         },
         {
             "code": 115,
+            "refs": [0, 1],
+            "name": "DP_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction speculatively executed - Data processing"
         },
         {
             "code": 116,
+            "refs": [0, 1],
+            "name": "ASE_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction speculatively executed - Advanced SIMD"
         },
         {
             "code": 117,
+            "refs": [0, 1],
+            "name": "VFP_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction speculatively executed - VFP"
         },
         {
             "code": 118,
+            "refs": [0, 1],
+            "name": "PC_WRITE_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "event_bits": 1,
@@ -394,6 +551,10 @@
         },
         {
             "code": 120,
+            "refs": [0, 1],
+            "name": "BR_IMMED_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
@@ -403,6 +564,10 @@
         },
         {
             "code": 121,
+            "refs": [0, 1],
+            "name": "BR_RETURN_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
@@ -412,52 +577,82 @@
         },
         {
             "code": 122,
+            "refs": [0, 1],
+            "name": "BR_INDIRECT_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Branch speculatively executed - Indirect branch"
         },
         {
             "code": 124,
+            "refs": [0, 1],
+            "name": "ISB_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Barrier speculatively executed - ISB"
         },
         {
             "code": 125,
+            "refs": [0, 1],
+            "name": "DSB_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Barrier speculatively executed - DSB"
         },
         {
             "code": 126,
+            "refs": [0, 1],
+            "name": "DMB_SPEC",
+            "recommended": true,
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Barrier speculatively executed - DMB"
         },
         {
             "code": 129,
+            "refs": [0, 1],
+            "name": "EXC_UNDEF",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "Exception taken - Undefined Instruction"
         },
         {
             "code": 138,
+            "refs": [0, 1],
+            "name": "EXC_HVC",
+            "recommended": true,
+            "impdef": true,
             "type": "EXC",
             "description": "Exception taken - Hypervisor Call"
         },
         {
             "code": 192,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction side stalled due to a linefill"
         },
         {
             "code": 193,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Instruction side stalled due to a translation table walk"
         },
         {
             "code": 194,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "subtype": "READ",
@@ -465,6 +660,8 @@
         },
         {
             "code": 195,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "subtype": "READ",
@@ -472,11 +669,15 @@
         },
         {
             "code": 196,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "INS",
             "description": "Number of ways read in the instruction BTAC RAM"
         },
         {
             "code": 202,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
@@ -485,6 +686,8 @@
         },
         {
             "code": 211,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
@@ -492,6 +695,8 @@
         },
         {
             "code": 216,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
@@ -499,6 +704,8 @@
         },
         {
             "code": 217,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
@@ -506,6 +713,8 @@
         },
         {
             "code": 218,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
@@ -513,86 +722,116 @@
         },
         {
             "code": 219,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "INS",
             "description": "Number of NEON instruction which fail their condition code and lead to a flush of the DE pipe"
         },
         {
             "code": 220,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "Number of Trap to hypervisor"
         },
         {
             "code": 222,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "PTM EXTOUT 0"
         },
         {
             "code": 223,
+            "refs": [0, 1],
+            "impdef": true,
             "type": "UEVT",
             "description": "PTM EXTOUT 1"
         },
         {
             "code": 224,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Duration during which the MMU handle a translation table walk"
         },
         {
             "code": 225,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Duration during which the MMU handle a Stage1 translation table walk"
         },
         {
             "code": 226,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Duration during which the MMU handle a Stage2 translation table walk"
         },
         {
             "code": 227,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Duration during which the MMU handle a translation table walk requested by the Load Store Unit"
         },
         {
             "code": 228,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Duration during which the MMU handle a translation table walk requested by the Instruction side"
         },
         {
             "code": 229,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "INS",
             "description": "Duration during which the MMU handle a translation table walk requested by a Preload instruction or Prefetch request"
         },
         {
             "code": 230,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Duration during which the MMU handle a translation table walk requested by a CP15 operation (maintenance by MVA and VA-to-PA operation)"
         },
         {
             "code": 231,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Level 1 PLD TLB refill"
         },
         {
             "code": 232,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Level 1 CP15 TLB refill"
         },
         {
             "code": 233,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "Level 1 TLB flush"
         },
         {
             "code": 234,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
@@ -600,6 +839,8 @@
         },
         {
             "code": 235,
+            "refs": [0, 1],
+            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
