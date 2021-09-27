@@ -1,9 +1,9 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
     "cpu": "Cortex-A75",
-    "architecture": "armv8",
+    "architecture": "armv8-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
@@ -20,7 +20,10 @@
     "events": [
         {
             "code": 0,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "SW_INCR",
             "architectural": true,
             "type": "INS",
@@ -28,7 +31,10 @@
         },
         {
             "code": 1,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -41,7 +47,10 @@
         },
         {
             "code": 2,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -53,7 +62,10 @@
         },
         {
             "code": 3,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -66,11 +78,14 @@
         },
         {
             "code": 4,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 2,
             "event_lsb": 3,
@@ -79,7 +94,10 @@
         },
         {
             "code": 5,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -91,7 +109,10 @@
         },
         {
             "code": 8,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -102,7 +123,10 @@
         },
         {
             "code": 9,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -112,7 +136,10 @@
         },
         {
             "code": 10,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
@@ -123,7 +150,10 @@
         },
         {
             "code": 11,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -134,7 +164,10 @@
         },
         {
             "code": 12,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
             "type": "EXC",
@@ -145,7 +178,10 @@
         },
         {
             "code": 13,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "EXC",
@@ -156,18 +192,24 @@
         },
         {
             "code": 14,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
             "event_lsb": 23,
             "trace_lsb": 23,
-            "description": "Instruction architecturally executed, condition code check pass, procedure return. This event counts the following branches: \" \"BX R14\u2022 \" \"MOV PC, LR\u2022 \" \"POP{...,PC}\u2022 \" \"LDR PC, SP, #offset\u2022"
+            "description": "Instruction architecturally executed, condition code check pass, procedure return. This event counts the following branches: +//0 +//0-BX R14+//0 +//0 +//0-MOV PC, LR+//0 +//0 +//0-POP{+//0,PC}+//0 +//0 +//0-LDR PC, SP, #offset+//0-"
         },
         {
             "code": 16,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -176,11 +218,14 @@
             "event_bits": 1,
             "event_lsb": 26,
             "trace_lsb": 26,
-            "description": "Mispredicted or not predicted branch speculatively executed. This event counts branches mispredicted or not predicted. It counts: \" Each correction to the predicted program flow that occurs because of a misprediction. \" Each correction to the predicted program flow that occurs because there is no prediction. \" Each correction that relates to instructions that the program flow prediction resources can predict"
+            "description": "Mispredicted or not predicted branch speculatively executed. This event counts branches mispredicted or not predicted. It counts: +//0 Each correction to the predicted program flow that occurs because of a misprediction. +//0 Each correction to the predicted program flow that occurs because there is no prediction. +//0 Each correction that relates to instructions that the program flow prediction resources can predict"
         },
         {
             "code": 17,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -188,7 +233,10 @@
         },
         {
             "code": 18,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "EXC",
@@ -200,14 +248,20 @@
         },
         {
             "code": 19,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "description": "Data memory access"
         },
         {
             "code": 20,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -217,7 +271,10 @@
         },
         {
             "code": 21,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -227,7 +284,10 @@
         },
         {
             "code": 22,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -237,7 +297,10 @@
         },
         {
             "code": 23,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -247,7 +310,10 @@
         },
         {
             "code": 24,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -257,7 +323,10 @@
         },
         {
             "code": 25,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS",
             "type": "UEVT",
             "component": "BUS",
@@ -265,15 +334,22 @@
         },
         {
             "code": 27,
-            "refs": [0, 1],
-            "name": "INT_SPEC",
+            "refs": [
+                0,
+                1
+            ],
+            "trm_name": "INT_SPEC",
+            "name": "INST_SPEC",
             "architectural": false,
             "type": "INS",
             "description": "Operation speculatively executed. This event counts all the instructions that go through the core rename block at each cycle. This includes instructions architecturally executed and the last micro-operation of each instruction that is not architecturally executed"
         },
         {
             "code": 28,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "TTBR_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -284,7 +360,10 @@
         },
         {
             "code": 29,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -296,14 +375,19 @@
         },
         {
             "code": 30,
-            "refs": [0, 1],
+            "refs": [
+                0
+            ],
             "name": "CHAIN",
             "type": "UEVT",
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For even-numbered counters, there is no increment"
         },
         {
             "code": 31,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
@@ -313,7 +397,10 @@
         },
         {
             "code": 32,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
@@ -323,7 +410,10 @@
         },
         {
             "code": 33,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETIRED",
             "architectural": true,
             "type": "EXC",
@@ -331,7 +421,10 @@
         },
         {
             "code": 35,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_FRONTEND",
             "architectural": false,
             "type": "INS",
@@ -342,7 +435,10 @@
         },
         {
             "code": 36,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_BACKEND",
             "architectural": false,
             "type": "INS",
@@ -353,7 +449,10 @@
         },
         {
             "code": 37,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -362,7 +461,10 @@
         },
         {
             "code": 38,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -371,7 +473,10 @@
         },
         {
             "code": 41,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
@@ -380,7 +485,10 @@
         },
         {
             "code": 42,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -389,17 +497,23 @@
         },
         {
             "code": 43,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L3",
             "description": "Attributable Level 3 data or unified cache access. This event counts all cacheable read transactions that return data from the SCU, and all cache line writes into the L3 cache that do not cause a linefill"
         },
         {
             "code": 45,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -408,7 +522,10 @@
         },
         {
             "code": 47,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -417,7 +534,10 @@
         },
         {
             "code": 48,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2I_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -426,7 +546,10 @@
         },
         {
             "code": 52,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DTLB_WALK",
             "architectural": false,
             "type": "UEVT",
@@ -434,7 +557,10 @@
         },
         {
             "code": 53,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ITLB_WALK",
             "architectural": false,
             "type": "INS",
@@ -442,7 +568,10 @@
         },
         {
             "code": 54,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LL_CACHE_RD",
             "architectural": false,
             "type": "UEVT",
@@ -451,7 +580,10 @@
         },
         {
             "code": 55,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LL_CACHE_MISS_RD",
             "architectural": false,
             "type": "UEVT",
@@ -460,14 +592,20 @@
         },
         {
             "code": 56,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "REMOTE_ACCESS_RD",
             "type": "UEVT",
             "description": "Access to another socket in a multi-socket system, read"
         },
         {
             "code": 64,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
             "impdef": true,
@@ -479,19 +617,25 @@
         },
         {
             "code": 65,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L1D",
             "description": "L1 data cache access, write. This event counts all store lookups, reads, and writes into the cache"
         },
         {
             "code": 70,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
@@ -503,7 +647,10 @@
         },
         {
             "code": 71,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
@@ -515,7 +662,10 @@
         },
         {
             "code": 72,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
@@ -526,7 +676,10 @@
         },
         {
             "code": 80,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_RD",
             "recommended": true,
             "impdef": true,
@@ -538,7 +691,10 @@
         },
         {
             "code": 81,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WR",
             "recommended": true,
             "impdef": true,
@@ -550,7 +706,10 @@
         },
         {
             "code": 86,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
@@ -562,7 +721,10 @@
         },
         {
             "code": 87,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
@@ -574,7 +736,10 @@
         },
         {
             "code": 88,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
@@ -585,7 +750,10 @@
         },
         {
             "code": 96,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -595,7 +763,10 @@
         },
         {
             "code": 97,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -604,52 +775,11 @@
             "description": "Bus access write. This event counts beats of store data sent to the SCU"
         },
         {
-            "code": 98,
-            "refs": [1],
-            "name": "BUS_ACCESS_SHARED",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "subtype": "ACCESS",
-            "component": "BUS",
-            "description": "Bus access, Normal, Cacheable, Shareable"
-        },
-        {
-            "code": 99,
-            "refs": [1],
-            "name": "BUS_ACCESS_NOT_SHARED",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "subtype": "ACCESS",
-            "component": "BUS",
-            "description": "Bus access, not Normal, Cacheable, or Shareable"
-        },
-        {
-            "code": 100,
-            "refs": [1],
-            "name": "BUS_ACCESS_NORMAL",
-            "recommended": true,
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "description": "Bus access, Normal"
-        },
-        {
-            "code": 101,
-            "refs": [1],
-            "name": "BUS_ACCESS_PERIPH",
-            "recommended": true,
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "description": "Bus access, Device"
-        },
-        {
             "code": 102,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -658,7 +788,10 @@
         },
         {
             "code": 103,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -667,7 +800,10 @@
         },
         {
             "code": 106,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LDST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -679,7 +815,10 @@
         },
         {
             "code": 108,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LDREX_SPEC",
             "recommended": true,
             "impdef": true,
@@ -689,7 +828,10 @@
         },
         {
             "code": 109,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_PASS_SPEC",
             "recommended": true,
             "impdef": true,
@@ -699,7 +841,10 @@
         },
         {
             "code": 110,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_FAIL_SPEC",
             "recommended": true,
             "impdef": true,
@@ -709,7 +854,10 @@
         },
         {
             "code": 111,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_SPEC",
             "recommended": true,
             "impdef": true,
@@ -719,7 +867,10 @@
         },
         {
             "code": 112,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
@@ -732,7 +883,10 @@
         },
         {
             "code": 113,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -745,7 +899,10 @@
         },
         {
             "code": 114,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -755,7 +912,10 @@
         },
         {
             "code": 115,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DP_SPEC",
             "recommended": true,
             "impdef": true,
@@ -765,7 +925,10 @@
         },
         {
             "code": 116,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ASE_SPEC",
             "recommended": true,
             "impdef": true,
@@ -775,7 +938,10 @@
         },
         {
             "code": 117,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "VFP_SPEC",
             "recommended": true,
             "impdef": true,
@@ -785,7 +951,10 @@
         },
         {
             "code": 119,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CRYPTO_SPEC",
             "recommended": true,
             "impdef": true,
@@ -795,7 +964,10 @@
         },
         {
             "code": 122,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
             "impdef": true,
@@ -805,7 +977,10 @@
         },
         {
             "code": 124,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ISB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -815,7 +990,10 @@
         },
         {
             "code": 125,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DSB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -825,7 +1003,10 @@
         },
         {
             "code": 126,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DMB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -835,7 +1016,10 @@
         },
         {
             "code": 129,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_UNDEF",
             "recommended": true,
             "impdef": true,
@@ -844,7 +1028,10 @@
         },
         {
             "code": 138,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_HVC",
             "recommended": true,
             "impdef": true,
@@ -853,19 +1040,25 @@
         },
         {
             "code": 160,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_RD",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L3",
             "description": "Attributable Level 3 data or unified cache access, read. This event counts RDUnique, RDClean, RDNotSharedDirty, atomics (STR, LD, SWP, CMP reads and writes), and StashOnce sent to L3"
         },
         {
             "code": 162,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -876,7 +1069,10 @@
         },
         {
             "code": 192,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LF_STALL",
             "impdef": true,
             "architectural": false,
@@ -885,7 +1081,10 @@
         },
         {
             "code": 193,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PTW_STALL",
             "impdef": true,
             "architectural": false,
@@ -894,7 +1093,10 @@
         },
         {
             "code": 194,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "I_TAG_RAM_RD",
             "impdef": true,
             "architectural": false,
@@ -904,7 +1106,10 @@
         },
         {
             "code": 195,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "I_DATA_RAM_RD",
             "impdef": true,
             "architectural": false,
@@ -914,7 +1119,10 @@
         },
         {
             "code": 196,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "I_BTAC_RAM_RD",
             "impdef": true,
             "type": "INS",
@@ -922,7 +1130,10 @@
         },
         {
             "code": 211,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "D_LSU_SLOT_FULL",
             "impdef": true,
             "architectural": false,
@@ -932,7 +1143,10 @@
         },
         {
             "code": 216,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LS_IQ_FULL",
             "impdef": true,
             "architectural": false,
@@ -942,7 +1156,10 @@
         },
         {
             "code": 217,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DP_IQ_FULL",
             "impdef": true,
             "architectural": false,
@@ -952,7 +1169,10 @@
         },
         {
             "code": 218,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DE_IQ_FULL",
             "impdef": true,
             "architectural": false,
@@ -962,7 +1182,10 @@
         },
         {
             "code": 220,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_HYP",
             "impdef": true,
             "type": "EXC",
@@ -970,7 +1193,10 @@
         },
         {
             "code": 222,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ETM_EXT_OUT0",
             "impdef": true,
             "type": "ETM",
@@ -978,7 +1204,10 @@
         },
         {
             "code": 223,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ETM_EXT_OUT1",
             "impdef": true,
             "type": "ETM",
@@ -986,7 +1215,10 @@
         },
         {
             "code": 224,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW",
             "impdef": true,
             "architectural": false,
@@ -995,7 +1227,10 @@
         },
         {
             "code": 225,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_ST1",
             "impdef": true,
             "architectural": false,
@@ -1004,7 +1239,10 @@
         },
         {
             "code": 226,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_ST2",
             "impdef": true,
             "architectural": false,
@@ -1013,7 +1251,10 @@
         },
         {
             "code": 227,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_LSU",
             "impdef": true,
             "architectural": false,
@@ -1022,7 +1263,10 @@
         },
         {
             "code": 228,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_ISIDE",
             "impdef": true,
             "architectural": false,
@@ -1031,7 +1275,10 @@
         },
         {
             "code": 229,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_PLD",
             "impdef": true,
             "architectural": false,
@@ -1040,7 +1287,10 @@
         },
         {
             "code": 230,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MMU_PTW_CP15",
             "impdef": true,
             "architectural": false,
@@ -1049,7 +1299,10 @@
         },
         {
             "code": 231,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1PLD_TLB_REFILL",
             "impdef": true,
             "architectural": false,
@@ -1058,7 +1311,10 @@
         },
         {
             "code": 232,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2PLD_TLB",
             "impdef": true,
             "architectural": false,
@@ -1068,7 +1324,10 @@
         },
         {
             "code": 233,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UTLB_FLUSH",
             "impdef": true,
             "architectural": false,
@@ -1077,7 +1336,10 @@
         },
         {
             "code": 234,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "TLB_ACCESS",
             "impdef": true,
             "architectural": false,
@@ -1087,7 +1349,10 @@
         },
         {
             "code": 235,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1PLD_TLB",
             "impdef": true,
             "architectural": false,
@@ -1096,7 +1361,10 @@
         },
         {
             "code": 236,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PLDTLB_WALK",
             "impdef": true,
             "architectural": false,

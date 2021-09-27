@@ -1,33 +1,41 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
     "cpu": "Cortex-A9",
-    "architecture": "armv7",
+    "architecture": "armv7-a",
     "pmu_architecture": "pmuv2",
     "counters": 6,
     "refs": [
         {
             "ref": "Cortex-A9 TRM",
+            "public": false
+        },
+        {
+            "ref": "Cortex-A9 TRM",
             "public": true
         },
         {
-            "ref": "gator events-Cortex-A9.xml",
-            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A9.xml",
-            "public": true
+            "public": false
         }
     ],
     "events": [
         {
             "code": 0,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment"
         },
         {
             "code": 1,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "INS",
@@ -35,7 +43,10 @@
         },
         {
             "code": 2,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "INS",
@@ -43,7 +54,10 @@
         },
         {
             "code": 3,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -51,7 +65,10 @@
         },
         {
             "code": 4,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -60,7 +77,10 @@
         },
         {
             "code": 5,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -68,63 +88,112 @@
         },
         {
             "code": 6,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "LD_RETIRED",
             "type": "UEVT",
             "description": "Data read"
         },
         {
             "code": 7,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "ST_RETIRED",
             "type": "UEVT",
             "description": "Data writes"
         },
         {
+            "code": 8,
+            "refs": [
+                0,
+                2
+            ],
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter increments for every architecturally executed instruction"
+        },
+        {
             "code": 9,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "description": "Exception taken"
         },
         {
             "code": 10,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "EXC_RETURN",
             "type": "EXC",
             "description": "Exception return"
         },
         {
             "code": 11,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "CID_WRITE_RETIRED",
             "type": "UEVT",
             "description": "Write context ID"
         },
         {
             "code": 12,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "PC_WRITE_RETIRED",
             "type": "UEVT",
             "description": "Software change of the PC"
         },
         {
             "code": 13,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "BR_IMMED_RETIRED",
             "type": "UEVT",
             "description": "Immediate branch"
         },
         {
+            "code": 14,
+            "refs": [
+                0,
+                2
+            ],
+            "name": "BR_RETURN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter counts all procedure return instructions that are architecturally executed"
+        },
+        {
             "code": 15,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "UNALIGNED_LDST_RETIRED",
             "type": "UEVT",
             "description": "Unaligned load or store"
         },
         {
             "code": 16,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -134,7 +203,10 @@
         },
         {
             "code": 18,
-            "refs": [1],
+            "refs": [
+                0,
+                2
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -143,7 +215,10 @@
         },
         {
             "code": 64,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -151,7 +226,10 @@
         },
         {
             "code": 65,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -159,21 +237,30 @@
         },
         {
             "code": 66,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Jazelle backward branches executed.[a] Counts the number of Jazelle taken branches being executed. This includes the branches that are flushed because of a previous load/store that aborts late"
         },
         {
             "code": 80,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Coherent linefill miss.[b] Counts the number of coherent linefill requests performed by the Cortex-A9 processor that also miss in all the other Cortex-A9 processors. This means that the request is sent to the external memory"
         },
         {
             "code": 81,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -181,7 +268,10 @@
         },
         {
             "code": 96,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -190,7 +280,10 @@
         },
         {
             "code": 97,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -198,7 +291,10 @@
         },
         {
             "code": 98,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -206,7 +302,10 @@
         },
         {
             "code": 99,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": true,
             "type": "INS",
@@ -214,7 +313,10 @@
         },
         {
             "code": 100,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": true,
             "type": "INS",
@@ -222,7 +324,10 @@
         },
         {
             "code": 101,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -231,7 +336,10 @@
         },
         {
             "code": 102,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -239,7 +347,10 @@
         },
         {
             "code": 103,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -247,7 +358,10 @@
         },
         {
             "code": 104,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -257,7 +371,10 @@
         },
         {
             "code": 105,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -266,14 +383,20 @@
         },
         {
             "code": 106,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Number of prefetcher linefills.[c] Counts the number of data linefills caused by prefetcher requests"
         },
         {
             "code": 107,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -282,7 +405,10 @@
         },
         {
             "code": 110,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "EXC",
@@ -291,7 +417,10 @@
         },
         {
             "code": 112,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -299,7 +428,10 @@
         },
         {
             "code": 113,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -307,7 +439,10 @@
         },
         {
             "code": 114,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -315,7 +450,10 @@
         },
         {
             "code": 115,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -323,7 +461,10 @@
         },
         {
             "code": 116,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -331,7 +472,10 @@
         },
         {
             "code": 128,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -339,7 +483,10 @@
         },
         {
             "code": 129,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -347,7 +494,10 @@
         },
         {
             "code": 130,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -355,7 +505,10 @@
         },
         {
             "code": 131,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -363,7 +516,10 @@
         },
         {
             "code": 132,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -371,7 +527,10 @@
         },
         {
             "code": 133,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -379,7 +538,10 @@
         },
         {
             "code": 134,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -387,7 +549,10 @@
         },
         {
             "code": 138,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -395,7 +560,10 @@
         },
         {
             "code": 139,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -403,7 +571,10 @@
         },
         {
             "code": 140,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -411,7 +582,10 @@
         },
         {
             "code": 141,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -419,7 +593,10 @@
         },
         {
             "code": 142,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -427,7 +604,10 @@
         },
         {
             "code": 144,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": true,
             "type": "INS",
@@ -435,7 +615,10 @@
         },
         {
             "code": 145,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": true,
             "type": "INS",
@@ -443,7 +626,10 @@
         },
         {
             "code": 146,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -451,14 +637,20 @@
         },
         {
             "code": 147,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "External interrupts. Counts the number of external interrupts executed by the processor"
         },
         {
             "code": 160,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -466,7 +658,10 @@
         },
         {
             "code": 161,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -474,28 +669,40 @@
         },
         {
             "code": 162,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "PLE FIFO flush"
         },
         {
             "code": 163,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "PLE request completed"
         },
         {
             "code": 164,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "PLE FIFO overflow"
         },
         {
             "code": 165,
-            "refs": [0, 1],
+            "refs": [
+                1,
+                2
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "PLE request programmed"

@@ -1,9 +1,9 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
     "cpu": "Cortex-A7",
-    "architecture": "armv7",
+    "architecture": "armv7-a",
     "pmu_architecture": "pmuv2",
     "counters": 4,
     "refs": [
@@ -20,14 +20,20 @@
     "events": [
         {
             "code": 0,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment. The register is incremented only on writes to the Software Increment Register. See the ARM Architecture Reference Manual"
         },
         {
             "code": 1,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -39,7 +45,10 @@
         },
         {
             "code": 2,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -50,11 +59,14 @@
         },
         {
             "code": 3,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
@@ -62,11 +74,14 @@
         },
         {
             "code": 4,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "event_bits": 1,
             "event_lsb": 3,
             "trace_lsb": 3,
@@ -74,11 +89,14 @@
         },
         {
             "code": 5,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "event_bits": 1,
             "event_lsb": 4,
             "trace_lsb": 4,
@@ -86,7 +104,10 @@
         },
         {
             "code": 6,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LD_RETIRED",
             "architectural": false,
             "type": "INS",
@@ -97,7 +118,10 @@
         },
         {
             "code": 7,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ST_RETIRED",
             "architectural": false,
             "type": "INS",
@@ -108,7 +132,10 @@
         },
         {
             "code": 8,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -119,7 +146,10 @@
         },
         {
             "code": 9,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -129,7 +159,10 @@
         },
         {
             "code": 10,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
@@ -140,7 +173,10 @@
         },
         {
             "code": 11,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -151,7 +187,10 @@
         },
         {
             "code": 12,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PC_WRITE_RETIRED",
             "type": "UEVT",
             "event_bits": 1,
@@ -161,7 +200,10 @@
         },
         {
             "code": 13,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "UEVT",
@@ -172,7 +214,10 @@
         },
         {
             "code": 14,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "EXC",
@@ -183,7 +228,10 @@
         },
         {
             "code": 15,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LDST_RETIRED",
             "type": "UEVT",
             "event_bits": 1,
@@ -193,7 +241,10 @@
         },
         {
             "code": 16,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -206,7 +257,9 @@
         },
         {
             "code": 17,
-            "refs": [0],
+            "refs": [
+                0
+            ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -214,7 +267,10 @@
         },
         {
             "code": 18,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -226,7 +282,10 @@
         },
         {
             "code": 19,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
@@ -236,7 +295,10 @@
         },
         {
             "code": 20,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "INS",
@@ -248,7 +310,10 @@
         },
         {
             "code": 21,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -260,7 +325,10 @@
         },
         {
             "code": 22,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -270,7 +338,10 @@
         },
         {
             "code": 23,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -280,7 +351,10 @@
         },
         {
             "code": 24,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -290,7 +364,10 @@
         },
         {
             "code": 25,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS",
             "architectural": false,
             "type": "UEVT",
@@ -299,7 +376,10 @@
         },
         {
             "code": 29,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -308,7 +388,10 @@
         },
         {
             "code": 96,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -318,7 +401,10 @@
         },
         {
             "code": 97,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -328,7 +414,10 @@
         },
         {
             "code": 134,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
@@ -340,7 +429,10 @@
         },
         {
             "code": 135,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
@@ -352,7 +444,10 @@
         },
         {
             "code": 192,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -362,7 +457,10 @@
         },
         {
             "code": 193,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -373,7 +471,10 @@
         },
         {
             "code": 194,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -383,7 +484,10 @@
         },
         {
             "code": 195,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -393,7 +497,10 @@
         },
         {
             "code": 196,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -403,7 +510,10 @@
         },
         {
             "code": 197,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -413,7 +523,9 @@
         },
         {
             "code": 198,
-            "refs": [0],
+            "refs": [
+                0
+            ],
             "impdef": true,
             "type": "UEVT",
             "event_bits": 1,
@@ -423,21 +535,30 @@
         },
         {
             "code": 199,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "ETM",
             "description": "ETM Ext Out[0]"
         },
         {
             "code": 200,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "ETM",
             "description": "ETM Ext Out[1]"
         },
         {
             "code": 201,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -448,7 +569,10 @@
         },
         {
             "code": 202,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",

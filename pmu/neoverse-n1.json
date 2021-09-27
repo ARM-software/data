@@ -2,19 +2,21 @@
     "_type": "Events",
     "timestamp": "Fri Sep 24 17:06:04 2021",
     "implementer": "A",
-    "cpu": "Cortex-A78",
+    "cpu": "Neoverse N1",
     "architecture": "armv8.2-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
         {
-            "ref": "Cortex-A78 TRM",
+            "ref": "Neoverse N1 TRM",
             "public": true
         },
         {
-            "ref": "gator events-Cortex-A78.xml",
-            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A78.xml",
-            "public": true
+            "ref": "Neoverse N1 internal docs",
+            "public": false
+        },
+        {
+            "public": false
         }
     ],
     "events": [
@@ -22,7 +24,7 @@
             "code": 0,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "SW_INCR",
             "architectural": true,
@@ -36,7 +38,7 @@
             "code": 1,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
@@ -46,13 +48,13 @@
             "event_bits": 1,
             "event_lsb": 1,
             "trace_lsb": 1,
-            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: - Cache maintenance instructions - Non-cacheable accesses"
+            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: +//0 Cache maintenance instructions. +//0 Non-cacheable accesses"
         },
         {
             "code": 2,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
@@ -61,13 +63,13 @@
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
-            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: - TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
+            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +//0 TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 3,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
@@ -75,15 +77,15 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 3,
-            "trace_lsb": 3,
-            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache - Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
+            "event_lsb": 167,
+            "trace_lsb": 167,
+            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Stores of an entire cache line, even if they make a coherency request outside the L1. +//0 Partial cache line writes which do not allocate into the L1 cache. +//0 Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
         },
         {
             "code": 4,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE",
             "architectural": false,
@@ -91,85 +93,85 @@
             "subtype": "REFILL",
             "component": "L1D",
             "event_bits": 3,
-            "event_lsb": 4,
-            "trace_lsb": 4,
-            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
+            "event_lsb": 3,
+            "trace_lsb": 3,
+            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses. This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
         },
         {
             "code": 5,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 2,
-            "event_lsb": 7,
-            "trace_lsb": 7,
-            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: - TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
+            "event_lsb": 6,
+            "trace_lsb": 6,
+            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +//0 TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 8,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
-            "event_bits": 5,
-            "event_lsb": 9,
-            "trace_lsb": 9,
+            "event_bits": 4,
+            "event_lsb": 8,
+            "trace_lsb": 8,
             "description": "Instruction architecturally executed. This event counts all retired instructions, including those that fail their condition check"
         },
         {
             "code": 9,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 14,
-            "trace_lsb": 14,
+            "event_lsb": 12,
+            "trace_lsb": 12,
             "description": "Exception taken"
         },
         {
             "code": 10,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 15,
-            "trace_lsb": 15,
+            "event_lsb": 13,
+            "trace_lsb": 13,
             "description": "Instruction architecturally executed, condition code check pass, exception return"
         },
         {
             "code": 11,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
-            "event_lsb": 16,
-            "trace_lsb": 16,
-            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: - Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
+            "event_lsb": 156,
+            "trace_lsb": 156,
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: +//0 Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
         },
         {
             "code": 16,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_MIS_PRED",
             "architectural": false,
@@ -177,59 +179,59 @@
             "subtype": "MISPREDICT",
             "component": "BPU",
             "event_bits": 1,
-            "event_lsb": 17,
-            "trace_lsb": 17,
+            "event_lsb": 14,
+            "trace_lsb": 14,
             "description": "Mispredicted or not predicted branch speculatively executed. This event counts any predictable branch instruction which is mispredicted either due to dynamic misprediction or because the MMU is off and the branches are statically predicted not taken"
         },
         {
             "code": 17,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
             "event_bits": 1,
-            "event_lsb": 18,
-            "trace_lsb": 18,
+            "event_lsb": 15,
+            "trace_lsb": 15,
             "description": "Cycle"
         },
         {
             "code": 18,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
             "component": "BPU",
-            "event_bits": 2,
-            "event_lsb": 19,
-            "trace_lsb": 19,
+            "event_bits": 1,
+            "event_lsb": 16,
+            "trace_lsb": 16,
             "description": "Predictable branch speculatively executed. This event counts all predictable branches"
         },
         {
             "code": 19,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "MEM_ACCESS",
             "architectural": false,
             "type": "INS",
             "subtype": "ACCESS",
             "event_bits": 3,
-            "event_lsb": 21,
-            "trace_lsb": 21,
-            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks or prefetches This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
+            "event_lsb": 17,
+            "trace_lsb": 17,
+            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks or prefetches. This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
         },
         {
             "code": 20,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1I_CACHE",
             "architectural": false,
@@ -237,15 +239,15 @@
             "subtype": "ACCESS",
             "component": "L1I",
             "event_bits": 1,
-            "event_lsb": 24,
-            "trace_lsb": 24,
-            "description": "L1 instruction cache access or L0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: - Cache maintenance instructions - Non-cacheable accesses"
+            "event_lsb": 20,
+            "trace_lsb": 20,
+            "description": "Level 1 instruction cache access or Level 0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: +//0 Cache maintenance instructions. +//0 Non-cacheable accesses"
         },
         {
             "code": 21,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
@@ -253,128 +255,127 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 25,
-            "trace_lsb": 25,
-            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: - Invalidations which do not result in data being transferred out of the L1 - Full-line writes which write to L2 without writing L1, such as write streaming mode"
+            "event_lsb": 21,
+            "trace_lsb": 21,
+            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: +//0 Invalidations which do not result in data being transferred out of the L1. +//0 Full-line writes which write to L2 without writing L1, such as write streaming mode"
         },
         {
             "code": 22,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 4,
-            "event_lsb": 26,
-            "trace_lsb": 26,
-            "description": "L2 unified cache access. This event counts any transaction from L1 which looks up in the L2 cache, and any write-back from the L1 to the L2. Snoops from outside the core and cache maintenance operations are not counted"
+            "event_bits": 3,
+            "event_lsb": 22,
+            "trace_lsb": 22,
+            "description": "L2 data cache access. This event counts any transaction from L1 which looks up in the L2 cache, and any write-back from the L1 to the L2. Snoops from outside the core and cache maintenance operations are not counted"
         },
         {
             "code": 23,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
             "component": "L2",
-            "event_bits": 4,
-            "event_lsb": 30,
-            "trace_lsb": 30,
-            "description": "L2 unified cache refill. This event counts any Cacheable transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes and prefetches that target this level of cache, should not be counted"
+            "event_bits": 3,
+            "event_lsb": 25,
+            "trace_lsb": 25,
+            "description": "L2 data cache refill. This event counts any cacheable transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted"
         },
         {
             "code": 24,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 4,
-            "event_lsb": 34,
-            "trace_lsb": 34,
-            "description": "L2 unified cache write-back. This event counts any write-back of data from the L2 cache to outside the core. This includes snoops to the L2 which return data, regardless of whether they cause an invalidation. Invalidations from the L2 which do not write data outside of the core and snoops which return data from the L1 are not counted"
+            "event_bits": 3,
+            "event_lsb": 28,
+            "trace_lsb": 28,
+            "description": "L2 data cache write-back. This event counts any write-back of data from the L2 cache to outside the core. This includes snoops to the L2 which return data, regardless of whether they cause an invalidation. Invalidations from the L2 which do not write data outside of the core and snoops which return data from the L1 are not counted"
         },
         {
             "code": 25,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BUS_ACCESS",
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "event_bits": 2,
-            "event_lsb": 38,
-            "trace_lsb": 38,
+            "event_lsb": 31,
+            "trace_lsb": 31,
             "description": "Bus access. This event counts for every beat of data transferred over the data channels between the core and the SCU. If both read and write data beats are transferred on a given cycle, this event is counted twice on that cycle. This event counts the sum of BUS_ACCESS_RD and BUS_ACCESS_WR"
         },
         {
             "code": 26,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "MEMORY_ERROR",
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 40,
-            "trace_lsb": 40,
+            "event_lsb": 33,
+            "trace_lsb": 33,
             "description": "Local memory error. This event counts any correctable or uncorrectable memory error (ECC or parity) in the protected core RAMs"
         },
         {
             "code": 27,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "INST_SPEC",
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 41,
-            "trace_lsb": 41,
+            "event_bits": 3,
+            "event_lsb": 34,
+            "trace_lsb": 34,
             "description": "Operation speculatively executed"
         },
         {
             "code": 28,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "TTBR_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
-            "event_lsb": 46,
-            "trace_lsb": 46,
-            "description": "Instruction architecturally executed, condition code check pass, write to TTBR. This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: - Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
+            "event_lsb": 37,
+            "trace_lsb": 37,
+            "description": "Instruction architecturally executed, condition code check pass, write to TTBR.This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: +//0 Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
         },
         {
             "code": 29,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "BUS_MASTER_CYCLE",
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "event_bits": 1,
-            "event_lsb": 47,
-            "trace_lsb": 47,
+            "event_lsb": 38,
+            "trace_lsb": 38,
             "description": "Bus cycles. This event duplicates CPU_CYCLES"
         },
         {
@@ -382,124 +383,122 @@
             "refs": [
                 0
             ],
-            "trm_name": "COUNTER_OVERFLOW",
             "name": "CHAIN",
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 48,
-            "trace_lsb": 48,
+            "event_lsb": 39,
+            "trace_lsb": 39,
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For even-numbered counters, there is no increment"
         },
         {
             "code": 32,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_ALLOCATE",
             "name": "L2D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 49,
-            "trace_lsb": 49,
-            "description": "L2 unified cache allocation without refill. This event counts any full cache line write into the L2 cache which does not cause a linefill, including write-backs from L1 to L2 and full-line writes which do not allocate into L1"
+            "event_bits": 2,
+            "event_lsb": 40,
+            "trace_lsb": 40,
+            "description": "L2 data cache allocation without refill. This event counts any full cache line write into the L2 cache which does not cause a linefill, including write-backs from L1 to L2 and full-line writes which do not allocate into L1"
         },
         {
             "code": 33,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_RETIRED",
             "architectural": true,
             "type": "EXC",
-            "event_bits": 4,
-            "event_lsb": 52,
-            "trace_lsb": 52,
+            "event_bits": 1,
+            "event_lsb": 42,
+            "trace_lsb": 42,
             "description": "Instruction architecturally executed, branch. This event counts all branches, taken or not. This excludes exception entries, debug entries and CCFAIL branches"
         },
         {
             "code": 34,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_MIS_PRED_RETIRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
-            "event_bits": 4,
-            "event_lsb": 56,
-            "trace_lsb": 56,
+            "event_bits": 1,
+            "event_lsb": 43,
+            "trace_lsb": 43,
             "description": "Instruction architecturally executed, mispredicted branch. This event counts any branch counted by BR_RETIRED which is not correctly predicted and causes a pipeline flush"
         },
         {
             "code": 35,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
             "type": "INS",
             "event_bits": 1,
-            "event_lsb": 60,
-            "trace_lsb": 60,
+            "event_lsb": 44,
+            "trace_lsb": 44,
             "description": "No operation issued because of the frontend. The counter counts on any cycle when there are no fetched instructions available to dispatch"
         },
         {
             "code": 36,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
             "type": "INS",
             "event_bits": 1,
-            "event_lsb": 61,
-            "trace_lsb": 61,
+            "event_lsb": 45,
+            "trace_lsb": 45,
             "description": "No operation issued because of the backend. The counter counts on any cycle fetched instructions are not dispatched due to resource constraints"
         },
         {
             "code": 37,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB",
             "architectural": false,
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 3,
-            "event_lsb": 62,
-            "trace_lsb": 62,
-            "description": "L1 data TLB access. This event counts any load or store operation which accesses the data L1 TLB. If both a load and a store are executed on a cycle, this event counts twice. This event counts regardless of whether the MMU is enabled"
+            "event_lsb": 46,
+            "trace_lsb": 46,
+            "description": "Level 1 data TLB access. This event counts any load or store operation which accesses the data L1 TLB. If both a load and a store are executed on a cycle, this event counts twice. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 38,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1I_TLB",
             "architectural": false,
             "type": "UEVT",
             "component": "L1ITLB",
             "event_bits": 1,
-            "event_lsb": 65,
-            "trace_lsb": 65,
-            "description": "L1 instruction TLB access. This event counts any instruction fetch which accesses the instruction L1 TLB. This event counts regardless of whether the MMU is enabled"
+            "event_lsb": 168,
+            "trace_lsb": 168,
+            "description": "Level 1 instruction TLB access. This event counts any instruction fetch which accesses the instruction L1 TLB.This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 41,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L3D_CACHE_ALLOCATE",
             "architectural": false,
@@ -507,230 +506,150 @@
             "subtype": "WRITE",
             "component": "L2",
             "event_bits": 1,
-            "event_lsb": 66,
-            "trace_lsb": 66,
-            "description": "Attributable L3 unified cache allocation without refill. This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and full-line writes which do not allocate into L2"
+            "event_lsb": 157,
+            "trace_lsb": 157,
+            "description": "Attributable L3 data or unified cache allocation without refill. This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and full-line writes which do not allocate into L2"
         },
         {
             "code": 42,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L3D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L3",
-            "event_bits": 3,
-            "event_lsb": 67,
-            "trace_lsb": 67,
-            "description": "Attributable L3 unified cache refill. This event counts for any cacheable read transaction returning data from the SCU for which the data source was outside the cluster. Transactions such as ReadUnique are counted here as 'read' transactions, even though they can be generated by store instructions. Prefetches and stashes that target the L3 cache are not counted"
+            "event_bits": 2,
+            "event_lsb": 158,
+            "trace_lsb": 158,
+            "description": "Attributable Level 3 unified cache refill. This event counts for any cacheable read transaction returning data from the SCU for which the data source was outside the cluster. Transactions such as ReadUnique are counted here as 'read' transactions, even though they can be generated by store instructions"
         },
         {
             "code": 43,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L3D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L3",
             "event_bits": 1,
-            "event_lsb": 70,
-            "trace_lsb": 70,
-            "description": "Attributable L3 unified cache access. This event counts for any cacheable read transaction returning data from the SCU, or for any cacheable write to the SCU"
+            "event_lsb": 160,
+            "trace_lsb": 160,
+            "description": "Attributable Level 3 unified cache access. This event counts for any cacheable read transaction returning data from the SCU, or for any cacheable write to the SCU"
         },
         {
             "code": 45,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_REFILL",
             "name": "L2D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 71,
-            "trace_lsb": 71,
-            "description": "Attributable L2 unified TLB refill. This event counts on any refill of the L2 TLB, caused by either an instruction or data access. This event does not count if the MMU is disabled"
+            "event_lsb": 49,
+            "trace_lsb": 49,
+            "description": "Attributable L2 data or unified TLB refill. This event counts on any refill of the L2 TLB, caused by either an instruction or data access. This event does not count if the MMU is disabled"
         },
         {
             "code": 47,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_REQ",
             "name": "L2D_TLB",
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 2,
-            "event_lsb": 72,
-            "trace_lsb": 72,
-            "description": "Attributable L2 unified TLB access. This event counts on any access to the L2 TLB (caused by a refill of any of the L1 TLBs). This event does not count if the MMU is disabled"
+            "event_lsb": 50,
+            "trace_lsb": 50,
+            "description": "Attributable L2 data or unified TLB access. This event counts on any access to the L2 TLB (caused by a refill of any of the L1 TLBs). This event does not count if the MMU is disabled"
         },
         {
             "code": 49,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "REMOTE_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 74,
-            "trace_lsb": 74,
+            "event_lsb": 161,
+            "trace_lsb": 161,
             "description": "Access to another socket in a multi-socket system"
         },
         {
             "code": 52,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "DTLB_WLK",
             "name": "DTLB_WALK",
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 75,
-            "trace_lsb": 75,
+            "event_lsb": 52,
+            "trace_lsb": 52,
             "description": "Access to data TLB that caused a page table walk. This event counts on any data access which causes L2D_TLB_REFILL to count"
         },
         {
             "code": 53,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "ITLB_WLK",
             "name": "ITLB_WALK",
             "architectural": false,
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 76,
-            "trace_lsb": 76,
+            "event_lsb": 53,
+            "trace_lsb": 53,
             "description": "Access to instruction TLB that caused a page table walk. This event counts on any instruction access which causes L2D_TLB_REFILL to count"
         },
         {
             "code": 54,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "LL_CACHE_RD",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "event_bits": 3,
-            "event_lsb": 77,
-            "trace_lsb": 77,
-            "description": "Last level cache access, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
+            "event_bits": 2,
+            "event_lsb": 162,
+            "trace_lsb": 162,
+            "description": "Last level cache access, read. +//0 If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. +//0 If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
         },
         {
             "code": 55,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "LL_CACHE_MISS_RD",
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "event_bits": 3,
-            "event_lsb": 80,
-            "trace_lsb": 80,
-            "description": "Last level cache miss, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
-        },
-        {
-            "code": 57,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "L1D_CACHE_LMISS_RD",
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1D",
-            "description": "L1 data cache long-latency miss"
-        },
-        {
-            "code": 58,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "OP_RETIRED",
-            "architectural": true,
-            "type": "UEVT",
-            "description": "Micro-operation architecturally executed"
-        },
-        {
-            "code": 59,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "OP_SPEC",
-            "architectural": false,
-            "type": "UEVT",
-            "description": "Micro-operation speculatively executed"
-        },
-        {
-            "code": 60,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "STALL",
-            "type": "UEVT",
-            "description": "No operation sent for execution"
-        },
-        {
-            "code": 61,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "STALL_SLOT_BACKEND",
-            "type": "UEVT",
-            "description": "No operation sent for execution on a slot due to the backend"
-        },
-        {
-            "code": 62,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "STALL_SLOT_FRONTEND",
-            "type": "UEVT",
-            "description": "No operation sent for execution on a slot due to the frontend"
-        },
-        {
-            "code": 63,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "STALL_SLOT",
-            "type": "UEVT",
-            "description": "No operation sent for execution on a slot"
+            "event_bits": 2,
+            "event_lsb": 164,
+            "trace_lsb": 164,
+            "description": "Last level cache miss, read. +//0 If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. +//0 If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
         },
         {
             "code": 64,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
@@ -739,16 +658,13 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "event_bits": 2,
-            "event_lsb": 83,
-            "trace_lsb": 83,
-            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 65,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
@@ -758,15 +674,15 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 2,
-            "event_lsb": 85,
-            "trace_lsb": 85,
-            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "event_lsb": 56,
+            "trace_lsb": 56,
+            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 66,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_REFILL_RD",
             "recommended": true,
@@ -776,15 +692,15 @@
             "subtype": "READ",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 87,
-            "trace_lsb": 87,
-            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "event_lsb": 58,
+            "trace_lsb": 58,
+            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 67,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_REFILL_WR",
             "recommended": true,
@@ -794,15 +710,15 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 88,
-            "trace_lsb": 88,
-            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache - Non-cacheable accesses"
+            "event_lsb": 59,
+            "trace_lsb": 59,
+            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Stores of an entire cache line, even if they make a coherency request outside the L1. +//0 Partial cache line writes which do not allocate into the L1 cache. +//0 Non-cacheable accesses"
         },
         {
             "code": 68,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_REFILL_INNER",
             "recommended": true,
@@ -812,15 +728,15 @@
             "subtype": "REFILL",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 89,
-            "trace_lsb": 89,
-            "description": "L1 data cache refill, inner. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which hits in the L2 cache, L3 cache or another core in the cluster"
+            "event_lsb": 60,
+            "trace_lsb": 60,
+            "description": "L1 data cache refill, inner. This event counts any L1 D-cache linefill (as counted by L1D_CACHE_REFILL) which hits in the L2 cache, L3 cache or another core in the cluster"
         },
         {
             "code": 69,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
@@ -830,15 +746,15 @@
             "subtype": "REFILL",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 90,
-            "trace_lsb": 90,
-            "description": "L1 data cache refill, outer. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which does not hit in the L2 cache, L3 cache or another core in the cluster, and instead obtains data from outside the cluster"
+            "event_lsb": 61,
+            "trace_lsb": 61,
+            "description": "L1 data cache refill, outer. This event counts any L1 D-cache linefill (as counted by L1D_CACHE_REFILL) which does not hit in the L2 cache, L3 cache or another core in the cluster, and instead obtains data from outside the cluster"
         },
         {
             "code": 70,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_WB_VICTIM",
             "recommended": true,
@@ -848,15 +764,15 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 91,
-            "trace_lsb": 91,
+            "event_lsb": 62,
+            "trace_lsb": 62,
             "description": "L1 data cache write-back, victim"
         },
         {
             "code": 71,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_WB_CLEAN",
             "recommended": true,
@@ -866,15 +782,15 @@
             "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 92,
-            "trace_lsb": 92,
+            "event_lsb": 63,
+            "trace_lsb": 63,
             "description": "L1 data cache write-back cleaning and coherency"
         },
         {
             "code": 72,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_CACHE_INVAL",
             "recommended": true,
@@ -883,15 +799,15 @@
             "type": "UEVT",
             "component": "L1D",
             "event_bits": 1,
-            "event_lsb": 93,
-            "trace_lsb": 93,
+            "event_lsb": 64,
+            "trace_lsb": 64,
             "description": "L1 data cache invalidate"
         },
         {
             "code": 76,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB_REFILL_RD",
             "recommended": true,
@@ -900,15 +816,15 @@
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 1,
-            "event_lsb": 94,
-            "trace_lsb": 94,
+            "event_lsb": 65,
+            "trace_lsb": 65,
             "description": "L1 data TLB refill, read"
         },
         {
             "code": 77,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB_REFILL_WR",
             "recommended": true,
@@ -917,15 +833,15 @@
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 1,
-            "event_lsb": 95,
-            "trace_lsb": 95,
+            "event_lsb": 66,
+            "trace_lsb": 66,
             "description": "L1 data TLB refill, write"
         },
         {
             "code": 78,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB_RD",
             "recommended": true,
@@ -934,15 +850,15 @@
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 2,
-            "event_lsb": 96,
-            "trace_lsb": 96,
+            "event_lsb": 67,
+            "trace_lsb": 67,
             "description": "L1 data TLB access, read"
         },
         {
             "code": 79,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "L1D_TLB_WR",
             "recommended": true,
@@ -951,17 +867,16 @@
             "type": "UEVT",
             "component": "L1DTLB",
             "event_bits": 2,
-            "event_lsb": 98,
-            "trace_lsb": 98,
+            "event_lsb": 69,
+            "trace_lsb": 69,
             "description": "L1 data TLB access, write"
         },
         {
             "code": 80,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_ACCESS_RD",
             "name": "L2D_CACHE_RD",
             "recommended": true,
             "impdef": true,
@@ -969,18 +884,17 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 100,
-            "trace_lsb": 100,
-            "description": "L2 unified cache access, read. This event counts any read transaction from L1 which looks up in the L2 cache. Snoops from outside the core are not counted"
+            "event_bits": 2,
+            "event_lsb": 71,
+            "trace_lsb": 71,
+            "description": "L2 data cache access, read. This event counts any read transaction from L1 which looks up in the L2 cache. Snoops from outside the core are not counted"
         },
         {
             "code": 81,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_ACCESS_WR",
             "name": "L2D_CACHE_WR",
             "recommended": true,
             "impdef": true,
@@ -988,18 +902,17 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 103,
-            "trace_lsb": 103,
-            "description": "L2 unified cache access, write. This event counts any write transaction from L1 which looks up in the L2 cache or any writeback from L1 which allocates into the L2 cache. Snoops from outside the core are not counted"
+            "event_bits": 2,
+            "event_lsb": 73,
+            "trace_lsb": 73,
+            "description": "L2 data cache access, write. This event counts any write transaction from L1 which looks up in the L2 cache or any write-back from L1 which allocates into the L2 cache. Snoops from outside the core are not counted"
         },
         {
             "code": 82,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_RD_REFILL",
             "name": "L2D_CACHE_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -1007,18 +920,17 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 106,
-            "trace_lsb": 106,
-            "description": "L2 unified cache refill, read. This event counts any cacheable read transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are counted here as 'read' transactions, even though they can be generated by store instructions"
+            "event_bits": 2,
+            "event_lsb": 75,
+            "trace_lsb": 75,
+            "description": "L2 data cache refill, read. This event counts any cacheable read transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are counted here as 'read' transactions, even though they can be generated by store instructions"
         },
         {
             "code": 83,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_WR_REFILL",
             "name": "L2D_CACHE_REFILL_WR",
             "recommended": true,
             "impdef": true,
@@ -1026,18 +938,17 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 109,
-            "trace_lsb": 109,
-            "description": "L2 unified cache refill, write. This event counts any write transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are not counted as write transactions"
+            "event_bits": 2,
+            "event_lsb": 77,
+            "trace_lsb": 77,
+            "description": "L2 data cache refill, write. This event counts any write transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are not counted as write transactions"
         },
         {
             "code": 86,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_WRITEBACK_VICTIM",
             "name": "L2D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
@@ -1045,18 +956,17 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 112,
-            "trace_lsb": 112,
-            "description": "L2 unified cache write-back, victim"
+            "event_bits": 2,
+            "event_lsb": 79,
+            "trace_lsb": 79,
+            "description": "L2 data cache write-back, victim"
         },
         {
             "code": 87,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "CACHE_WRITEBACK_CLEAN_COH",
             "name": "L2D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
@@ -1064,36 +974,34 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 115,
-            "trace_lsb": 115,
-            "description": "L2 unified cache write-back, cleaning and coherency"
+            "event_bits": 2,
+            "event_lsb": 81,
+            "trace_lsb": 81,
+            "description": "L2 data cache write-back, cleaning and coherency"
         },
         {
             "code": 88,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2CACHE_INV",
             "name": "L2D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2",
-            "event_bits": 3,
-            "event_lsb": 118,
-            "trace_lsb": 118,
-            "description": "L2 unified cache invalidate"
+            "event_bits": 2,
+            "event_lsb": 83,
+            "trace_lsb": 83,
+            "description": "L2 data cache invalidate"
         },
         {
             "code": 92,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_RD_REFILL",
             "name": "L2D_TLB_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -1101,17 +1009,16 @@
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 121,
-            "trace_lsb": 121,
-            "description": "L2 unified TLB refill, read"
+            "event_lsb": 85,
+            "trace_lsb": 85,
+            "description": "L2 data or unified TLB refill, read"
         },
         {
             "code": 93,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_WR_REFILL",
             "name": "L2D_TLB_REFILL_WR",
             "recommended": true,
             "impdef": true,
@@ -1119,17 +1026,16 @@
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 122,
-            "trace_lsb": 122,
-            "description": "L2 unified TLB refill, write"
+            "event_lsb": 86,
+            "trace_lsb": 86,
+            "description": "L2 data or unified TLB refill, write"
         },
         {
             "code": 94,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_RD_REQ",
             "name": "L2D_TLB_RD",
             "recommended": true,
             "impdef": true,
@@ -1137,17 +1043,16 @@
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 2,
-            "event_lsb": 123,
-            "trace_lsb": 123,
-            "description": "L2 unified TLB access, read"
+            "event_lsb": 87,
+            "trace_lsb": 87,
+            "description": "L2 data or unified TLB access, read"
         },
         {
             "code": 95,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "L2TLB_WR_REQ",
             "name": "L2D_TLB_WR",
             "recommended": true,
             "impdef": true,
@@ -1155,49 +1060,47 @@
             "type": "UEVT",
             "component": "L2TLB",
             "event_bits": 1,
-            "event_lsb": 125,
-            "trace_lsb": 125,
-            "description": "L2 unified TLB access, write"
+            "event_lsb": 89,
+            "trace_lsb": 89,
+            "description": "L2 data or unified TLB access, write"
         },
         {
             "code": 96,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "BUS_ACCESS_REQ",
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "event_bits": 1,
-            "event_lsb": 126,
-            "trace_lsb": 126,
+            "event_lsb": 90,
+            "trace_lsb": 90,
             "description": "Bus access read. This event counts for every beat of data transferred over the read data channel between the core and the SCU"
         },
         {
             "code": 97,
             "refs": [
                 0,
-                1
+                2
             ],
-            "trm_name": "BUS_ACCESS_RETRY",
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "event_bits": 1,
-            "event_lsb": 127,
-            "trace_lsb": 127,
+            "event_lsb": 91,
+            "trace_lsb": 91,
             "description": "Bus access write. This event counts for every beat of data transferred over the write data channel between the core and the SCU"
         },
         {
             "code": 102,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "MEM_ACCESS_RD",
             "recommended": true,
@@ -1206,15 +1109,15 @@
             "type": "INS",
             "subtype": "READ",
             "event_bits": 2,
-            "event_lsb": 128,
-            "trace_lsb": 128,
-            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks - Prefetches"
+            "event_lsb": 92,
+            "trace_lsb": 92,
+            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks. +//0 Prefetches"
         },
         {
             "code": 103,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "MEM_ACCESS_WR",
             "recommended": true,
@@ -1223,60 +1126,60 @@
             "type": "INS",
             "subtype": "WRITE",
             "event_bits": 2,
-            "event_lsb": 130,
-            "trace_lsb": 130,
-            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks - Prefetches"
+            "event_lsb": 94,
+            "trace_lsb": 94,
+            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks. +//0 Prefetches"
         },
         {
             "code": 104,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "UNALIGNED_LD_SPEC",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
             "event_bits": 2,
-            "event_lsb": 132,
-            "trace_lsb": 132,
+            "event_lsb": 96,
+            "trace_lsb": 96,
             "description": "Unaligned access, read"
         },
         {
             "code": 105,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "UNALIGNED_ST_SPEC",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
             "event_bits": 2,
-            "event_lsb": 134,
-            "trace_lsb": 134,
+            "event_lsb": 98,
+            "trace_lsb": 98,
             "description": "Unaligned access, write"
         },
         {
             "code": 106,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "UNALIGNED_LDST_SPEC",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
             "event_bits": 3,
-            "event_lsb": 136,
-            "trace_lsb": 136,
+            "event_lsb": 100,
+            "trace_lsb": 100,
             "description": "Unaligned access"
         },
         {
             "code": 108,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "LDREX_SPEC",
             "recommended": true,
@@ -1284,15 +1187,15 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 139,
-            "trace_lsb": 139,
+            "event_lsb": 103,
+            "trace_lsb": 103,
             "description": "Exclusive operation speculatively executed, LDREX or LDX"
         },
         {
             "code": 109,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "STREX_PASS_SPEC",
             "recommended": true,
@@ -1300,15 +1203,15 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 140,
-            "trace_lsb": 140,
+            "event_lsb": 104,
+            "trace_lsb": 104,
             "description": "Exclusive operation speculatively executed, STREX or STX pass"
         },
         {
             "code": 110,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "STREX_FAIL_SPEC",
             "recommended": true,
@@ -1316,15 +1219,15 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 141,
-            "trace_lsb": 141,
+            "event_lsb": 105,
+            "trace_lsb": 105,
             "description": "Exclusive operation speculatively executed, STREX or STX fail"
         },
         {
             "code": 111,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "STREX_SPEC",
             "recommended": true,
@@ -1332,95 +1235,111 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 142,
-            "trace_lsb": 142,
+            "event_lsb": 106,
+            "trace_lsb": 106,
             "description": "Exclusive operation speculatively executed, STREX or STX"
         },
         {
             "code": 112,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 143,
-            "trace_lsb": 143,
+            "event_bits": 3,
+            "event_lsb": 107,
+            "trace_lsb": 107,
             "description": "Operation speculatively executed, load"
         },
         {
             "code": 113,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 148,
-            "trace_lsb": 148,
+            "event_bits": 3,
+            "event_lsb": 110,
+            "trace_lsb": 110,
             "description": "Operation speculatively executed, store"
+        },
+        {
+            "code": 114,
+            "refs": [
+                0,
+                2
+            ],
+            "name": "LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "event_bits": 2,
+            "event_lsb": 113,
+            "trace_lsb": 113,
+            "description": "Operation speculatively executed, load or store. This event counts the sum of LD_SPEC and ST_SPEC"
         },
         {
             "code": 115,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "DP_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 153,
-            "trace_lsb": 153,
+            "event_bits": 3,
+            "event_lsb": 115,
+            "trace_lsb": 115,
             "description": "Operation speculatively executed, integer data-processing"
         },
         {
             "code": 116,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "ASE_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "INS",
-            "event_bits": 5,
-            "event_lsb": 158,
-            "trace_lsb": 158,
+            "event_bits": 3,
+            "event_lsb": 118,
+            "trace_lsb": 118,
             "description": "Operation speculatively executed, Advanced SIMD instruction"
         },
         {
             "code": 117,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "VFP_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "INS",
-            "event_bits": 5,
-            "event_lsb": 163,
-            "trace_lsb": 163,
+            "event_bits": 3,
+            "event_lsb": 121,
+            "trace_lsb": 121,
             "description": "Operation speculatively executed, floating-point instruction"
         },
         {
             "code": 118,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "PC_WRITE_SPEC",
             "recommended": true,
@@ -1428,79 +1347,79 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 2,
-            "event_lsb": 168,
-            "trace_lsb": 168,
+            "event_lsb": 124,
+            "trace_lsb": 124,
             "description": "Operation speculatively executed, software change of the PC"
         },
         {
             "code": 119,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "CRYPTO_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "INS",
-            "event_bits": 5,
-            "event_lsb": 170,
-            "trace_lsb": 170,
+            "event_bits": 3,
+            "event_lsb": 126,
+            "trace_lsb": 126,
             "description": "Operation speculatively executed, Cryptographic instruction"
         },
         {
             "code": 120,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_IMMED_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 2,
-            "event_lsb": 175,
-            "trace_lsb": 175,
+            "event_bits": 1,
+            "event_lsb": 129,
+            "trace_lsb": 129,
             "description": "Branch speculatively executed, immediate branch"
         },
         {
             "code": 121,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_RETURN_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 2,
-            "event_lsb": 177,
-            "trace_lsb": 177,
+            "event_bits": 1,
+            "event_lsb": 130,
+            "trace_lsb": 130,
             "description": "Branch speculatively executed, procedure return"
         },
         {
             "code": 122,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 2,
-            "event_lsb": 179,
-            "trace_lsb": 179,
+            "event_bits": 1,
+            "event_lsb": 131,
+            "trace_lsb": 131,
             "description": "Branch speculatively executed, indirect branch"
         },
         {
             "code": 124,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "ISB_SPEC",
             "recommended": true,
@@ -1508,15 +1427,15 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 1,
-            "event_lsb": 181,
-            "trace_lsb": 181,
+            "event_lsb": 132,
+            "trace_lsb": 132,
             "description": "Barrier speculatively executed, ISB"
         },
         {
             "code": 125,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "DSB_SPEC",
             "recommended": true,
@@ -1524,15 +1443,15 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 2,
-            "event_lsb": 182,
-            "trace_lsb": 182,
+            "event_lsb": 133,
+            "trace_lsb": 133,
             "description": "Barrier speculatively executed, DSB"
         },
         {
             "code": 126,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "DMB_SPEC",
             "recommended": true,
@@ -1540,242 +1459,242 @@
             "architectural": false,
             "type": "UEVT",
             "event_bits": 2,
-            "event_lsb": 184,
-            "trace_lsb": 184,
+            "event_lsb": 135,
+            "trace_lsb": 135,
             "description": "Barrier speculatively executed, DMB"
         },
         {
             "code": 129,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_UNDEF",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 186,
-            "trace_lsb": 186,
+            "event_lsb": 137,
+            "trace_lsb": 137,
             "description": "Counts the number of undefined exceptions taken locally"
         },
         {
             "code": 130,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_SVC",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 187,
-            "trace_lsb": 187,
+            "event_lsb": 138,
+            "trace_lsb": 138,
             "description": "Exception taken locally, Supervisor Call"
         },
         {
             "code": 131,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_PABORT",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 188,
-            "trace_lsb": 188,
+            "event_lsb": 139,
+            "trace_lsb": 139,
             "description": "Exception taken locally, Instruction Abort"
         },
         {
             "code": 132,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_DABORT",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 189,
-            "trace_lsb": 189,
+            "event_lsb": 140,
+            "trace_lsb": 140,
             "description": "Exception taken locally, Data Abort and SError"
         },
         {
             "code": 134,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 190,
-            "trace_lsb": 190,
+            "event_lsb": 141,
+            "trace_lsb": 141,
             "description": "Exception taken locally, IRQ"
         },
         {
             "code": 135,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 191,
-            "trace_lsb": 191,
+            "event_lsb": 142,
+            "trace_lsb": 142,
             "description": "Exception taken locally, FIQ"
         },
         {
             "code": 136,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_SMC",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 192,
-            "trace_lsb": 192,
+            "event_lsb": 143,
+            "trace_lsb": 143,
             "description": "Exception taken locally, Secure Monitor Call"
         },
         {
             "code": 138,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_HVC",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 193,
-            "trace_lsb": 193,
+            "event_lsb": 144,
+            "trace_lsb": 144,
             "description": "Exception taken locally, Hypervisor Call"
         },
         {
             "code": 139,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TRAP_PABORT",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 194,
-            "trace_lsb": 194,
+            "event_lsb": 145,
+            "trace_lsb": 145,
             "description": "Exception taken, Instruction Abort not taken locally"
         },
         {
             "code": 140,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TRAP_DABORT",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 195,
-            "trace_lsb": 195,
+            "event_lsb": 146,
+            "trace_lsb": 146,
             "description": "Exception taken, Data Abort or SError not taken locally"
         },
         {
             "code": 141,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TRAP_OTHER",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 196,
-            "trace_lsb": 196,
+            "event_lsb": 147,
+            "trace_lsb": 147,
             "description": "Exception taken, Other traps not taken locally"
         },
         {
             "code": 142,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TRAP_IRQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 197,
-            "trace_lsb": 197,
+            "event_lsb": 148,
+            "trace_lsb": 148,
             "description": "Exception taken, IRQ not taken locally"
         },
         {
             "code": 143,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "EXC_TRAP_FIQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
             "event_bits": 1,
-            "event_lsb": 198,
-            "trace_lsb": 198,
+            "event_lsb": 149,
+            "trace_lsb": 149,
             "description": "Exception taken, FIQ not taken locally"
         },
         {
             "code": 144,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "RC_LD_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 199,
-            "trace_lsb": 199,
-            "description": "Release consistency operation speculatively executed, loadacquire"
+            "event_bits": 3,
+            "event_lsb": 150,
+            "trace_lsb": 150,
+            "description": "Release consistency operation speculatively executed, load-acquire"
         },
         {
             "code": 145,
             "refs": [
                 0,
-                1
+                2
             ],
             "name": "RC_ST_SPEC",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "event_bits": 5,
-            "event_lsb": 204,
-            "trace_lsb": 204,
-            "description": "Release consistency operation speculatively executed, storerelease"
+            "event_bits": 3,
+            "event_lsb": 153,
+            "trace_lsb": 153,
+            "description": "Release consistency operation speculatively executed, store-release"
         },
         {
             "code": 160,
             "refs": [
                 0,
-                1
+                2
             ],
             "trm_name": "L3_CACHE_RD",
             "name": "L3D_CACHE_RD",
@@ -1786,67 +1705,9 @@
             "subtype": "READ",
             "component": "L3",
             "event_bits": 1,
-            "event_lsb": 209,
-            "trace_lsb": 209,
+            "event_lsb": 166,
+            "trace_lsb": 166,
             "description": "L3 cache read"
-        },
-        {
-            "code": 16388,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "CNT_CYCLES",
-            "architectural": false,
-            "type": "CYCLE",
-            "description": "Constant frequency cycles"
-        },
-        {
-            "code": 16389,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "STALL_BACKEND_MEM",
-            "architectural": false,
-            "type": "UEVT",
-            "description": "No operation sent due to the backend and memory stalls"
-        },
-        {
-            "code": 16390,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "L1I_CACHE_LMISS",
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1I",
-            "description": "L1 instruction cache long latency miss"
-        },
-        {
-            "code": 16393,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "L2D_CACHE_LMISS_RD",
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L2",
-            "description": "L2 unified cache long latency miss"
-        },
-        {
-            "code": 16395,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "L3D_CACHE_LMISS_RD",
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L3",
-            "description": "L3 unified cache long latency miss"
         }
     ]
 }

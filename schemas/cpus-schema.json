@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "CPU product list",
+    "type": "object",
+    "properties": {
+        "_type": {
+            "type": "string",
+            "enum": ["CPUs"]
+        },
+        "timestamp": {
+            "description": "Time this file was generated",
+            "type": "string"
+        },
+        "cpus": {
+            "description": "List of CPUs",
+            "type": "array",
+            "items": {
+                "title": "CPU",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "CPU product name",
+                        "type": "string"
+                    },
+                    "implementer": {
+                        "description": "CPU implementer code, e.g. A for ARM Ltd.",
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 255
+                    },
+                    "cpuid": {
+                        "description": "CPU id, 5 hex digits",
+                        "type": "string"
+                    },
+                    "cpuids": {
+                        "description": "list of CPU ids",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "arch": {
+                        "description": "Architecture specifier, in 'tool' format",
+                        "type": "string"
+                    },
+                    "counters": {
+                        "description": "Number of physical hardware counters (e.g. 4, 6)",
+                        "type": "integer",
+                        "maximum": 31
+                    }
+                },
+                "required": ["implementer", "name", "arch", "cpuid"],
+                "additionalProperties": false
+            }
+        }
+    }
+}

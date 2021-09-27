@@ -1,27 +1,39 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:04 2021",
     "implementer": "A",
     "cpu": "Cortex-R52",
-    "architecture": "armv8",
+    "architecture": "armv8-r",
     "pmu_architecture": "pmuv3",
+    "counters": 8,
     "refs": [
         {
             "ref": "Cortex-R52 TRM",
+            "public": true
+        },
+        {
+            "ref": "gator events-Cortex-R52.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-R52.xml",
             "public": true
         }
     ],
     "events": [
         {
             "code": 0,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment. The register is incremented only on writes to the Software Increment Register (PMSWINC)"
         },
         {
             "code": 1,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -34,7 +46,10 @@
         },
         {
             "code": 3,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -47,7 +62,10 @@
         },
         {
             "code": 4,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -60,7 +78,10 @@
         },
         {
             "code": 6,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LD_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -71,7 +92,10 @@
         },
         {
             "code": 7,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -82,7 +106,10 @@
         },
         {
             "code": 8,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -93,7 +120,10 @@
         },
         {
             "code": 9,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -103,7 +133,10 @@
         },
         {
             "code": 10,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
@@ -114,7 +147,10 @@
         },
         {
             "code": 11,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -125,7 +161,10 @@
         },
         {
             "code": 12,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -136,7 +175,10 @@
         },
         {
             "code": 13,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -147,7 +189,10 @@
         },
         {
             "code": 14,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -158,7 +203,10 @@
         },
         {
             "code": 15,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LDST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -169,7 +217,10 @@
         },
         {
             "code": 16,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -182,7 +233,9 @@
         },
         {
             "code": 17,
-            "refs": [0],
+            "refs": [
+                0
+            ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -190,7 +243,10 @@
         },
         {
             "code": 18,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -202,7 +258,10 @@
         },
         {
             "code": 19,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
@@ -212,7 +271,10 @@
         },
         {
             "code": 20,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -225,7 +287,10 @@
         },
         {
             "code": 25,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS",
             "type": "UEVT",
             "component": "BUS",
@@ -233,7 +298,10 @@
         },
         {
             "code": 26,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEMORY_ERROR",
             "architectural": false,
             "type": "INS",
@@ -241,7 +309,10 @@
         },
         {
             "code": 27,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_SPEC",
             "architectural": false,
             "type": "UEVT",
@@ -249,7 +320,10 @@
         },
         {
             "code": 29,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -258,14 +332,20 @@
         },
         {
             "code": 30,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CHAIN",
             "type": "UEVT",
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For evennumbered counters, there is no increment"
         },
         {
             "code": 33,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -276,7 +356,10 @@
         },
         {
             "code": 34,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED_RETIRED",
             "architectural": false,
             "type": "UEVT",
@@ -286,21 +369,30 @@
         },
         {
             "code": 35,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_FRONTEND",
             "type": "UEVT",
             "description": "No operation issued due to the front end"
         },
         {
             "code": 36,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_BACKEND",
             "type": "UEVT",
             "description": "No operation issued due to the back end"
         },
         {
             "code": 96,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -310,7 +402,10 @@
         },
         {
             "code": 97,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -320,7 +415,10 @@
         },
         {
             "code": 130,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_SVC",
             "recommended": true,
             "impdef": true,
@@ -332,7 +430,10 @@
         },
         {
             "code": 134,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
@@ -344,7 +445,10 @@
         },
         {
             "code": 135,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
@@ -356,7 +460,10 @@
         },
         {
             "code": 138,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_HVC",
             "recommended": true,
             "impdef": true,
@@ -368,7 +475,10 @@
         },
         {
             "code": 142,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_IRQ",
             "recommended": true,
             "impdef": true,
@@ -380,7 +490,10 @@
         },
         {
             "code": 143,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_FIQ",
             "recommended": true,
             "impdef": true,
@@ -392,7 +505,10 @@
         },
         {
             "code": 192,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_AXI_READ",
             "impdef": true,
             "type": "UEVT",
@@ -403,7 +519,10 @@
         },
         {
             "code": 193,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_AXI_WRITE",
             "impdef": true,
             "type": "UEVT",
@@ -414,7 +533,10 @@
         },
         {
             "code": 194,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_FLASH_READ",
             "impdef": true,
             "type": "UEVT",
@@ -425,7 +547,10 @@
         },
         {
             "code": 195,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_LLPP_READ",
             "impdef": true,
             "type": "UEVT",
@@ -436,7 +561,10 @@
         },
         {
             "code": 196,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_LLPP_WRITE",
             "impdef": true,
             "type": "UEVT",
@@ -447,7 +575,10 @@
         },
         {
             "code": 197,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_AXI_READ",
             "impdef": true,
             "architectural": false,
@@ -459,7 +590,10 @@
         },
         {
             "code": 198,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_AXI_WRITE",
             "impdef": true,
             "architectural": false,
@@ -471,7 +605,10 @@
         },
         {
             "code": 199,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_FLASH_READ",
             "impdef": true,
             "architectural": false,
@@ -483,7 +620,10 @@
         },
         {
             "code": 200,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_REFILL_PF_AXI",
             "impdef": true,
             "architectural": false,
@@ -494,7 +634,10 @@
         },
         {
             "code": 201,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_REFILL_LS_AXI",
             "impdef": true,
             "architectural": false,
@@ -505,7 +648,10 @@
         },
         {
             "code": 202,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_REFILL_LS_FLASH",
             "impdef": true,
             "architectural": false,
@@ -516,7 +662,10 @@
         },
         {
             "code": 203,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_DC_ACCESS_AXI",
             "impdef": true,
             "architectural": false,
@@ -529,7 +678,10 @@
         },
         {
             "code": 204,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_DC_ACCESS_FLASH",
             "impdef": true,
             "architectural": false,
@@ -542,7 +694,10 @@
         },
         {
             "code": 205,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_ACCESS_AXI",
             "impdef": true,
             "architectural": false,
@@ -555,7 +710,10 @@
         },
         {
             "code": 206,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_ACCESS_FLASH",
             "impdef": true,
             "architectural": false,
@@ -568,7 +726,10 @@
         },
         {
             "code": 207,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_LS_HINTED_AXI",
             "impdef": true,
             "architectural": false,
@@ -577,7 +738,10 @@
         },
         {
             "code": 208,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_LS_HINTED_FLASH_READ",
             "impdef": true,
             "architectural": false,
@@ -586,7 +750,10 @@
         },
         {
             "code": 209,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_REFILL_IC_AXI",
             "impdef": true,
             "architectural": false,
@@ -597,7 +764,10 @@
         },
         {
             "code": 210,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_REFILL_IC_FLASH",
             "impdef": true,
             "architectural": false,
@@ -608,7 +778,10 @@
         },
         {
             "code": 211,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_LS_AXI_READ",
             "impdef": true,
             "architectural": false,
@@ -619,7 +792,10 @@
         },
         {
             "code": 212,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_NC_LS_FLASH_READ",
             "impdef": true,
             "architectural": false,
@@ -630,7 +806,10 @@
         },
         {
             "code": 213,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_COND_BR_RETIRED",
             "impdef": true,
             "type": "UEVT",
@@ -641,7 +820,10 @@
         },
         {
             "code": 214,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_MIS_PRED_COND_BR",
             "impdef": true,
             "architectural": false,
@@ -652,7 +834,10 @@
         },
         {
             "code": 215,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BTAC_BR_RETIRED",
             "impdef": true,
             "type": "UEVT",
@@ -663,7 +848,10 @@
         },
         {
             "code": 216,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_MIS_PRED_BTAC_BR",
             "impdef": true,
             "architectural": false,
@@ -674,7 +862,10 @@
         },
         {
             "code": 217,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_VSCTLR_CHANGED",
             "impdef": true,
             "architectural": true,
@@ -686,7 +877,10 @@
         },
         {
             "code": 218,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_DSB_ALL_RETIRED",
             "impdef": true,
             "architectural": true,
@@ -698,7 +892,10 @@
         },
         {
             "code": 219,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_SIMULT_ACCESS_AXI",
             "impdef": true,
             "type": "INS",
@@ -706,7 +903,10 @@
         },
         {
             "code": 220,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_SIMULT_ACCESS_FLASH",
             "impdef": true,
             "type": "INS",
@@ -714,7 +914,10 @@
         },
         {
             "code": 221,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_EL2_ENTERED",
             "impdef": true,
             "type": "EXC",
@@ -725,7 +928,10 @@
         },
         {
             "code": 222,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_CRS_BR_RETIRED",
             "impdef": true,
             "type": "UEVT",
@@ -736,7 +942,10 @@
         },
         {
             "code": 223,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_MIS_PRED_CRS_BR",
             "impdef": true,
             "architectural": false,
@@ -747,7 +956,10 @@
         },
         {
             "code": 240,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_COR_ERR_MEM",
             "impdef": true,
             "architectural": false,
@@ -759,7 +971,10 @@
         },
         {
             "code": 241,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_FAT_ERR_MEM",
             "impdef": true,
             "type": "UEVT",
@@ -769,18 +984,24 @@
         },
         {
             "code": 242,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BUS_COR_DATA",
             "impdef": true,
             "type": "UEVT",
             "component": "BUS",
             "event_bits": 1,
             "errevent_lsb": 2,
-            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP)"
+            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP). - - - - [3] Fatal data payload bus error occurred from any source (AXIM or LLPP). - - - - [4] Fatal READY signal bus error occurred from any source (AXIM, Flash, or LLPP)"
         },
         {
             "code": 243,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BUS_FAT_OTHER",
             "impdef": true,
             "type": "UEVT",
@@ -791,18 +1012,26 @@
         },
         {
             "code": 244,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BUS_PROTOCOL_ANY",
             "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
+            "architectural": false,
+            "type": "EXC",
+            "subtype": "READ",
+            "component": "L1D",
             "event_bits": 1,
             "errevent_lsb": 6,
-            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP)"
+            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP). - - - - [7] Correctable L1 instruction cache (data or tag) memory error. - - - - [8] Correctable L1 data cache (data or tag) memory error. - - - - [9] Correctable ATCM, BTCM, or CTCM memory error. - - - - [10] Fatal ATCM, BTCM, or CTCM memory error. - - - - [11] Correctable flash memory error. - - - - [12] Fatal flash memory error. - - - - [13] Timeout for AXIM bus. - - - - [14] Timeout for Flash bus. - - - - [15] Timeout for LLPP bus. - - - - [16] Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error. - - - - [17] Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full. - - - - [18] Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered). - - - - [19] A memory or bus fatal error was synchronously detected in Hyp mode. - - - - [20] An abort exception was taken because an EL2-controlled MPU fault generated an abort. - - - - [21] An abort exception was taken because an EL1-controlled MPU fault generated an abort. - - - - [22] An Undefined exception was taken due to any cause. - - - - [23] A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU. - - - - [24] Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times. - - - - [25] Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
         },
         {
             "code": 256,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IQ_EMPTY_NO_MISS",
             "impdef": true,
             "architectural": false,
@@ -811,7 +1040,10 @@
         },
         {
             "code": 257,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IQ_EMPTY_AXI_MISS",
             "impdef": true,
             "architectural": false,
@@ -820,7 +1052,10 @@
         },
         {
             "code": 258,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IQ_EMPTY_FLASH_MISS",
             "impdef": true,
             "architectural": false,
@@ -829,7 +1064,10 @@
         },
         {
             "code": 259,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_INTERLOCK_OTHER",
             "impdef": true,
             "architectural": false,
@@ -838,7 +1076,10 @@
         },
         {
             "code": 260,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_INTERLOCK_AGU",
             "impdef": true,
             "architectural": false,
@@ -847,7 +1088,10 @@
         },
         {
             "code": 261,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_INTERLOCK_FPASIMD",
             "impdef": true,
             "architectural": false,
@@ -856,7 +1100,10 @@
         },
         {
             "code": 262,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_LOAD_STALL_AXI",
             "impdef": true,
             "architectural": false,
@@ -865,7 +1112,10 @@
         },
         {
             "code": 263,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_LOAD_STALL_FLASH",
             "impdef": true,
             "architectural": false,
@@ -874,7 +1124,10 @@
         },
         {
             "code": 264,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_WR_STALL_STORE",
             "impdef": true,
             "architectural": false,
@@ -883,7 +1136,10 @@
         },
         {
             "code": 265,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_WR_STALL_AXI_STB_FULL",
             "impdef": true,
             "architectural": false,
@@ -892,7 +1148,10 @@
         },
         {
             "code": 266,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_WR_STALL_TCM_STB_FULL",
             "impdef": true,
             "architectural": false,
@@ -901,7 +1160,10 @@
         },
         {
             "code": 267,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_WR_STALL_LLPP_STB_FULL",
             "impdef": true,
             "architectural": false,
@@ -910,7 +1172,10 @@
         },
         {
             "code": 268,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BARRIER_STALL_BARRIER",
             "impdef": true,
             "architectural": false,
@@ -920,7 +1185,10 @@
         },
         {
             "code": 269,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_BARRIER_STORE_AXIWRITE",
             "impdef": true,
             "architectural": false,
@@ -930,7 +1198,10 @@
         },
         {
             "code": 512,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_WT_HIT",
             "impdef": true,
             "architectural": false,
@@ -940,7 +1211,10 @@
         },
         {
             "code": 513,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_DC_WT_HIT",
             "impdef": true,
             "architectural": false,
@@ -950,7 +1224,10 @@
         },
         {
             "code": 514,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_I_UMPU_HIT",
             "impdef": true,
             "type": "INS",
@@ -958,7 +1235,10 @@
         },
         {
             "code": 515,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_D_UMPU_HIT",
             "impdef": true,
             "architectural": false,
@@ -967,7 +1247,10 @@
         },
         {
             "code": 516,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_CACHE_HIT",
             "impdef": true,
             "architectural": false,
@@ -977,7 +1260,10 @@
         },
         {
             "code": 517,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_LFB_HIT",
             "impdef": true,
             "architectural": false,
@@ -987,7 +1273,10 @@
         },
         {
             "code": 518,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_BIU_HIT",
             "impdef": true,
             "architectural": false,
@@ -997,7 +1286,10 @@
         },
         {
             "code": 519,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "name": "KITE_IC_HINT_REQ",
             "impdef": true,
             "architectural": false,
@@ -1006,7 +1298,9 @@
             "description": "L1 instruction cache hint request sent"
         },
         {
-            "refs": [0],
+            "refs": [
+                0
+            ],
             "impdef": true,
             "architectural": true,
             "type": "INS",
@@ -1014,188 +1308,6 @@
             "event_lsb": 6,
             "trace_lsb": 10,
             "description": "Two instructions architecturally executed in parallel. Asserted along with bit PMUEVENTx[5] when dual issuing"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 3,
-            "description": "Fatal data payload bus error occurred from any source (AXIM or LLPP)"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 4,
-            "description": "Fatal READY signal bus error occurred from any source (AXIM, Flash, or LLPP)"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1I",
-            "event_bits": 1,
-            "errevent_lsb": 7,
-            "description": "Correctable L1 instruction cache (data or tag) memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1D",
-            "event_bits": 1,
-            "errevent_lsb": 8,
-            "description": "Correctable L1 data cache (data or tag) memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 9,
-            "description": "Correctable ATCM, BTCM, or CTCM memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 10,
-            "description": "Fatal ATCM, BTCM, or CTCM memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 11,
-            "description": "Correctable flash memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 12,
-            "description": "Fatal flash memory error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 13,
-            "description": "Timeout for AXIM bus"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 14,
-            "description": "Timeout for Flash bus"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 15,
-            "description": "Timeout for LLPP bus"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1D",
-            "event_bits": 1,
-            "errevent_lsb": 16,
-            "description": "Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "component": "L1D",
-            "event_bits": 1,
-            "errevent_lsb": 17,
-            "description": "Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 18,
-            "description": "Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered)"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "component": "BUS",
-            "event_bits": 1,
-            "errevent_lsb": 19,
-            "description": "A memory or bus fatal error was synchronously detected in Hyp mode"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "EXC",
-            "event_bits": 1,
-            "errevent_lsb": 20,
-            "description": "An abort exception was taken because an EL2-controlled MPU fault generated an abort"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "EXC",
-            "event_bits": 1,
-            "errevent_lsb": 21,
-            "description": "An abort exception was taken because an EL1-controlled MPU fault generated an abort"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "EXC",
-            "event_bits": 1,
-            "errevent_lsb": 22,
-            "description": "An Undefined exception was taken due to any cause"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 23,
-            "description": "A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "EXC",
-            "event_bits": 1,
-            "errevent_lsb": 24,
-            "description": "Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times"
-        },
-        {
-            "refs": [0],
-            "impdef": true,
-            "type": "UEVT",
-            "event_bits": 1,
-            "errevent_lsb": 25,
-            "description": "Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
         }
     ]
 }

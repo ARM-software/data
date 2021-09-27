@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "CPU hardware event list (based on Intel format)",
+    "oneOf": [
+        {
+            "type": "array",
+            "items": {
+                "description": "PMU event",
+                "type": "object",
+                "oneOf": [
+                    {
+                        "properties": {
+                            "EventCode": {
+                                "description": "Code to be programmed into the PMU event type register (hex prefixed with 0x)",
+                                "type": "string",
+                                "pattern": "^0x"
+                            },
+                            "EventName": {
+                                "description": "Mnemonic for the event",
+                                "type": "string"
+                            },
+                            "BriefDescription": {
+                                "type": "string"
+                            },
+                            "PublicDescription": {
+                                "type": "string"
+                            },
+                            "Compat": {
+                                "type": "string"
+                            },
+                            "Unit": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["EventCode", "BriefDescription"],
+                        "additionalProperties": false
+                    },
+                    {
+                        "properties": {
+                            "ArchStdEvent": {
+                                "description": "Event mnemonic",
+                                "type": "string"
+                            },
+                            "BriefDescription": {
+                                "type": "string"
+                            },
+                            "PublicDescription": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["ArchStdEvent"],
+                        "additionalProperties": false
+                    }
+                ]
+            }
+        },
+        {
+            "type": "array",
+            "items": {
+                "description": "PMU metric",
+                "type": "object",
+                "properties": {
+                    "MetricName": {
+                        "type": "string"
+                    },
+                    "MetricExpr": {
+                        "description": "an arithmetic expression in terms of other events and metrics",
+                        "type": "string"
+                    },
+                    "ScaleUnit": {
+                        "type": "string"
+                    },
+                    "MetricGroup": {
+                        "type": "string"
+                    },
+                    "Compat": {
+                        "type": "string"
+                    },
+                    "BriefDescription": {
+                        "type": "string"
+                    },
+                    "PublicDescription": {
+                        "type": "string"
+                    },                    
+                    "Unit": {
+                        "type": "string"
+                    }
+                },
+                "required": ["MetricName", "MetricExpr"],
+                "additionalProperties": false
+            }
+        }
+    ]
+}
+ 

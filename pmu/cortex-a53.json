@@ -1,9 +1,9 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
     "cpu": "Cortex-A53",
-    "architecture": "armv8",
+    "architecture": "armv8-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
@@ -20,14 +20,20 @@
     "events": [
         {
             "code": 0,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "SW_INCR",
             "type": "UEVT",
             "description": "Software increment. The register is incremented only on writes to the Software Increment Register"
         },
         {
             "code": 1,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -40,7 +46,10 @@
         },
         {
             "code": 2,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -52,7 +61,10 @@
         },
         {
             "code": 3,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -65,7 +77,10 @@
         },
         {
             "code": 4,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -78,7 +93,10 @@
         },
         {
             "code": 5,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -90,7 +108,10 @@
         },
         {
             "code": 6,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LD_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -101,7 +122,10 @@
         },
         {
             "code": 7,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -112,7 +136,10 @@
         },
         {
             "code": 8,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -123,7 +150,10 @@
         },
         {
             "code": 9,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -133,7 +163,10 @@
         },
         {
             "code": 10,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_RETURN",
             "type": "EXC",
             "event_bits": 1,
@@ -143,7 +176,10 @@
         },
         {
             "code": 11,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CID_WRITE_RETIRED",
             "type": "UEVT",
             "event_bits": 1,
@@ -153,7 +189,10 @@
         },
         {
             "code": 12,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -164,7 +203,10 @@
         },
         {
             "code": 13,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -175,7 +217,10 @@
         },
         {
             "code": 14,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -183,7 +228,10 @@
         },
         {
             "code": 15,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LDST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -194,7 +242,10 @@
         },
         {
             "code": 16,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -207,7 +258,10 @@
         },
         {
             "code": 17,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -215,7 +269,10 @@
         },
         {
             "code": 18,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -227,7 +284,10 @@
         },
         {
             "code": 19,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
@@ -237,7 +297,10 @@
         },
         {
             "code": 20,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -250,7 +313,10 @@
         },
         {
             "code": 21,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -263,7 +329,10 @@
         },
         {
             "code": 22,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -276,7 +345,10 @@
         },
         {
             "code": 23,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -289,7 +361,10 @@
         },
         {
             "code": 24,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -302,7 +377,10 @@
         },
         {
             "code": 25,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS",
             "type": "UEVT",
             "component": "BUS",
@@ -310,14 +388,20 @@
         },
         {
             "code": 26,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEMORY_ERROR",
             "type": "UEVT",
             "description": "Local memory error"
         },
         {
             "code": 29,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -326,15 +410,21 @@
         },
         {
             "code": 30,
-            "refs": [0, 1],
+            "refs": [
+                0
+            ],
             "name": "CHAIN",
             "type": "UEVT",
             "description": "Odd performance counter chain mode"
         },
         {
             "code": 96,
-            "refs": [0, 1],
-            "name": "BUS_ACCESS_LD",
+            "refs": [
+                0,
+                1
+            ],
+            "trm_name": "BUS_ACCESS_LD",
+            "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
@@ -343,8 +433,12 @@
         },
         {
             "code": 97,
-            "refs": [0, 1],
-            "name": "BUS_ACCESS_ST",
+            "refs": [
+                0,
+                1
+            ],
+            "trm_name": "BUS_ACCESS_ST",
+            "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
@@ -353,7 +447,10 @@
         },
         {
             "code": 122,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
             "impdef": true,
@@ -363,7 +460,10 @@
         },
         {
             "code": 134,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
@@ -372,7 +472,10 @@
         },
         {
             "code": 135,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
@@ -381,14 +484,20 @@
         },
         {
             "code": 192,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "External memory request"
         },
         {
             "code": 193,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -396,14 +505,20 @@
         },
         {
             "code": 194,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Linefill because of prefetch"
         },
         {
             "code": 195,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -411,28 +526,40 @@
         },
         {
             "code": 196,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Entering read allocate mode"
         },
         {
             "code": 197,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Read allocate mode"
         },
         {
             "code": 198,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Pre-decode error"
         },
         {
             "code": 199,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -440,21 +567,30 @@
         },
         {
             "code": 200,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "SCU Snooped data from another CPU for this CPU"
         },
         {
             "code": 201,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "type": "UEVT",
             "description": "Conditional branch executed"
         },
         {
             "code": 202,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -464,7 +600,10 @@
         },
         {
             "code": 203,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -474,7 +613,10 @@
         },
         {
             "code": 204,
-            "refs": [0],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -484,7 +626,10 @@
         },
         {
             "code": 208,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -496,7 +641,10 @@
         },
         {
             "code": 209,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -508,7 +656,10 @@
         },
         {
             "code": 210,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
@@ -519,7 +670,10 @@
         },
         {
             "code": 224,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -527,7 +681,10 @@
         },
         {
             "code": 225,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -535,7 +692,10 @@
         },
         {
             "code": 226,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -543,7 +703,10 @@
         },
         {
             "code": 227,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -551,7 +714,10 @@
         },
         {
             "code": 228,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -559,7 +725,10 @@
         },
         {
             "code": 229,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -567,7 +736,10 @@
         },
         {
             "code": 230,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
@@ -575,7 +747,10 @@
         },
         {
             "code": 231,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
@@ -583,7 +758,10 @@
         },
         {
             "code": 232,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",

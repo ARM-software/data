@@ -2,18 +2,18 @@
     "_type": "Events",
     "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
-    "cpu": "Cortex-A35",
+    "cpu": "Cortex-A34",
     "architecture": "armv8-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
         {
-            "ref": "Cortex-A35 TRM",
+            "ref": "Cortex-A34 TRM",
             "public": true
         },
         {
-            "ref": "gator events-Cortex-A35.xml",
-            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A35.xml",
+            "ref": "gator events-Cortex-A34.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A34.xml",
             "public": true
         }
     ],
@@ -397,17 +397,6 @@
             "description": "Local memory error"
         },
         {
-            "code": 27,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "INST_SPEC",
-            "architectural": false,
-            "type": "UEVT",
-            "description": "Operation speculatively executed"
-        },
-        {
             "code": 29,
             "refs": [
                 0,
@@ -455,58 +444,6 @@
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access - Write"
-        },
-        {
-            "code": 115,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "DP_SPEC",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "description": "Operation speculatively executed, integer dataprocessing"
-        },
-        {
-            "code": 116,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "ASE_SPEC",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "INS",
-            "description": "Operation speculatively executed, Advanced SIMD instruction"
-        },
-        {
-            "code": 117,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "VFP_SPEC",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "INS",
-            "description": "Operation speculatively executed, floating-point instruction"
-        },
-        {
-            "code": 119,
-            "refs": [
-                0,
-                1
-            ],
-            "name": "CRYPTO_SPEC",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "INS",
-            "description": "Operation speculatively executed, Cryptographic instruction"
         },
         {
             "code": 122,
@@ -597,16 +534,6 @@
             "description": "Read allocate mode"
         },
         {
-            "code": 198,
-            "refs": [
-                0,
-                1
-            ],
-            "impdef": true,
-            "type": "UEVT",
-            "description": "Pre-decode error"
-        },
-        {
             "code": 199,
             "refs": [
                 0,
@@ -666,7 +593,8 @@
         {
             "code": 204,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,

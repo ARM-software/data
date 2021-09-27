@@ -2,18 +2,18 @@
     "_type": "Events",
     "timestamp": "Fri Sep 24 17:06:04 2021",
     "implementer": "A",
-    "cpu": "Cortex-A78",
-    "architecture": "armv8.2-a",
+    "cpu": "Neoverse V1",
+    "architecture": "armv8.4-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
         {
-            "ref": "Cortex-A78 TRM",
+            "ref": "Neoverse V1 TRM",
             "public": true
         },
         {
-            "ref": "gator events-Cortex-A78.xml",
-            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A78.xml",
+            "ref": "gator events-Neoverse-V1.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Neoverse-V1.xml",
             "public": true
         }
     ],
@@ -46,7 +46,7 @@
             "event_bits": 1,
             "event_lsb": 1,
             "trace_lsb": 1,
-            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: - Cache maintenance instructions - Non-cacheable accesses"
+            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: +ICI Cache maintenance instructions +ICI Non-cacheable accesses"
         },
         {
             "code": 2,
@@ -61,7 +61,7 @@
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
-            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: - TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
+            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +ICI TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 3,
@@ -77,7 +77,7 @@
             "event_bits": 1,
             "event_lsb": 3,
             "trace_lsb": 3,
-            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache - Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
+            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Stores of an entire cache line, even if they make a coherency request outside the L1 +ICI Partial cache line writes which do not allocate into the L1 cache +ICI Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
         },
         {
             "code": 4,
@@ -93,7 +93,7 @@
             "event_bits": 3,
             "event_lsb": 4,
             "trace_lsb": 4,
-            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
+            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Non-cacheable accesses This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
         },
         {
             "code": 5,
@@ -108,7 +108,7 @@
             "event_bits": 2,
             "event_lsb": 7,
             "trace_lsb": 7,
-            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: - TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
+            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +ICI TLB maintenance instructions This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 8,
@@ -163,7 +163,7 @@
             "event_bits": 1,
             "event_lsb": 16,
             "trace_lsb": 16,
-            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: - Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: +ICI Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
         },
         {
             "code": 16,
@@ -223,7 +223,7 @@
             "event_bits": 3,
             "event_lsb": 21,
             "trace_lsb": 21,
-            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks or prefetches This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
+            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: +ICI Instruction fetches +ICI Cache maintenance instructions +ICI Translation table walks or prefetches This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
         },
         {
             "code": 20,
@@ -239,7 +239,7 @@
             "event_bits": 1,
             "event_lsb": 24,
             "trace_lsb": 24,
-            "description": "L1 instruction cache access or L0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: - Cache maintenance instructions - Non-cacheable accesses"
+            "description": "L1 instruction cache access or L0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: +ICI Cache maintenance instructions +ICI Non-cacheable accesses"
         },
         {
             "code": 21,
@@ -255,7 +255,7 @@
             "event_bits": 1,
             "event_lsb": 25,
             "trace_lsb": 25,
-            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: - Invalidations which do not result in data being transferred out of the L1 - Full-line writes which write to L2 without writing L1, such as write streaming mode"
+            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: +ICI Invalidations which do not result in data being transferred out of the L1 +ICI Full-line writes which write to L2 without writing L1, such as write streaming mode"
         },
         {
             "code": 22,
@@ -359,7 +359,7 @@
             "event_bits": 1,
             "event_lsb": 46,
             "trace_lsb": 46,
-            "description": "Instruction architecturally executed, condition code check pass, write to TTBR. This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: - Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to TTBR. This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: +ICI Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
         },
         {
             "code": 29,
@@ -634,7 +634,7 @@
             "event_bits": 3,
             "event_lsb": 77,
             "trace_lsb": 77,
-            "description": "Last level cache access, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
+            "description": "Last level cache access, read. +ICI If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. +ICI If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented +IBM L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
         },
         {
             "code": 55,
@@ -650,7 +650,7 @@
             "event_bits": 3,
             "event_lsb": 80,
             "trace_lsb": 80,
-            "description": "Last level cache miss, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
+            "description": "Last level cache miss, read. +ICI If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. +ICI If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented +IBM L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
         },
         {
             "code": 57,
@@ -742,7 +742,7 @@
             "event_bits": 2,
             "event_lsb": 83,
             "trace_lsb": 83,
-            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Non-cacheable accesses"
         },
         {
             "code": 65,
@@ -760,7 +760,7 @@
             "event_bits": 2,
             "event_lsb": 85,
             "trace_lsb": 85,
-            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Non-cacheable accesses"
         },
         {
             "code": 66,
@@ -778,7 +778,7 @@
             "event_bits": 1,
             "event_lsb": 87,
             "trace_lsb": 87,
-            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Non-cacheable accesses"
+            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Non-cacheable accesses"
         },
         {
             "code": 67,
@@ -796,7 +796,7 @@
             "event_bits": 1,
             "event_lsb": 88,
             "trace_lsb": 88,
-            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache - Non-cacheable accesses"
+            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches +ICI Stores of an entire cache line, even if they make a coherency request outside the L1 +ICI Partial cache line writes which do not allocate into the L1 cache +ICI Non-cacheable accesses"
         },
         {
             "code": 68,
@@ -814,7 +814,7 @@
             "event_bits": 1,
             "event_lsb": 89,
             "trace_lsb": 89,
-            "description": "L1 data cache refill, inner. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which hits in the L2 cache, L3 cache or another core in the cluster"
+            "description": "L1 data cache refill, inner. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which hits in the L2 cache, system L3 cache or another core in the cluster"
         },
         {
             "code": 69,
@@ -832,7 +832,7 @@
             "event_bits": 1,
             "event_lsb": 90,
             "trace_lsb": 90,
-            "description": "L1 data cache refill, outer. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which does not hit in the L2 cache, L3 cache or another core in the cluster, and instead obtains data from outside the cluster"
+            "description": "L1 data cache refill, outer. This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which does not hit in the L2 cache, system L3 cache or another core in the cluster, and instead obtains data from outside the cluster"
         },
         {
             "code": 70,
@@ -1208,7 +1208,7 @@
             "event_bits": 2,
             "event_lsb": 128,
             "trace_lsb": 128,
-            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks - Prefetches"
+            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: +ICI Instruction fetches +ICI Cache maintenance instructions +ICI Translation table walks +ICI Prefetches"
         },
         {
             "code": 103,
@@ -1225,7 +1225,7 @@
             "event_bits": 2,
             "event_lsb": 130,
             "trace_lsb": 130,
-            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: - Instruction fetches - Cache maintenance instructions - Translation table walks - Prefetches"
+            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: +ICI Instruction fetches +ICI Cache maintenance instructions +ICI Translation table walks +ICI Prefetches"
         },
         {
             "code": 104,

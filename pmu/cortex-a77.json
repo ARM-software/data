@@ -1,9 +1,9 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Nov 10 21:53:45 2020",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
     "implementer": "A",
     "cpu": "Cortex-A77",
-    "architecture": "armv8.2",
+    "architecture": "armv8.2-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
@@ -20,7 +20,10 @@
     "events": [
         {
             "code": 0,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "SW_INCR",
             "architectural": true,
             "type": "INS",
@@ -31,20 +34,26 @@
         },
         {
             "code": 1,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "ACCESS",
+            "subtype": "REFILL",
             "component": "L1I",
             "event_bits": 1,
             "event_lsb": 1,
             "trace_lsb": 1,
-            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: \" Cache maintenance instructions. \" Non-cacheable accesses"
+            "description": "L1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: +//0 Cache maintenance instructions. +//0 Non-cacheable accesses"
         },
         {
             "code": 2,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -52,37 +61,46 @@
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
-            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: \" TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
+            "description": "L1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +//0 TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 3,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
             "event_lsb": 170,
             "trace_lsb": 170,
-            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Stores of an entire cache line, even if they make a coherency request outside the L1. \" Partial cache line writes which do not allocate into the L1 cache. \" Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
+            "description": "L1 data cache refill. This event counts any load or store operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Stores of an entire cache line, even if they make a coherency request outside the L1. +//0 Partial cache line writes which do not allocate into the L1 cache. +//0 Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
         },
         {
             "code": 4,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "ACCESS",
+            "subtype": "REFILL",
             "component": "L1D",
             "event_bits": 3,
             "event_lsb": 3,
             "trace_lsb": 3,
-            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Non-cacheable accesses. This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
+            "description": "L1 data cache access. This event counts any load or store operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses. This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
         },
         {
             "code": 5,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -90,11 +108,14 @@
             "event_bits": 2,
             "event_lsb": 6,
             "trace_lsb": 6,
-            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: \" TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
+            "description": "L1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills that result in a translation fault. The following instructions are not counted: +//0 TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 8,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
@@ -105,7 +126,10 @@
         },
         {
             "code": 9,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TAKEN",
             "type": "EXC",
             "event_bits": 1,
@@ -115,7 +139,10 @@
         },
         {
             "code": 10,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
@@ -126,18 +153,24 @@
         },
         {
             "code": 11,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
             "event_lsb": 160,
             "trace_lsb": 160,
-            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: \" Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes to CONTEXTIDR in AArch32 state, and via the CONTEXTIDR_EL1 mnemonic in AArch64 state. The following instructions are not counted: +//0 Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
         },
         {
             "code": 16,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -150,7 +183,10 @@
         },
         {
             "code": 17,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CPU_CYCLES",
             "architectural": false,
             "type": "CYCLE",
@@ -161,7 +197,10 @@
         },
         {
             "code": 18,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_PRED",
             "architectural": false,
             "type": "UEVT",
@@ -173,7 +212,10 @@
         },
         {
             "code": 19,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS",
             "architectural": false,
             "type": "INS",
@@ -181,11 +223,14 @@
             "event_bits": 3,
             "event_lsb": 18,
             "trace_lsb": 18,
-            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: \" Instruction fetches. \" Cache maintenance instructions. \" Translation table walks or prefetches. This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
+            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks or prefetches. This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
         },
         {
             "code": 20,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -194,11 +239,14 @@
             "event_bits": 1,
             "event_lsb": 21,
             "trace_lsb": 21,
-            "description": "Level 1 instruction cache access or Level 0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: \" Cache maintenance instructions. \" Non-cacheable accesses"
+            "description": "Level 1 instruction cache access or Level 0 Macro-op cache access. This event counts any instruction fetch which accesses the L1 instruction cache or L0 Macro-op cache. The following instructions are not counted: +//0 Cache maintenance instructions. +//0 Non-cacheable accesses"
         },
         {
             "code": 21,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -207,11 +255,14 @@
             "event_bits": 1,
             "event_lsb": 22,
             "trace_lsb": 22,
-            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: \" Invalidations which do not result in data being transferred out of the L1. \" Full-line writes which write to L2 without writing L1, such as write streaming mode"
+            "description": "L1 data cache Write-Back. This event counts any write-back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: +//0 Invalidations which do not result in data being transferred out of the L1. +//0 Full-line writes which write to L2 without writing L1, such as write streaming mode"
         },
         {
             "code": 22,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE",
             "architectural": false,
             "type": "UEVT",
@@ -224,7 +275,10 @@
         },
         {
             "code": 23,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -237,7 +291,10 @@
         },
         {
             "code": 24,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
@@ -250,7 +307,10 @@
         },
         {
             "code": 25,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS",
             "architectural": false,
             "type": "UEVT",
@@ -262,7 +322,10 @@
         },
         {
             "code": 26,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEMORY_ERROR",
             "type": "UEVT",
             "event_bits": 1,
@@ -272,7 +335,10 @@
         },
         {
             "code": 27,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "INST_SPEC",
             "architectural": false,
             "type": "UEVT",
@@ -283,18 +349,24 @@
         },
         {
             "code": 28,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "TTBR_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
             "event_bits": 1,
             "event_lsb": 179,
             "trace_lsb": 179,
-            "description": "Instruction architecturally executed, condition code check pass, write to TTBR.This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: \" Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to TTBR.This event only counts writes to TTBR0/TTBR1 in AArch32 state and TTBR0_EL1/TTBR1_EL1 in AArch64 state. The following instructions are not counted: +//0 Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
         },
         {
             "code": 29,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "UEVT",
@@ -306,7 +378,9 @@
         },
         {
             "code": 30,
-            "refs": [0],
+            "refs": [
+                0
+            ],
             "name": "CHAIN",
             "type": "UEVT",
             "event_bits": 1,
@@ -316,7 +390,10 @@
         },
         {
             "code": 32,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
@@ -329,7 +406,10 @@
         },
         {
             "code": 33,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETIRED",
             "architectural": true,
             "type": "EXC",
@@ -340,7 +420,10 @@
         },
         {
             "code": 34,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_MIS_PRED_RETIRED",
             "architectural": false,
             "type": "UEVT",
@@ -353,7 +436,10 @@
         },
         {
             "code": 35,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_FRONTEND",
             "architectural": false,
             "type": "INS",
@@ -364,7 +450,10 @@
         },
         {
             "code": 36,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STALL_BACKEND",
             "architectural": false,
             "type": "INS",
@@ -375,7 +464,10 @@
         },
         {
             "code": 37,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -387,7 +479,10 @@
         },
         {
             "code": 38,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1I_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -399,7 +494,10 @@
         },
         {
             "code": 41,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
@@ -412,7 +510,10 @@
         },
         {
             "code": 42,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -425,11 +526,14 @@
         },
         {
             "code": 43,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L3D_CACHE",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "event_bits": 1,
             "event_lsb": 163,
             "trace_lsb": 163,
@@ -437,7 +541,10 @@
         },
         {
             "code": 45,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
@@ -449,7 +556,10 @@
         },
         {
             "code": 47,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB",
             "architectural": false,
             "type": "UEVT",
@@ -461,7 +571,10 @@
         },
         {
             "code": 49,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "REMOTE_ACCESS",
             "type": "UEVT",
             "event_bits": 1,
@@ -471,7 +584,10 @@
         },
         {
             "code": 52,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DTLB_WALK",
             "architectural": false,
             "type": "UEVT",
@@ -483,7 +599,10 @@
         },
         {
             "code": 53,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ITLB_WALK",
             "architectural": false,
             "type": "UEVT",
@@ -495,7 +614,10 @@
         },
         {
             "code": 54,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LL_CACHE_RD",
             "architectural": false,
             "type": "UEVT",
@@ -504,11 +626,14 @@
             "event_bits": 2,
             "event_lsb": 165,
             "trace_lsb": 165,
-            "description": "Last level cache access, read. \" If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. \" If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
+            "description": "Last level cache access, read. +//0 If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'interconnect cache'. +//0 If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
         },
         {
             "code": 55,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LL_CACHE_MISS_RD",
             "architectural": false,
             "type": "UEVT",
@@ -517,11 +642,14 @@
             "event_bits": 2,
             "event_lsb": 167,
             "trace_lsb": 167,
-            "description": "Last level cache miss, read. \" If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. \" If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
+            "description": "Last level cache miss, read. +//0 If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of 'DRAM', 'remote' or 'inter-cluster peer'. +//0 If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
         },
         {
             "code": 64,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
             "impdef": true,
@@ -532,11 +660,14 @@
             "event_bits": 2,
             "event_lsb": 55,
             "trace_lsb": 55,
-            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Non-cacheable accesses"
+            "description": "L1 data cache access, read. This event counts any load operation or page table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 65,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
             "impdef": true,
@@ -547,11 +678,14 @@
             "event_bits": 2,
             "event_lsb": 57,
             "trace_lsb": 57,
-            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Non-cacheable accesses"
+            "description": "L1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_WR event causes this event to count. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 66,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -562,26 +696,32 @@
             "event_bits": 1,
             "event_lsb": 59,
             "trace_lsb": 59,
-            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Non-cacheable accesses"
+            "description": "L1 data cache refill, read. This event counts any load operation or page table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Non-cacheable accesses"
         },
         {
             "code": 67,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL_WR",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L1D",
             "event_bits": 1,
             "event_lsb": 60,
             "trace_lsb": 60,
-            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: \" Cache maintenance instructions and prefetches. \" Stores of an entire cache line, even if they make a coherency request outside the L1. \" Partial cache line writes which do not allocate into the L1 cache. \" Non-cacheable accesses"
+            "description": "L1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +//0 Cache maintenance instructions and prefetches. +//0 Stores of an entire cache line, even if they make a coherency request outside the L1. +//0 Partial cache line writes which do not allocate into the L1 cache. +//0 Non-cacheable accesses"
         },
         {
             "code": 68,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL_INNER",
             "recommended": true,
             "impdef": true,
@@ -596,7 +736,10 @@
         },
         {
             "code": 69,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
             "impdef": true,
@@ -611,7 +754,10 @@
         },
         {
             "code": 70,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
@@ -626,7 +772,10 @@
         },
         {
             "code": 71,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
@@ -641,7 +790,10 @@
         },
         {
             "code": 72,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
@@ -655,7 +807,10 @@
         },
         {
             "code": 76,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -669,7 +824,10 @@
         },
         {
             "code": 77,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_REFILL_WR",
             "recommended": true,
             "impdef": true,
@@ -683,7 +841,10 @@
         },
         {
             "code": 78,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_RD",
             "recommended": true,
             "impdef": true,
@@ -697,7 +858,10 @@
         },
         {
             "code": 79,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L1D_TLB_WR",
             "recommended": true,
             "impdef": true,
@@ -711,7 +875,10 @@
         },
         {
             "code": 80,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_RD",
             "recommended": true,
             "impdef": true,
@@ -726,7 +893,10 @@
         },
         {
             "code": 81,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WR",
             "recommended": true,
             "impdef": true,
@@ -741,7 +911,10 @@
         },
         {
             "code": 82,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -756,13 +929,16 @@
         },
         {
             "code": 83,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_REFILL_WR",
             "recommended": true,
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "subtype": "READ",
+            "subtype": "WRITE",
             "component": "L2",
             "event_bits": 2,
             "event_lsb": 78,
@@ -771,7 +947,10 @@
         },
         {
             "code": 86,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
@@ -786,7 +965,10 @@
         },
         {
             "code": 87,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
@@ -801,7 +983,10 @@
         },
         {
             "code": 88,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
@@ -815,7 +1000,10 @@
         },
         {
             "code": 92,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_REFILL_RD",
             "recommended": true,
             "impdef": true,
@@ -829,7 +1017,10 @@
         },
         {
             "code": 93,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_REFILL_WR",
             "recommended": true,
             "impdef": true,
@@ -843,7 +1034,10 @@
         },
         {
             "code": 94,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_RD",
             "recommended": true,
             "impdef": true,
@@ -857,7 +1051,10 @@
         },
         {
             "code": 95,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "L2D_TLB_WR",
             "recommended": true,
             "impdef": true,
@@ -871,7 +1068,10 @@
         },
         {
             "code": 96,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -884,7 +1084,10 @@
         },
         {
             "code": 97,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -897,7 +1100,10 @@
         },
         {
             "code": 102,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS_RD",
             "recommended": true,
             "impdef": true,
@@ -907,11 +1113,14 @@
             "event_bits": 2,
             "event_lsb": 93,
             "trace_lsb": 93,
-            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: \" Instruction fetches. \" Cache maintenance instructions. \" Translation table walks. \" Prefetches"
+            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks. +//0 Prefetches"
         },
         {
             "code": 103,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "MEM_ACCESS_WR",
             "recommended": true,
             "impdef": true,
@@ -921,11 +1130,14 @@
             "event_bits": 2,
             "event_lsb": 95,
             "trace_lsb": 95,
-            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: \" Instruction fetches. \" Cache maintenance instructions. \" Translation table walks. \" Prefetches"
+            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: +//0 Instruction fetches. +//0 Cache maintenance instructions. +//0 Translation table walks. +//0 Prefetches"
         },
         {
             "code": 104,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LD_SPEC",
             "recommended": true,
             "impdef": true,
@@ -937,7 +1149,10 @@
         },
         {
             "code": 105,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_ST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -949,7 +1164,10 @@
         },
         {
             "code": 106,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "UNALIGNED_LDST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -961,7 +1179,10 @@
         },
         {
             "code": 108,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LDREX_SPEC",
             "recommended": true,
             "impdef": true,
@@ -974,7 +1195,10 @@
         },
         {
             "code": 109,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_PASS_SPEC",
             "recommended": true,
             "impdef": true,
@@ -987,7 +1211,10 @@
         },
         {
             "code": 110,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_FAIL_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1000,7 +1227,10 @@
         },
         {
             "code": 111,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "STREX_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1013,7 +1243,10 @@
         },
         {
             "code": 112,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1026,7 +1259,10 @@
         },
         {
             "code": 113,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1039,7 +1275,10 @@
         },
         {
             "code": 114,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1052,7 +1291,10 @@
         },
         {
             "code": 115,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DP_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1065,7 +1307,10 @@
         },
         {
             "code": 116,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ASE_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1078,7 +1323,10 @@
         },
         {
             "code": 117,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "VFP_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1091,7 +1339,10 @@
         },
         {
             "code": 118,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "PC_WRITE_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1104,7 +1355,10 @@
         },
         {
             "code": 119,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "CRYPTO_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1117,7 +1371,10 @@
         },
         {
             "code": 120,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_IMMED_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1130,7 +1387,10 @@
         },
         {
             "code": 121,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_RETURN_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1143,7 +1403,10 @@
         },
         {
             "code": 122,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1156,7 +1419,10 @@
         },
         {
             "code": 124,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "ISB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1169,7 +1435,10 @@
         },
         {
             "code": 125,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DSB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1182,7 +1451,10 @@
         },
         {
             "code": 126,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "DMB_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1195,7 +1467,10 @@
         },
         {
             "code": 129,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_UNDEF",
             "recommended": true,
             "impdef": true,
@@ -1207,7 +1482,10 @@
         },
         {
             "code": 130,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_SVC",
             "recommended": true,
             "impdef": true,
@@ -1219,7 +1497,10 @@
         },
         {
             "code": 131,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_PABORT",
             "recommended": true,
             "impdef": true,
@@ -1231,7 +1512,10 @@
         },
         {
             "code": 132,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_DABORT",
             "recommended": true,
             "impdef": true,
@@ -1243,7 +1527,10 @@
         },
         {
             "code": 134,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
@@ -1255,7 +1542,10 @@
         },
         {
             "code": 135,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
@@ -1267,7 +1557,10 @@
         },
         {
             "code": 136,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_SMC",
             "recommended": true,
             "impdef": true,
@@ -1279,7 +1572,10 @@
         },
         {
             "code": 138,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_HVC",
             "recommended": true,
             "impdef": true,
@@ -1291,7 +1587,10 @@
         },
         {
             "code": 139,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_PABORT",
             "recommended": true,
             "impdef": true,
@@ -1303,7 +1602,10 @@
         },
         {
             "code": 140,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_DABORT",
             "recommended": true,
             "impdef": true,
@@ -1315,7 +1617,10 @@
         },
         {
             "code": 141,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_OTHER",
             "recommended": true,
             "impdef": true,
@@ -1327,7 +1632,10 @@
         },
         {
             "code": 142,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_IRQ",
             "recommended": true,
             "impdef": true,
@@ -1339,7 +1647,10 @@
         },
         {
             "code": 143,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "EXC_TRAP_FIQ",
             "recommended": true,
             "impdef": true,
@@ -1351,7 +1662,10 @@
         },
         {
             "code": 144,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "RC_LD_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1364,7 +1678,10 @@
         },
         {
             "code": 145,
-            "refs": [0, 1],
+            "refs": [
+                0,
+                1
+            ],
             "name": "RC_ST_SPEC",
             "recommended": true,
             "impdef": true,
@@ -1377,8 +1694,12 @@
         },
         {
             "code": 160,
-            "refs": [0, 1],
-            "name": "L3_CACHE_RD",
+            "refs": [
+                0,
+                1
+            ],
+            "trm_name": "L3_CACHE_RD",
+            "name": "L3D_CACHE_RD",
             "recommended": true,
             "impdef": true,
             "architectural": false,

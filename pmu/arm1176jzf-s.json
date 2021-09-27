@@ -1,0 +1,363 @@
+{
+    "_type": "Events",
+    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "implementer": "A",
+    "cpu": "ARM1176JZF-S",
+    "architecture": "armv6",
+    "counters": 3,
+    "refs": [
+        {
+            "ref": "gator events-ARM11.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-ARM11.xml",
+            "public": true
+        }
+    ],
+    "events": [
+        {
+            "code": 0,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction cache miss to a cacheable location, which requires a fetch from external memory"
+        },
+        {
+            "code": 1,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Stall because instruction buffer cannot deliver an instruction"
+        },
+        {
+            "code": 2,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Stall because of a data dependency"
+        },
+        {
+            "code": 3,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction MicroTLB miss (unused on ARM1156)"
+        },
+        {
+            "code": 4,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data MicroTLB miss (unused on ARM1156)"
+        },
+        {
+            "code": 5,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Branch instruction executed, branch might or might not have changed program flow"
+        },
+        {
+            "code": 6,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Branch mis-predicted"
+        },
+        {
+            "code": 7,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Instructions executed"
+        },
+        {
+            "code": 9,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "description": "Data cache access, not including Cache operations"
+        },
+        {
+            "code": 10,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "description": "Data cache access, not including Cache Operations regardless of whether or not the location is cacheable"
+        },
+        {
+            "code": 11,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache miss, not including Cache Operations"
+        },
+        {
+            "code": 12,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "description": "Data cache write-back"
+        },
+        {
+            "code": 13,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Software changed the PC"
+        },
+        {
+            "code": 15,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Main TLB miss (unused on ARM1156)"
+        },
+        {
+            "code": 16,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Explicit external data or peripheral access"
+        },
+        {
+            "code": 17,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Stall because of Load Store Unit request queue being full"
+        },
+        {
+            "code": 18,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "The number of times the Write Buffer was drained because of a Data Synchronization Barrier command or Strongly Ordered operation"
+        },
+        {
+            "code": 19,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The number of cycles which FIQ interrupts are disabled (ARM1156 only)"
+        },
+        {
+            "code": 20,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The number of cycles which IRQ interrupts are disabled (ARM1156 only)"
+        },
+        {
+            "code": 32,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "ETM",
+            "description": "ETMEXTOUT[0] signal was asserted for a cycle"
+        },
+        {
+            "code": 33,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "ETM",
+            "description": "ETMEXTOUT[1] signal was asserted for a cycle"
+        },
+        {
+            "code": 34,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "ETM",
+            "description": "ETMEXTOUT[0] or ETMEXTOUT[1] was asserted"
+        },
+        {
+            "code": 35,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Procedure call instruction executed"
+        },
+        {
+            "code": 36,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Procedure return instruction executed"
+        },
+        {
+            "code": 37,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Procedure return instruction executed and return address predicted"
+        },
+        {
+            "code": 38,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Procedure return instruction executed and return address predicted incorrectly"
+        },
+        {
+            "code": 48,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction cache Tag or Valid RAM parity error (ARM1156 only)"
+        },
+        {
+            "code": 49,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction cache RAM parity error (ARM1156 only)"
+        },
+        {
+            "code": 50,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache Tag or Valid RAM parity error (ARM1156 only)"
+        },
+        {
+            "code": 51,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache RAM parity error (ARM1156 only)"
+        },
+        {
+            "code": 52,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "ITCM error (ARM1156 only)"
+        },
+        {
+            "code": 53,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "DTCM error (ARM1156 only)"
+        },
+        {
+            "code": 54,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Procedure return address popped off the return stack (ARM1156 only)"
+        },
+        {
+            "code": 55,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Procedure return address popped off the return stack has been incorrectly predicted by the PFU (ARM1156 only)"
+        },
+        {
+            "code": 56,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache Dirty RAM parity error (ARM1156 only)"
+        }
+    ]
+}
