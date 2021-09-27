@@ -1,0 +1,204 @@
+{
+    "_type": "CPUs",
+    "timestamp": "Mon Sep 27 14:53:38 2021",
+    "cpus": [
+        {
+            "implementer": 65,
+            "name": "Cortex-A8",
+            "arch": "armv7-a",
+            "cpuid": "0x41c08"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A9",
+            "arch": "armv7-a",
+            "cpuid": "0x41c09"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A5",
+            "arch": "armv7-a",
+            "cpuid": "0x41c05"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A7",
+            "arch": "armv7-a",
+            "cpuid": "0x41c07"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A15",
+            "arch": "armv7-a",
+            "cpuid": "0x41c0f"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A17",
+            "arch": "armv7-a",
+            "cpuid": "0x41c0e"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A32",
+            "arch": "armv8-a",
+            "cpuid": "0x41d01"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A34",
+            "arch": "armv8-a",
+            "cpuid": "0x41d02"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A35",
+            "arch": "armv8-a",
+            "cpuid": "0x41d04"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A53",
+            "arch": "armv8-a",
+            "cpuid": "0x41d03"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A55",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d05"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A57",
+            "arch": "armv8-a",
+            "cpuid": "0x41d07"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A65",
+            "arch": "armv8-a",
+            "cpuid": "0x41d06"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A72",
+            "arch": "armv8-a",
+            "cpuid": "0x41d08"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A73",
+            "arch": "armv8-a",
+            "cpuid": "0x41d09"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A75",
+            "arch": "armv8-a",
+            "cpuid": "0x41d0a"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A76",
+            "arch": "armv8-a",
+            "cpuid": "0x41d0b"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A76AE",
+            "arch": "armv8-a",
+            "cpuid": "0x41d0e"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A77",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d0d"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A78",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d41"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A78AE",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d42"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A78C",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d4b"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-X1",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d44"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse N1",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d0c"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse E1",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d4a"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse V1",
+            "arch": "armv8.4-a",
+            "cpuid": "0x41d40"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse N2",
+            "arch": "armv9-a",
+            "cpuid": "0x41d49"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A510",
+            "arch": "armv9-a",
+            "cpuid": "0x41d46"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A710",
+            "arch": "armv9-a",
+            "cpuid": "0x41d47"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-X2",
+            "arch": "armv9-a",
+            "cpuid": "0x41d48"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R52",
+            "arch": "armv8-r",
+            "cpuid": "0x41d13"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R52+",
+            "arch": "armv8-r",
+            "cpuid": "0x41d16"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R82",
+            "arch": "armv8-r",
+            "cpuid": "0x41d15"
+        }
+    ]
+}
