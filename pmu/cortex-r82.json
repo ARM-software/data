@@ -1,9 +1,9 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Mon Oct 11 17:46:09 2021",
     "implementer": "A",
     "cpu": "Cortex-R82",
-    "architecture": "armv8-r",
+    "architecture": "armv8.4-r",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
@@ -1877,8 +1877,6 @@
                 0
             ],
             "name": "L1I_CACHE_LMISS",
-            "recommended": true,
-            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
@@ -1891,8 +1889,6 @@
                 0
             ],
             "name": "LDST_ALIGN_LAT",
-            "recommended": true,
-            "impdef": true,
             "type": "UEVT",
             "description": "The counter counts each access counted by 'Memory: Access' that, due to the alignment of the address and size of data being accessed, incurred additional latency"
         },
@@ -1902,8 +1898,6 @@
                 0
             ],
             "name": "LD_ALIGN_LAT",
-            "recommended": true,
-            "impdef": true,
             "type": "UEVT",
             "description": "The counter counts each memory-read access counted by 'Latency: Access with additional latency from alignment'"
         },
@@ -1913,8 +1907,6 @@
                 0
             ],
             "name": "ST_ALIGN_LAT",
-            "recommended": true,
-            "impdef": true,
             "type": "UEVT",
             "description": "The counter counts each memory-write access counted by 'Latency: Access with additional latency from alignment'"
         }

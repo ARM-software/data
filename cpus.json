@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Mon Sep 27 14:53:38 2021",
+    "timestamp": "Tue Oct 12 08:34:42 2021",
     "cpus": [
         {
             "implementer": 65,
@@ -197,7 +197,7 @@
         {
             "implementer": 65,
             "name": "Cortex-R82",
-            "arch": "armv8-r",
+            "arch": "armv8.4-r",
             "cpuid": "0x41d15"
         }
     ]
