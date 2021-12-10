@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Cortex-A65",
     "architecture": "armv8-a",
@@ -405,6 +405,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "Odd performance counter chain mode"
         },
@@ -459,7 +460,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 29,
             "trace_lsb": 29,
@@ -515,7 +516,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 33,
             "trace_lsb": 33,
@@ -530,7 +531,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 34,
             "trace_lsb": 34,
@@ -545,7 +546,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 35,
             "trace_lsb": 35,
@@ -1037,7 +1038,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "description": "Attributable Level 3 unified cache access, read. This event counts for any cacheable read transaction returning data from the SCU. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1051,7 +1052,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "description": "Attributable Level 3 unified cache refill, read. This event duplicates L3D_CACHE_REFILL. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1121,7 +1122,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
-            "component": "L2",
+            "component": "L3",
             "description": "Level 3 cache refill due to prefetch. This event counts any linefills from the hardware prefetcher which cause an allocation into the L3 cache. Note It might not be possible to distinguish between both hardware and software prefetches and also which prefetches cause an allocation. If so, only hardware prefetches should be counted, regardless of whether they allocate. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1281,7 +1282,6 @@
             ],
             "name": "IFU_MICRO_COND_MISPRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
@@ -1294,7 +1294,6 @@
             ],
             "name": "IFU_MICRO_CADDR_MISPRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
@@ -1307,7 +1306,6 @@
             ],
             "name": "IFU_MICRO_HIT",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor hit with immediate redirect"
@@ -1331,7 +1329,6 @@
             ],
             "name": "IFU_MICRO_CORRECTION",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor correction"
@@ -1353,7 +1350,6 @@
             ],
             "name": "IFU_MICRO_NO_PRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor miss"
@@ -1595,6 +1591,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L2",
             "description": "Unattributable Level 3 data cache access. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 data cache read access"
         },
         {
@@ -1607,6 +1604,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L2",
             "description": "Unattributable Level 3 data cache access, read. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 data cache read access"
         },
         {
@@ -1619,6 +1617,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L2",
             "description": "Unattributable Level 3 data or unified cache allocation without refill. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 cache allocate without refill"
         },
         {
@@ -1631,6 +1630,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L2",
             "description": "Unattributable Level 3 data or unified cache refill. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 cache refill"
         },
         {

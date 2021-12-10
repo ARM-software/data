@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Neoverse N1",
     "architecture": "armv8.2-a",
@@ -384,6 +384,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "event_bits": 1,
             "event_lsb": 39,
@@ -444,7 +445,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 44,
             "trace_lsb": 44,
@@ -458,7 +459,7 @@
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 45,
             "trace_lsb": 45,
@@ -504,7 +505,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 157,
             "trace_lsb": 157,
@@ -520,6 +521,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L3",
             "event_bits": 2,
             "event_lsb": 158,
             "trace_lsb": 158,
@@ -535,6 +537,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 160,
             "trace_lsb": 160,
@@ -1708,6 +1711,46 @@
             "event_lsb": 166,
             "trace_lsb": 166,
             "description": "L3 cache read"
+        },
+        {
+            "code": 16384,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_POP",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Population"
+        },
+        {
+            "code": 16385,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken"
+        },
+        {
+            "code": 16386,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FILTRATE",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken and not removed by filtering"
+        },
+        {
+            "code": 16387,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_COLLISION",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample collided with previous sample"
         }
     ]
 }

@@ -104,6 +104,11 @@
                         "type": "boolean",
                         "default": false
                     },
+                    "for_driver": {
+                        "description": "True if this event is for internal use by a PMU driver (e.g. CHAIN)",
+                        "type": "boolean",
+                        "default": false
+                    },
                     "component": {
                         "description": "For non-architectural events, the microarchitecture component",
                         "type": "string"

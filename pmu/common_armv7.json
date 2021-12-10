@@ -1,12 +1,12 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Jun 24 09:49:44 2021",
-    "cpu": "common",
+    "timestamp": "Thu Dec  2 15:42:32 2021",
+    "cpu": "common ARMv7.0",
     "architecture": "armv7-a",
     "pmu_architecture": "pmuv2",
     "refs": [
         {
-            "ref": "ARM ARM",
+            "ref": "ARM ARM v7",
             "public": true
         }
     ],

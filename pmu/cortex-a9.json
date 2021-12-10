@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:32 2021",
     "implementer": "A",
     "cpu": "Cortex-A9",
     "architecture": "armv7-a",
@@ -39,6 +39,7 @@
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "INS",
+            "component": "L1I",
             "description": "Instruction cache miss"
         },
         {
@@ -50,6 +51,7 @@
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "INS",
+            "component": "L1ITLB",
             "description": "Instruction micro TLB miss"
         },
         {
@@ -61,6 +63,7 @@
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
+            "component": "L1D",
             "description": "Data cache miss"
         },
         {
@@ -73,6 +76,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
+            "component": "L1D",
             "description": "Data cache access"
         },
         {
@@ -84,6 +88,7 @@
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
+            "component": "L1DTLB",
             "description": "Data micro TLB miss"
         },
         {
@@ -208,7 +213,6 @@
                 2
             ],
             "name": "BR_PRED",
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Predictable branches"
@@ -410,7 +414,6 @@
                 2
             ],
             "impdef": true,
-            "architectural": false,
             "type": "EXC",
             "component": "BPU",
             "description": "Predictable function returns. Counts the number of procedure returns whose condition codes do not fail, excluding all returns from exception. This count includes procedure returns that are flushed because of a previous load/store that aborts late. Only the following instructions are reported: BX R14 MOV PC LR POP {..,pc} LDR pc,[sp],#offset. The following instructions are not reported: LDMIA R9!,{..,PC} (ThumbEE state only) LDR PC,[R9],#offset (ThumbEE state only) BX R0 (Rm != R14) MOV PC,R0 (Rm != R14) LDM SP,{...,PC} (writeback not specified) LDR PC,[SP,#offset] (wrong addressing mode)"

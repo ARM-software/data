@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Cortex-A34",
     "architecture": "armv8-a",
@@ -414,6 +414,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "Odd performance counter chain mode"
         },

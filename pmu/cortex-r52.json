@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Thu Dec  2 15:42:34 2021",
     "implementer": "A",
     "cpu": "Cortex-R52",
     "architecture": "armv8-r",
@@ -337,6 +337,7 @@
                 1
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For evennumbered counters, there is no increment"
         },
@@ -374,7 +375,7 @@
                 1
             ],
             "name": "STALL_FRONTEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation issued due to the front end"
         },
         {
@@ -384,7 +385,7 @@
                 1
             ],
             "name": "STALL_BACKEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation issued due to the back end"
         },
         {
@@ -1021,7 +1022,7 @@
             "architectural": false,
             "type": "EXC",
             "subtype": "READ",
-            "component": "L1D",
+            "component": "BUS",
             "event_bits": 1,
             "errevent_lsb": 6,
             "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP). - - - - [7] Correctable L1 instruction cache (data or tag) memory error. - - - - [8] Correctable L1 data cache (data or tag) memory error. - - - - [9] Correctable ATCM, BTCM, or CTCM memory error. - - - - [10] Fatal ATCM, BTCM, or CTCM memory error. - - - - [11] Correctable flash memory error. - - - - [12] Fatal flash memory error. - - - - [13] Timeout for AXIM bus. - - - - [14] Timeout for Flash bus. - - - - [15] Timeout for LLPP bus. - - - - [16] Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error. - - - - [17] Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full. - - - - [18] Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered). - - - - [19] A memory or bus fatal error was synchronously detected in Hyp mode. - - - - [20] An abort exception was taken because an EL2-controlled MPU fault generated an abort. - - - - [21] An abort exception was taken because an EL1-controlled MPU fault generated an abort. - - - - [22] An Undefined exception was taken due to any cause. - - - - [23] A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU. - - - - [24] Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times. - - - - [25] Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
@@ -1180,7 +1181,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Barrier stalled because store buffer was busy with another barrier"
         },
         {

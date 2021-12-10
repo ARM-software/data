@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Neoverse V1",
     "architecture": "armv8.4-a",
@@ -384,6 +384,7 @@
             ],
             "trm_name": "COUNTER_OVERFLOW",
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "event_bits": 1,
             "event_lsb": 48,
@@ -445,7 +446,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 60,
             "trace_lsb": 60,
@@ -459,7 +460,7 @@
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 61,
             "trace_lsb": 61,
@@ -505,7 +506,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 66,
             "trace_lsb": 66,
@@ -703,7 +704,7 @@
                 1
             ],
             "name": "STALL_SLOT_BACKEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot due to the backend"
         },
         {
@@ -713,7 +714,7 @@
                 1
             ],
             "name": "STALL_SLOT_FRONTEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot due to the frontend"
         },
         {
@@ -723,7 +724,7 @@
                 1
             ],
             "name": "STALL_SLOT",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot"
         },
         {
@@ -1791,6 +1792,46 @@
             "description": "L3 cache read"
         },
         {
+            "code": 16384,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_POP",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Population"
+        },
+        {
+            "code": 16385,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken"
+        },
+        {
+            "code": 16386,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FILTRATE",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken and not removed by filtering"
+        },
+        {
+            "code": 16387,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_COLLISION",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample collided with previous sample"
+        },
+        {
             "code": 16388,
             "refs": [
                 0,
@@ -1809,7 +1850,7 @@
             ],
             "name": "STALL_BACKEND_MEM",
             "architectural": false,
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent due to the backend and memory stalls"
         },
         {

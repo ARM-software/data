@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:32 2021",
     "implementer": "A",
     "cpu": "Cortex-A8",
     "architecture": "armv7-a",
@@ -20,6 +20,7 @@
                 0
             ],
             "name": "SW_INCR",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments on writes to the PMSWINC register"
         },
@@ -87,6 +88,7 @@
                 0
             ],
             "name": "LD_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-reading instruction"
         },
@@ -96,6 +98,7 @@
                 0
             ],
             "name": "ST_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-writing instruction, including SWP. The counter does not increment for a Store-Exclusive instruction that fails"
         },
@@ -115,6 +118,7 @@
                 0
             ],
             "name": "EXC_TAKEN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each exception taken.  The counter counts only the processor exceptions. It does not count untrapped floating-point exceptions or ThumbEE null checks and index checks"
         },
@@ -124,6 +128,7 @@
                 0
             ],
             "name": "EXC_RETURN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each executed exception return instruction"
         },
@@ -133,6 +138,7 @@
                 0
             ],
             "name": "CID_WRITE_RETIRED",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments for every write to the CONTEXTIDR"
         },
@@ -142,6 +148,7 @@
                 0
             ],
             "name": "PC_WRITE_RETIRED",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
         },
@@ -171,6 +178,7 @@
                 0
             ],
             "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter counts each memory-reading instruction or memory-writing instruction that accesses an unaligned address"
         },
@@ -207,6 +215,7 @@
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
+            "component": "L1D",
             "description": "Any write buffer full cycle"
         },
         {
@@ -217,8 +226,9 @@
             "name": "L1D_CACHE_WR",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
-            "component": "L2",
+            "component": "L1D",
             "description": "Any store that is merged in the L2 memory system"
         },
         {
@@ -232,7 +242,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "EVICT",
-            "component": "L2",
+            "component": "L1D",
             "description": "Any bufferable store transaction from load/store to L2 cache, excluding eviction or cast out data"
         },
         {
@@ -246,7 +256,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
-            "component": "L2",
+            "component": "L1D",
             "description": "Any accesses to the L2 cache"
         },
         {
@@ -259,7 +269,7 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "L2",
+            "component": "L1D",
             "description": "Any cacheable miss in the L2 cache"
         },
         {
@@ -270,7 +280,9 @@
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
+            "component": "L1D",
             "description": "The number of AXI read data transfers"
         },
         {
@@ -281,7 +293,9 @@
             "name": "L1D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
+            "component": "L1D",
             "description": "The number of AXI write data transfers"
         },
         {
@@ -292,7 +306,9 @@
             "name": "L1D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
+            "component": "L1D",
             "description": "Any replay event in the memory system"
         },
         {
@@ -303,7 +319,9 @@
             "name": "L1D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
+            "component": "L1D",
             "description": "Any unaligned memory access that results in a replay"
         },
         {
@@ -352,7 +370,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
-            "component": "L1D",
+            "component": "L1DTLB",
             "description": "Any NEON access that hits in the L1 data cache"
         },
         {
@@ -366,7 +384,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
-            "component": "L1D",
+            "component": "L1DTLB",
             "description": "Any NEON cacheable data accesses for L1 data cache"
         },
         {
@@ -380,7 +398,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
-            "component": "L2",
+            "component": "L1DTLB",
             "description": "Any L2 cache accesses as a result of a NEON memory access"
         },
         {
@@ -393,7 +411,7 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "L2",
+            "component": "L1DTLB",
             "description": "Any NEON hit in the L2 cache"
         },
         {
@@ -407,7 +425,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
-            "component": "L1I",
+            "component": "L2",
             "description": "Any L1 instruction cache access, excluding CP15 cache accesses"
         },
         {
@@ -421,7 +439,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
-            "component": "BPU",
+            "component": "L2",
             "description": "Any return stack misprediction because of incorrect target address for a taken return stack pop"
         },
         {
@@ -435,7 +453,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
-            "component": "BPU",
+            "component": "L2",
             "description": "Two forms of branch direction misprediction: branch predicted taken, but was not taken and branch predicted not taken, but was taken"
         },
         {
@@ -448,7 +466,7 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BPU",
+            "component": "L2",
             "description": "Any predictable branch that is predicted to be taken"
         },
         {
@@ -457,7 +475,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Any predictable branch that is executed and taken"
@@ -482,6 +499,7 @@
             "impdef": true,
             "architectural": false,
             "type": "INS",
+            "component": "L2",
             "description": "Increment for every cycle that no instructions are available for issue"
         },
         {
@@ -494,6 +512,7 @@
             "impdef": true,
             "architectural": false,
             "type": "INS",
+            "component": "L2",
             "description": "For every cycle, this event counts the number of instructions issued in that cycle. Multi-cycle instructions are only counted once"
         },
         {
@@ -506,6 +525,7 @@
             "impdef": true,
             "architectural": false,
             "type": "CYCLE",
+            "component": "L2",
             "description": "Number of cycles the processor stalls waiting on MRC data from NEON"
         },
         {
@@ -536,6 +556,7 @@
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[0]"
         },
@@ -547,6 +568,7 @@
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[1]"
         },
@@ -558,6 +580,7 @@
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from both external input sources PMUEXTIN[0] and PMUEXTIN[1]"
         }

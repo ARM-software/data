@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Cortex-A55",
     "architecture": "armv8.2-a",
@@ -455,6 +455,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "Odd performance counter chain mode"
         },
@@ -513,7 +514,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 29,
             "trace_lsb": 29,
@@ -573,7 +574,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 33,
             "trace_lsb": 33,
@@ -589,7 +590,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 34,
             "trace_lsb": 34,
@@ -605,7 +606,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "event_bits": 1,
             "event_lsb": 35,
             "trace_lsb": 35,
@@ -1099,7 +1100,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "description": "Attributable Level 3 unified cache access, read. This event counts for any cacheable read transaction returning data from the SCU. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1114,7 +1115,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L2",
+            "component": "L3",
             "description": "Attributable Level 3 unified cache refill, read.This event duplicates L3D_CACHE_REFILL. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1128,7 +1129,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
-            "component": "L2",
+            "component": "L3",
             "description": "Level 3 cache refill due to prefetch. This event counts any linefills from the hardware prefetcher which cause an allocation into the L3 cache. Note It might not be possible to both distinguish hardware vs software prefetches and also which prefetches cause an allocation. If so, only hardware prefetches should be counted, regardless of whether they allocate. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
@@ -1234,7 +1235,6 @@
             ],
             "name": "BR_COND_PRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Predicted conditional branch executed.This event counts when any branch which can be predicted by the conditional predictor is retired. This event still counts when branch prediction is disabled due to the MMU being off"
@@ -1275,7 +1275,6 @@
             ],
             "name": "BR_COND_MIS_PRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Conditional branch mis-predicted.This event counts when any branch which can be predicted by the conditional predictor is retired, and has mis-predicted the condition. This event still counts when branch prediction is disabled due to the MMU being off. Conditional indirect branches which correctly predicted the condition but mis-predicted on the address do not count this event"
@@ -1288,7 +1287,6 @@
             ],
             "name": "BR_INDIRECT_ADDR_PRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Indirect branch with predicted address executed.This event counts when any indirect branch which can be predicted by the BTAC is retired, was taken and correctly predicted the condition. This event still counts when branch prediction is disabled due to the MMU being off"
@@ -1301,7 +1299,6 @@
             ],
             "name": "BR_RETURN_ADDR_PRED",
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Procedure return with predicted address executed.This event counts when any procedure return which can be predicted by the CRS is retired, was taken and correctly predicted the condition. This event still counts when branch prediction is disabled due to the MMU being off"
@@ -1426,7 +1423,7 @@
             "name": "STALL_FRONTEND_CACHE",
             "impdef": true,
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued due to the frontend, cache miss.This event counts every cycle the DPU IQ is empty and there is an instruction cache miss being processed"
         },
         {
@@ -1438,7 +1435,7 @@
             "name": "STALL_FRONTEND_TLB",
             "impdef": true,
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued due to the frontend, TLB miss.This event counts every cycle the DPU IQ is empty and there is an instruction L1 TLB miss being processed"
         },
         {
@@ -1474,7 +1471,7 @@
             "name": "STALL_BACKEND_ILOCK_AGU",
             "impdef": true,
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued due to the backend, interlock, AGU.This event counts every cycle that issue is stalled and there is an interlock that is due to a load/store instruction waiting for data to calculate the address in the AGU. Stall cycles due to a stall in Wr (typically awaiting load data) are excluded"
         },
         {
@@ -1486,7 +1483,7 @@
             "name": "STALL_BACKEND_ILOCK_FPU",
             "impdef": true,
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued due to the backend, interlock, FPU.This event counts every cycle that issue is stalled and there is an interlock that is due to an FPU/NEON instruction. Stall cycles due to a stall in the Wr stage (typically awaiting load data) are excluded"
         },
         {

@@ -1,12 +1,16 @@
 {
     "_type": "Events",
     "timestamp": "Thu Dec  2 15:42:32 2021",
-    "cpu": "common ARMv8.0",
-    "architecture": "armv8-a",
+    "cpu": "common ARMv9.0",
+    "architecture": "armv9-a",
     "pmu_architecture": "pmuv3",
     "refs": [
         {
             "ref": "ARM ARM v8",
+            "public": true
+        },
+        {
+            "ref": "ARM v9 Supplement",
             "public": true
         }
     ],
@@ -1749,6 +1753,126 @@
             "subtype": "READ",
             "component": "L3",
             "description": "Level 3 data cache long-latency read miss"
+        },
+        {
+            "code": 16396,
+            "refs": [
+                1
+            ],
+            "name": "TRB_WRAP",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Trace buffer current write pointer wrapped"
+        },
+        {
+            "code": 16397,
+            "refs": [
+                1
+            ],
+            "name": "PMU_OVFS",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "PMU overflow, counters accessible to EL1 and EL0"
+        },
+        {
+            "code": 16398,
+            "refs": [
+                1
+            ],
+            "name": "TRB_TRIG",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Trace buffer Trigger Event"
+        },
+        {
+            "code": 16399,
+            "refs": [
+                1
+            ],
+            "name": "PMU_HOVFS",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "PMU overflow, counters reserved for use by EL2"
+        },
+        {
+            "code": 16400,
+            "refs": [
+                1
+            ],
+            "name": "TRCEXTOUT0",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PE Trace Unit external output 0"
+        },
+        {
+            "code": 16401,
+            "refs": [
+                1
+            ],
+            "name": "TRCEXTOUT1",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PE Trace Unit external output 1"
+        },
+        {
+            "code": 16402,
+            "refs": [
+                1
+            ],
+            "name": "TRCEXTOUT2",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PE Trace Unit external output 2"
+        },
+        {
+            "code": 16403,
+            "refs": [
+                1
+            ],
+            "name": "TRCEXTOUT3",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "PE Trace Unit external output 3"
+        },
+        {
+            "code": 16408,
+            "refs": [
+                1
+            ],
+            "name": "CTI_TRIGOUT4",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Cross-trigger Interface output trigger 4"
+        },
+        {
+            "code": 16409,
+            "refs": [
+                1
+            ],
+            "name": "CTI_TRIGOUT5",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Cross-trigger Interface output trigger 5 "
+        },
+        {
+            "code": 16410,
+            "refs": [
+                1
+            ],
+            "name": "CTI_TRIGOUT6",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Cross-trigger Interface output trigger 6"
+        },
+        {
+            "code": 16411,
+            "refs": [
+                1
+            ],
+            "name": "CTI_TRIGOUT7",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Cross-trigger Interface output trigger 7"
         },
         {
             "code": 16416,
@@ -4098,6 +4222,16 @@
             "type": "UEVT",
             "component": "BPU",
             "description": "Instruction architecturally excecuted, predicted branch"
+        },
+        {
+            "code": 33055,
+            "refs": [
+                1
+            ],
+            "name": "BRB_FILTRATE",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Branch Record captured"
         },
         {
             "code": 33056,

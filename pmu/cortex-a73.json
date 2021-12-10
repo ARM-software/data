@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Cortex-A73",
     "architecture": "armv8-a",
@@ -385,6 +385,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For evennumbered counters there is no increment"
         },
@@ -846,7 +847,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration for which all slots in the Load-Store Unit are busy"
         },
         {
@@ -859,7 +859,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration for which all slots in the load-store issue queue are busy"
         },
         {
@@ -872,7 +871,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration for which all slots in the data processing issue queue are busy"
         },
         {
@@ -885,7 +883,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration for which all slots in the Data Engine issue queue are busy"
         },
         {

@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Tue Oct 12 08:34:42 2021",
+    "timestamp": "Fri Dec 10 14:38:10 2021",
     "cpus": [
         {
             "implementer": 65,
@@ -181,6 +181,30 @@
             "name": "Cortex-X2",
             "arch": "armv9-a",
             "cpuid": "0x41d48"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R4",
+            "arch": "armv7-r",
+            "cpuid": "0x41c14"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R5",
+            "arch": "armv7-r",
+            "cpuid": "0x41c15"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R7",
+            "arch": "armv7-r",
+            "cpuid": "0x41c17"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R8",
+            "arch": "armv7-r",
+            "cpuid": "0x41c18"
         },
         {
             "implementer": 65,

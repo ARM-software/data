@@ -1,12 +1,16 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Neoverse E1",
     "architecture": "armv8.2-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
+        {
+            "ref": "Neoverse E1 TRM",
+            "public": true
+        },
         {
             "ref": "gator events-Neoverse-E1.xml",
             "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Neoverse-E1.xml",
@@ -17,16 +21,17 @@
         {
             "code": 0,
             "refs": [
-                0
+                1
             ],
             "name": "SW_INCR",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments on writes to the PMSWINC register"
         },
         {
             "code": 1,
             "refs": [
-                0
+                1
             ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
@@ -38,7 +43,7 @@
         {
             "code": 2,
             "refs": [
-                0
+                1
             ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
@@ -49,7 +54,7 @@
         {
             "code": 3,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
@@ -61,7 +66,7 @@
         {
             "code": 4,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE",
             "architectural": false,
@@ -73,7 +78,7 @@
         {
             "code": 5,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
@@ -84,25 +89,27 @@
         {
             "code": 6,
             "refs": [
-                0
+                1
             ],
             "name": "LD_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-reading instruction"
         },
         {
             "code": 7,
             "refs": [
-                0
+                1
             ],
             "name": "ST_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-writing instruction. DC ZVA is counted as a store. The counter does not increment for a Store-Exclusive instruction that fails"
         },
         {
             "code": 8,
             "refs": [
-                0
+                1
             ],
             "name": "INST_RETIRED",
             "architectural": true,
@@ -112,43 +119,47 @@
         {
             "code": 9,
             "refs": [
-                0
+                1
             ],
             "name": "EXC_TAKEN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each exception taken"
         },
         {
             "code": 10,
             "refs": [
-                0
+                1
             ],
             "name": "EXC_RETURN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each executed exception return instruction"
         },
         {
             "code": 11,
             "refs": [
-                0
+                1
             ],
             "name": "CID_WRITE_RETIRED",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments for every write to the CONTEXTIDR"
         },
         {
             "code": 12,
             "refs": [
-                0
+                1
             ],
             "name": "PC_WRITE_RETIRED",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
         },
         {
             "code": 13,
             "refs": [
-                0
+                1
             ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
@@ -158,7 +169,7 @@
         {
             "code": 14,
             "refs": [
-                0
+                1
             ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
@@ -168,7 +179,7 @@
         {
             "code": 16,
             "refs": [
-                0
+                1
             ],
             "name": "BR_MIS_PRED",
             "architectural": false,
@@ -180,7 +191,7 @@
         {
             "code": 17,
             "refs": [
-                0
+                1
             ],
             "name": "CPU_CYCLES",
             "architectural": false,
@@ -190,7 +201,7 @@
         {
             "code": 18,
             "refs": [
-                0
+                1
             ],
             "name": "BR_PRED",
             "architectural": false,
@@ -201,7 +212,7 @@
         {
             "code": 19,
             "refs": [
-                0
+                1
             ],
             "name": "MEM_ACCESS",
             "architectural": false,
@@ -213,7 +224,7 @@
         {
             "code": 20,
             "refs": [
-                0
+                1
             ],
             "name": "L1I_CACHE",
             "architectural": false,
@@ -225,7 +236,7 @@
         {
             "code": 21,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
@@ -237,7 +248,7 @@
         {
             "code": 22,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE",
             "architectural": false,
@@ -249,7 +260,7 @@
         {
             "code": 23,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
@@ -261,7 +272,7 @@
         {
             "code": 24,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
@@ -273,18 +284,19 @@
         {
             "code": 25,
             "refs": [
-                0
+                1
             ],
             "name": "BUS_ACCESS",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "BUS",
             "description": "The counter counts memory read operations and memory write operations that access outside of the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
         },
         {
             "code": 26,
             "refs": [
-                0
+                1
             ],
             "name": "MEMORY_ERROR",
             "architectural": false,
@@ -294,7 +306,7 @@
         {
             "code": 27,
             "refs": [
-                0
+                1
             ],
             "name": "INST_SPEC",
             "architectural": false,
@@ -304,37 +316,40 @@
         {
             "code": 28,
             "refs": [
-                0
+                1
             ],
             "name": "TTBR_WRITE_RETIRED",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter counts writes to the translation table base registers, TTBR0 and TTBR1"
         },
         {
             "code": 29,
             "refs": [
-                0
+                1
             ],
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "CYCLE",
+            "component": "BUS",
             "description": "The counter increments on every cycle of the interface at the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
         },
         {
             "code": 31,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L1D",
             "description": "The counter increments on every attributable write that writes an entire line into the Level 1 cache without fetching from outside the Level 1 cache"
         },
         {
             "code": 32,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_ALLOCATE",
             "architectural": false,
@@ -346,19 +361,18 @@
         {
             "code": 33,
             "refs": [
-                0
+                1
             ],
             "name": "BR_RETIRED",
-            "architectural": false,
+            "architectural": true,
             "type": "UEVT",
             "subtype": "MISPREDICT",
-            "component": "BPU",
             "description": "The counter counts all branches on the architecturally executed path that would incur cost if mispredicted"
         },
         {
             "code": 34,
             "refs": [
-                0
+                1
             ],
             "name": "BR_MIS_PRED_RETIRED",
             "architectural": false,
@@ -369,7 +383,7 @@
         {
             "code": 35,
             "refs": [
-                0
+                1
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
@@ -379,7 +393,7 @@
         {
             "code": 36,
             "refs": [
-                0
+                1
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
@@ -389,7 +403,7 @@
         {
             "code": 37,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_TLB",
             "architectural": false,
@@ -400,7 +414,7 @@
         {
             "code": 38,
             "refs": [
-                0
+                1
             ],
             "name": "L1I_TLB",
             "architectural": false,
@@ -411,43 +425,43 @@
         {
             "code": 41,
             "refs": [
-                0
+                1
             ],
             "name": "L3D_CACHE_ALLOCATE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "description": "The counter increments on every attributable write that writes an entire line into the Level 3 cache without fetching from outside the Level 1, Level 2, or Level 3 cache"
         },
         {
             "code": 42,
             "refs": [
-                0
+                1
             ],
             "name": "L3D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
-            "component": "L2",
+            "component": "L3",
             "description": "The counter counts each access counted by 'L3 Data Cache: Access' which causes a demand refill of any of the Level 1, Level 2. or Level 3 caches from outside the Level 1, Level 2, and Level 3 caches. A refill includes any access that causes data to be fetched from outside the cache, even if the data is ultimately not allocated into the cache. For example, data might be fetched into a buffer but then discarded, rather than being allocated into a cache. These buffers are treated as part of the cache"
         },
         {
             "code": 43,
             "refs": [
-                0
+                1
             ],
             "name": "L3D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "description": "The counter counts each memory read operation or memory write operation that causes a cache access to at least the Level 3 data or unified cache. If the cache is shared, only events attributable to this PE are counted. If the cache is not shared, all events are counted. Each access to a cache line is counted including re fills of and write-backs from the Level 1 or Level 2 data, instruction, or unified caches. Each access to other Level 3 data or unified memory structures, such as refill buffers, write buffers, and write-back buffers, is also counted"
         },
         {
             "code": 45,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_TLB_REFILL",
             "architectural": false,
@@ -458,7 +472,7 @@
         {
             "code": 47,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_TLB",
             "architectural": false,
@@ -469,7 +483,7 @@
         {
             "code": 52,
             "refs": [
-                0
+                1
             ],
             "name": "DTLB_WALK",
             "architectural": false,
@@ -480,7 +494,7 @@
         {
             "code": 53,
             "refs": [
-                0
+                1
             ],
             "name": "ITLB_WALK",
             "architectural": false,
@@ -491,7 +505,7 @@
         {
             "code": 54,
             "refs": [
-                0
+                1
             ],
             "name": "LL_CACHE_RD",
             "architectural": false,
@@ -502,7 +516,7 @@
         {
             "code": 55,
             "refs": [
-                0
+                1
             ],
             "name": "LL_CACHE_MISS_RD",
             "architectural": false,
@@ -513,16 +527,17 @@
         {
             "code": 56,
             "refs": [
-                0
+                1
             ],
             "name": "REMOTE_ACCESS_RD",
+            "architectural": false,
             "type": "UEVT",
             "description": "As 'Multi-socket Remote Access: Access', but counts only memory read operations. "
         },
         {
             "code": 64,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
@@ -536,7 +551,7 @@
         {
             "code": 65,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
@@ -550,7 +565,7 @@
         {
             "code": 66,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_REFILL_RD",
             "recommended": true,
@@ -564,7 +579,7 @@
         {
             "code": 67,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_REFILL_WR",
             "recommended": true,
@@ -578,7 +593,7 @@
         {
             "code": 68,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_REFILL_INNER",
             "recommended": true,
@@ -592,7 +607,7 @@
         {
             "code": 69,
             "refs": [
-                0
+                1
             ],
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
@@ -606,7 +621,7 @@
         {
             "code": 80,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_RD",
             "recommended": true,
@@ -620,7 +635,7 @@
         {
             "code": 81,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_WR",
             "recommended": true,
@@ -634,7 +649,7 @@
         {
             "code": 82,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_REFILL_RD",
             "recommended": true,
@@ -648,7 +663,7 @@
         {
             "code": 83,
             "refs": [
-                0
+                1
             ],
             "name": "L2D_CACHE_REFILL_WR",
             "recommended": true,
@@ -662,7 +677,7 @@
         {
             "code": 96,
             "refs": [
-                0
+                1
             ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
@@ -676,7 +691,7 @@
         {
             "code": 97,
             "refs": [
-                0
+                1
             ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
@@ -690,7 +705,7 @@
         {
             "code": 102,
             "refs": [
-                0
+                1
             ],
             "name": "MEM_ACCESS_RD",
             "recommended": true,
@@ -701,7 +716,7 @@
         {
             "code": 103,
             "refs": [
-                0
+                1
             ],
             "name": "MEM_ACCESS_WR",
             "recommended": true,
@@ -712,7 +727,7 @@
         {
             "code": 104,
             "refs": [
-                0
+                1
             ],
             "name": "UNALIGNED_LD_SPEC",
             "recommended": true,
@@ -723,7 +738,7 @@
         {
             "code": 105,
             "refs": [
-                0
+                1
             ],
             "name": "UNALIGNED_ST_SPEC",
             "recommended": true,
@@ -734,7 +749,7 @@
         {
             "code": 106,
             "refs": [
-                0
+                1
             ],
             "name": "UNALIGNED_LDST_SPEC",
             "recommended": true,
@@ -745,84 +760,91 @@
         {
             "code": 112,
             "refs": [
-                0
+                1
             ],
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-reading instructions, as defined by the 'Instructions (Executed): Load' event"
         },
         {
             "code": 113,
             "refs": [
-                0
+                1
             ],
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-writing instructions, as defined by the 'Instructions (Executed): Store' event"
         },
         {
             "code": 114,
             "refs": [
-                0
+                1
             ],
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-reading and memory-writing instructions, as defined by the 'Instructions (Executed): Load' and 'Instructions (Executed): Store' events"
         },
         {
             "code": 115,
             "refs": [
-                0
+                1
             ],
             "name": "DP_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only integer data-processing instructions"
         },
         {
             "code": 116,
             "refs": [
-                0
+                1
             ],
             "name": "ASE_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only Advanced SIMD data-processing instructions"
         },
         {
             "code": 117,
             "refs": [
-                0
+                1
             ],
             "name": "VFP_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only floating-point data-processing instructions"
         },
         {
             "code": 119,
             "refs": [
-                0
+                1
             ],
             "name": "CRYPTO_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only Cryptographic instructions, except PMULL and VMULL"
         },
         {
             "code": 120,
             "refs": [
-                0
+                1
             ],
             "name": "BR_IMMED_SPEC",
             "recommended": true,
@@ -834,7 +856,7 @@
         {
             "code": 121,
             "refs": [
-                0
+                1
             ],
             "name": "BR_RETURN_SPEC",
             "recommended": true,
@@ -846,7 +868,7 @@
         {
             "code": 122,
             "refs": [
-                0
+                1
             ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
@@ -858,7 +880,7 @@
         {
             "code": 124,
             "refs": [
-                0
+                1
             ],
             "name": "ISB_SPEC",
             "recommended": true,
@@ -870,7 +892,7 @@
         {
             "code": 134,
             "refs": [
-                0
+                1
             ],
             "name": "EXC_IRQ",
             "recommended": true,
@@ -881,7 +903,7 @@
         {
             "code": 135,
             "refs": [
-                0
+                1
             ],
             "name": "EXC_FIQ",
             "recommended": true,
@@ -892,7 +914,7 @@
         {
             "code": 160,
             "refs": [
-                0
+                1
             ],
             "name": "L3D_CACHE_RD",
             "recommended": true,
@@ -906,7 +928,7 @@
         {
             "code": 162,
             "refs": [
-                0
+                1
             ],
             "name": "L3D_CACHE_REFILL_RD",
             "recommended": true,
@@ -920,7 +942,7 @@
         {
             "code": 192,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -929,7 +951,7 @@
         {
             "code": 193,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -938,7 +960,7 @@
         {
             "code": 194,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -948,7 +970,7 @@
         {
             "code": 195,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -960,7 +982,7 @@
         {
             "code": 196,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -972,7 +994,7 @@
         {
             "code": 197,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -984,7 +1006,7 @@
         {
             "code": 198,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -994,7 +1016,7 @@
         {
             "code": 199,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1006,7 +1028,7 @@
         {
             "code": 200,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1018,18 +1040,19 @@
         {
             "code": 201,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L3",
             "description": "Level 3 cache write streaming mode"
         },
         {
             "code": 202,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1041,7 +1064,7 @@
         {
             "code": 203,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1053,7 +1076,7 @@
         {
             "code": 204,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1065,7 +1088,7 @@
         {
             "code": 205,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1077,7 +1100,7 @@
         {
             "code": 206,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1089,7 +1112,7 @@
         {
             "code": 207,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1101,7 +1124,7 @@
         {
             "code": 208,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1112,7 +1135,7 @@
         {
             "code": 209,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1123,10 +1146,9 @@
         {
             "code": 210,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
@@ -1135,10 +1157,9 @@
         {
             "code": 211,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
@@ -1147,10 +1168,9 @@
         {
             "code": 212,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor hit with immediate redirect"
@@ -1158,7 +1178,7 @@
         {
             "code": 214,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1169,10 +1189,9 @@
         {
             "code": 215,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor correction"
@@ -1180,7 +1199,7 @@
         {
             "code": 216,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "INS",
@@ -1189,10 +1208,9 @@
         {
             "code": 217,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Micro-predictor miss. "
@@ -1200,7 +1218,7 @@
         {
             "code": 218,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1210,7 +1228,7 @@
         {
             "code": 219,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1220,7 +1238,7 @@
         {
             "code": 220,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -1229,7 +1247,7 @@
         {
             "code": 221,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -1238,7 +1256,7 @@
         {
             "code": 222,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1249,7 +1267,7 @@
         {
             "code": 223,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1260,7 +1278,7 @@
         {
             "code": 224,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -1269,7 +1287,7 @@
         {
             "code": 225,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1280,7 +1298,7 @@
         {
             "code": 226,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1291,7 +1309,7 @@
         {
             "code": 227,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "INS",
@@ -1300,7 +1318,7 @@
         {
             "code": 228,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1310,7 +1328,7 @@
         {
             "code": 232,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "INS",
@@ -1319,7 +1337,7 @@
         {
             "code": 233,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1331,7 +1349,7 @@
         {
             "code": 234,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1343,7 +1361,7 @@
         {
             "code": 235,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -1352,7 +1370,7 @@
         {
             "code": 236,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -1361,7 +1379,7 @@
         {
             "code": 237,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1371,7 +1389,7 @@
         {
             "code": 240,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1383,7 +1401,7 @@
         {
             "code": 241,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1395,7 +1413,7 @@
         {
             "code": 242,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -1407,57 +1425,101 @@
         {
             "code": 243,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L3",
             "description": "Unattributable Level 3 data cache access. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 data cache read access"
         },
         {
             "code": 244,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L3",
             "description": "Unattributable Level 3 data cache access, read. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 data cache read access"
         },
         {
             "code": 245,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L3",
             "description": "Unattributable Level 3 data or unified cache allocation without refill. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 cache allocate without refill"
         },
         {
             "code": 246,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L3",
             "description": "Unattributable Level 3 data or unified cache refill. This event occurs when a requestor outside the PE makes a coherency request that results in level 3 cache refill"
         },
         {
             "code": 247,
             "refs": [
-                0
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L2",
             "description": "Level 2 cache stash dropped. This event counts on each stash request received from the interconnect or ACP, that is targeting L2 and gets dropped due to lack of buffer space to hold the request"
+        },
+        {
+            "code": 16384,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_POP",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Population"
+        },
+        {
+            "code": 16385,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken"
+        },
+        {
+            "code": 16386,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FILTRATE",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken and not removed by filtering"
+        },
+        {
+            "code": 16387,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_COLLISION",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample collided with previous sample"
         }
     ]
 }

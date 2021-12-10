@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:04 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Neoverse N2",
     "architecture": "armv9-a",
@@ -313,6 +313,7 @@
             ],
             "trm_name": "COUNTER_OVERFLOW",
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "For odd-numbered counters, this event increments the count by one for each overflow of the preceding even-numbered counter. For even-numbered counters, there is no increment"
         },
@@ -362,7 +363,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued because of the frontend The counter counts on any cycle when there are no fetched instructions available to dispatch"
         },
         {
@@ -373,7 +374,7 @@
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "No operation issued because of the backend The counter counts on any cycle fetched instructions are not dispatched due to resource constraints"
         },
         {
@@ -410,7 +411,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L2",
+            "component": "L3",
             "description": "Attributable L3 cache allocation without refill This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and full-line writes which do not allocate into L2"
         },
         {
@@ -578,7 +579,7 @@
                 1
             ],
             "name": "STALL_SLOT_BACKEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot due to the backend"
         },
         {
@@ -588,7 +589,7 @@
                 1
             ],
             "name": "STALL_SLOT_FRONTEND",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot due to the frontend"
         },
         {
@@ -598,7 +599,7 @@
                 1
             ],
             "name": "STALL_SLOT",
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent for execution on a slot"
         },
         {
@@ -1479,7 +1480,7 @@
             ],
             "name": "SAMPLE_POP",
             "type": "UEVT",
-            "description": "Sample population"
+            "description": "Sample Population"
         },
         {
             "code": 16385,
@@ -1489,7 +1490,7 @@
             ],
             "name": "SAMPLE_FEED",
             "type": "UEVT",
-            "description": "Sample taken"
+            "description": "Sample Taken"
         },
         {
             "code": 16386,
@@ -1499,7 +1500,7 @@
             ],
             "name": "SAMPLE_FILTRATE",
             "type": "UEVT",
-            "description": "Sample taken and not removed by filtering"
+            "description": "Sample Taken and not removed by filtering"
         },
         {
             "code": 16387,
@@ -1530,7 +1531,7 @@
             ],
             "name": "STALL_BACKEND_MEM",
             "architectural": false,
-            "type": "UEVT",
+            "type": "CYCLE",
             "description": "No operation sent due to the backend and memory stalls"
         },
         {
@@ -1575,7 +1576,6 @@
                 0
             ],
             "name": "TRB_WRAP",
-            "impdef": true,
             "type": "UEVT",
             "description": "Trace buffer current write pointer wrapped"
         },
@@ -1585,7 +1585,6 @@
                 0
             ],
             "name": "TRCEXTOUT0",
-            "impdef": true,
             "type": "UEVT",
             "description": "PE Trace Unit external output 0"
         },
@@ -1595,7 +1594,6 @@
                 0
             ],
             "name": "TRCEXTOUT1",
-            "impdef": true,
             "type": "UEVT",
             "description": "PE Trace Unit external output 1"
         },
@@ -1605,7 +1603,6 @@
                 0
             ],
             "name": "TRCEXTOUT2",
-            "impdef": true,
             "type": "UEVT",
             "description": "PE Trace Unit external output 2"
         },
@@ -1615,7 +1612,6 @@
                 0
             ],
             "name": "TRCEXTOUT3",
-            "impdef": true,
             "type": "UEVT",
             "description": "PE Trace Unit external output 3"
         },
@@ -1625,7 +1621,6 @@
                 0
             ],
             "name": "CTI_TRIGOUT4",
-            "impdef": true,
             "type": "UEVT",
             "description": "Cross-trigger Interface output trigger 4"
         },
@@ -1635,7 +1630,6 @@
                 0
             ],
             "name": "CTI_TRIGOUT5",
-            "impdef": true,
             "type": "UEVT",
             "description": "Cross-trigger Interface output trigger 5"
         },
@@ -1645,7 +1639,6 @@
                 0
             ],
             "name": "CTI_TRIGOUT6",
-            "impdef": true,
             "type": "UEVT",
             "description": "Cross-trigger Interface output trigger 6"
         },
@@ -1655,7 +1648,6 @@
                 0
             ],
             "name": "CTI_TRIGOUT7",
-            "impdef": true,
             "type": "UEVT",
             "description": "Cross-trigger Interface output trigger 7"
         },
@@ -1827,7 +1819,6 @@
                 1
             ],
             "name": "SVE_PRED_NOT_FULL_SPEC",
-            "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "description": "SVE predicated operations speculatively executed with a Governing predicate in which at least one element is FALSE"
@@ -1883,7 +1874,6 @@
                 1
             ],
             "name": "ASE_SVE_INT8_SPEC",
-            "impdef": true,
             "type": "UEVT",
             "description": "Operation counted by ASE_SVE_INT_SPEC where the largest type is 8-bit integer"
         },
@@ -1894,7 +1884,6 @@
                 1
             ],
             "name": "ASE_SVE_INT16_SPEC",
-            "impdef": true,
             "type": "UEVT",
             "description": "Operation counted by ASE_SVE_INT_SPEC where the largest type is 16-bit integer"
         },
@@ -1905,7 +1894,6 @@
                 1
             ],
             "name": "ASE_SVE_INT32_SPEC",
-            "impdef": true,
             "type": "UEVT",
             "description": "Operation counted by ASE_SVE_INT_SPEC where the largest type is 32-bit integer"
         },
@@ -1916,7 +1904,6 @@
                 1
             ],
             "name": "ASE_SVE_INT64_SPEC",
-            "impdef": true,
             "type": "UEVT",
             "description": "Operation counted by ASE_SVE_INT_SPEC where the largest type is 64-bit integer"
         }

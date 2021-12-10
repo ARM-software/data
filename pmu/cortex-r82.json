@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Mon Oct 11 17:46:09 2021",
+    "timestamp": "Thu Dec  2 15:42:34 2021",
     "implementer": "A",
     "cpu": "Cortex-R82",
     "architecture": "armv8.4-r",
@@ -20,6 +20,7 @@
                 0
             ],
             "name": "SW_INCR",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments on writes to the PMSWINC register"
         },
@@ -87,6 +88,7 @@
                 0
             ],
             "name": "LD_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-reading instruction"
         },
@@ -96,6 +98,7 @@
                 0
             ],
             "name": "ST_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter increments for every executed memory-writing instruction. DC ZVA is counted as a store. The counter does not increment for a Store-Exclusive instruction that fails"
         },
@@ -115,6 +118,7 @@
                 0
             ],
             "name": "EXC_TAKEN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each exception taken"
         },
@@ -124,6 +128,7 @@
                 0
             ],
             "name": "EXC_RETURN",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for each executed exception return instruction"
         },
@@ -133,6 +138,7 @@
                 0
             ],
             "name": "CID_WRITE_RETIRED",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter increments for every write to the CONTEXTIDR"
         },
@@ -142,6 +148,7 @@
                 0
             ],
             "name": "PC_WRITE_RETIRED",
+            "architectural": true,
             "type": "EXC",
             "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
         },
@@ -171,6 +178,7 @@
                 0
             ],
             "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
             "type": "INS",
             "description": "The counter counts each memory-reading instruction or memory-writing instruction access that would generate an Alignment fault when Alignment fault checking is enabled"
         },
@@ -252,6 +260,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "BUS",
             "description": "The counter counts memory read operations and memory write operations that access outside of the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
         },
         {
@@ -280,6 +289,7 @@
                 0
             ],
             "name": "TTBR_WRITE_RETIRED",
+            "architectural": true,
             "type": "UEVT",
             "description": "The counter counts writes to the translation table base registers, TTBR0 and TTBR1"
         },
@@ -291,6 +301,7 @@
             "name": "BUS_CYCLES",
             "architectural": false,
             "type": "CYCLE",
+            "component": "BUS",
             "description": "The counter increments on every cycle of the interface at the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
         },
         {
@@ -302,6 +313,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L1D",
             "description": "The counter increments on every attributable write that writes an entire line into the Level 1 cache without fetching from outside the Level 1 cache"
         },
         {
@@ -322,10 +334,9 @@
                 0
             ],
             "name": "BR_RETIRED",
-            "architectural": false,
+            "architectural": true,
             "type": "UEVT",
             "subtype": "MISPREDICT",
-            "component": "BPU",
             "description": "The counter counts all branches on the architecturally executed path that would incur cost if mispredicted"
         },
         {
@@ -431,6 +442,7 @@
                 0
             ],
             "name": "REMOTE_ACCESS_RD",
+            "architectural": false,
             "type": "UEVT",
             "description": "As 'Multi-socket Remote Access: Access', but counts only memory read operations. "
         },
@@ -452,6 +464,7 @@
                 0
             ],
             "name": "OP_RETIRED",
+            "architectural": false,
             "type": "UEVT",
             "description": "The counter counts each operation counted by 'Operations: Speculated' that would be executed in a Simple sequential execution of the program"
         },
@@ -482,7 +495,7 @@
             ],
             "name": "STALL_SLOT_BACKEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "Counts each Slot counted by 'Stalls: All' where no attributable instruction or operation was sent for execution because the backend is unable to accept it"
         },
         {
@@ -492,7 +505,7 @@
             ],
             "name": "STALL_SLOT_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "Counts each Slot counted by 'Stalls: All' where no attributable instruction or operation was sent for execution because there was no attributable instruction or operation available to issue from the PE from the frontend for the Slot"
         },
         {
@@ -502,7 +515,7 @@
             ],
             "name": "STALL_SLOT",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "description": "The counter counts on each attributable cycle the number of instruction or operation Slots that were not occupied by an instruction or operation attributable to the processing element"
         },
         {
@@ -661,6 +674,7 @@
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-reading instructions, as defined by the 'Instructions (Executed): Load' event"
         },
@@ -672,6 +686,7 @@
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-writing instructions, as defined by the 'Instructions (Executed): Store' event"
         },
@@ -683,6 +698,7 @@
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only memory-reading and memory-writing instructions, as defined by the 'Instructions (Executed): Load' and 'Instructions (Executed): Store' events"
         },
@@ -694,6 +710,7 @@
             "name": "DP_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only integer data-processing instructions"
         },
@@ -705,6 +722,7 @@
             "name": "ASE_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only Advanced SIMD data-processing instructions"
         },
@@ -716,6 +734,7 @@
             "name": "VFP_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only floating-point data-processing instructions"
         },
@@ -727,6 +746,7 @@
             "name": "PC_WRITE_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "INS",
             "description": "As 'Instructions (Speculated): All', but the counter counts only software changes of the PC"
         },
@@ -943,7 +963,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Indirect branch with predicted address executed"
@@ -954,7 +973,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Procedure return with predicted address executed"
@@ -1138,7 +1156,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Fetch pipeline accessed nano predictors for an immediate branch"
@@ -1149,7 +1166,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "An immediate branch hit in the nano predictors in the fetch pipeline"
@@ -1160,7 +1176,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "An immediate branch mis-predicted in the nano predictors in the fetch pipeline"
@@ -1171,7 +1186,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Fetch pipeline accessed nano predictors for a conditional branch"
@@ -1182,7 +1196,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "A conditional branch hit in the nano predictors in the fetch pipeline"
@@ -1193,7 +1206,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "A conditional branch mis-predicted in the nano predictors in the fetch pipeline"
@@ -1204,7 +1216,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Fetch pipeline accessed nano predictors for an indirect branch"
@@ -1215,7 +1226,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "An indirect branch hit in the nano predictors in the fetch pipeline"
@@ -1226,7 +1236,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "An indirect branch mis-predicted in the nano predictors in the fetch pipeline"
@@ -1237,7 +1246,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "Fetch pipeline accessed nano predictors for a return instruction"
@@ -1248,7 +1256,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "A return instruction hit in the nano predictors in the fetch pipeline"
@@ -1259,7 +1266,6 @@
                 0
             ],
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "description": "A return instruction mis-predicted in the nano predictors in the fetch pipeline"
@@ -1889,6 +1895,7 @@
                 0
             ],
             "name": "LDST_ALIGN_LAT",
+            "architectural": false,
             "type": "UEVT",
             "description": "The counter counts each access counted by 'Memory: Access' that, due to the alignment of the address and size of data being accessed, incurred additional latency"
         },
@@ -1898,6 +1905,7 @@
                 0
             ],
             "name": "LD_ALIGN_LAT",
+            "architectural": false,
             "type": "UEVT",
             "description": "The counter counts each memory-read access counted by 'Latency: Access with additional latency from alignment'"
         },
@@ -1907,6 +1915,7 @@
                 0
             ],
             "name": "ST_ALIGN_LAT",
+            "architectural": false,
             "type": "UEVT",
             "description": "The counter counts each memory-write access counted by 'Latency: Access with additional latency from alignment'"
         }

@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:33 2021",
     "implementer": "A",
     "cpu": "Cortex-A75",
     "architecture": "armv8-a",
@@ -318,7 +318,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
-            "component": "L1I",
+            "component": "L2",
             "description": "L2 data cache Write-Back. This event counts evictions with data caused by L2 CMOs, L2 evictions, and L2 snoops. It does not count L1 snooped data, streams, and data evicted by an L1 instruction write CMO"
         },
         {
@@ -368,9 +368,6 @@
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
-            "event_bits": 1,
-            "event_lsb": 20,
-            "trace_lsb": 20,
             "description": "Bus cycles"
         },
         {
@@ -379,6 +376,7 @@
                 0
             ],
             "name": "CHAIN",
+            "for_driver": true,
             "type": "UEVT",
             "description": "For odd-numbered counters, increments the count by one for each overflow of the preceding even-numbered counter. For even-numbered counters, there is no increment"
         },
@@ -427,7 +425,7 @@
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 16,
             "trace_lsb": 16,
@@ -441,7 +439,7 @@
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
-            "type": "INS",
+            "type": "CYCLE",
             "event_bits": 1,
             "event_lsb": 15,
             "trace_lsb": 15,
@@ -481,6 +479,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L3",
             "description": "Attributable Level 3 data or unified cache allocation without refill"
         },
         {
@@ -493,6 +492,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L3",
             "description": "Attributable Level 3 data or unified cache refill. This event counts all cacheable read transactions that return from the DSU and come from outside of the cluster"
         },
         {
@@ -612,7 +612,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
-            "component": "L1DTLB",
+            "component": "L1D",
             "description": "L1 data cache access, read. This event counts all read accesses, PLD, PF, TLB, and multiple cache accesses for the same load"
         },
         {
@@ -1065,6 +1065,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "READ",
+            "component": "L3",
             "description": "Attributable Level 3 data or unified cache refill, read"
         },
         {
@@ -1138,7 +1139,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration for which all slots in the Load-Store Unit (LSU) are busy"
         },
         {
@@ -1150,8 +1150,7 @@
             "name": "LS_IQ_FULL",
             "impdef": true,
             "architectural": false,
-            "type": "UEVT",
-            "component": "BUS",
+            "type": "CYCLE",
             "description": "Duration for which all slots in the load-store issue queue are busy. This event counts the cycles where all slots in the LS IQs are full with micro-operations waiting for issuing, and the dispatch stage is not empty"
         },
         {
@@ -1163,8 +1162,7 @@
             "name": "DP_IQ_FULL",
             "impdef": true,
             "architectural": false,
-            "type": "UEVT",
-            "component": "BUS",
+            "type": "CYCLE",
             "description": "Duration for which all slots in the data processing issue queue are busy. This event counts the cycles where all slots in the DP0 and DP1 IQs are full with micro-operations waiting for issuing, and the despatch stage is not empty"
         },
         {
@@ -1176,8 +1174,7 @@
             "name": "DE_IQ_FULL",
             "impdef": true,
             "architectural": false,
-            "type": "UEVT",
-            "component": "BUS",
+            "type": "INS",
             "description": "Duration for which all slots in the data engine issue queue are busy. This event is set every time that the data engine rename has at least one valid instruction, excluding No Operations (NOPs), that cannot move to the issue stage because accpt_instr is LOW"
         },
         {

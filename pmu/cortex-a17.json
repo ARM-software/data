@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Sep 24 17:06:03 2021",
+    "timestamp": "Thu Dec  2 15:42:32 2021",
     "implementer": "A",
     "cpu": "Cortex-A17",
     "architecture": "armv7-a",
@@ -28,6 +28,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
+            "component": "L1I",
             "event_bits": 1,
             "event_lsb": 0,
             "trace_lsb": 0,
@@ -42,6 +43,7 @@
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
+            "component": "L1ITLB",
             "event_bits": 1,
             "event_lsb": 1,
             "trace_lsb": 1,
@@ -57,6 +59,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L1D",
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
@@ -72,6 +75,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L1D",
             "event_bits": 2,
             "event_lsb": 3,
             "trace_lsb": 3,
@@ -87,6 +91,7 @@
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
+            "component": "L1DTLB",
             "event_bits": 1,
             "event_lsb": 5,
             "trace_lsb": 5,
@@ -180,7 +185,6 @@
                 1
             ],
             "name": "BR_PRED",
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
             "event_bits": 1,
@@ -434,6 +438,7 @@
             "recommended": true,
             "impdef": true,
             "type": "UEVT",
+            "component": "BUS",
             "description": "Reserved"
         },
         {
@@ -880,7 +885,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration during which all slots in the Load-Store Unit are busy"
         },
         {
@@ -892,7 +896,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration during which all slots in the Load-Store Issue queue are busy"
         },
         {
@@ -904,7 +907,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration during which all slots in the Data Processing issue queue are busy"
         },
         {
@@ -916,7 +918,6 @@
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
-            "component": "BUS",
             "description": "Duration during which all slots in the Data Engine issue queue are busy"
         },
         {
