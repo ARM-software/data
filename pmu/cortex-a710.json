@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Dec  2 15:42:33 2021",
+    "timestamp": "Mon Mar 14 16:13:19 2022",
     "implementer": "A",
     "cpu": "Cortex-A710",
     "architecture": "armv9-a",
@@ -56,7 +56,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "L1 data cache refill This event counts any load or store operation or translation table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache. - Non-cacheable accesses This event counts the sum of L1D_CACHE_ REFILL_RD and L1D_CACHE_REFILL_WR"
+            "description": "L1 data cache refill This event counts any load or store operation or translation table walk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches - Stores of an entire cache line, even if they make a coherency request outside the L1 - Partial cache line writes which do not allocate into the L1 cache. - Non-cacheable accesses This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
         },
         {
             "code": 4,
@@ -118,7 +118,7 @@
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR This event only counts writes to CONTEXTIDR_ EL1. Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2 are not counted"
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR This event only counts writes to CONTEXTIDR_EL1. Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2 are not counted"
         },
         {
             "code": 16,
@@ -320,7 +320,7 @@
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
-            "description": "Instruction architecturally executed, mispredicted branch This event counts any branch counted by BR_ RETIRED which is not correctly predicted and causes a pipeline flush"
+            "description": "Instruction architecturally executed, mispredicted branch This event counts any branch counted by BR_RETIRED which is not correctly predicted and causes a pipeline flush"
         },
         {
             "code": 35,
@@ -498,7 +498,7 @@
                 0
             ],
             "name": "OP_RETIRED",
-            "architectural": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Micro-operation architecturally executed"
         },

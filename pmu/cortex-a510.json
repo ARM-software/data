@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Dec  2 15:42:33 2021",
+    "timestamp": "Mon Mar 14 16:13:19 2022",
     "implementer": "A",
     "cpu": "Cortex-A510",
     "architecture": "armv9-a",
@@ -507,7 +507,7 @@
                 0
             ],
             "name": "OP_RETIRED",
-            "architectural": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Micro-operation architecturally executed This event counts each operation counted by OP_SPEC that would be executed in a Simple sequential execution of the program"
         },
