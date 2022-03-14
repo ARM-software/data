@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Dec  2 15:42:34 2021",
+    "timestamp": "Tue Dec 14 16:19:40 2021",
     "implementer": "A",
     "cpu": "Cortex-R52",
     "architecture": "armv8-r",
@@ -995,7 +995,7 @@
             "component": "BUS",
             "event_bits": 1,
             "errevent_lsb": 2,
-            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP). - - - - [3] Fatal data payload bus error occurred from any source (AXIM or LLPP). - - - - [4] Fatal READY signal bus error occurred from any source (AXIM, Flash, or LLPP)"
+            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP)"
         },
         {
             "code": 243,
@@ -1019,13 +1019,11 @@
             ],
             "name": "KITE_BUS_PROTOCOL_ANY",
             "impdef": true,
-            "architectural": false,
-            "type": "EXC",
-            "subtype": "READ",
+            "type": "UEVT",
             "component": "BUS",
             "event_bits": 1,
             "errevent_lsb": 6,
-            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP). - - - - [7] Correctable L1 instruction cache (data or tag) memory error. - - - - [8] Correctable L1 data cache (data or tag) memory error. - - - - [9] Correctable ATCM, BTCM, or CTCM memory error. - - - - [10] Fatal ATCM, BTCM, or CTCM memory error. - - - - [11] Correctable flash memory error. - - - - [12] Fatal flash memory error. - - - - [13] Timeout for AXIM bus. - - - - [14] Timeout for Flash bus. - - - - [15] Timeout for LLPP bus. - - - - [16] Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error. - - - - [17] Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full. - - - - [18] Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered). - - - - [19] A memory or bus fatal error was synchronously detected in Hyp mode. - - - - [20] An abort exception was taken because an EL2-controlled MPU fault generated an abort. - - - - [21] An abort exception was taken because an EL1-controlled MPU fault generated an abort. - - - - [22] An Undefined exception was taken due to any cause. - - - - [23] A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU. - - - - [24] Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times. - - - - [25] Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
+            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP)"
         },
         {
             "code": 256,
@@ -1308,6 +1306,230 @@
             "event_lsb": 6,
             "trace_lsb": 10,
             "description": "Two instructions architecturally executed in parallel. Asserted along with bit PMUEVENTx[5] when dual issuing"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 3,
+            "description": "Fatal data payload bus error occurred from any source (AXIM or LLPP)"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 4,
+            "description": "Fatal READY signal bus error occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "event_bits": 1,
+            "errevent_lsb": 7,
+            "description": "Correctable L1 instruction cache (data or tag) memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 8,
+            "description": "Correctable L1 data cache (data or tag) memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 9,
+            "description": "Correctable ATCM, BTCM, or CTCM memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 10,
+            "description": "Fatal ATCM, BTCM, or CTCM memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 11,
+            "description": "Correctable flash memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 12,
+            "description": "Fatal flash memory error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 13,
+            "description": "Timeout for AXIM bus"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 14,
+            "description": "Timeout for Flash bus"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 15,
+            "description": "Timeout for LLPP bus"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 16,
+            "description": "Correctable memory occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded the ERRs because they were full or because it was overwritten by a fatal error"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "event_bits": 1,
+            "errevent_lsb": 17,
+            "description": "Fatal memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or Flash) but was not recorded in the ERRs because they were full"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 18,
+            "description": "Interrupts masked in Hyp mode for too long (the IMP_INTMONR watchdog has triggered)"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "event_bits": 1,
+            "errevent_lsb": 19,
+            "description": "A memory or bus fatal error was synchronously detected in Hyp mode"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 20,
+            "description": "An abort exception was taken because an EL2-controlled MPU fault generated an abort"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 21,
+            "description": "An abort exception was taken because an EL1-controlled MPU fault generated an abort"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 22,
+            "description": "An Undefined exception was taken due to any cause"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 23,
+            "description": "A memory access marked in EL1- controlled MPU as Device was flushed because it was marked as Normal in EL2-controlled MPU"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "EXC",
+            "event_bits": 1,
+            "errevent_lsb": 24,
+            "description": "Processor livelock because of hard errors or exception at exception vector. This is a pulse bit. An exception of the same type and vector offset was consecutively taken 20 times"
+        },
+        {
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "errevent_lsb": 25,
+            "description": "Software running in EL2 unlocks TESTR1. TESTR1 is for testing purposes only"
         }
     ]
 }
