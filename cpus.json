@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Mon Mar 14 18:03:03 2022",
+    "timestamp": "Wed Jul 20 09:26:30 2022",
     "cpus": [
         {
             "implementer": 65,
@@ -82,6 +82,12 @@
         },
         {
             "implementer": 65,
+            "name": "Cortex-A65AE",
+            "arch": "armv8-a",
+            "cpuid": "0x41d43"
+        },
+        {
+            "implementer": 65,
             "name": "Cortex-A72",
             "arch": "armv8-a",
             "cpuid": "0x41d08"
@@ -130,15 +136,21 @@
         },
         {
             "implementer": 65,
+            "name": "Cortex-X1",
+            "arch": "armv8.2-a",
+            "cpuid": "0x41d44"
+        },
+        {
+            "implementer": 65,
             "name": "Cortex-A78C",
             "arch": "armv8.2-a",
             "cpuid": "0x41d4b"
         },
         {
             "implementer": 65,
-            "name": "Cortex-X1",
+            "name": "Cortex-X1C",
             "arch": "armv8.2-a",
-            "cpuid": "0x41d44"
+            "cpuid": "0x41d4c"
         },
         {
             "implementer": 65,
@@ -184,6 +196,18 @@
         },
         {
             "implementer": 65,
+            "name": "Cortex-A715",
+            "arch": "armv9-a",
+            "cpuid": "0x41d4d"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-X3",
+            "arch": "armv9-a",
+            "cpuid": "0x41d4e"
+        },
+        {
+            "implementer": 65,
             "name": "Cortex-R4",
             "arch": "armv7-r",
             "cpuid": "0x41c14"
@@ -223,6 +247,48 @@
             "name": "Cortex-R82",
             "arch": "armv8.4-r",
             "cpuid": "0x41d15"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M3",
+            "arch": "armv7-m",
+            "cpuid": "0x41c23"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M4",
+            "arch": "armv7-m",
+            "cpuid": "0x41c24"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M7",
+            "arch": "armv7-m",
+            "cpuid": "0x41c27"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M23",
+            "arch": "armv8-m",
+            "cpuid": "0x41d20"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M33",
+            "arch": "armv8-m",
+            "cpuid": "0x41d21"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M55",
+            "arch": "armv8.1-m",
+            "cpuid": "0x41d22"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-M85",
+            "arch": "armv8.1-m",
+            "cpuid": "0x41d23"
         }
     ]
 }

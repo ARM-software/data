@@ -1,7 +1,8 @@
 {
     "_type": "Events",
-    "timestamp": "Mon Mar 14 16:13:19 2022",
+    "timestamp": "Thu May 12 20:20:31 2022",
     "implementer": "A",
+    "cpuid": "0x41d48",
     "cpu": "Cortex-X2",
     "architecture": "armv9-a",
     "pmu_architecture": "pmuv3",

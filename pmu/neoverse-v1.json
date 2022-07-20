@@ -1,7 +1,8 @@
 {
     "_type": "Events",
-    "timestamp": "Tue Dec 14 16:19:40 2021",
+    "timestamp": "Thu May 12 20:20:31 2022",
     "implementer": "A",
+    "cpuid": "0x41d40",
     "cpu": "Neoverse V1",
     "architecture": "armv8.4-a",
     "pmu_architecture": "pmuv3",
@@ -672,7 +673,7 @@
                 1
             ],
             "name": "OP_RETIRED",
-            "architectural": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Micro-operation architecturally executed"
         },

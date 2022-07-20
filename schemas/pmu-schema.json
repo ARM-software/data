@@ -53,6 +53,17 @@
             "description": "CPU name, e.g. Cortex-A7",
             "type": "string"
         },
+        "cpuid": {
+            "description": "CPU id, 5 or 6 hex digits",
+            "type": "string"
+        },
+        "cpuids": {
+            "description": "list of CPU ids",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "counters": {
             "description": "Number of physical hardware counters (e.g. 4, 6)",
             "type": "integer",
