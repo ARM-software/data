@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu May 12 20:20:31 2022",
+    "timestamp": "Wed Aug 24 21:19:17 2022",
     "implementer": "A",
     "cpuid": "0x41d40",
     "cpu": "Neoverse V1",
@@ -1889,6 +1889,106 @@
             "type": "UEVT",
             "component": "L3",
             "description": "L3 unified cache long latency miss"
+        },
+        {
+            "code": 32773,
+            "refs": [
+                0
+            ],
+            "name": "ASE_INST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Advanced SIMD operations speculatively executed"
+        },
+        {
+            "code": 32774,
+            "refs": [
+                0
+            ],
+            "name": "SVE_INST_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE operations speculatively executed"
+        },
+        {
+            "code": 32884,
+            "refs": [
+                0
+            ],
+            "name": "SVE_PRED_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE predicated operations speculatively executed"
+        },
+        {
+            "code": 32885,
+            "refs": [
+                0
+            ],
+            "name": "SVE_PRED_EMPTY_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE predicated operations with no active predicates speculatively executed"
+        },
+        {
+            "code": 32886,
+            "refs": [
+                0
+            ],
+            "name": "SVE_PRED_FULL_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE predicated operations speculatively executed with all active predicates"
+        },
+        {
+            "code": 32887,
+            "refs": [
+                0
+            ],
+            "name": "SVE_PRED_PARTIAL_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE predicated operations speculatively executed with partially active predicates"
+        },
+        {
+            "code": 32956,
+            "refs": [
+                0
+            ],
+            "name": "SVE_LDFF_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE First-fault load operations speculatively executed"
+        },
+        {
+            "code": 32957,
+            "refs": [
+                0
+            ],
+            "name": "SVE_LDFF_FAULT_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "SVE First-fault load operations speculatively executed which set FFR bit to 0"
+        },
+        {
+            "code": 32960,
+            "refs": [
+                0
+            ],
+            "name": "FP_SCALE_OPS_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Scalable floating-point element operations speculatively executed"
+        },
+        {
+            "code": 32961,
+            "refs": [
+                0
+            ],
+            "name": "FP_FIXED_OPS_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-scalable floating-point element operations speculatively executed"
         }
     ]
 }

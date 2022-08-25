@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu May 12 20:20:30 2022",
+    "timestamp": "Wed Aug 24 21:19:16 2022",
     "cpu": "common ARMv9.0",
     "architecture": "armv9-a",
     "pmu_architecture": "pmuv3",
@@ -4075,6 +4075,96 @@
             "description": "Advanced SIMD and SVE integer matrix multiply operations speculatively executed"
         },
         {
+            "code": 33031,
+            "refs": [
+                0
+            ],
+            "name": "BR_SKIP_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, branch not taken"
+        },
+        {
+            "code": 33032,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_TAKEN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, immediate branch taken"
+        },
+        {
+            "code": 33033,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_SKIP_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, immediate branch not taken"
+        },
+        {
+            "code": 33034,
+            "refs": [
+                0
+            ],
+            "name": "BR_IND_TAKEN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch taken"
+        },
+        {
+            "code": 33035,
+            "refs": [
+                0
+            ],
+            "name": "BR_IND_SKIP_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch not taken"
+        },
+        {
+            "code": 33036,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDNR_TAKEN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch taken excluding returns"
+        },
+        {
+            "code": 33037,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDNR_SKIP_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch not taken excluding returns"
+        },
+        {
+            "code": 33038,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_ANY_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, procedure return"
+        },
+        {
+            "code": 33039,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_SKIP_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, procedure return not taken"
+        },
+        {
             "code": 33040,
             "refs": [
                 0
@@ -4222,6 +4312,26 @@
             "type": "UEVT",
             "component": "BPU",
             "description": "Instruction architecturally excecuted, predicted branch"
+        },
+        {
+            "code": 33053,
+            "refs": [
+                0
+            ],
+            "name": "BR_IND_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch"
+        },
+        {
+            "code": 33054,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDNR_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, indirect branch excluding procedure return"
         },
         {
             "code": 33055,
