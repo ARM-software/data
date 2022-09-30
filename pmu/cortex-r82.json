@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Wed Aug 24 21:19:17 2022",
+    "timestamp": "Mon Sep 26 21:05:51 2022",
     "implementer": "A",
     "cpuid": "0x41d15",
     "cpu": "Cortex-R82",
@@ -22,12 +22,13 @@
         {
             "code": 0,
             "refs": [
+                0,
                 1
             ],
             "name": "SW_INCR",
             "architectural": true,
-            "type": "UEVT",
-            "description": "The counter increments on writes to the PMSWINC register"
+            "type": "INS",
+            "description": "Instruction architecturally executed, condition code check pass, software increment"
         },
         {
             "code": 1,

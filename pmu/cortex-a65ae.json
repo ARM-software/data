@@ -2,19 +2,19 @@
     "_type": "Events",
     "timestamp": "Mon Sep 26 21:05:51 2022",
     "implementer": "A",
-    "cpuid": "0x41d4a",
-    "cpu": "Neoverse E1",
-    "architecture": "armv8.2-a",
+    "cpuid": "0x41d43",
+    "cpu": "Cortex-A65AE",
+    "architecture": "armv8-a",
     "pmu_architecture": "pmuv3",
     "counters": 6,
     "refs": [
         {
-            "ref": "Neoverse E1 TRM",
+            "ref": "Cortex-A65AE TRM",
             "public": true
         },
         {
-            "ref": "gator events-Neoverse-E1.xml",
-            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Neoverse-E1.xml",
+            "ref": "gator events-Cortex-A65AE.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A65AE.xml",
             "public": true
         }
     ],
@@ -44,7 +44,7 @@
             "event_bits": 1,
             "event_lsb": 0,
             "trace_lsb": 0,
-            "description": "Level 1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: +ICI Cache maintenance instructions. +ICI Non-cacheable accesses"
+            "description": "Level 1 instruction cache refill. This event counts any instruction fetch which misses in the cache. The following instructions are not counted: - Cache maintenance instructions. - Non-cacheable accesses"
         },
         {
             "code": 2,
@@ -59,7 +59,7 @@
             "event_bits": 1,
             "event_lsb": 1,
             "trace_lsb": 1,
-            "description": "Level 1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills which result in a translation fault. The following instructions are not counted: +ICI TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
+            "description": "Level 1 instruction TLB refill. This event counts any refill of the instruction L1 TLB from the L2 TLB. This includes refills which result in a translation fault. The following instructions are not counted: - TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 3,
@@ -75,7 +75,7 @@
             "event_bits": 1,
             "event_lsb": 2,
             "trace_lsb": 2,
-            "description": "Level 1 data cache refill. This event counts any load or store operation or pagewalk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Stores of an entire cache line, even if they make a coherency request outside the L1. +ICI Partial cache line writes which do not allocate into the L1 cache. +ICI Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
+            "description": "Level 1 data cache refill. This event counts any load or store operation or pagewalk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Stores of an entire cache line, even if they make a coherency request outside the L1. - Partial cache line writes which do not allocate into the L1 cache. - Non-cacheable accesses. This event counts the sum of L1D_CACHE_REFILL_RD and L1D_CACHE_REFILL_WR"
         },
         {
             "code": 4,
@@ -91,7 +91,7 @@
             "event_bits": 1,
             "event_lsb": 3,
             "trace_lsb": 3,
-            "description": "Level 1 data cache access. This event counts any load or store operation or pagewalk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Non-cacheable accesses. This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
+            "description": "Level 1 data cache access. This event counts any load or store operation or pagewalk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Non-cacheable accesses. This event counts the sum of L1D_CACHE_RD and L1D_CACHE_WR"
         },
         {
             "code": 5,
@@ -106,7 +106,7 @@
             "event_bits": 1,
             "event_lsb": 4,
             "trace_lsb": 4,
-            "description": "Level 1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills which result in a translation fault. The following instructions are not counted: +ICI TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
+            "description": "Level 1 data TLB refill. This event counts any refill of the data L1 TLB from the L2 TLB. This includes refills which result in a translation fault. The following instructions are not counted: - TLB maintenance instructions. This event counts regardless of whether the MMU is enabled"
         },
         {
             "code": 6,
@@ -134,7 +134,7 @@
             "event_bits": 1,
             "event_lsb": 6,
             "trace_lsb": 6,
-            "description": "Instruction architecturally executed, condition code check pass, store. This event counts all store instructions and DC ZVA. This includes all the Armv8.1-A atomic instructions. The following instructions are not counted: +ICI Store-Exclusive instructions which fail"
+            "description": "Instruction architecturally executed, condition code check pass, store. This event counts all store instructions and DC ZVA. This includes all the Armv8.1-A atomic instructions. The following instructions are not counted: - Store-Exclusive instructions which fail"
         },
         {
             "code": 8,
@@ -189,7 +189,7 @@
             "event_bits": 1,
             "event_lsb": 10,
             "trace_lsb": 10,
-            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes via the CONTEXTIDR_EL1 mnemonic in AArch64. The following instructions are not counted: +ICI Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to CONTEXTIDR. This event only counts writes via the CONTEXTIDR_EL1 mnemonic in AArch64. The following instructions are not counted: - Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2"
         },
         {
             "code": 12,
@@ -288,7 +288,7 @@
             "event_bits": 1,
             "event_lsb": 17,
             "trace_lsb": 17,
-            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: +ICI Instruction fetches. +ICI Cache maintenance instructions. +ICI Translation table walks or prefetches. This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
+            "description": "Data memory access. This event counts memory accesses due to load or store instructions. The following instructions are not counted: - Instruction fetches. - Cache maintenance instructions. - Translation table walks or prefetches. This event counts the sum of MEM_ACCESS_RD and MEM_ACCESS_WR"
         },
         {
             "code": 20,
@@ -304,7 +304,7 @@
             "event_bits": 1,
             "event_lsb": 18,
             "trace_lsb": 18,
-            "description": "Level 1 instruction cache access. This event counts any instruction fetch which accesses the L1 instruction cache. The following instructions are not counted: +ICI Cache maintenance instructions. +ICI Non-cacheable accesses"
+            "description": "Level 1 instruction cache access. This event counts any instruction fetch which accesses the L1 instruction cache. The following instructions are not counted: - Cache maintenance instructions. - Non-cacheable accesses"
         },
         {
             "code": 21,
@@ -320,7 +320,7 @@
             "event_bits": 1,
             "event_lsb": 19,
             "trace_lsb": 19,
-            "description": "Level 1 data cache Write-Back. This event counts any write back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: +ICI Invalidations which do not result in data being transferred out of the L1. +ICI Full-line writes which write to L2 without writing L1, such as writestreaming mode"
+            "description": "Level 1 data cache Write-Back. This event counts any write back of data from the L1 data cache to L2 or L3. This counts both victim line evictions and snoops, including cache maintenance operations. The following instructions are not counted: - Invalidations which do not result in data being transferred out of the L1. - Full-line writes which write to L2 without writing L1, such as write-streaming mode"
         },
         {
             "code": 22,
@@ -336,7 +336,7 @@
             "event_bits": 1,
             "event_lsb": 20,
             "trace_lsb": 20,
-            "description": "Level 2 unified cache access. +ICI If the core is configured with a per-core L2 cache: This event counts any transaction from L1 which looks up in the L2 cache, and any write-back from the L1 to the L2. Snoops from outside the core and cache maintenance operations are not counted. +ICI If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE. +ICI If there is neither a per-core cache nor a cluster cache configured, then this event is not implemented"
+            "description": "Level 2 unified cache access. - If the core is configured with a per-core L2 cache: This event counts any transaction from L1 which looks up in the L2 cache, and any write-back from the L1 to the L2. Snoops from outside the core and cache maintenance operations are not counted. - If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE. - If there is neither a per-core cache nor a cluster cache configured, then this event is not implemented"
         },
         {
             "code": 23,
@@ -352,7 +352,7 @@
             "event_bits": 1,
             "event_lsb": 21,
             "trace_lsb": 21,
-            "description": "Level 2 unified cache refill. +ICI If the core is configured with a per-core L2 cache: This event counts any cacheable transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes and prefetches that target this level of cache should not be counted. +ICI If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL. +ICI If there is neither a per-core cache nor a cluster cache configured, then this event is not implemented"
+            "description": "Level 2 unified cache refill. - If the core is configured with a per-core L2 cache: This event counts any cacheable transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes and prefetches that target this level of cache should not be counted. - If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL. - If there is neither a per-core cache nor a cluster cache configured, then this event is not implemented"
         },
         {
             "code": 24,
@@ -368,7 +368,7 @@
             "event_bits": 1,
             "event_lsb": 22,
             "trace_lsb": 22,
-            "description": "Level 2 unified cache Write-Back. +ICI If the core is configured with a per-core L2 cache: This event counts any write back of data from the L2 cache to outside the core. This includes snoops to the L2 which return data, regardless of whether they cause an invalidation. Invalidations from the L2 which do not write data outside of the core and snoops which return data from the L1 are not counted. +ICI If the core is not configured with a per-core L2 cache, this event is not implemented"
+            "description": "Level 2 unified cache Write-Back. - If the core is configured with a per-core L2 cache: This event counts any write back of data from the L2 cache to outside the core. This includes snoops to the L2 which return data, regardless of whether they cause an invalidation. Invalidations from the L2 which do not write data outside of the core and snoops which return data from the L1 are not counted. - If the core is not configured with a per-core L2 cache, this event is not implemented"
         },
         {
             "code": 25,
@@ -421,7 +421,7 @@
             "event_bits": 1,
             "event_lsb": 25,
             "trace_lsb": 25,
-            "description": "Instruction architecturally executed, condition code check pass, write to TTBR. This event only counts writes to TTBR0_EL1/TTBR1_EL1 in AArch64. The following instructions are not counted: +ICI Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/ TTBR1_EL2"
+            "description": "Instruction architecturally executed, condition code check pass, write to TTBR. This event only counts writes to TTBR0_EL1/TTBR1_EL1 in AArch64. The following instructions are not counted: - Accesses to TTBR0_EL12/TTBR1_EL12 or TTBR0_EL2/TTBR1_EL2"
         },
         {
             "code": 29,
@@ -459,7 +459,7 @@
             "event_bits": 1,
             "event_lsb": 26,
             "trace_lsb": 26,
-            "description": "Level 2 unified cache allocation without refill. +ICI If the core is configured with a per-core L2 cache: This event counts any full cache line write into the L2 cache which does not cause a linefill, including write-backs from L1 to L2 and fullline writes which do not allocate into L1. +ICI If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_ALLOCATE. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 unified cache allocation without refill. - If the core is configured with a per-core L2 cache: This event counts any full cache line write into the L2 cache which does not cause a linefill, including write-backs from L1 to L2 and full-line writes which do not allocate into L1. - If the core is not configured with a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_ALLOCATE. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 33,
@@ -473,7 +473,7 @@
             "event_bits": 1,
             "event_lsb": 27,
             "trace_lsb": 27,
-            "description": "Instruction architecturally executed, branch. This event counts all branches, taken or not, popped from the branch monitor. This excludes exception entries, debug entries, and CCFAIL branches. In the Neoverse E1 core, an ISB is a branch, and even micro architectural ISBs are counted"
+            "description": "Instruction architecturally executed, branch. This event counts all branches, taken or not, popped from the branch monitor. This excludes exception entries, debug entries, and CCFAIL branches. In the Cortex- A65AE core, an ISB is a branch, and even micro architectural ISBs are counted"
         },
         {
             "code": 34,
@@ -564,7 +564,7 @@
             "event_bits": 1,
             "event_lsb": 33,
             "trace_lsb": 33,
-            "description": "Attributable Level 3 unified cache allocation without refill. +ICI If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and fullline writes which do not allocate into L2. +ICI If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
+            "description": "Attributable Level 3 unified cache allocation without refill. - If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts any full cache line write into the L3 cache which does not cause a linefill, including write-backs from L2 to L3 and full-line writes which do not allocate into L2. - If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
             "code": 42,
@@ -580,7 +580,7 @@
             "event_bits": 1,
             "event_lsb": 34,
             "trace_lsb": 34,
-            "description": "Attributable Level 3 unified cache refill. +ICI If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts for any cacheable read transaction returning data from the SCU for which the data source was outside the cluster. Transactions such as ReadUnique are counted here as +IBw-read+IB0 transactions, even though they can be generated by store instructions. Prefetches and stashes that target the L3 cache are not counted. +ICI If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
+            "description": "Attributable Level 3 unified cache refill. - If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts for any cacheable read transaction returning data from the SCU for which the data source was outside the cluster. Transactions such as ReadUnique are counted here as \"read\" transactions, even though they can be generated by store instructions. Prefetches and stashes that target the L3 cache are not counted. - If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
             "code": 43,
@@ -596,7 +596,7 @@
             "event_bits": 1,
             "event_lsb": 35,
             "trace_lsb": 35,
-            "description": "Attributable Level 3 unified cache access. +ICI If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts for any cacheable read transaction returning data from the SCU, or for any cacheable write to the SCU. +ICI If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
+            "description": "Attributable Level 3 unified cache access. - If the core is configured with a per-core L2 cache and the cluster is configured with an L3 cache: This event counts for any cacheable read transaction returning data from the SCU, or for any cacheable write to the SCU. - If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
             "code": 45,
@@ -672,7 +672,7 @@
             "event_bits": 1,
             "event_lsb": 41,
             "trace_lsb": 41,
-            "description": "Last level cache access, read. +ICI If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of \"interconnect cache\". +ICI If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented +IBM L3D_CACHE_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
+            "description": "Last level cache access, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of \"interconnect cache\". - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_RD event corresponding to the last level of cache implemented - L3D_CACHE_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_RD if only one is implemented, or L1D_CACHE_RD if neither is implemented"
         },
         {
             "code": 55,
@@ -688,7 +688,7 @@
             "event_bits": 1,
             "event_lsb": 42,
             "trace_lsb": 42,
-            "description": "Last level cache miss, read. +ICI If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of \"DRAM\", \"remote\" or \"inter-cluster peer\". +ICI If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented +IBM L3D_CACHE_REFILL_RD if both per-core L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
+            "description": "Last level cache miss, read. - If CPUECTLR.EXTLLC is set: This event counts any cacheable read transaction which returns a data source of \"DRAM\", \"remote\" or \"inter-cluster peer\". - If CPUECTLR.EXTLLC is not set: This event is a duplicate of the L*D_CACHE_REFILL_RD event corresponding to the last level of cache implemented - L3D_CACHE_REFILL_RD if both percore L2 and cluster L3 are implemented, L2D_CACHE_REFILL_RD if only one is implemented, or L1D_CACHE_REFILL_RD if neither is implemented"
         },
         {
             "code": 56,
@@ -716,7 +716,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "description": "Level 1 data cache access, read. This event counts any load operation or pagewalk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Non-cacheable accesses"
+            "description": "Level 1 data cache access, read. This event counts any load operation or pagewalk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Non-cacheable accesses"
         },
         {
             "code": 65,
@@ -731,7 +731,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "Level 1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Non-cacheable accesses"
+            "description": "Level 1 data cache access, write. This event counts any store operation which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL event causes this event to count. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Non-cacheable accesses"
         },
         {
             "code": 66,
@@ -746,7 +746,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "description": "Level 1 data cache refill, read. This event counts any load operation or pagewalk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Non-cacheable accesses"
+            "description": "Level 1 data cache refill, read. This event counts any load operation or pagewalk access which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Non-cacheable accesses"
         },
         {
             "code": 67,
@@ -761,7 +761,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "Level 1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: +ICI Cache maintenance instructions and prefetches. +ICI Stores of an entire cache line, even if they make a coherency request outside the L1. +ICI Partial cache line writes which do not allocate into the L1 cache. +ICI Non-cacheable accesses"
+            "description": "Level 1 data cache refill, write. This event counts any store operation which causes data to be read from outside the L1, including accesses which do not allocate into L1. The following instructions are not counted: - Cache maintenance instructions and prefetches. - Stores of an entire cache line, even if they make a coherency request outside the L1. - Partial cache line writes which do not allocate into the L1 cache. - Non-cacheable accesses"
         },
         {
             "code": 68,
@@ -806,7 +806,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L2",
-            "description": "Level 2 cache access, read. +ICI If the core is configured with a per-core L2 cache: This event counts any read transaction from L1 which looks up in the L2 cache. Snoops from outside the core are not counted. +ICI If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_RD. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 cache access, read. - If the core is configured with a per-core L2 cache: This event counts any read transaction from L1 which looks up in the L2 cache. Snoops from outside the core are not counted. - If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_RD. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 81,
@@ -821,7 +821,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "description": "Level 2 cache access, write. +ICI If the core is configured with a per-core L2 cache: This event counts any write transaction from L1 which looks up in the L2 cache or any write-back from L1 which allocates into the L2 cache. Snoops from outside the core are not counted. +ICI If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_WR. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 cache access, write. - If the core is configured with a per-core L2 cache: This event counts any write transaction from L1 which looks up in the L2 cache or any write-back from L1 which allocates into the L2 cache. Snoops from outside the core are not counted. - If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_WR. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 82,
@@ -836,7 +836,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L2",
-            "description": "Level 2 cache refill, read. +ICI If the core is configured with a per-core L2 cache: This event counts any cacheable read transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are counted here as +IBw-read+IB0 transactions, even though they can be generated by store instructions. +ICI If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL_RD. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 cache refill, read. - If the core is configured with a per-core L2 cache: This event counts any cacheable read transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are counted here as \"read\" transactions, even though they can be generated by store instructions. - If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL_RD. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 83,
@@ -851,7 +851,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L2",
-            "description": "Level 2 cache refill, write. +ICI If the core is configured with a per-core L2 cache: This event counts any write transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are not counted as write transactions. +ICI If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL_WR. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 cache refill, write. - If the core is configured with a per-core L2 cache: This event counts any write transaction from L1 which causes data to be read from outside the core. L2 refills caused by stashes into L2 should not be counted. Transactions such as ReadUnique are not counted as write transactions. - If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3D_CACHE_REFILL_WR. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 96,
@@ -891,7 +891,7 @@
             "architectural": false,
             "type": "INS",
             "subtype": "READ",
-            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: +ICI Instruction fetches. +ICI Cache maintenance instructions. +ICI Translation table walks. +ICI Prefetches"
+            "description": "Data memory access, read. This event counts memory accesses due to load instructions. The following instructions are not counted: - Instruction fetches. - Cache maintenance instructions. - Translation table walks. - Prefetches"
         },
         {
             "code": 103,
@@ -905,7 +905,7 @@
             "architectural": false,
             "type": "INS",
             "subtype": "WRITE",
-            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: +ICI Instruction fetches. +ICI Cache maintenance instructions. +ICI Translation table walks. +ICI Prefetches"
+            "description": "Data memory access, write. This event counts memory accesses due to store instructions. The following instructions are not counted: - Instruction fetches. - Cache maintenance instructions. - Translation table walks. - Prefetches"
         },
         {
             "code": 104,
@@ -1200,7 +1200,7 @@
             "type": "UEVT",
             "subtype": "REFILL",
             "component": "L2",
-            "description": "Level 2 cache refill due to prefetch. +ICI If the core is configured with a per-core L2 cache: This event does not count. +ICI If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3_PREF_LINE_FILL. +ICI If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
+            "description": "Level 2 cache refill due to prefetch. - If the core is configured with a per-core L2 cache: This event does not count. - If the core is configured without a per-core L2 cache: This event counts the cluster cache event, as defined by L3_PREF_LINE_FILL. - If there is neither a per-core cache nor a cluster cache configured, this event is not implemented"
         },
         {
             "code": 197,
@@ -1214,7 +1214,7 @@
             "type": "UEVT",
             "subtype": "REFILL",
             "component": "L3",
-            "description": "Level 3 cache refill due to prefetch. This event counts any linefills from the hardware prefetcher which cause an allocation into the L3 cache. Note It might not be possible to distinguish between both hardware and software prefetches and also which prefetches cause an allocation. If so, only hardware prefetches should be counted, regardless of whether they allocate. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
+            "description": "Level 3 cache refill due to prefetch. This event counts any linefills from the hardware prefetcher which cause an allocation into the L3 cache. Note: It might not be possible to distinguish between both hardware and software prefetches and also which prefetches cause an allocation. If so, only hardware prefetches should be counted, regardless of whether they allocate. If either the core is configured without a per-core L2 or the cluster is configured without an L3 cache, this event is not implemented"
         },
         {
             "code": 198,
@@ -1336,7 +1336,7 @@
             "type": "UEVT",
             "subtype": "ACCESS",
             "component": "L2TLB",
-            "description": "Level 2 TLB IPA cache access. This event counts on each access to the IPA cache. +ICI If a single pagewalk needs to make multiple accesses to the IPA cache, each access is counted. +ICI If stage 2 translation is disabled, this event does not count"
+            "description": "Level 2 TLB IPA cache access. This event counts on each access to the IPA cache. - If a single pagewalk needs to make multiple accesses to the IPA cache, each access is counted. - If stage 2 translation is disabled, this event does not count"
         },
         {
             "code": 207,
@@ -1350,7 +1350,7 @@
             "type": "UEVT",
             "subtype": "REFILL",
             "component": "L2TLB",
-            "description": "Level 2 TLB IPA cache refill. This event counts on each refill of the IPA cache. +ICI If a single pagewalk needs to make multiple accesses to the IPA cache, each access which causes a refill is counted. +ICI If stage 2 translation is disabled, this event does not count"
+            "description": "Level 2 TLB IPA cache refill. This event counts on each refill of the IPA cache. - If a single pagewalk needs to make multiple accesses to the IPA cache, each access which causes a refill is counted. - If stage 2 translation is disabled, this event does not count"
         },
         {
             "code": 208,
@@ -1681,7 +1681,7 @@
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "Unattributable Level 1 data cache write-back. This event occurs when a requestor outside the PE makes a coherency request that results in writeback"
+            "description": "Unattributable Level 1 data cache write-back. This event occurs when a requestor outside the PE makes a coherency request that results in write-back"
         },
         {
             "code": 241,

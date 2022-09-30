@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Wed Aug 24 21:19:16 2022",
+    "timestamp": "Mon Sep 26 21:05:50 2022",
     "implementer": "A",
     "cpuid": "0x41c08",
     "cpu": "Cortex-A8",
@@ -8,6 +8,10 @@
     "pmu_architecture": "pmuv2",
     "counters": 4,
     "refs": [
+        {
+            "ref": "Cortex-A8 TRM",
+            "public": true
+        },
         {
             "ref": "gator events-Cortex-A8.xml",
             "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A8.xml",
@@ -18,198 +22,224 @@
         {
             "code": 0,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "SW_INCR",
-            "architectural": true,
             "type": "UEVT",
-            "description": "The counter increments on writes to the PMSWINC register"
+            "description": "Software increment. The register is incremented only on writes to the Software Increment Register. See c9, Software Increment Register on page 3-81"
         },
         {
             "code": 1,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
             "component": "L1I",
-            "description": "The counter counts instruction memory accesses that cause a refill of at least the Level 1 instruction or unified cache. This includes each instruction memory access that causes a refill from outside the cache. It excludes accesses that do not cause a new cache refill but are satisfied from refilling data of a previous miss"
+            "description": "Instruction fetch that causes a refill at the lowest level of instruction or unified cache. Each instruction fetch from normal cacheable memory that causes a refill from outside of the cache is counted. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted. Where instruction fetches consist of multiple instructions, these accesses count as single events. CP15 cache maintenance operations do not count as events. This counter increments for speculative instruction fetches and for fetches of instructions that reach execution"
         },
         {
             "code": 2,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "component": "L1ITLB",
-            "description": "The counter counts instruction memory accesses that cause a TLB refill of at least the Level 1 instruction TLB. This includes each instruction memory access that causes an access to a level of memory system due to a translation table walk or an access to another level of TLB caching"
+            "description": "Instruction fetch that causes a TLB refill at the lowest level of TLB. Each instruction fetch that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative instruction fetches and for fetches of instructions that reach execution"
         },
         {
             "code": 3,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a refill of at least the Level 1 data or unified cache from outside the Level 1 cache. Each access that causes a new linefill is counted, including those from instructions that generate multiple accesses, such as load or store multiples, and PUSH and POP instructions. In particular, the counter counts accesses to the Level 1 cache that cause a refill that is satisfied by another Level 1 data or unified cache, or a Level 2 cache, or memory"
+            "description": "Data read or write operation that causes a refill at the lowest level of data or unified cache. Each data read from or write to normal cacheable memory that causes a refill from outside of the cache is counted. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted. Each access to a cache line to normal cacheable memory that causes a new linefill is counted, including the multiple transaction of instructions such as LDM or STM, PUSH and POP. Write-through writes that hit in the cache do not cause a linefill and so are not counted. CP15 cache maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
         },
         {
             "code": 4,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE",
             "architectural": false,
-            "type": "UEVT",
+            "type": "INS",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a cache access to at least the Level 1 data or unified cache. Each access to a cache line is counted including the multiple accesses of instructions, such as LDM or STM . Each access to other Level 1 data or unified memory structures, for example refill buffers, write buffers, and write- back buffers, is also counted"
+            "description": "Data read or write operation that causes a cache access at the lowest level of data or unified cache. Each access to a cache line to normal cacheable memory is counted including the multiple transaction of instructions such as LDM or STM. CP15 cache maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
         },
         {
             "code": 5,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "component": "L1DTLB",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a TLB refill of at least the Level 1 data or unified TLB. It counts each read or write that causes a refill, in the form of a translation table walk or an access to another level of TLB caching"
+            "description": "Data read or write operation that causes a TLB refill at the lowest level of TLB. Each data read or write operation that causes a translation table walk or an access to another level of TLB caching is counted. CP15 TLB maintenance operations do not count as events. This counter increments for speculative data accesses and for data accesses that are explicitly made by instructions"
         },
         {
             "code": 6,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter increments for every executed memory-reading instruction"
+            "description": "Data read architecturally executed. This counter increments for every instruction that explicitly read data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 7,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter increments for every executed memory-writing instruction, including SWP. The counter does not increment for a Store-Exclusive instruction that fails"
+            "description": "Data write architecturally executed. The counter increments for every instruction that explicitly wrote data, including SWP. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 8,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter increments for every architecturally executed instruction"
+            "description": "Instruction architecturally executed. This counter counts for all instructions, including conditional instructions that fail their condition codes"
         },
         {
             "code": 9,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_TAKEN",
-            "architectural": true,
             "type": "EXC",
-            "description": "The counter increments for each exception taken.  The counter counts only the processor exceptions. It does not count untrapped floating-point exceptions or ThumbEE null checks and index checks"
+            "description": "Exception taken. This counts for each exception taken"
         },
         {
             "code": 10,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
-            "description": "The counter increments for each executed exception return instruction"
+            "description": "Exception return architecturally executed. This includes: +ICI RFE <addressing_mode> <Rn>{!} +ICI MOVS PC (and other similar data processing instructions) +ICI LDM <addressing_mode> Rn{!}, <registers_and_pc> This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 11,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
-            "type": "UEVT",
-            "description": "The counter increments for every write to the CONTEXTIDR"
+            "type": "INS",
+            "description": "Instruction that writes to the Context ID Register architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 12,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
-            "type": "EXC",
-            "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
+            "type": "INS",
+            "description": "Software change of PC, except by an exception, architecturally executed. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 13,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter counts all immediate branch instructions that are architecturally executed"
+            "description": "Immediate branch architecturally executed, taken or not taken. This includes B{L}, BLX, CB{N}Z, HB{L}, and HBLP. This counter counts for all immediate branch instructions that are architecturally executed, including conditional instructions that fail their condition codes"
         },
         {
             "code": 14,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
-            "type": "INS",
-            "description": "The counter counts all procedure return instructions that are architecturally executed"
+            "type": "EXC",
+            "description": "Procedure return, other than exception returns, architecturally executed. This includes: +ICI BX R14 +ICI MOV PC, LR +ICI POP {..., PC} +ICI LDR PC, [R13], #offset +ICI LDMIA R9!, {...,PC} +ICI LDR PC, [R9], #offset This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 15,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "UNALIGNED_LDST_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter counts each memory-reading instruction or memory-writing instruction that accesses an unaligned address"
+            "description": "Unaligned access architecturally executed. This counts each instruction that is an access to an unaligned address. This counter only increments for instructions that are unconditional or that pass their condition codes"
         },
         {
             "code": 16,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
-            "description": "The counter counts each correction to the predicted program flow that occurs because of a misprediction from, or no prediction from, the branch prediction resources and that relates to instructions that the branch prediction resources are capable of predicting"
+            "description": "Branch mispredicted or not predicted. This counts for every pipeline flush because of a misprediction from the program flow prediction resources"
+        },
+        {
+            "code": 17,
+            "refs": [
+                0
+            ],
+            "name": "CPU_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Cycle count. This counts for every clock cycle"
         },
         {
             "code": 18,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_PRED",
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
-            "description": "The counter counts every branch or other change in the program flow that the branch prediction resources are capable of predicting"
+            "description": "Branches or other change in the program flow that could have been predicted by the branch prediction resources of the processor"
         },
         {
             "code": 64,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
@@ -222,12 +252,12 @@
         {
             "code": 65,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L1D",
             "description": "Any store that is merged in the L2 memory system"
@@ -235,7 +265,8 @@
         {
             "code": 66,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_RD",
             "recommended": true,
@@ -249,7 +280,8 @@
         {
             "code": 67,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_WR",
             "recommended": true,
@@ -263,7 +295,8 @@
         {
             "code": 68,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_INNER",
             "recommended": true,
@@ -276,12 +309,12 @@
         {
             "code": 69,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L1D",
             "description": "The number of AXI read data transfers"
@@ -289,12 +322,12 @@
         {
             "code": 70,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WB_VICTIM",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L1D",
             "description": "The number of AXI write data transfers"
@@ -302,12 +335,12 @@
         {
             "code": 71,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WB_CLEAN",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L1D",
             "description": "Any replay event in the memory system"
@@ -315,12 +348,12 @@
         {
             "code": 72,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_INVAL",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L1D",
             "description": "Any unaligned memory access that results in a replay"
@@ -328,42 +361,46 @@
         {
             "code": 73,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
             "component": "L1D",
-            "description": "Any L1 data memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: hash hit and physical address miss, hash hit and physical address hit in another way and hash miss and physical address hit"
+            "description": "Any L1 data memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: +ICI hash hit and physical address miss +ICI hash hit and physical address hit in another way +ICI hash miss and physical address hit"
         },
         {
             "code": 74,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "subtype": "ACCESS",
             "component": "L1I",
-            "description": "Any L1 instruction memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: hash hit and physical address miss, hash hit and physical address hit in another way and hash miss and physical address hit"
+            "description": "Any L1 instruction memory access that misses in the cache as a result of the hashing algorithm. The cases covered are: +ICI hash hit and physical address miss +ICI hash hit and physical address hit in another way +ICI hash miss and physical address hit"
         },
         {
             "code": 75,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
             "component": "L1D",
-            "description": "Any L1 data memory access in which a page coloring alias occurs. alias = virtual address [12] ! = physical address [12]. This behavior results in a data memory eviction or cast out"
+            "description": "Any L1 data memory access in which a page coloring alias occurs. alias = virtual address [12] ! = physical address [12] This behavior results in a data memory eviction or cast out"
         },
         {
             "code": 76,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_REFILL_RD",
             "recommended": true,
@@ -377,7 +414,8 @@
         {
             "code": 77,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_REFILL_WR",
             "recommended": true,
@@ -391,7 +429,8 @@
         {
             "code": 78,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_RD",
             "recommended": true,
@@ -405,7 +444,8 @@
         {
             "code": 79,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_WR",
             "recommended": true,
@@ -418,7 +458,8 @@
         {
             "code": 80,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_RD",
             "recommended": true,
@@ -432,12 +473,12 @@
         {
             "code": 81,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_WR",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "L2",
@@ -446,26 +487,26 @@
         {
             "code": 82,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL_RD",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "L2",
-            "description": "Two forms of branch direction misprediction: branch predicted taken, but was not taken and branch predicted not taken, but was taken"
+            "description": "Two forms of branch direction misprediction: +ICI branch predicted taken, but was not taken +ICI branch predicted not taken, but was taken"
         },
         {
             "code": 83,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL_WR",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "component": "L2",
             "description": "Any predictable branch that is predicted to be taken"
@@ -473,7 +514,8 @@
         {
             "code": 84,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "UEVT",
@@ -483,17 +525,19 @@
         {
             "code": 85,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "INS",
-            "description": "Number of operations issued, where an operation is either: an instruction or one operation in a sequence of operations that make up a multi-cycle instruction"
+            "description": "Number of operations issued, where an operation is either: +ICI an instruction +ICI one operation in a sequence of operations that make up a multi-cycle instruction"
         },
         {
             "code": 86,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_WB_VICTIM",
             "recommended": true,
@@ -506,7 +550,8 @@
         {
             "code": 87,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_WB_CLEAN",
             "recommended": true,
@@ -519,7 +564,8 @@
         {
             "code": 88,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_INVAL",
             "recommended": true,
@@ -532,7 +578,8 @@
         {
             "code": 89,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -542,7 +589,8 @@
         {
             "code": 90,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
@@ -552,36 +600,36 @@
         {
             "code": 112,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_SPEC",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[0]"
         },
         {
             "code": 113,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_SPEC",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from external input source PMUEXTIN[1]"
         },
         {
             "code": 114,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LDST_SPEC",
             "recommended": true,
             "impdef": true,
-            "architectural": false,
             "type": "UEVT",
             "description": "Counts any event from both external input sources PMUEXTIN[0] and PMUEXTIN[1]"
         }

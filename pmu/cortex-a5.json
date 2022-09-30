@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Wed Aug 24 21:19:16 2022",
+    "timestamp": "Mon Sep 26 21:05:50 2022",
     "implementer": "A",
     "cpuid": "0x41c05",
     "cpu": "Cortex-A5",
@@ -8,6 +8,10 @@
     "pmu_architecture": "pmuv2",
     "counters": 2,
     "refs": [
+        {
+            "ref": "Cortex-A5 TRM",
+            "public": true
+        },
         {
             "ref": "gator events-Cortex-A5.xml",
             "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A5.xml",
@@ -18,311 +22,439 @@
         {
             "code": 0,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "SW_INCR",
-            "architectural": true,
             "type": "UEVT",
-            "description": "The counter increments on writes to the PMSWINC register"
+            "description": "Software increment. The register is incremented only on writes to the Software Increment Register. See Software Increment Register on page 10-7"
         },
         {
             "code": 1,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "REFILL",
             "component": "L1I",
-            "description": "The counter counts instruction memory accesses that cause a refill of at least the Level 1 instruction or unified cache. This includes each instruction memory access that causes a refill from outside the cache. It excludes accesses that do not cause a new cache refill but are satisfied from refilling data of a previous miss"
+            "event_bits": 1,
+            "event_lsb": 0,
+            "trace_lsb": 0,
+            "description": "Instruction fetch that causes a refill at (at least) the lowest level of instruction or unified cache. Includes the speculative linefills in the count"
         },
         {
             "code": 2,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
             "component": "L1ITLB",
-            "description": "The counter counts instruction memory accesses that cause a TLB refill of at least the Level 1 instruction TLB. This includes each instruction memory access that causes an access to a level of memory system due to a translation table walk or an access to another level of TLB caching"
+            "event_bits": 1,
+            "event_lsb": 1,
+            "trace_lsb": 1,
+            "description": "Instruction fetch that causes a TLB refill at (at least) the lowest level of TLB. Includes the speculative requests in the count"
         },
         {
             "code": 3,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a refill of at least the Level 1 data or unified cache from outside the Level 1 cache. Each access that causes a new linefill is counted, including those from instructions that generate multiple accesses, such as load or store multiples, and PUSH and POP instructions. In particular, the counter counts accesses to the Level 1 cache that cause a refill that is satisfied by another Level 1 data or unified cache, or a Level 2 cache, or memory"
+            "event_bits": 1,
+            "event_lsb": 2,
+            "trace_lsb": 2,
+            "description": "Data read or write operation that causes a refill at (at least) the lowest level of data or unified cache. Counts the number of allocations performed in the Data Cache because of a read or a write"
         },
         {
             "code": 4,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE",
             "architectural": false,
             "type": "UEVT",
             "subtype": "WRITE",
             "component": "L1D",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a cache access to at least the Level 1 data or unified cache. Each access to a cache line is counted including the multiple accesses of instructions, such as LDM or STM . Each access to other Level 1 data or unified memory structures, for example refill buffers, write buffers, and write- back buffers, is also counted"
+            "event_bits": 1,
+            "event_lsb": 3,
+            "trace_lsb": 3,
+            "description": "Data read or write operation that causes a cache access at (at least) the lowest level of data or unified cache. This includes speculative reads"
         },
         {
             "code": 5,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
             "type": "UEVT",
+            "subtype": "WRITE",
             "component": "L1DTLB",
-            "description": "The counter counts each memory-read operation or memory-write operation that causes a TLB refill of at least the Level 1 data or unified TLB. It counts each read or write that causes a refill, in the form of a translation table walk or an access to another level of TLB caching"
+            "event_bits": 1,
+            "event_lsb": 4,
+            "trace_lsb": 4,
+            "description": "Data read or write operation that causes a TLB refill at (at least) the lowest level of TLB. This does not include micro TLB misses because of PLD, PLI, CP15 Cache operation by MVA and CP15 VA to PA operations"
         },
         {
             "code": 6,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_RETIRED",
-            "architectural": true,
+            "architectural": false,
             "type": "INS",
-            "description": "The counter increments for every executed memory-reading instruction"
+            "event_bits": 1,
+            "event_lsb": 5,
+            "trace_lsb": 5,
+            "description": "Data read architecturally executed. Counts the number of data read instructions accepted by the Load Store Unit. This includes counting the speculative and aborted LDR/LDM, and the reads because of the SWP instructions"
         },
         {
             "code": 7,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_RETIRED",
-            "architectural": true,
+            "architectural": false,
             "type": "INS",
-            "description": "The counter increments for every executed memory-writing instruction, including SWP. The counter does not increment for a Store-Exclusive instruction that fails"
+            "event_bits": 1,
+            "event_lsb": 6,
+            "trace_lsb": 6,
+            "description": "Data write architecturally executed. Counts the number of data write instructions accepted by the Load Store Unit. This includes counting the speculative and aborted STR/STM, and the writes because of the SWP instructions"
         },
         {
             "code": 8,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "INST_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "The counter increments for every architecturally executed instruction"
+            "event_bits": 1,
+            "event_lsb": 7,
+            "trace_lsb": 7,
+            "description": "Instruction architecturally executed"
         },
         {
             "code": 9,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_TAKEN",
-            "architectural": true,
             "type": "EXC",
-            "description": "The counter increments for each exception taken.  The counter counts only the processor exceptions. It does not count untrapped floating-point exceptions or ThumbEE null checks and index checks"
+            "event_bits": 1,
+            "event_lsb": 8,
+            "trace_lsb": 8,
+            "description": "Exception taken. Counts the number of exceptions architecturally taken"
         },
         {
             "code": 10,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_RETURN",
             "architectural": true,
             "type": "EXC",
-            "description": "The counter increments for each executed exception return instruction"
+            "event_bits": 1,
+            "event_lsb": 9,
+            "trace_lsb": 9,
+            "description": "Exception return architecturally executed. The following instructions are reported on this event: +ICI LDM {..., pc}^ +ICI RFE +ICI DP S pc"
         },
         {
             "code": 11,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
-            "type": "UEVT",
-            "description": "The counter increments for every write to the CONTEXTIDR"
+            "type": "INS",
+            "event_bits": 1,
+            "event_lsb": 10,
+            "trace_lsb": 10,
+            "description": "Change to ContextID retired. Counts the number of instructions architecturally executed writing into the ContextID Register"
         },
         {
             "code": 12,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "PC_WRITE_RETIRED",
-            "architectural": true,
-            "type": "EXC",
-            "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 11,
+            "trace_lsb": 11,
+            "description": "Software change of PC"
         },
         {
             "code": 13,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
-            "type": "INS",
-            "description": "The counter counts all immediate branch instructions that are architecturally executed"
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 12,
+            "trace_lsb": 12,
+            "description": "Immediate branch architecturally executed (taken or not taken). This includes the branches which are flushed due to a previous load/store which aborts late"
         },
         {
             "code": 14,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
-            "type": "INS",
-            "description": "The counter counts all procedure return instructions that are architecturally executed"
+            "type": "EXC",
+            "event_bits": 1,
+            "event_lsb": 13,
+            "trace_lsb": 13,
+            "description": "Procedure return (other than exception returns) architecturally executed"
         },
         {
             "code": 15,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "UNALIGNED_LDST_RETIRED",
-            "architectural": true,
-            "type": "INS",
-            "description": "The counter counts each memory-reading instruction or memory-writing instruction that accesses an unaligned address"
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 14,
+            "trace_lsb": 14,
+            "description": "Unaligned load-store"
         },
         {
             "code": 16,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_MIS_PRED",
             "architectural": false,
             "type": "UEVT",
             "subtype": "MISPREDICT",
             "component": "BPU",
-            "description": "The counter counts each correction to the predicted program flow that occurs because of a misprediction from, or no prediction from, the branch prediction resources and that relates to instructions that the branch prediction resources are capable of predicting"
+            "event_bits": 1,
+            "event_lsb": 15,
+            "trace_lsb": 15,
+            "description": "Branch mispredicted/not predicted. Counts the number of mispredicted or not-predicted branches executed. This includes the branches which are flushed because of a previous load/store which aborts late"
+        },
+        {
+            "code": 17,
+            "refs": [
+                0
+            ],
+            "name": "CPU_CYCLES",
+            "type": "CYCLE",
+            "description": "Cycle counter"
         },
         {
             "code": 18,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_PRED",
-            "architectural": false,
             "type": "UEVT",
             "component": "BPU",
-            "description": "The counter counts every branch or other change in the program flow that the branch prediction resources are capable of predicting"
+            "event_bits": 1,
+            "event_lsb": 16,
+            "trace_lsb": 16,
+            "description": "Branches or other change in program flow that could have been predicted by the branch prediction resources of the processor. This includes the branches which are flushed because of a previous load/store which aborts late"
         },
         {
             "code": 19,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS",
-            "architectural": false,
             "type": "UEVT",
-            "subtype": "WRITE",
-            "component": "L1D",
-            "description": "The counter counts memory-read or memory-write operations that the processor made. The counter increments whether the access results in an access to a Level 1 data or unified cache, a Level 2 data or unified cache, or neither of these"
+            "event_bits": 1,
+            "event_lsb": 17,
+            "trace_lsb": 17,
+            "description": "Data memory access"
         },
         {
             "code": 20,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE",
             "architectural": false,
-            "type": "UEVT",
-            "subtype": "REFILL",
+            "type": "INS",
+            "subtype": "ACCESS",
             "component": "L1I",
-            "description": "The counter counts instruction memory accesses that access at least the Level 1 instruction or unified cache. Each access to other Level 1 instruction memory structures, such as refill buffers, is also counted"
+            "event_bits": 1,
+            "event_lsb": 18,
+            "trace_lsb": 18,
+            "description": "Instruction Cache access"
         },
         {
             "code": 21,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
             "type": "UEVT",
-            "subtype": "WRITE",
+            "subtype": "EVICT",
             "component": "L1D",
-            "description": "The counter counts every write-back of data from the Level 1 data or unified cache. The counter counts each write-back that causes data to be written from the Level 1 cache to outside of the Level 1 cache"
+            "event_bits": 1,
+            "event_lsb": 19,
+            "trace_lsb": 19,
+            "description": "Data cache eviction"
         },
         {
             "code": 134,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
-            "description": "As 'Exceptions: Taken', but counts only those exceptions taken locally that are IRQ or Virtual IRQ exceptions"
+            "event_bits": 1,
+            "event_lsb": 20,
+            "trace_lsb": 20,
+            "description": "IRQ exception taken"
         },
         {
             "code": 135,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
             "type": "EXC",
-            "description": "As 'Exceptions: Taken', but counts only those exceptions taken locally that are FIQ or Virtual FIQ exceptions"
+            "event_bits": 1,
+            "event_lsb": 21,
+            "trace_lsb": 21,
+            "description": "FIQ exception taken"
         },
         {
             "code": 192,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 22,
+            "trace_lsb": 22,
             "description": "External memory request"
         },
         {
             "code": 193,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "architectural": false,
             "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 23,
+            "trace_lsb": 23,
             "description": "Non-cacheable external memory request"
         },
         {
             "code": 194,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 24,
+            "trace_lsb": 24,
             "description": "Linefill because of prefetch"
         },
         {
             "code": 195,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 25,
+            "trace_lsb": 25,
             "description": "Prefetch linefill dropped"
         },
         {
             "code": 196,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 26,
+            "trace_lsb": 26,
             "description": "Entering read allocate mode"
         },
         {
             "code": 197,
             "refs": [
+                0,
+                1
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "event_bits": 1,
+            "event_lsb": 27,
+            "trace_lsb": 27,
+            "description": "Read allocate mode"
+        },
+        {
+            "code": 198,
+            "refs": [
                 0
             ],
             "impdef": true,
             "type": "UEVT",
-            "description": "Read allocate mode"
+            "event_bits": 1,
+            "event_lsb": 28,
+            "trace_lsb": 28,
+            "description": "Reserved"
         },
         {
             "code": 199,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "ETM",
@@ -331,7 +463,8 @@
         {
             "code": 200,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
             "type": "ETM",
@@ -340,11 +473,16 @@
         {
             "code": 201,
             "refs": [
-                0
+                0,
+                1
             ],
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
-            "description": "No operation issued due to the backend, store, STB full"
+            "event_bits": 1,
+            "event_lsb": 29,
+            "trace_lsb": 29,
+            "description": "Data Write operation that stalls the pipeline because the store buffer is full"
         }
     ]
 }

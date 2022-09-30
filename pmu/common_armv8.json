@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Wed Aug 24 21:19:16 2022",
+    "timestamp": "Mon Sep 26 21:05:50 2022",
     "cpu": "common ARMv8.0",
     "architecture": "armv8-a",
     "pmu_architecture": "pmuv3",
@@ -1038,6 +1038,7 @@
             "name": "BUS_ACCESS_RD",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access, read"
@@ -1050,6 +1051,7 @@
             "name": "BUS_ACCESS_WR",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access, write"
@@ -1090,6 +1092,7 @@
             "name": "BUS_ACCESS_NORMAL",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access, normal"
@@ -1102,6 +1105,7 @@
             "name": "BUS_ACCESS_PERIPH",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "component": "BUS",
             "description": "Bus access, peripheral"
@@ -1114,6 +1118,7 @@
             "name": "MEM_ACCESS_RD",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Data memory access, read"
         },
@@ -1125,6 +1130,7 @@
             "name": "MEM_ACCESS_WR",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Data memory access, write"
         },
@@ -1136,6 +1142,7 @@
             "name": "UNALIGNED_LD_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Unaligned access, read"
         },
@@ -1147,6 +1154,7 @@
             "name": "UNALIGNED_ST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Unaligned access, write"
         },
@@ -1158,6 +1166,7 @@
             "name": "UNALIGNED_LDST_SPEC",
             "recommended": true,
             "impdef": true,
+            "architectural": false,
             "type": "UEVT",
             "description": "Unaligned access"
         },
@@ -1385,6 +1394,7 @@
             "name": "EXC_UNDEF",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Other synchronous"
         },
@@ -1396,6 +1406,7 @@
             "name": "EXC_SVC",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Supervisor Call"
         },
@@ -1407,6 +1418,7 @@
             "name": "EXC_PABORT",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Instruction Abort"
         },
@@ -1418,6 +1430,7 @@
             "name": "EXC_DABORT",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Data Abort and SError"
         },
@@ -1429,6 +1442,7 @@
             "name": "EXC_IRQ",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, IRQ"
         },
@@ -1440,6 +1454,7 @@
             "name": "EXC_FIQ",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, FIQ"
         },
@@ -1451,6 +1466,7 @@
             "name": "EXC_SMC",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Secure Monitor Call"
         },
@@ -1462,6 +1478,7 @@
             "name": "EXC_HVC",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Hypervisor Call"
         },
@@ -1473,6 +1490,7 @@
             "name": "EXC_TRAP_PABORT",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Instruction Abort not taken locally"
         },
@@ -1484,6 +1502,7 @@
             "name": "EXC_TRAP_DABORT",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Data Abort or SError not taken locally"
         },
@@ -1495,6 +1514,7 @@
             "name": "EXC_TRAP_OTHER",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, Other traps not taken locally"
         },
@@ -1506,6 +1526,7 @@
             "name": "EXC_TRAP_IRQ",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, IRQ not taken locally"
         },
@@ -1517,6 +1538,7 @@
             "name": "EXC_TRAP_FIQ",
             "recommended": true,
             "impdef": true,
+            "architectural": true,
             "type": "EXC",
             "description": "Exception taken, FIQ not taken locally"
         },
