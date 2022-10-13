@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Thu Oct 13 13:18:33 2022",
+    "timestamp": "Thu Oct 13 13:25:50 2022",
     "cpus": [
         {
             "implementer": 65,
@@ -295,6 +295,12 @@
             "name": "Cortex-M85",
             "arch": "armv8.1-m",
             "cpuid": "0x41d23"
+        },
+        {
+            "implementer": 63,
+            "name": "Morello",
+            "arch": "armv8.2-a",
+            "cpuid": "0x3f412"
         }
     ]
 }
