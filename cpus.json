@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Wed Jul 20 09:26:30 2022",
+    "timestamp": "Thu Oct 13 13:18:33 2022",
     "cpus": [
         {
             "implementer": 65,
@@ -205,6 +205,12 @@
             "name": "Cortex-X3",
             "arch": "armv9-a",
             "cpuid": "0x41d4e"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse V2",
+            "arch": "armv9-a",
+            "cpuid": "0x41d4f"
         },
         {
             "implementer": 65,
