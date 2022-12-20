@@ -1,0 +1,492 @@
+{
+    "_type": "Events",
+    "timestamp": "Thu Oct 13 15:11:59 2022",
+    "implementer": "A",
+    "cpuid": "0x41c17",
+    "cpu": "Cortex-R7",
+    "architecture": "armv7-r",
+    "pmu_architecture": "pmuv2",
+    "counters": 8,
+    "refs": [
+        {
+            "ref": "gator events-Cortex-R7.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-R7.xml",
+            "public": true
+        }
+    ],
+    "events": [
+        {
+            "code": 0,
+            "refs": [
+                0
+            ],
+            "name": "SW_INCR",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Incremented only on writes to the Software Increment Register"
+        },
+        {
+            "code": 1,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "Each instruction fetch from normal cacheable memory that causes a refill from the L2 memory system generates this event. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted"
+        },
+        {
+            "code": 3,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "Each data read from or write to normal cacheable memory that causes a refill from the L2 memory system generates this event. Accesses that do not cause a new cache refill, but are satisfied from refilling data of a previous miss are not counted"
+        },
+        {
+            "code": 4,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Each access to a cache line is counted including the multiple transactions of an LDM, STM, or other operations. CP15 cache maintenance operations do not count as events"
+        },
+        {
+            "code": 6,
+            "refs": [
+                0
+            ],
+            "name": "LD_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Data Read architecturally executed. This event occurs for every instruction that explicitly reads data, including SWP"
+        },
+        {
+            "code": 7,
+            "refs": [
+                0
+            ],
+            "name": "ST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Data Write architecturally executed. This event occurs for every instruction that explicitly writes data, including SWP"
+        },
+        {
+            "code": 8,
+            "refs": [
+                0
+            ],
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed"
+        },
+        {
+            "code": 9,
+            "refs": [
+                0
+            ],
+            "name": "EXC_TAKEN",
+            "architectural": true,
+            "type": "EXC",
+            "description": "This event occurs on each exception taken"
+        },
+        {
+            "code": 10,
+            "refs": [
+                0
+            ],
+            "name": "EXC_RETURN",
+            "architectural": true,
+            "type": "EXC",
+            "description": "Exception return architecturally executed. This event occurs on every exception return"
+        },
+        {
+            "code": 11,
+            "refs": [
+                0
+            ],
+            "name": "CID_WRITE_RETIRED",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Change to Context ID executed"
+        },
+        {
+            "code": 12,
+            "refs": [
+                0
+            ],
+            "name": "PC_WRITE_RETIRED",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Software changed the PC, except by an exception, architecturally executed"
+        },
+        {
+            "code": 13,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "B immediate, BL immediate or BLX immediate instruction architecturally executed (taken or not taken)"
+        },
+        {
+            "code": 14,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_RETIRED",
+            "architectural": true,
+            "type": "EXC",
+            "description": "Procedure return architecturally executed, other than exception returns, for example, BZ Rm, LDM Rn, {..,PC}"
+        },
+        {
+            "code": 15,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "This event occurs for each instruction that was to an unaligned address that either triggered an alignment fault, or would have done so if the SCTLR A-bit had been set"
+        },
+        {
+            "code": 16,
+            "refs": [
+                0
+            ],
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Branch mispredicted or not predicted"
+        },
+        {
+            "code": 18,
+            "refs": [
+                0
+            ],
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Branches or other change in program flow that could have been predicted by the branch prediction resources of the processor"
+        },
+        {
+            "code": 20,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "INS",
+            "component": "L1I",
+            "description": "Instruction access"
+        },
+        {
+            "code": 80,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "component": "L2",
+            "description": "Number of cycles IRQs are interrupted"
+        },
+        {
+            "code": 81,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "component": "L2",
+            "description": "Number of cycles IRQs are interrupted"
+        },
+        {
+            "code": 97,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Parity error on PRED"
+        },
+        {
+            "code": 98,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_SHARED",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Parity error on BTAC"
+        },
+        {
+            "code": 99,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_NOT_SHARED",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Detected ECC errors on ITCM"
+        },
+        {
+            "code": 100,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_NORMAL",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Detected ECC errors on DTCM"
+        },
+        {
+            "code": 101,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_PERIPH",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "component": "BUS",
+            "description": "Detected ECC errors on instruction cache"
+        },
+        {
+            "code": 102,
+            "refs": [
+                0
+            ],
+            "name": "MEM_ACCESS_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Detected ECC errors on data cache"
+        },
+        {
+            "code": 104,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LD_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Correctable ECC errors on slave bus, data write channel"
+        },
+        {
+            "code": 105,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_ST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Correctable ECC errors on peripheral master bus, data read channel"
+        },
+        {
+            "code": 106,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Correctable ECC errors on master 0 bus, data read channel"
+        },
+        {
+            "code": 107,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Correctable ECC errors on master 1 bus, data read channel"
+        },
+        {
+            "code": 108,
+            "refs": [
+                0
+            ],
+            "name": "LDREX_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Detected ECC errors on SCU RAM"
+        },
+        {
+            "code": 128,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "STREX passed"
+        },
+        {
+            "code": 129,
+            "refs": [
+                0
+            ],
+            "name": "EXC_UNDEF",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "UEVT",
+            "description": "STREX failed"
+        },
+        {
+            "code": 130,
+            "refs": [
+                0
+            ],
+            "name": "EXC_SVC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "UEVT",
+            "description": "Literal pool in TCM region"
+        },
+        {
+            "code": 144,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "DMB stall"
+        },
+        {
+            "code": 145,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "ITCM access"
+        },
+        {
+            "code": 146,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "DTCM access"
+        },
+        {
+            "code": 147,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "SCU coherency operation (CCB request)"
+        },
+        {
+            "code": 148,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "SCU coherency"
+        },
+        {
+            "code": 149,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction cache dependent stall"
+        },
+        {
+            "code": 150,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache dependent stall"
+        },
+        {
+            "code": 151,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable no peripheral dependent stall"
+        },
+        {
+            "code": 152,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable peripheral dependent stall"
+        },
+        {
+            "code": 153,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data cache high priority dependent stall"
+        }
+    ]
+}
