@@ -13,11 +13,13 @@
             "public": true
         },
         {
-            "ref": "Neoverse N1 internal docs",
+            "ref": "<deleted>",
             "public": false
         },
         {
-            "public": false
+            "ref": "gator events-Neoverse-N1.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Neoverse-N1.xml",
+            "public": true
         }
     ],
     "events": [

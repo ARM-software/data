@@ -9,7 +9,7 @@
     "counters": 6,
     "refs": [
         {
-            "ref": "Cortex-A9 TRM",
+            "ref": "<deleted>",
             "public": false
         },
         {
@@ -17,14 +17,15 @@
             "public": true
         },
         {
-            "public": false
+            "ref": "gator events-Cortex-A9.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A9.xml",
+            "public": true
         }
     ],
     "events": [
         {
             "code": 0,
             "refs": [
-                0,
                 2
             ],
             "name": "SW_INCR",
@@ -34,7 +35,6 @@
         {
             "code": 1,
             "refs": [
-                0,
                 2
             ],
             "name": "L1I_CACHE_REFILL",
@@ -46,7 +46,6 @@
         {
             "code": 2,
             "refs": [
-                0,
                 2
             ],
             "name": "L1I_TLB_REFILL",
@@ -58,7 +57,6 @@
         {
             "code": 3,
             "refs": [
-                0,
                 2
             ],
             "name": "L1D_CACHE_REFILL",
@@ -70,7 +68,6 @@
         {
             "code": 4,
             "refs": [
-                0,
                 2
             ],
             "name": "L1D_CACHE",
@@ -83,7 +80,6 @@
         {
             "code": 5,
             "refs": [
-                0,
                 2
             ],
             "name": "L1D_TLB_REFILL",
@@ -95,7 +91,6 @@
         {
             "code": 6,
             "refs": [
-                0,
                 2
             ],
             "name": "LD_RETIRED",
@@ -105,7 +100,6 @@
         {
             "code": 7,
             "refs": [
-                0,
                 2
             ],
             "name": "ST_RETIRED",
@@ -115,7 +109,6 @@
         {
             "code": 8,
             "refs": [
-                0,
                 2
             ],
             "name": "INST_RETIRED",
@@ -126,7 +119,6 @@
         {
             "code": 9,
             "refs": [
-                0,
                 2
             ],
             "name": "EXC_TAKEN",
@@ -136,7 +128,6 @@
         {
             "code": 10,
             "refs": [
-                0,
                 2
             ],
             "name": "EXC_RETURN",
@@ -146,7 +137,6 @@
         {
             "code": 11,
             "refs": [
-                0,
                 2
             ],
             "name": "CID_WRITE_RETIRED",
@@ -156,7 +146,6 @@
         {
             "code": 12,
             "refs": [
-                0,
                 2
             ],
             "name": "PC_WRITE_RETIRED",
@@ -166,7 +155,6 @@
         {
             "code": 13,
             "refs": [
-                0,
                 2
             ],
             "name": "BR_IMMED_RETIRED",
@@ -176,7 +164,6 @@
         {
             "code": 14,
             "refs": [
-                0,
                 2
             ],
             "name": "BR_RETURN_RETIRED",
@@ -187,7 +174,6 @@
         {
             "code": 15,
             "refs": [
-                0,
                 2
             ],
             "name": "UNALIGNED_LDST_RETIRED",
@@ -197,7 +183,6 @@
         {
             "code": 16,
             "refs": [
-                0,
                 2
             ],
             "name": "BR_MIS_PRED",
@@ -210,7 +195,6 @@
         {
             "code": 18,
             "refs": [
-                0,
                 2
             ],
             "name": "BR_PRED",

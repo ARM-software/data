@@ -13,11 +13,13 @@
             "public": true
         },
         {
-            "ref": "Cortex-A15 internal docs",
+            "ref": "<deleted>",
             "public": false
         },
         {
-            "public": false
+            "ref": "gator events-Cortex-A15.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A15.xml",
+            "public": true
         }
     ],
     "events": [
