@@ -1,14 +1,14 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:04 2024",
+    "timestamp": "Thu Feb  8 21:07:05 2024",
     "implementer": "A",
-    "cpuid": "0x41d4d",
-    "cpu": "Cortex-A715",
-    "architecture": "armv9-a",
+    "cpuid": "0x41d82",
+    "cpu": "Cortex-X4",
+    "architecture": "armv9.2-a",
     "pmu_architecture": "pmuv3",
     "refs": [
         {
-            "ref": "Cortex-A715 TRM",
+            "ref": "Cortex-X4 TRM",
             "public": true
         }
     ],
@@ -267,6 +267,15 @@
             "description": "This event counts for every beat of data that is transferred over the data channels between the core and the SCU. If both read and write data beats are transferred on a given cycle, this event is counted twice on that cycle. This event counts the sum of BUS_ACCESS_RD and BUS_ACCESS_WR"
         },
         {
+            "code": 26,
+            "refs": [
+                0
+            ],
+            "name": "MEMORY_ERROR",
+            "type": "UEVT",
+            "description": "Local memory error"
+        },
+        {
             "code": 27,
             "refs": [
                 0
@@ -295,7 +304,7 @@
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
-            "description": "Bus cycle This event duplicates CPU_CYCLES"
+            "description": "Bus cycle"
         },
         {
             "code": 30,
@@ -578,7 +587,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L1D",
-            "description": "Level 1 data cache access, read Counts any load operation or translation table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. Cache maintenance instructions and prefetches are not counted. Noncacheable accesses are not counted"
+            "description": "Level 1 data cache access, read Counts any load operation or translation table walk access which looks up in the L1 data cache. In particular, any access which could count the L1D_CACHE_REFILL_RD event causes this event to count. Cache maintenance instructions and prefetches are not counted. Non-cacheable accesses are not counted"
         },
         {
             "code": 65,
@@ -623,6 +632,34 @@
             "description": "Level 1 data cache refill, outer This event counts any L1 data cache linefill (as counted by L1D_CACHE_REFILL) which does not hit in the L2 cache, L3 cache, or another core in the cluster, and instead obtains data from outside the cluster"
         },
         {
+            "code": 70,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_WB_VICTIM",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "Level 1 data cache write-back, victim"
+        },
+        {
+            "code": 71,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_WB_CLEAN",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "Level 1 data cache write-back, cleaning and coherency"
+        },
+        {
             "code": 72,
             "refs": [
                 0
@@ -634,6 +671,58 @@
             "type": "UEVT",
             "component": "L1D",
             "description": "Level 1 data cache invalidate"
+        },
+        {
+            "code": 76,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_REFILL_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data TLB refill, read"
+        },
+        {
+            "code": 77,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_REFILL_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data TLB refill, write"
+        },
+        {
+            "code": 78,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data TLB access, read"
+        },
+        {
+            "code": 79,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data TLB access, write"
         },
         {
             "code": 80,
@@ -733,6 +822,58 @@
             "description": "Level 2 data cache invalidate This event counts any cache maintenance operation which causes the invalidation of a line present in the L2 cache"
         },
         {
+            "code": 92,
+            "refs": [
+                0
+            ],
+            "name": "L2D_TLB_REFILL_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Attributable level 2 data or unified TLB refill, read"
+        },
+        {
+            "code": 93,
+            "refs": [
+                0
+            ],
+            "name": "L2D_TLB_REFILL_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Attributable level 2 data or unified TLB refill, write"
+        },
+        {
+            "code": 94,
+            "refs": [
+                0
+            ],
+            "name": "L2D_TLB_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Attributable level 2 data or unified TLB access, read"
+        },
+        {
+            "code": 95,
+            "refs": [
+                0
+            ],
+            "name": "L2D_TLB_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2TLB",
+            "description": "Attributable level 2 data or unified TLB access, write"
+        },
+        {
             "code": 96,
             "refs": [
                 0
@@ -783,6 +924,63 @@
             "description": "Data memory access, write This event counts memory accesses due to store instructions. The following instructions are not counted: - Instruction fetches. - Cache maintenance instructions. - Translation table walks. - Prefetches"
         },
         {
+            "code": 104,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LD_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Unaligned access, read"
+        },
+        {
+            "code": 105,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_ST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Unaligned access, write"
+        },
+        {
+            "code": 106,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Unaligned access"
+        },
+        {
+            "code": 108,
+            "refs": [
+                0
+            ],
+            "name": "LDREX_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, LDREX or LDX"
+        },
+        {
+            "code": 109,
+            "refs": [
+                0
+            ],
+            "name": "STREX_PASS_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Exclusive operation speculatively executed, STREX or STX pass"
+        },
+        {
             "code": 110,
             "refs": [
                 0
@@ -829,6 +1027,18 @@
             "architectural": false,
             "type": "UEVT",
             "description": "Operation speculatively executed, store"
+        },
+        {
+            "code": 114,
+            "refs": [
+                0
+            ],
+            "name": "LDST_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Operation speculatively executed, load or store"
         },
         {
             "code": 115,
@@ -891,6 +1101,42 @@
             "description": "Operation speculatively executed, Cryptographic instruction"
         },
         {
+            "code": 120,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed, immediate branch"
+        },
+        {
+            "code": 121,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed, procedure return"
+        },
+        {
+            "code": 122,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDIRECT_SPEC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Branch speculatively executed, indirect branch"
+        },
+        {
             "code": 124,
             "refs": [
                 0
@@ -925,6 +1171,17 @@
             "architectural": false,
             "type": "UEVT",
             "description": "Barrier speculatively executed, DMB"
+        },
+        {
+            "code": 127,
+            "refs": [
+                0
+            ],
+            "name": "CSDB_SPEC",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Barrier speculatively executed, CDSB"
         },
         {
             "code": 129,
@@ -1105,7 +1362,7 @@
             "type": "UEVT",
             "subtype": "READ",
             "component": "L3",
-            "description": "Level 3 cache read This event counts for any cacheable read transaction sent to the SCU"
+            "description": "Attributable level 3 data or unified cache access, read This event counts for any cacheable read transaction sent to the SCU"
         },
         {
             "code": 16384,
@@ -1364,6 +1621,16 @@
             "description": "Checked data memory access, write"
         },
         {
+            "code": 32772,
+            "refs": [
+                0
+            ],
+            "name": "SIMD_INST_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "SIMD instruction speculatively executed"
+        },
+        {
             "code": 32773,
             "refs": [
                 0
@@ -1411,6 +1678,16 @@
             "architectural": false,
             "type": "UEVT",
             "description": "Double-precision floating-point operation speculatively executed"
+        },
+        {
+            "code": 32832,
+            "refs": [
+                0
+            ],
+            "name": "INT_SPEC",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Advanced SIMD and SVE integer operations speculatively executed"
         },
         {
             "code": 32884,
@@ -1461,6 +1738,16 @@
             "architectural": false,
             "type": "UEVT",
             "description": "SVE predicated operations with no or partially active predicates speculatively executed"
+        },
+        {
+            "code": 32903,
+            "refs": [
+                0
+            ],
+            "name": "PRF_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "The counter counts speculatively executed prefetch operations due to scalar PRFM and SVE PRFinstructions"
         },
         {
             "code": 32956,
@@ -1560,7 +1847,149 @@
             "name": "BR_INDNR_TAKEN_RETIRED",
             "architectural": true,
             "type": "INS",
-            "description": "Instruction architecturally executed, indirect branch excluding procedure return retired"
+            "description": "Instruction architecturally executed, indirect branch taken excluding returns"
+        },
+        {
+            "code": 33040,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted immediate branch"
+        },
+        {
+            "code": 33041,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted immediate branch"
+        },
+        {
+            "code": 33042,
+            "refs": [
+                0
+            ],
+            "name": "BR_IND_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted indirect branch"
+        },
+        {
+            "code": 33043,
+            "refs": [
+                0
+            ],
+            "name": "BR_IND_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted indirect branch"
+        },
+        {
+            "code": 33044,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted procedure return"
+        },
+        {
+            "code": 33045,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted procedure return"
+        },
+        {
+            "code": 33046,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDNR_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted indirect branch excluding returns"
+        },
+        {
+            "code": 33047,
+            "refs": [
+                0
+            ],
+            "name": "BR_INDNR_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted indirect branch excluding returns"
+        },
+        {
+            "code": 33048,
+            "refs": [
+                0
+            ],
+            "name": "BR_TAKEN_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted taken branch"
+        },
+        {
+            "code": 33049,
+            "refs": [
+                0
+            ],
+            "name": "BR_TAKEN_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted taken branch"
+        },
+        {
+            "code": 33050,
+            "refs": [
+                0
+            ],
+            "name": "BR_SKIP_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted not taken branch"
+        },
+        {
+            "code": 33051,
+            "refs": [
+                0
+            ],
+            "name": "BR_SKIP_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, mispredicted not taken branch"
+        },
+        {
+            "code": 33052,
+            "refs": [
+                0
+            ],
+            "name": "BR_PRED_RETIRED",
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "Instruction architecturally executed, predicted branch"
         },
         {
             "code": 33053,
@@ -1571,6 +2000,35 @@
             "architectural": true,
             "type": "INS",
             "description": "Instruction architecturally executed, indirect branch"
+        },
+        {
+            "code": 33056,
+            "refs": [
+                0
+            ],
+            "name": "INST_FETCH_PERCYC",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Total cycles, INST_FETCH"
+        },
+        {
+            "code": 33057,
+            "refs": [
+                0
+            ],
+            "name": "MEM_ACCESS_RD_PERCYC",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Total cycles, MEM_ACCESS_RD"
+        },
+        {
+            "code": 33060,
+            "refs": [
+                0
+            ],
+            "name": "INST_FETCH",
+            "type": "INS",
+            "description": "Instruction memory access"
         },
         {
             "code": 33064,
@@ -1593,6 +2051,124 @@
             "description": "Total cycles, ITLB_WALK The counter counts by the number of instruction TLB walk events in progress on each processor cycle"
         },
         {
+            "code": 33066,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_BR",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, branch"
+        },
+        {
+            "code": 33067,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_LD",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, load"
+        },
+        {
+            "code": 33068,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_ST",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, store"
+        },
+        {
+            "code": 33069,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_OP",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, matching operation type"
+        },
+        {
+            "code": 33070,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_EVENT",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, matching events"
+        },
+        {
+            "code": 33071,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED_LAT",
+            "type": "UEVT",
+            "description": "Statisical Profiling sample taken, exceeding minimum latency"
+        },
+        {
+            "code": 33072,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_RW",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data or unified TLB demand access"
+        },
+        {
+            "code": 33073,
+            "refs": [
+                0
+            ],
+            "name": "L1I_TLB_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1ITLB",
+            "description": "Level 1 instruction TLB demand access"
+        },
+        {
+            "code": 33074,
+            "refs": [
+                0
+            ],
+            "name": "L1D_TLB_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1DTLB",
+            "description": "Level 1 data or unified TLB preload or prefetch"
+        },
+        {
+            "code": 33075,
+            "refs": [
+                0
+            ],
+            "name": "L1I_TLB_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1ITLB",
+            "description": "Level 1 instruction TLB preload or prefetch"
+        },
+        {
+            "code": 33076,
+            "refs": [
+                0
+            ],
+            "name": "DTLB_HWUPD",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data TLB hardware update of translation table"
+        },
+        {
+            "code": 33077,
+            "refs": [
+                0
+            ],
+            "name": "ITLB_HWUPD",
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB hardware update of translation table"
+        },
+        {
             "code": 33078,
             "refs": [
                 0
@@ -1600,7 +2176,7 @@
             "name": "DTLB_STEP",
             "architectural": false,
             "type": "UEVT",
-            "description": "Data TLB translation table walk, step The counter counts each translation table walk access made by a refill of the data or unified TLB"
+            "description": "Data TLB translation table walk, step"
         },
         {
             "code": 33079,
@@ -1609,8 +2185,358 @@
             ],
             "name": "ITLB_STEP",
             "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB translation table walk, step"
+        },
+        {
+            "code": 33080,
+            "refs": [
+                0
+            ],
+            "name": "DTLB_WALK_LARGE",
+            "architectural": false,
             "type": "UEVT",
-            "description": "Instruction TLB translation table walk, step The counter counts each translation table walk access made by a refill of the instruction TLB"
+            "description": "Data TLB large page translation table walk"
+        },
+        {
+            "code": 33081,
+            "refs": [
+                0
+            ],
+            "name": "ITLB_WALK_LARGE",
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB large page translation table walk"
+        },
+        {
+            "code": 33082,
+            "refs": [
+                0
+            ],
+            "name": "DTLB_WALK_SMALL",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data TLB small page translation table walk"
+        },
+        {
+            "code": 33083,
+            "refs": [
+                0
+            ],
+            "name": "ITLB_WALK_SMALL",
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB small page translation table walk"
+        },
+        {
+            "code": 33084,
+            "refs": [
+                0
+            ],
+            "name": "DTLB_WALK_RW",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data TLB demand access with at least one translation table walk"
+        },
+        {
+            "code": 33085,
+            "refs": [
+                0
+            ],
+            "name": "ITLB_WALK_RD",
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB demand access with at least one translation table walk"
+        },
+        {
+            "code": 33086,
+            "refs": [
+                0
+            ],
+            "name": "DTLB_WALK_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data TLB preload or prefetch with at least one translation table walk"
+        },
+        {
+            "code": 33087,
+            "refs": [
+                0
+            ],
+            "name": "ITLB_WALK_PRFM",
+            "architectural": false,
+            "type": "INS",
+            "description": "Instruction TLB preload or prefetch with at least one translation table walk"
+        },
+        {
+            "code": 33088,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_RW",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Level 1 data cache demand access"
+        },
+        {
+            "code": 33089,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_RD",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand access"
+        },
+        {
+            "code": 33090,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "Level 1 data cache preload or prefetch"
+        },
+        {
+            "code": 33091,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache preload or prefetch"
+        },
+        {
+            "code": 33092,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_MISS",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "Level 1 data cache demand access miss"
+        },
+        {
+            "code": 33093,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HWPRF",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache hardware prefetch"
+        },
+        {
+            "code": 33094,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_REFILL_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "Level 1 data cache refill, preload or prefetch"
+        },
+        {
+            "code": 33095,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_REFILL_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "Level 1 instruction cache refill,preload or prefetch"
+        },
+        {
+            "code": 33096,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_RW",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "description": "Level 2 data cache demand access miss"
+        },
+        {
+            "code": 33098,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "Level 2 data cache preload or prefetch"
+        },
+        {
+            "code": 33100,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_MISS",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L2",
+            "description": "Level 2 data cache demand access miss"
+        },
+        {
+            "code": 33102,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_REFILL_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L2",
+            "description": "Level 2 data cache refill, preload or prefetch"
+        },
+        {
+            "code": 33104,
+            "refs": [
+                0
+            ],
+            "name": "L3D_CACHE_RW",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L3",
+            "description": "Level 3 data cache demand access miss"
+        },
+        {
+            "code": 33105,
+            "refs": [
+                0
+            ],
+            "name": "L3D_CACHE_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L3",
+            "description": "Level 3 data cache preload or prefetch"
+        },
+        {
+            "code": 33106,
+            "refs": [
+                0
+            ],
+            "name": "L3D_CACHE_MISS",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L3",
+            "description": "Level 3 data cache demand access miss"
+        },
+        {
+            "code": 33107,
+            "refs": [
+                0
+            ],
+            "name": "L3D_CACHE_REFILL_PRFM",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L3",
+            "description": "Level 3 data cache refill,preload or prefetch"
+        },
+        {
+            "code": 33108,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_HWPRF",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "Level 1 data cache hardware prefetch"
+        },
+        {
+            "code": 33109,
+            "refs": [
+                0
+            ],
+            "name": "L2D_CACHE_HWPRF",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L2",
+            "description": "Level 2 data cache hardware prefetch"
+        },
+        {
+            "code": 33112,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_MEMBOUND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Frontend stall cycles, memory bound"
+        },
+        {
+            "code": 33113,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_L1I",
+            "architectural": false,
+            "type": "CYCLE",
+            "component": "L1I",
+            "description": "Frontend stall cycles, level 1 instruction cache"
+        },
+        {
+            "code": 33115,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_MEM",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Frontend stall cycles, last level PE cache or memory"
+        },
+        {
+            "code": 33116,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_TLB",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Frontend stall cycles, TLB"
+        },
+        {
+            "code": 33120,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_CPUBOUND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Frontend stall cycles, processor bound"
+        },
+        {
+            "code": 33121,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND_FLOW",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Frontend stall cycles, flow control"
         },
         {
             "code": 33122,
@@ -1618,8 +2544,176 @@
                 0
             ],
             "name": "STALL_FRONTEND_FLUSH",
+            "architectural": false,
             "type": "CYCLE",
-            "description": "No operation sent for execution due to the frontend flush recovery"
+            "description": "Frontend stall cycles, flush recovery"
+        },
+        {
+            "code": 33124,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_MEMBOUND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, memory bound"
+        },
+        {
+            "code": 33125,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_L1D",
+            "architectural": false,
+            "type": "CYCLE",
+            "component": "L1D",
+            "description": "Backend stall cycles, level 1 data cache"
+        },
+        {
+            "code": 33127,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_TLB",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, TLB"
+        },
+        {
+            "code": 33128,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_ST",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, store"
+        },
+        {
+            "code": 33130,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_CPUBOUND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, processor bound"
+        },
+        {
+            "code": 33131,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_BUSY",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, backend busy"
+        },
+        {
+            "code": 33133,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND_RENAME",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Backend stall cycles, rename full"
+        },
+        {
+            "code": 33216,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HIT_RD",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch hit"
+        },
+        {
+            "code": 33232,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HIT_RD_FPRFM",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch first hit, fetched by software preload"
+        },
+        {
+            "code": 33248,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HIT_RD_FHWPRF",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch first hit, fetched by hardware prefetcher"
+        },
+        {
+            "code": 33280,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HIT",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache hit"
+        },
+        {
+            "code": 33288,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_HIT_PRFM",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache software preload hit"
+        },
+        {
+            "code": 33344,
+            "refs": [
+                0
+            ],
+            "name": "L1I_LFB_HIT_RD",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch line-fill buffer hit"
+        },
+        {
+            "code": 33360,
+            "refs": [
+                0
+            ],
+            "name": "L1I_LFB_HIT_RD_FPRFM",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch line-fill buffer first hit, recently fetched by software preload"
+        },
+        {
+            "code": 33376,
+            "refs": [
+                0
+            ],
+            "name": "L1I_LFB_HIT_RD_FHWPRF",
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "Level 1 instruction cache demand fetch line-fill buffer first hit, recently fetched by hardware prefetcher"
         }
     ]
 }
