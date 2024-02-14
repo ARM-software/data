@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:04 2024",
+    "timestamp": "Wed Feb 14 13:55:17 2024",
     "implementer": "A",
     "cpuid": "0x41d44",
     "cpu": "Cortex-X1",
@@ -1791,6 +1791,46 @@
             "event_lsb": 209,
             "trace_lsb": 209,
             "description": "L3 cache read"
+        },
+        {
+            "code": 16384,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_POP",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Population"
+        },
+        {
+            "code": 16385,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FEED",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken"
+        },
+        {
+            "code": 16386,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_FILTRATE",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample Taken and not removed by filtering"
+        },
+        {
+            "code": 16387,
+            "refs": [
+                0
+            ],
+            "name": "SAMPLE_COLLISION",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Sample collided with previous sample"
         },
         {
             "code": 16388,

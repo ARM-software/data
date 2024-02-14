@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:05 2024",
+    "timestamp": "Wed Feb 14 13:55:18 2024",
     "implementer": "A",
     "cpuid": "0x41d82",
     "cpu": "Cortex-X4",
@@ -120,16 +120,6 @@
             "architectural": true,
             "type": "INS",
             "description": "Instruction architecturally executed, Condition code check pass, write to CONTEXTIDR This event only counts writes using the CONTEXTIDR_EL1 mnemonic. Writes to CONTEXTIDR_EL12 and CONTEXTIDR_EL2 are not counted"
-        },
-        {
-            "code": 12,
-            "refs": [
-                0
-            ],
-            "name": "PC_WRITE_RETIRED",
-            "architectural": true,
-            "type": "EXC",
-            "description": "Instruction architecturally executed, Condition code check pass, software change of the PC This event counts all branches taken and popped from the branch monitor. This excludes exception entries, debug entries, and CCFAIL branches"
         },
         {
             "code": 13,
@@ -1173,17 +1163,6 @@
             "description": "Barrier speculatively executed, DMB"
         },
         {
-            "code": 127,
-            "refs": [
-                0
-            ],
-            "name": "CSDB_SPEC",
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "description": "Barrier speculatively executed, CDSB"
-        },
-        {
             "code": 129,
             "refs": [
                 0
@@ -1370,8 +1349,8 @@
                 0
             ],
             "name": "SAMPLE_POP",
-            "type": "EXC",
-            "description": "Statistical Profiling sample population The counter increments for each operation that might be sampled, whether or not the operation was sampled. Operations that are executed at an Exception level or Security state in which the Statistical Profiling Extension is disabled are not counted"
+            "type": "UEVT",
+            "description": "Sample Population"
         },
         {
             "code": 16385,
@@ -1380,7 +1359,7 @@
             ],
             "name": "SAMPLE_FEED",
             "type": "UEVT",
-            "description": "Statistical Profiling sample taken The counter increments each time the sample interval counter reaches zero and is reloaded, and the sample does not collide with the previous sample. Samples that are removed by filtering, or discarded, and not written to the Profiling Buffer are counted"
+            "description": "Sample Taken"
         },
         {
             "code": 16386,
@@ -1389,7 +1368,7 @@
             ],
             "name": "SAMPLE_FILTRATE",
             "type": "UEVT",
-            "description": "Statistical Profiling sample taken and not removed by filtering The counter increments each time that a completed sample record is checked against the filters and not removed. Sample records that are not removed by filtering, but are discarded before being written to the Profiling Buffer because of a Profiling Buffer management event, are counted"
+            "description": "Sample Taken and not removed by filtering"
         },
         {
             "code": 16387,
@@ -1398,7 +1377,7 @@
             ],
             "name": "SAMPLE_COLLISION",
             "type": "UEVT",
-            "description": "Statistical Profiling sample collided with previous sample The counter increments for each sample record that is taken when the previous sampled operation has not completed generating its sample record"
+            "description": "Sample collided with previous sample"
         },
         {
             "code": 16388,
@@ -1828,16 +1807,6 @@
             "architectural": false,
             "type": "UEVT",
             "description": "Advanced SIMD and SVE 64-bit integer operation speculatively executed"
-        },
-        {
-            "code": 33032,
-            "refs": [
-                0
-            ],
-            "name": "BR_IMMED_TAKEN_RETIRED",
-            "architectural": true,
-            "type": "INS",
-            "description": "Instruction architecturally executed, immediate branch taken"
         },
         {
             "code": 33036,
