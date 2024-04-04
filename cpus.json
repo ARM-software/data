@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Thu Feb  8 22:14:05 2024",
+    "timestamp": "Thu Apr  4 09:35:11 2024",
     "cpus": [
         {
             "implementer": 65,
@@ -229,6 +229,36 @@
             "name": "Cortex-X4",
             "arch": "armv9.2-a",
             "cpuid": "0x41d82"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse V3AE",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d83"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse V3",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d84"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A520AE",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d88"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A720AE",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d89"
+        },
+        {
+            "implementer": 65,
+            "name": "Neoverse N3",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d8e"
         },
         {
             "implementer": 65,
