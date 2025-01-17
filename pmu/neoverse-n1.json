@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:04 2024",
+    "timestamp": "Fri Jan 17 16:05:21 2025",
     "implementer": "A",
     "cpuid": "0x41d0c",
     "cpu": "Neoverse N1",
@@ -1276,22 +1276,6 @@
             "event_lsb": 110,
             "trace_lsb": 110,
             "description": "Operation speculatively executed, store"
-        },
-        {
-            "code": 114,
-            "refs": [
-                0,
-                2
-            ],
-            "name": "LDST_SPEC",
-            "recommended": true,
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "event_bits": 2,
-            "event_lsb": 113,
-            "trace_lsb": 113,
-            "description": "Operation speculatively executed, load or store. This event counts the sum of LD_SPEC and ST_SPEC"
         },
         {
             "code": 115,
