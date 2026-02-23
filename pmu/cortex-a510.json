@@ -1,14 +1,20 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:04 2024",
+    "timestamp": "Fri Jan 17 16:05:22 2025",
     "implementer": "A",
     "cpuid": "0x41d46",
     "cpu": "Cortex-A510",
     "architecture": "armv9-a",
     "pmu_architecture": "pmuv3",
+    "counters": 6,
     "refs": [
         {
             "ref": "Cortex-A510 TRM",
+            "public": true
+        },
+        {
+            "ref": "gator events-Cortex-A510.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-A510.xml",
             "public": true
         }
     ],
@@ -16,7 +22,8 @@
         {
             "code": 1,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE_REFILL",
             "architectural": false,
@@ -28,7 +35,8 @@
         {
             "code": 2,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_TLB_REFILL",
             "architectural": false,
@@ -39,7 +47,8 @@
         {
             "code": 3,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL",
             "architectural": false,
@@ -51,7 +60,8 @@
         {
             "code": 4,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE",
             "architectural": false,
@@ -63,7 +73,8 @@
         {
             "code": 5,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB_REFILL",
             "architectural": false,
@@ -74,7 +85,8 @@
         {
             "code": 6,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_RETIRED",
             "architectural": true,
@@ -84,7 +96,8 @@
         {
             "code": 7,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_RETIRED",
             "architectural": true,
@@ -94,7 +107,8 @@
         {
             "code": 8,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "INST_RETIRED",
             "architectural": true,
@@ -104,7 +118,8 @@
         {
             "code": 9,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_TAKEN",
             "type": "EXC",
@@ -113,7 +128,8 @@
         {
             "code": 10,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_RETURN",
             "architectural": true,
@@ -123,7 +139,8 @@
         {
             "code": 11,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "CID_WRITE_RETIRED",
             "architectural": true,
@@ -133,7 +150,8 @@
         {
             "code": 12,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "PC_WRITE_RETIRED",
             "architectural": true,
@@ -143,7 +161,8 @@
         {
             "code": 13,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_IMMED_RETIRED",
             "architectural": true,
@@ -153,7 +172,8 @@
         {
             "code": 14,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_RETIRED",
             "architectural": true,
@@ -163,7 +183,8 @@
         {
             "code": 16,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_MIS_PRED",
             "architectural": false,
@@ -175,7 +196,8 @@
         {
             "code": 17,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "CPU_CYCLES",
             "architectural": false,
@@ -185,7 +207,8 @@
         {
             "code": 18,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_PRED",
             "architectural": false,
@@ -196,7 +219,8 @@
         {
             "code": 19,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS",
             "architectural": false,
@@ -207,7 +231,8 @@
         {
             "code": 20,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE",
             "architectural": false,
@@ -219,7 +244,8 @@
         {
             "code": 21,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WB",
             "architectural": false,
@@ -231,7 +257,8 @@
         {
             "code": 22,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE",
             "architectural": false,
@@ -243,7 +270,8 @@
         {
             "code": 23,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL",
             "architectural": false,
@@ -255,7 +283,8 @@
         {
             "code": 24,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_WB",
             "architectural": false,
@@ -267,7 +296,8 @@
         {
             "code": 25,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BUS_ACCESS",
             "architectural": false,
@@ -278,7 +308,8 @@
         {
             "code": 26,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEMORY_ERROR",
             "type": "UEVT",
@@ -287,7 +318,8 @@
         {
             "code": 27,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "INST_SPEC",
             "architectural": false,
@@ -297,7 +329,8 @@
         {
             "code": 28,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "TTBR_WRITE_RETIRED",
             "architectural": true,
@@ -307,7 +340,8 @@
         {
             "code": 29,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BUS_CYCLES",
             "architectural": false,
@@ -328,7 +362,8 @@
         {
             "code": 32,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_ALLOCATE",
             "architectural": false,
@@ -340,7 +375,8 @@
         {
             "code": 33,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETIRED",
             "architectural": true,
@@ -350,7 +386,8 @@
         {
             "code": 34,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_MIS_PRED_RETIRED",
             "architectural": false,
@@ -362,7 +399,8 @@
         {
             "code": 35,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_FRONTEND",
             "architectural": false,
@@ -372,7 +410,8 @@
         {
             "code": 36,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND",
             "architectural": false,
@@ -382,7 +421,8 @@
         {
             "code": 37,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_TLB",
             "architectural": false,
@@ -393,7 +433,8 @@
         {
             "code": 38,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_TLB",
             "architectural": false,
@@ -404,7 +445,8 @@
         {
             "code": 43,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L3D_CACHE",
             "architectural": false,
@@ -416,7 +458,8 @@
         {
             "code": 45,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_TLB_REFILL",
             "architectural": false,
@@ -427,7 +470,8 @@
         {
             "code": 47,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_TLB",
             "architectural": false,
@@ -438,7 +482,8 @@
         {
             "code": 52,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "DTLB_WALK",
             "architectural": false,
@@ -449,7 +494,8 @@
         {
             "code": 53,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ITLB_WALK",
             "architectural": false,
@@ -460,7 +506,8 @@
         {
             "code": 54,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LL_CACHE_RD",
             "architectural": false,
@@ -472,7 +519,8 @@
         {
             "code": 55,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LL_CACHE_MISS_RD",
             "architectural": false,
@@ -484,7 +532,8 @@
         {
             "code": 56,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "REMOTE_ACCESS_RD",
             "type": "UEVT",
@@ -493,7 +542,8 @@
         {
             "code": 57,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_LMISS_RD",
             "architectural": false,
@@ -505,7 +555,8 @@
         {
             "code": 58,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "OP_RETIRED",
             "architectural": false,
@@ -515,7 +566,8 @@
         {
             "code": 59,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "OP_SPEC",
             "architectural": false,
@@ -525,7 +577,8 @@
         {
             "code": 60,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL",
             "architectural": false,
@@ -535,7 +588,8 @@
         {
             "code": 61,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_SLOT_BACKEND",
             "architectural": false,
@@ -545,7 +599,8 @@
         {
             "code": 62,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_SLOT_FRONTEND",
             "architectural": false,
@@ -555,7 +610,8 @@
         {
             "code": 63,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_SLOT",
             "architectural": false,
@@ -565,7 +621,8 @@
         {
             "code": 64,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_RD",
             "recommended": true,
@@ -579,7 +636,8 @@
         {
             "code": 65,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_WR",
             "recommended": true,
@@ -593,7 +651,8 @@
         {
             "code": 66,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_RD",
             "recommended": true,
@@ -607,7 +666,8 @@
         {
             "code": 67,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_WR",
             "recommended": true,
@@ -621,7 +681,8 @@
         {
             "code": 68,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_INNER",
             "recommended": true,
@@ -635,7 +696,8 @@
         {
             "code": 69,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_OUTER",
             "recommended": true,
@@ -649,7 +711,8 @@
         {
             "code": 80,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_RD",
             "recommended": true,
@@ -663,7 +726,8 @@
         {
             "code": 81,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_WR",
             "recommended": true,
@@ -677,7 +741,8 @@
         {
             "code": 82,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL_RD",
             "recommended": true,
@@ -691,7 +756,8 @@
         {
             "code": 83,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL_WR",
             "recommended": true,
@@ -705,7 +771,8 @@
         {
             "code": 96,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BUS_ACCESS_RD",
             "recommended": true,
@@ -717,7 +784,8 @@
         {
             "code": 97,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BUS_ACCESS_WR",
             "recommended": true,
@@ -729,7 +797,8 @@
         {
             "code": 102,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS_RD",
             "recommended": true,
@@ -742,7 +811,8 @@
         {
             "code": 103,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS_WR",
             "recommended": true,
@@ -755,7 +825,8 @@
         {
             "code": 112,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_SPEC",
             "recommended": true,
@@ -767,7 +838,8 @@
         {
             "code": 113,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_SPEC",
             "recommended": true,
@@ -779,7 +851,8 @@
         {
             "code": 114,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LDST_SPEC",
             "recommended": true,
@@ -791,7 +864,8 @@
         {
             "code": 115,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "DP_SPEC",
             "recommended": true,
@@ -803,7 +877,8 @@
         {
             "code": 116,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ASE_SPEC",
             "recommended": true,
@@ -815,7 +890,8 @@
         {
             "code": 117,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "VFP_SPEC",
             "recommended": true,
@@ -827,7 +903,8 @@
         {
             "code": 118,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "PC_WRITE_SPEC",
             "recommended": true,
@@ -839,7 +916,8 @@
         {
             "code": 119,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "CRYPTO_SPEC",
             "recommended": true,
@@ -851,7 +929,8 @@
         {
             "code": 120,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_IMMED_SPEC",
             "recommended": true,
@@ -863,7 +942,8 @@
         {
             "code": 121,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_SPEC",
             "recommended": true,
@@ -875,7 +955,8 @@
         {
             "code": 122,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_INDIRECT_SPEC",
             "recommended": true,
@@ -887,7 +968,8 @@
         {
             "code": 134,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_IRQ",
             "recommended": true,
@@ -898,7 +980,8 @@
         {
             "code": 135,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "EXC_FIQ",
             "recommended": true,
@@ -909,7 +992,8 @@
         {
             "code": 160,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L3D_CACHE_RD",
             "recommended": true,
@@ -923,7 +1007,8 @@
         {
             "code": 162,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L3D_CACHE_REFILL_RD",
             "recommended": true,
@@ -937,7 +1022,8 @@
         {
             "code": 193,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_REFILL_PREFETCH",
             "impdef": true,
@@ -950,7 +1036,8 @@
         {
             "code": 194,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_CACHE_REFILL_PREFETCH",
             "impdef": true,
@@ -963,7 +1050,8 @@
         {
             "code": 195,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_WS_MODE",
             "impdef": true,
@@ -976,7 +1064,8 @@
         {
             "code": 196,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_WS_MODE_ENTRY",
             "impdef": true,
@@ -989,7 +1078,8 @@
         {
             "code": 197,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1D_WS_MODE",
             "impdef": true,
@@ -1002,7 +1092,8 @@
         {
             "code": 199,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L3D_WS_MODE",
             "impdef": true,
@@ -1015,7 +1106,8 @@
         {
             "code": 200,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LL_WS_MODE",
             "impdef": true,
@@ -1027,7 +1119,8 @@
         {
             "code": 201,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_COND_PRED",
             "impdef": true,
@@ -1038,7 +1131,8 @@
         {
             "code": 202,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_INDIRECT_MIS_PRED",
             "impdef": true,
@@ -1051,7 +1145,8 @@
         {
             "code": 203,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_INDIRECT_ADDR_MIS_PRED",
             "impdef": true,
@@ -1064,7 +1159,8 @@
         {
             "code": 204,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_COND_MIS_PRED",
             "impdef": true,
@@ -1077,7 +1173,8 @@
         {
             "code": 205,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_INDIRECT_ADDR_PRED",
             "impdef": true,
@@ -1088,7 +1185,8 @@
         {
             "code": 206,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_ADDR_PRED",
             "impdef": true,
@@ -1099,7 +1197,8 @@
         {
             "code": 207,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "BR_RETURN_ADDR_MIS_PRED",
             "impdef": true,
@@ -1112,7 +1211,8 @@
         {
             "code": 208,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_WALK_TLB",
             "impdef": true,
@@ -1125,7 +1225,8 @@
         {
             "code": 209,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_WALK_TLB_REFILL",
             "impdef": true,
@@ -1138,7 +1239,8 @@
         {
             "code": 212,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_S2_TLB",
             "impdef": true,
@@ -1151,7 +1253,8 @@
         {
             "code": 213,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_S2_TLB_REFILL",
             "impdef": true,
@@ -1164,7 +1267,8 @@
         {
             "code": 214,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_STASH_DROPPED",
             "impdef": true,
@@ -1176,7 +1280,8 @@
         {
             "code": 225,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_FRONTEND_CACHE",
             "impdef": true,
@@ -1187,7 +1292,8 @@
         {
             "code": 226,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_FRONTEND_TLB",
             "impdef": true,
@@ -1198,7 +1304,8 @@
         {
             "code": 227,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_FRONTEND_PDERR",
             "impdef": true,
@@ -1208,7 +1315,8 @@
         {
             "code": 228,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ILOCK",
             "impdef": true,
@@ -1219,7 +1327,8 @@
         {
             "code": 229,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ILOCK_ADDR",
             "impdef": true,
@@ -1230,7 +1339,8 @@
         {
             "code": 230,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ILOCK_VPU",
             "impdef": true,
@@ -1241,7 +1351,8 @@
         {
             "code": 231,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_LD",
             "impdef": true,
@@ -1252,7 +1363,8 @@
         {
             "code": 232,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ST",
             "impdef": true,
@@ -1263,7 +1375,8 @@
         {
             "code": 233,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_LD_CACHE",
             "impdef": true,
@@ -1274,7 +1387,8 @@
         {
             "code": 234,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_LD_TLB",
             "impdef": true,
@@ -1285,7 +1399,8 @@
         {
             "code": 235,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ST_STB",
             "impdef": true,
@@ -1296,7 +1411,8 @@
         {
             "code": 236,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_ST_TLB",
             "impdef": true,
@@ -1307,7 +1423,8 @@
         {
             "code": 237,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_VPU_HAZARD",
             "impdef": true,
@@ -1318,7 +1435,8 @@
         {
             "code": 238,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_SLOT_BACKEND_ILOCK",
             "impdef": true,
@@ -1329,7 +1447,8 @@
         {
             "code": 16389,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "STALL_BACKEND_MEM",
             "architectural": false,
@@ -1339,7 +1458,8 @@
         {
             "code": 16390,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L1I_CACHE_LMISS",
             "architectural": false,
@@ -1351,7 +1471,8 @@
         {
             "code": 16393,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L2D_CACHE_LMISS_RD",
             "architectural": false,
@@ -1363,7 +1484,8 @@
         {
             "code": 16395,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "L3D_CACHE_LMISS_RD",
             "architectural": false,
@@ -1483,7 +1605,8 @@
         {
             "code": 16416,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LDST_ALIGN_LAT",
             "type": "UEVT",
@@ -1492,7 +1615,8 @@
         {
             "code": 16417,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "LD_ALIGN_LAT",
             "type": "UEVT",
@@ -1501,7 +1625,8 @@
         {
             "code": 16418,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ST_ALIGN_LAT",
             "type": "UEVT",
@@ -1510,7 +1635,8 @@
         {
             "code": 16420,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS_CHECKED",
             "type": "UEVT",
@@ -1519,7 +1645,8 @@
         {
             "code": 16421,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS_CHECKED_RD",
             "type": "UEVT",
@@ -1528,7 +1655,8 @@
         {
             "code": 16422,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "MEM_ACCESS_CHECKED_WR",
             "type": "UEVT",
@@ -1537,7 +1665,8 @@
         {
             "code": 32770,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "SVE_INST_RETIRED",
             "architectural": true,
@@ -1547,7 +1676,8 @@
         {
             "code": 32774,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "SVE_INST_SPEC",
             "architectural": false,
@@ -1557,7 +1687,8 @@
         {
             "code": 32788,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "FP_HP_SPEC",
             "architectural": false,
@@ -1567,7 +1698,8 @@
         {
             "code": 32792,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "FP_SP_SPEC",
             "architectural": false,
@@ -1577,7 +1709,8 @@
         {
             "code": 32796,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "FP_DP_SPEC",
             "architectural": false,
@@ -1587,7 +1720,8 @@
         {
             "code": 32995,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ASE_SVE_INT8_SPEC",
             "architectural": false,
@@ -1597,7 +1731,8 @@
         {
             "code": 32999,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ASE_SVE_INT16_SPEC",
             "architectural": false,
@@ -1607,7 +1742,8 @@
         {
             "code": 33003,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ASE_SVE_INT32_SPEC",
             "architectural": false,
@@ -1617,7 +1753,8 @@
         {
             "code": 33007,
             "refs": [
-                0
+                0,
+                1
             ],
             "name": "ASE_SVE_INT64_SPEC",
             "architectural": false,

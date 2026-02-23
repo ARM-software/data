@@ -1,6 +1,6 @@
 {
     "_type": "CPUs",
-    "timestamp": "Thu Apr  4 09:35:11 2024",
+    "timestamp": "Mon Feb 23 14:23:43 2026",
     "cpus": [
         {
             "implementer": 65,
@@ -256,9 +256,27 @@
         },
         {
             "implementer": 65,
+            "name": "Cortex-A725",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d87"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-X925",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d85"
+        },
+        {
+            "implementer": 65,
             "name": "Neoverse N3",
             "arch": "armv9.2-a",
             "cpuid": "0x41d8e"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-A320",
+            "arch": "armv9.2-a",
+            "cpuid": "0x41d8f"
         },
         {
             "implementer": 65,
@@ -301,6 +319,12 @@
             "name": "Cortex-R82",
             "arch": "armv8.4-r",
             "cpuid": "0x41d15"
+        },
+        {
+            "implementer": 65,
+            "name": "Cortex-R82AE",
+            "arch": "armv8.4-r",
+            "cpuid": "0x41d14"
         },
         {
             "implementer": 65,

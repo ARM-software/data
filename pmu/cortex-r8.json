@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:05 2024",
+    "timestamp": "Fri Jan 17 16:05:23 2025",
     "implementer": "A",
     "cpuid": "0x41c18",
     "cpu": "Cortex-R8",
@@ -361,7 +361,7 @@
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
-            "description": "Correctable ECC errors on slave bus, data write channel"
+            "description": "Correctable ECC errors on subordinate bus, data write channel"
         },
         {
             "code": 105,
@@ -374,7 +374,7 @@
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
-            "description": "Correctable ECC errors on peripheral master bus, data read channel"
+            "description": "Correctable ECC errors on peripheral manager bus, data read channel"
         },
         {
             "code": 106,
@@ -387,7 +387,7 @@
             "architectural": false,
             "type": "UEVT",
             "component": "BUS",
-            "description": "Correctable ECC errors on master 0 bus, data read channel"
+            "description": "Correctable ECC errors on manager 0 bus, data read channel"
         },
         {
             "code": 107,
@@ -397,7 +397,7 @@
             "impdef": true,
             "type": "UEVT",
             "component": "BUS",
-            "description": "Correctable ECC errors on master 1 bus, data read channel"
+            "description": "Correctable ECC errors on manager 1 bus, data read channel"
         },
         {
             "code": 108,

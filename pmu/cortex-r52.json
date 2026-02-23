@@ -1,12 +1,12 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:05 2024",
+    "timestamp": "Fri Jan 17 16:05:23 2025",
     "implementer": "A",
     "cpuid": "0x41d13",
     "cpu": "Cortex-R52",
     "architecture": "armv8-r",
     "pmu_architecture": "pmuv3",
-    "counters": 8,
+    "counters": 4,
     "refs": [
         {
             "ref": "Cortex-R52 TRM",

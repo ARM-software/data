@@ -1,0 +1,1019 @@
+{
+    "_type": "Events",
+    "timestamp": "Fri Jan 17 16:05:23 2025",
+    "implementer": "A",
+    "cpuid": "0x41d16",
+    "cpu": "Cortex-R52+",
+    "architecture": "armv8-r",
+    "pmu_architecture": "pmuv3",
+    "counters": 4,
+    "refs": [
+        {
+            "ref": "gator events-Cortex-R52+.xml",
+            "url": "https://raw.githubusercontent.com/ARM-software/gator/master/daemon/events-Cortex-R52+.xml",
+            "public": true
+        }
+    ],
+    "events": [
+        {
+            "code": 0,
+            "refs": [
+                0
+            ],
+            "name": "SW_INCR",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "The counter increments on writes to the PMSWINC register"
+        },
+        {
+            "code": 1,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "The counter counts each access counted by 'L1 Instruction Cache: Access' that causes a demand refill of any of the Level 1 caches outside the Level 1 caches of this PE. A refill includes any access that causes data to be fetched from outside the cache, even if the data is ultimately not allocated into the cache. For example, data might be fetched into a buffer but then discarded, rather than being allocated into a cache. These buffers are treated as part of the cache. If the cache is shared, only events attributable to this PE are counted. If the cache is not shared, all events are counted"
+        },
+        {
+            "code": 3,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE_REFILL",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "The counter counts each access counted by 'L1 Data Cache: Access' that causes a demand refill of at least the Level 1 data or unified cache from outside the Level 1 cache. Each access to a cache line that causes a new linefill is counted, including those from instructions that generate multiple accesses, such as load or store multiples, and PUSH and POP instructions. In particular, the counter counts accesses to the Level 1 cache that cause a refill that is satisfied by another Level 1 data or unified cache, or a Level 2 cache, or memory. A refill includes any access that causes data to be fetched from outside the cache, even if the data is ultimately not allocated into the cache. For example, data might be fetched into a buffer but then discarded, rather than being allocated into a cache. These buffers are treated as part of the cache"
+        },
+        {
+            "code": 4,
+            "refs": [
+                0
+            ],
+            "name": "L1D_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "The counter counts each memory read operation or memory write operation that causes a cache access to at least the Level 1 data or unified cache. If the cache is shared, only events attributable to this PE are counted. If the cache is not shared, all events are counted. Each access to a cache line is counted including the multiple accesses of instructions, such as LDM or STM. Each access to other Level 1 data or unified memory structures, for example refill buffers, write buffers, and write-back buffers, is also counted"
+        },
+        {
+            "code": 6,
+            "refs": [
+                0
+            ],
+            "name": "LD_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter increments for every executed memory-reading instruction"
+        },
+        {
+            "code": 7,
+            "refs": [
+                0
+            ],
+            "name": "ST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter increments for every executed memory-writing instruction. DC ZVA is counted as a store. The counter does not increment for a Store-Exclusive instruction that fails"
+        },
+        {
+            "code": 8,
+            "refs": [
+                0
+            ],
+            "name": "INST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter increments for every architecturally executed instruction"
+        },
+        {
+            "code": 9,
+            "refs": [
+                0
+            ],
+            "name": "EXC_TAKEN",
+            "architectural": true,
+            "type": "EXC",
+            "description": "The counter increments for each exception taken"
+        },
+        {
+            "code": 10,
+            "refs": [
+                0
+            ],
+            "name": "EXC_RETURN",
+            "architectural": true,
+            "type": "EXC",
+            "description": "The counter increments for each executed exception return instruction"
+        },
+        {
+            "code": 11,
+            "refs": [
+                0
+            ],
+            "name": "CID_WRITE_RETIRED",
+            "architectural": true,
+            "type": "UEVT",
+            "description": "The counter increments for every write to the CONTEXTIDR"
+        },
+        {
+            "code": 12,
+            "refs": [
+                0
+            ],
+            "name": "PC_WRITE_RETIRED",
+            "architectural": true,
+            "type": "EXC",
+            "description": "The counter increments for every software change of the PC. This includes all: Branch instructions, memory reading instructions that explicitly write to the PC, Data processing instructions that explicitly write to the PC, and Exception return instructions"
+        },
+        {
+            "code": 13,
+            "refs": [
+                0
+            ],
+            "name": "BR_IMMED_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter counts all immediate branch instructions that are architecturally executed"
+        },
+        {
+            "code": 14,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETURN_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter counts all procedure return instructions that are architecturally executed"
+        },
+        {
+            "code": 15,
+            "refs": [
+                0
+            ],
+            "name": "UNALIGNED_LDST_RETIRED",
+            "architectural": true,
+            "type": "INS",
+            "description": "The counter counts each memory-reading instruction or memory-writing instruction access that would generate an Alignment fault when Alignment fault checking is enabled"
+        },
+        {
+            "code": 16,
+            "refs": [
+                0
+            ],
+            "name": "BR_MIS_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "The counter counts each correction to the predicted program flow that occurs because of a misprediction from, or no prediction from, a change in control flow that the branch prediction resources are capable of predicting"
+        },
+        {
+            "code": 17,
+            "refs": [
+                0
+            ],
+            "name": "CPU_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The counter increments on every cycle"
+        },
+        {
+            "code": 18,
+            "refs": [
+                0
+            ],
+            "name": "BR_PRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "The counter counts every branch or other change in the program flow that the branch prediction resources are capable of predicting"
+        },
+        {
+            "code": 19,
+            "refs": [
+                0
+            ],
+            "name": "MEM_ACCESS",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "L1D",
+            "description": "The counter counts memory read operations and memory write operations that the PE made. The counter increments whether the access results in an access to a Level 1 data or unified cache, a Level 2 data or unified cache, or neither of these"
+        },
+        {
+            "code": 20,
+            "refs": [
+                0
+            ],
+            "name": "L1I_CACHE",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "The counter counts attributable instruction memory accesses that access at least the Level 1 instruction or unified cache. Each access to other Level 1 instruction memory structures, such as refill buffers, is also counted"
+        },
+        {
+            "code": 25,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS",
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "BUS",
+            "description": "The counter counts memory read operations and memory write operations that access outside of the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
+        },
+        {
+            "code": 26,
+            "refs": [
+                0
+            ],
+            "name": "MEMORY_ERROR",
+            "architectural": false,
+            "type": "UEVT",
+            "description": "The counter counts every occurrence of a memory error signaled by a memory closely coupled to this PE. The definition of local memories is IMPLEMENTATION DEFINED but includes caches, tightly-coupled memories, and TLB arrays"
+        },
+        {
+            "code": 27,
+            "refs": [
+                0
+            ],
+            "name": "INST_SPEC",
+            "architectural": false,
+            "type": "INS",
+            "description": "The counter counts instructions that are speculatively executed by the PE. This includes instructions that are subsequently not architecturally executed"
+        },
+        {
+            "code": 29,
+            "refs": [
+                0
+            ],
+            "name": "BUS_CYCLES",
+            "architectural": false,
+            "type": "CYCLE",
+            "component": "BUS",
+            "description": "The counter increments on every cycle of the interface at the boundary of the PE and its closely-coupled caches. Where this boundary lies with respect to any implemented caches is IMPLEMENTATION DEFINED"
+        },
+        {
+            "code": 33,
+            "refs": [
+                0
+            ],
+            "name": "BR_RETIRED",
+            "architectural": true,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "description": "The counter counts all branches on the architecturally executed path that would incur cost if mispredicted"
+        },
+        {
+            "code": 34,
+            "refs": [
+                0
+            ],
+            "name": "BR_MIS_PRED_RETIRED",
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BPU",
+            "description": "The counter counts all instructions counted by 'Instructions (Executed): Branch (Any)' that were not correctly predicted"
+        },
+        {
+            "code": 35,
+            "refs": [
+                0
+            ],
+            "name": "STALL_FRONTEND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The counter counts every cycle counted by the 'Cycles: CPU Cycles' event on which no operation was issued because there are no operations available to issue for this PE from the frontend"
+        },
+        {
+            "code": 36,
+            "refs": [
+                0
+            ],
+            "name": "STALL_BACKEND",
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "The counter counts every cycle counted by the 'Cycles: CPU Cycles' event on which no operation was issued because either: The backend is unable to accept any of the operations available for issue for this PE, OR the backend is unable to accept any operations"
+        },
+        {
+            "code": 96,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_RD",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "component": "BUS",
+            "description": "As 'Bus: Access', but counts only memory-read operations that access outside the boundary of the PE and its closely-coupled caches"
+        },
+        {
+            "code": 97,
+            "refs": [
+                0
+            ],
+            "name": "BUS_ACCESS_WR",
+            "recommended": true,
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "component": "BUS",
+            "description": "As 'Bus: Access', but counts only memory-write operations that access outside the boundary of the PE and its closely-coupled caches"
+        },
+        {
+            "code": 130,
+            "refs": [
+                0
+            ],
+            "name": "EXC_SVC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions taken locally that are Supervisor Call exceptions"
+        },
+        {
+            "code": 134,
+            "refs": [
+                0
+            ],
+            "name": "EXC_IRQ",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions taken locally that are IRQ or Virtual IRQ exceptions"
+        },
+        {
+            "code": 135,
+            "refs": [
+                0
+            ],
+            "name": "EXC_FIQ",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions taken locally that are FIQ or Virtual FIQ exceptions"
+        },
+        {
+            "code": 138,
+            "refs": [
+                0
+            ],
+            "name": "EXC_HVC",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions that are Hypervisor Call exceptions including both those taken locally and from non-secure EL1/PL1"
+        },
+        {
+            "code": 142,
+            "refs": [
+                0
+            ],
+            "name": "EXC_TRAP_IRQ",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions not taken locally that are IRQ exceptions"
+        },
+        {
+            "code": 143,
+            "refs": [
+                0
+            ],
+            "name": "EXC_TRAP_FIQ",
+            "recommended": true,
+            "impdef": true,
+            "architectural": true,
+            "type": "EXC",
+            "description": "As 'Exceptions: Taken', but counts only those exceptions not taken locally that are FIQ exceptions"
+        },
+        {
+            "code": 192,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "External memory request, AXIM read"
+        },
+        {
+            "code": 193,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "External memory request, AXIM write"
+        },
+        {
+            "code": 194,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "External memory request, Flash (read-only)"
+        },
+        {
+            "code": 195,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "External memory request, LLPP read"
+        },
+        {
+            "code": 196,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "External memory request, LLPP write"
+        },
+        {
+            "code": 197,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Non-cacheable external memory request, AXIM read"
+        },
+        {
+            "code": 198,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "WRITE",
+            "description": "Non-cacheable external memory request, AXIM write"
+        },
+        {
+            "code": 199,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "READ",
+            "description": "Non-cacheable external memory request, Flash (read-only)"
+        },
+        {
+            "code": 200,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of prefetch (AXIM only)"
+        },
+        {
+            "code": 201,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of load or store, AXIM"
+        },
+        {
+            "code": 202,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1D",
+            "description": "L1 data cache refill because of load or store, Flash"
+        },
+        {
+            "code": 203,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "L1 data cache access in a way reserved for AXIM"
+        },
+        {
+            "code": 204,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1D",
+            "description": "L1 data cache access in a way reserved for Flash"
+        },
+        {
+            "code": 205,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "L1 instruction cache access in a way reserved for AXIM"
+        },
+        {
+            "code": 206,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "ACCESS",
+            "component": "L1I",
+            "description": "L1 instruction cache access in a way reserved for Flash"
+        },
+        {
+            "code": 207,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load was hinted, AXIM"
+        },
+        {
+            "code": 208,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load was hinted, Flash"
+        },
+        {
+            "code": 209,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "L1 instruction cache refill, AXIM"
+        },
+        {
+            "code": 210,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "REFILL",
+            "component": "L1I",
+            "description": "L1 instruction cache refill, Flash"
+        },
+        {
+            "code": 211,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load, AXIM"
+        },
+        {
+            "code": 212,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Non-cacheable external memory request because of load, Flash"
+        },
+        {
+            "code": 213,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Conditional branch executed"
+        },
+        {
+            "code": 214,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Conditional branch mispredicted"
+        },
+        {
+            "code": 215,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "BTAC branch executed"
+        },
+        {
+            "code": 216,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "Conditional branch mispredicted"
+        },
+        {
+            "code": 217,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, MCR to VSCTLR"
+        },
+        {
+            "code": 218,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": true,
+            "type": "INS",
+            "description": "Instruction architecturally executed, strong DSB, DFB"
+        },
+        {
+            "code": 219,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Simultaneous accesses from instruction side and data side to AXIM (causing contention)"
+        },
+        {
+            "code": 220,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Simultaneous accesses from instruction side and data side to Flash (causing contention)"
+        },
+        {
+            "code": 221,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "EXC",
+            "description": "Exception taken to EL2 (hypmode entry), excluding reset"
+        },
+        {
+            "code": 222,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Implementation defined event. CRS branch executed"
+        },
+        {
+            "code": 223,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "subtype": "MISPREDICT",
+            "component": "BPU",
+            "description": "CRS branch mispredicted"
+        },
+        {
+            "code": 240,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "Correctable memory error occurred from any source (L1 instruction cache, L1 data cache, ATCM, BTCM, CTCM, or flash)"
+        },
+        {
+            "code": 241,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "description": "Fatal memory error occurred from any source (ATCM, BTCM, CTCM, or Flash)"
+        },
+        {
+            "code": 242,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Correctable data payload bus error occurred from any source (AXIM or LLPP)"
+        },
+        {
+            "code": 243,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Fatal non-protocol bus error (payload errors, except data) occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 244,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Fatal protocol bus error (LEN, ID, LAST, READY, and interconnect protection errors) occurred from any source (AXIM, Flash, or LLPP)"
+        },
+        {
+            "code": 256,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU Instruction Queue (IQ) is empty and that is not because of a recent instruction cache miss in any cache way"
+        },
+        {
+            "code": 257,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU IQ is empty and there is an instruction cache miss being processed for a cache way reserved for AXI manager"
+        },
+        {
+            "code": 258,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle that the DPU IQ is empty and there is an instruction cache miss being processed for a cache way reserved for Flash"
+        },
+        {
+            "code": 259,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is not because of an Advanced SIMD or floating-point instruction, and not because of a load/store instruction waiting for data tocal culate the address in the AGU. Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 260,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is because of a load/store instruction waiting for data to calculate the address in the Address Generation Unit (AGU). Stall cycles because of a stall in Wr, typically awaiting load data, are excluded"
+        },
+        {
+            "code": 261,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "INS",
+            "description": "Counts every cycle there is an interlock that is because of an Advanced SIMD or floating-point instruction. Stall cycles because of a stall in the Wr stage, typically waiting load data, are excluded"
+        },
+        {
+            "code": 262,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is a stall in the Wr stage because of a load miss from the AXIM"
+        },
+        {
+            "code": 263,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is astall in the Wr stage because ofa load miss from Flash"
+        },
+        {
+            "code": 264,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "CYCLE",
+            "description": "Counts every cycle there is a stall in the Wr stage because of a store"
+        },
+        {
+            "code": 265,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the AXIM part of the store buffer was full"
+        },
+        {
+            "code": 266,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the TCM part of the store buffer was full"
+        },
+        {
+            "code": 267,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Store stalled because the LLPP part of the store buffer was full"
+        },
+        {
+            "code": 268,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Barrier stalled because store buffer was busy with another barrier"
+        },
+        {
+            "code": 269,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "BUS",
+            "description": "Barrier stalled because it was waiting for a write to complete on the AXIM bus"
+        },
+        {
+            "code": 512,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache way tracker hit"
+        },
+        {
+            "code": 513,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1D",
+            "description": "L1 data cache way tracker hit"
+        },
+        {
+            "code": 514,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "type": "INS",
+            "description": "Instruction side micro MPU hit"
+        },
+        {
+            "code": 515,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "description": "Data side micro MPU hit. This can also be counted on a pipeline stall"
+        },
+        {
+            "code": 516,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hit"
+        },
+        {
+            "code": 517,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache line fill buffer hit"
+        },
+        {
+            "code": 518,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hit on BIU response"
+        },
+        {
+            "code": 519,
+            "refs": [
+                0
+            ],
+            "impdef": true,
+            "architectural": false,
+            "type": "UEVT",
+            "component": "L1I",
+            "description": "L1 instruction cache hint request sent"
+        }
+    ]
+}

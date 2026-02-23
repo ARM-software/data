@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Thu Feb  8 21:07:05 2024",
+    "timestamp": "Fri Jan 17 16:05:22 2025",
     "implementer": "A",
     "cpuid": "0x41c15",
     "cpu": "Cortex-R5",
@@ -417,7 +417,7 @@
             "type": "UEVT",
             "subtype": "ACCESS",
             "component": "BUS",
-            "description": "Non-cacheable access on AXI master bus"
+            "description": "Non-cacheable access on AXI manager bus"
         },
         {
             "code": 88,
@@ -594,7 +594,7 @@
             ],
             "impdef": true,
             "type": "UEVT",
-            "description": "TCM fatal ECC error reported by AXI slave interface"
+            "description": "TCM fatal ECC error reported by AXI subordinate interface"
         },
         {
             "code": 109,
@@ -603,7 +603,7 @@
             ],
             "impdef": true,
             "type": "UEVT",
-            "description": "TCM correctable ECC error reported by AXI slave interface"
+            "description": "TCM correctable ECC error reported by AXI subordinate interface"
         },
         {
             "code": 110,
