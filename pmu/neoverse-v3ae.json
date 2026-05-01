@@ -1,6 +1,6 @@
 {
     "_type": "Events",
-    "timestamp": "Fri Jan 17 16:05:22 2025",
+    "timestamp": "Fri May  1 15:36:43 2026",
     "implementer": "A",
     "cpuid": "0x41d83",
     "cpu": "Neoverse V3AE",
@@ -119,16 +119,6 @@
             "architectural": true,
             "type": "INS",
             "description": "Instruction architecturally executed, Condition code check pass, write to CONTEXTIDR Counts architecturally executed writes to the CONTEXTIDR_EL1 register, which usually contain the kernel PID and can be output with hardware trace"
-        },
-        {
-            "code": 12,
-            "refs": [
-                0
-            ],
-            "name": "PC_WRITE_RETIRED",
-            "architectural": true,
-            "type": "INS",
-            "description": "Instruction architecturally executed, Condition code check pass, Software change of the PC Counts branch instructions that caused a change of Program Counter, which effectively causes a change in the control flow of the program"
         },
         {
             "code": 13,
@@ -1160,17 +1150,6 @@
             "description": "Barrier speculatively executed, DMB Counts DMB operations that are speculatively issued to the Load/Store unit in the CPU. This event does not count implied barriers from load acquire/store release operations"
         },
         {
-            "code": 127,
-            "refs": [
-                0
-            ],
-            "name": "CSDB_SPEC",
-            "impdef": true,
-            "architectural": false,
-            "type": "UEVT",
-            "description": "Barrier speculatively executed, CSDB Counts CDSB operations that are speculatively issued to the Load/Store unit in the CPU. This event does not count implied barriers from load acquire/store release operations"
-        },
-        {
             "code": 129,
             "refs": [
                 0
@@ -1688,16 +1667,6 @@
             "architectural": false,
             "type": "UEVT",
             "description": "Integer operation speculatively executed, Advanced SIMD or SVE 64-bit Counts speculatively executed Advanced SIMD or SVE integer operations with the largest data type a 64-bit integer"
-        },
-        {
-            "code": 33032,
-            "refs": [
-                0
-            ],
-            "name": "BR_IMMED_TAKEN_RETIRED",
-            "architectural": true,
-            "type": "INS",
-            "description": "Branch instruction architecturally executed, immediate, taken Counts architecturally executed direct branches that were taken"
         },
         {
             "code": 33036,
@@ -2401,17 +2370,6 @@
             "description": "Backend stall cycles, level 1 data cache Counts cycles when the backend is stalled because there is a pending demand load request in progress in the level 1 data cache"
         },
         {
-            "code": 33126,
-            "refs": [
-                0
-            ],
-            "name": "STALL_BACKEND_L2D",
-            "architectural": false,
-            "type": "CYCLE",
-            "component": "L2",
-            "description": "Backend stall cycles, level 2 data cache Counts cycles when the backend is stalled because there is a pending demand load request in progress in the level 2 data cache"
-        },
-        {
             "code": 33127,
             "refs": [
                 0
@@ -2450,16 +2408,6 @@
             "architectural": false,
             "type": "CYCLE",
             "description": "Backend stall cycles, backend busy Counts cycles when the backend could not accept any micro-operations because the issue queues are full to take any operations for execution"
-        },
-        {
-            "code": 33132,
-            "refs": [
-                0
-            ],
-            "name": "STALL_BACKEND_ILOCK",
-            "architectural": false,
-            "type": "CYCLE",
-            "description": "Backend stall cycles, input dependency Counts cycles when the backend could not accept any micro-operations due to resource constraints imposed by input dependency"
         },
         {
             "code": 33133,
